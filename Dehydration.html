@@ -16,10 +16,10 @@
                 <a href="Dehydration.html">DEHYDRATION</a>
             </div>
             <div class="sub-box">
-                <a href="link2.html">DAY CREAM MOISTURISERS</a>
+                <a href="Daycream.html">DAY CREAM MOISTURISERS</a>
             </div>
             <div class="sub-box">
-                <a href="link3.html">NIGHT CREAM MOISTURISERS</a>
+                <a href="Nightcream.html">NIGHT CREAM MOISTURISERS</a>
             </div>
             <div class="sub-box">
                 <a href="link4.html">FACE MASKS</a>
@@ -38,7 +38,15 @@
             </div>
         </div>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const currentHtmlFile = window.location.href.split("/").slice(-1)[0];
 
+            var link = document.querySelector(".sub-box a[href='" + currentHtmlFile + "']");
+            link.style.textDecoration = 'underline';
+        
+        });
+    </script>
     <div class="background-container">
         <div class="image-box">
             <img src="1.jpg" alt="Foto 1" class="image">
@@ -79,7 +87,7 @@
             <p>Aqualia Thermal Rehydrating Serum</p>
         </div>
     </div>
-   
+
 </body>
 
 </html>
