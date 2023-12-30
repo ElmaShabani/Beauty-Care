@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styling...</title>
+
+    <link rel="stylesheet" href="./Serum.css">
+
+<body>
+    <div class="container3">
+        <div class="middle-box">
+            <div class="sub-box">
+                <a href="Dehydration.html">DEHYDRATION</a>
+            </div>
+            <div class="sub-box">
+                <a href="Daycream.html">DAY CREAM MOISTURISERS</a>
+            </div>
+            <div class="sub-box">
+                <a href="Nightcream.html">NIGHT CREAM MOISTURISERS</a>
+            </div>
+            <div class="sub-box">
+                <a href="Face.html">FACE MASKS</a>
+            </div>
+            <div class="sub-box">
+                <a href="Serum.html">SERUMS & BOOSTERS</a>
+            </div>
+            <div class="sub-box">
+                <a href="Clean.html">CLEANSERS & MAKEUP REMOVER</a>
+            </div>
+            <div class="sub-box">
+                <a href="EyeandLip.html">EYE & LIP CARE</a>
+            </div>
+            <div class="sub-box">
+                <a href="allskincare.html">See all <br> SKINCARE PRODUCT TYPE</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const currentHtmlFile = window.location.href.split("/").slice(-1)[0];
+
+            var link = document.querySelector(".sub-box a[href='" + currentHtmlFile + "']");
+            link.style.textDecoration = 'underline';
+        });
+    </script>
+    <div class="background-container">
+        <div class="image-box">
+            <img src="serum1.jpg" alt="Foto 1" class="image">
+            <p>Normaderm Salicylic Acid + Probiotic <br>
+                Fractions Anti-Blemish Serum 30ml</p>
+        </div>
+        <div class="image-box">
+            <img src="serum5.jpg" alt=" Foto 5" class="image">
+            <p>Liftactiv Supreme 15% Pure Vitamin <br>
+                C Brightening Serum 20ml </p>
+        </div>
+
+        <div class="image-box">
+            <img src="serum3.jpg" alt="Foto 6" class="image">
+            <p>Liftactiv Supreme Serum 10</p>
+        </div>
+        <div class="image-box">
+            <img src="serum4.jpg" alt="Foto 6" class="image">
+            <p>Liftactiv Specialist B3 5% Niacinamide<br>
+                & AHA Complex Dark Spots & Pigmentation<br>
+                Serum 30ml</p>
+        </div>
+        <div class="image-box">
+            <img src="serum2.jpg" alt="Foto 2" class="image">
+            <p>Aqualia Thermal Rehydrating Serum</p>
+        </div>
+        <div class="image-box">
+            <img src="serum6.jpg" alt="Foto 3" class="image">
+            <p>Neovadiol Meno 5 Serum for <br>
+                Menopausal Skin 30ml</p>
+        </div>
+        <div class="image-box">
+            <img src="serum7.jpg" alt="Foto 6" class="image">
+            <p>Minéral 89 Hyaluronic Acid Booster</p>
+        </div>
+        <div class="image-box">
+            <img src="serum8.jpg" alt="Foto 4" class="image">
+            <p>Minéral 89 Probiotic Serum</p>
+        </div>
+    </div>
+
+</body>
+
+</html>
