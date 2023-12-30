@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styling...</title>
+
+    <link rel="stylesheet" href="./Face.css">
+
+<body>
+    <div class="container3">
+        <div class="middle-box">
+            <div class="sub-box">
+                <a href="Dehydration.html">DEHYDRATION</a>
+            </div>
+            <div class="sub-box">
+                <a href="Daycream.html">DAY CREAM MOISTURISERS</a>
+            </div>
+            <div class="sub-box">
+                <a href="Nightcream.html">NIGHT CREAM MOISTURISERS</a>
+            </div>
+            <div class="sub-box">
+                <a href="Face.html">FACE MASKS</a>
+            </div>
+            <div class="sub-box">
+                <a href="Serum.html">SERUMS & BOOSTERS</a>
+            </div>
+            <div class="sub-box">
+                <a href="Clean.html">CLEANSERS & MAKEUP REMOVER</a>
+            </div>
+            <div class="sub-box">
+                <a href="EyeandLip.html">EYE & LIP CARE</a>
+            </div>
+            <div class="sub-box">
+                <a href="allskincare.html">See all <br> SKINCARE PRODUCT TYPE</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const currentHtmlFile = window.location.href.split("/").slice(-1)[0];
+
+            var link = document.querySelector(".sub-box a[href='" + currentHtmlFile + "']");
+            link.style.textDecoration = 'underline';
+        });
+    </script>
+    <div class="background-container center-container">
+
+        <div class="image-box">
+            <img src="face2.jpg" alt="Foto 2" class="image">
+            <p>Detox Clarifying Charcoal Mask</p>
+        </div>
+        <div class="image-box">
+            <img src="face3.jpg" alt="Foto 6" class="image">
+            <p>Minéral 89 Fortifying Recovery Mask</p>
+        </div>
+        <div class="image-box">
+            <img src="face4.jpg" alt="Foto 6" class="image">
+            <p>Double Glow Peel Face Mask</p>
+        </div>
+        <div class="image-box">
+            <img src="face6.jpg" alt="Foto 3" class="image">
+            <p>Liftactiv Specialist Hyalu Face Mask</p>
+        </div>
+    </div>
+
+</body>
+
+</html>
