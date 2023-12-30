@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styling...</title>
+
+    <link rel="stylesheet" href="./Nightcream.css">
+
+<body>
+    <div class="container3">
+        <div class="middle-box">
+            <div class="sub-box">
+                <a href="Dehydration.html">DEHYDRATION</a>
+            </div>
+            <div class="sub-box">
+                <a href="Daycream.html">DAY CREAM MOISTURISERS</a>
+            </div>
+            <div class="sub-box">
+                <a href="Nightcream.html">NIGHT CREAM MOISTURISERS</a>
+            </div>
+            <div class="sub-box">
+                <a href="link4.html">FACE MASKS</a>
+            </div>
+            <div class="sub-box">
+                <a href="link5.html">SERUMS & BOOSTERS</a>
+            </div>
+            <div class="sub-box">
+                <a href="link6.html">CLEANSERS & MAKEUP REMOVER</a>
+            </div>
+            <div class="sub-box">
+                <a href="link7.html">EYE & LIP CARE</a>
+            </div>
+            <div class="sub-box">
+                <a href="link8.html">See all <br> SKINCARE PRODUCT TYPE</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const currentHtmlFile = window.location.href.split("/").slice(-1)[0];
+
+            var link = document.querySelector(".sub-box a[href='" + currentHtmlFile + "']");
+            link.style.textDecoration = 'underline';
+        });
+    </script>
+    <div class="background-container">
+        <div class="image-box">
+            <img src="night1.jpg" alt="Foto 1" class="image">
+            <p>Liftactiv Collagen Specialist Peptide Night<br>
+                Cream with Reservatrol for All Skin Types</p>
+        </div>
+        <div class="image-box">
+            <img src="night5.jpg" alt="Foto 2" class="image">
+            <p>Aqualia Thermal Night Spa Night<br>
+                Cream</p>
+        </div>
+        <div class="image-box">
+            <img src="night3.jpg" alt="Foto 6" class="image">
+            <p>NMinéral 89 72 Hr Hyaluronic Acid Moisture <br>
+                Boosting Cream for All Skin Types 50ml</p>
+        </div>
+        <div class="image-box">
+            <img src="night4.jpg" alt="Foto 6" class="image">
+            <p>Neovadiol Rose Platinium Night<br>
+                Cream</p>
+        </div>
+        <div class="image-box">
+            <img src="night2.jpg" alt=" Foto 5" class="image">
+            <p>Neovadiol Perimenopause Revitalizing Night<br>
+                Cream</p>
+        </div>
+
+        <div class="image-box">
+            <img src="night6.jpg" alt="Foto 3" class="image">
+            <p>Idéalia Energising Night<br>
+                Cream</p>
+        </div>
+        <div class="image-box">
+            <img src="night7.jpg" alt="Foto 6" class="image">
+            <p>Slow Âge Night Cream and Mask</p>
+        </div>
+        <div class="image-box">
+            <img src="night8.jpg" alt="Foto 4" class="image">
+            <p>Neovadiol Magistral Day & Night<br> Cream</p>
+        </div>
+    </div>
+
+</body>
+
+</html>
