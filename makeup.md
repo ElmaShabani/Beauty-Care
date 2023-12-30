@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Makeup</title>
+    <title>Makeup </title>
 </head>
 <body>
     <header>
-        <h1>Makeup</h1>
+        <h1>Makeup Products</h1>
         <div id="cart">
             <span id="cart-count">0</span>
             <img src="C:\Users\S\Desktop\cart.jpg" alt="Shopping Cart">
@@ -27,7 +27,7 @@
             <div class="product"   onclick="addToCart('Hollywood Flawless Filter', 49.00)">
             <img src="file:///C:/Users/S/Desktop/s2419786-main-zoom.webp" alt="Foundation" >
             <h3>Charlotte Tilbury<p>Hollywood Flawless Filter</p></h3>
-            <p>$49.00</p>
+            <p>$49.00    <del>$72.00</del</p>
         </div>
         <div class="product" onclick="addToCart('Gloss Bomb Universal', 21.00)">
             <img src="file:///C:/Users/S/Desktop/s2662468-main-zoom.webp" alt="Lipgloss" >
@@ -72,12 +72,42 @@
 <div class="product" onclick="addToCart('Diamond Bomb All-Over Diamond Veil',42.00)">
     <img src="file:///C:/Users/S/Desktop/s2385169-main-zoom.webp" alt="Highlighter" >
     <h3>Fenty Beauty by Rihanna<p>Diamond Bomb All-Over Diamond Veil</p></h3>
-    <p>$42.00</p>
+    <p>$42.00 <del>$67.00</del</p>
 </div>
 <div class="product" onclick="addToCart('Natural Finish Longwear Liquid Foundation',46.00)">
     <img src="file:///C:/Users/S/Desktop/s1960772-main-zoom.webp" alt="Foundation" >
     <h3>Too Faced<p>Natural Finish Longwear Liquid Foundation</p></h3>
     <p>$46.00</p>
+</div>
+<div class="product" onclick="addToCart('Shine Lipstick Balm',43.00)">
+    <img src="file:///C:/Users/S/Desktop/s1811579-main-zoom.webp" alt="Lipstick" >
+    <h3>Yves Saint Laurent<p>Shine Lipstick Balm</p></h3>
+    <p>$43.00</p>
+</div>
+<div class="product" onclick="addToCart('Tartelette In Bloom Clay Eyeshadow Palette',45.00)">
+    <img src="file:///C:/Users/S/Desktop/s1775006-main-zoom.webp" alt="Eyeshadow Palette" >
+    <h3>Tarte<p>Tartelette In Bloom Clay Eyeshadow Palette</p></h3>
+    <p>$45.00</p>
+</div>
+<div class="product" onclick="addToCart('Hangover Replenishing Face Primer',19.50)">
+    <img src="file:///C:/Users/S/Desktop/s1626043-main-zoom.webp" alt="Primer" >
+    <h3>Too Faced<p>Hangover Replenishing Face Primer</p></h3>
+    <p>$19.50 <del>$32.00</del></p>
+</div>
+<div class="product" onclick="addToCart('Smudge Proof Brow Pomade',19.00)">
+    <img src="file:///C:/Users/S/Desktop/s1578699-main-zoom.webp" alt="Brow Pomade" >
+    <h3>Anastasia Beverly Hills<p>Smudge Proof Brow Pomade</p></h3>
+    <p>$21.00 </p>
+</div>
+<div class="product" onclick="addToCart('Cookie and Tickle Powder Highlighters',35.00)">
+    <img src="file:///C:/Users/S/Desktop/s2520468-main-zoom.webp" alt="Highlighter" >
+    <h3>Benefit Cosmetics <p>Cookie and Tickle Powder Highlighters</p></h3>
+    <p>$35.00 </p>
+</div>
+<div class="product" onclick="addToCart('Match Stix Matte Contour Skinstick',32.00)">
+    <img src="file:///C:/Users/S/Desktop/s1925700-main-zoom.webp" alt="Contour Skinstick" >
+    <h3>Fenty Beauty by Rihanna<p>Match Stix Matte Contour Skinstick</p></h3>
+    <p>$32.00 </p>
 </div>
 
     </section>
