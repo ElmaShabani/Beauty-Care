@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="MainPage.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <title>EverGlow Beauty</title>
+   </head>
+<body>
+    <header>
+        <div class="container" style="font-family: 'Times New Roman', Times, serif;">
+            <div class="row">
+              <div class="col-1">
+               <a href="#" style="color:peru; ">Makeup</a>
+              </div> 
+              <div class="col-1">
+               <a href="#" style="color: peru;">Skin Care</a>
+              </div>
+              <div class="col-1">
+               <a href="#" style="color: peru;">Fragrance</a>
+              </div>
+              <div class="col-1">
+               <a href="#" style="color: peru;">Hair</a>
+              </div>
+              <div class="col-4" style="font-family:Verdana, Geneva, Tahoma, sans-serif; font-size: 200%; color: #000000;" >EverGlow Beauty</div>
+           <!--<div id="cart" class="col-1">
+        <h2>Shopping Cart</h2>
+        <ul id="cart-items"></ul>
+        <p>Total: $<span id="cart-total">0.00</span></p>
+    </div> 
+    <div id="cart-image" onclick="toggleCart()" class="col-1">
+    <img src="c:\Users\elona\Downloads\238147666_396953888438906_4247488565881645248_n.jpg" alt="Cart" width="30px"></div> -->
+        </div>
+    </div>
+     </header>
+     <section id="video-section">
+        <video width="100%" height="100%" controls >
+            <source src="c:\Users\elona\Downloads\Untitled video - Made with Clipchamp (2).mp4" type="video/mp4" autoplay>
+            
+        </video>
+    </section>
+    <br> 
+    <h1 style="font-family: 'Times New Roman', Times, serif;"><b>Best Sellers</b></h1>
+
+<div class="slider-container" style="font-family: 'Times New Roman', Times, serif;">
+    <div class="slider">
+        <div class="slide">
+        <img src="c:\Users\elona\Downloads\night4.jpg" alt="Image 1">
+        <h4 style="text-align: center;">Vichy</h4>
+        <p style="text-align: center;">Neovadiol Rose Platinium Night <br>Cream</p>
+        <button class="add-to-cart" onclick="addToCart('Neovadiol Rose Platinium Night',110.00)">Add to Cart</button>
+        </div>
+        <div class="slide">
+        <img src="c:\Users\elona\Downloads\s2114072-main-zoom.webp" alt="Image 2">
+        <h4 style="text-align: center;">Huda Beauty</h4>
+        <p style="text-align: center;">Easy Bake Loose Baking <br> & Setting Powder</p> 
+        <p style="text-align: center;">$38.00</p>  
+        <button class="add-to-cart" onclick="addToCart('Easy Bake Loose Baking <br> & Setting Powder',38.00)">Add to Cart</button>
+        </div>
+        <div class="slide">
+        <img src="c:\Users\elona\Downloads\day4.jpg" alt="Image 3">
+        <h4 style="text-align: center;">Vichy</h4>
+        <p style="text-align: center;">Neovadiol Perimenopause<br> Plumping Day Cream for Dry Skin</p>
+        <button class="add-to-cart" onclick="addToCart('Neovadiol Perimenopause<br> Plumping Day Cream for Dry Skin',110.00)">Add to Cart</button>
+        </div>
+        <div class="slide">
+        <img src="c:\Users\elona\Downloads\s2385169-main-zoom.webp" alt="Image 4">
+        <h3 style="text-align: center;">Fenty Beauty by Rihanna</h3>
+        <p style="text-align: center;">Diamond Bomb All-Over Diamond Veil</p>
+        <p style="text-align: center;">$42.00 <del>$67.00</del></p>
+        <button class="add-to-cart" onclick="addToCart('Diamond Bomb All-Over Diamond Veil',42.00)">Add to Cart</button>
+        </div>
+        <div class="slide">
+        <img src="c:\Users\elona\Downloads\s2662468-main-zoom.webp" alt="Image 5">
+        <h3 style="text-align: center;">Fenty Beauty</h3>
+        <p style="text-align: center;">Gloss Bomb Universal</p>
+        <p style="text-align: center;">$21.00</p>
+        <button class="add-to-cart" onclick="addToCart('Gloss Bomb Universal',21.00)">Add to Cart</button>
+        </div>
+        <div class="slide">
+        <img src="c:\Users\elona\Downloads\venesa111.webp" alt="Image 6">
+        <h3 style="text-align: center;">Dior</h3>
+        <p style="text-align: center;">Sauvage Eau de Toilette</p>
+        <p style="text-align: center;">$110.00</p>
+        <button class="add-to-cart" onclick="addToCart('Sauvage Eau de Toilette',110.00)">Add to Cart</button>
+        </div>
+        <div class="slide">
+        <img src="c:\Users\elona\Downloads\s2382026-main-zoom.webp" alt="Image 7">
+        <h3 style="text-align: center;">Slip</h3>
+        <p style="text-align: center;">Pure Silk Turban</p>
+        <p style="text-align: center;"> $85.00</p>
+        <button class="add-to-cart" onclick="addToCart('Pure Silk Turban',85.00)">Add to Cart</button>
+        </div>
+        <div class="slide">
+            <img src="c:\Users\elona\Downloads\s2718062-main-zoom.webp" alt="Image 8">
+            <h3 style="text-align: center;">Dyson</h3>
+            <p style="text-align: center;">Airwrap Multi Styler in Ceramic Pop</p>
+            <p style="text-align: center;"> $599.00</p>
+            <button class="add-to-cart" onclick="addToCart('Airwrap Multi Styler in Ceramic Pop',599.00)">Add to Cart</button>
+            </div>
+         </div>
+</div>
+<button class="prev" onclick="prevSlide()">❮</button>
+ <button class="next" onclick="nextSlide()">❯</button>
+ <br>
+
+ <div class="second-container" style="font-family: 'Times New Roman', Times, serif;">
+    <div class="image-container">
+        <img src="c:\Users\elona\Downloads\006_210519_FACIAL_OIL_HM_DUO_FACIAL_OIL_RM_2202.jpg" alt="Image" class="round-image">
+    </div>
+    <div class="quote-container">
+        <blockquote>
+            <h1 style="color: peru;">What makes us Unique?</h1>
+            <p>Together we’re building a safe, welcoming <br> space in beauty and beyond. This is <br> makeup made to feel good in, without <br>hiding what makes you unique. And it’s all <br> vegan and cruelty free.</p>
+            <a href="OurStory.html" style="color: peru;">OUR STORY</a>
+        </blockquote>
+    </div>
+ </div>
+
+ <footer style="background-color:rgb(255, 253, 251);">
+    <div class="footer-content">
+        <div class="social-media">
+            <a href="#" target="_blank"><img src="C:\Users\S\Desktop\Facebook_Logo_2023.png" alt="Facebook"></a>
+            <a href="#" target="_blank"><img src="C:\Users\S\Downloads\Instagram_logo_2016.svg.png" alt="Instagram"></a>
+            
+        </div>
+        <div class="contact-info">
+            <p>Email: everglowbeauty@gmail.com</p>
+            <p>Phone: +383 48 555 111</p>
+        </div>
+    </div>
+    <p class="copyright">&copy; 2023 EverGlow Beauty. All rights reserved.</p>
+</footer>
+<script src="mainpage.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
