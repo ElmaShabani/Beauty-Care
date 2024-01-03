@@ -78,20 +78,3 @@ body {
 .image-box p {
     margin: 5px 0;
 }
-
-.round-container {
-    width: 800px; 
-    height: 800px;
-    overflow: hidden;
-    border-radius: 100%;
-    margin-left:140px;
-    margin-top: 50px;
-
-}
-
-.round-container img {
-    width: 100%; 
-    height: auto; 
-    
-    
-}
