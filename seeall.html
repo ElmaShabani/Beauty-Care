@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="forall.css">
+    <title>See All </title>
+</head>
+<body>
+    <header>
+        <h1>See All</h1>
+        <div id="cart" class="hidden">
+            <h2>Shopping Cart</h2>
+            <ul id="cart-items">
+            </ul>
+            <p>Total: $<span id="cart-total">0.00</span></p>
+        </div>
+    
+        <div id="cart-image" onclick="toggleCart()">
+            <img src="C:\Users\S\Desktop\cart.jpg" alt="Cart" width="70px">
+        </div>
+    </header>
+
+    <section id="products">
+        <div class="product" >
+            <img src="file:///C:/Users/S/Downloads/s2660918-main-zoom.webp" alt="Styling Cream" >
+            <h3>COLOR WOW<p>Mini One Minute Transformation Anti Frizz Styling Cream</p></h3>
+            <p>$12.00</p>
+            <button class="add-to-cart" onclick="addToCart('Mini One Minute Transformation Anti Frizz Styling Cream', 12.00)">Add to Cart</button>
+    </div>
+    <div class="product" >
+        <img src="file:///C:/Users/S/Downloads/s2494433-main-zoom.webp" alt="Styling Cream" >
+        <h3>PATTERN by Tracee Ellis Ross<p> Styling Cream for Curly &Coily Hair</p></h3>
+        <p>$28.00 </p>
+        <button class="add-to-cart" onclick="addToCart('Styling Cream for Curly &Coily Hair', 28.00)">Add to Cart</button>
+    </div>
+    <div class="product" >
+        <img src="file:///C:/Users/S/Downloads/s2622397-main-zoom.webp" alt="Heat Protectant" >
+        <h3>Curlsmith<p>Heat Protectant Leave In Teatment</p> </h3>
+        <p>$24.00  <del>$33.00</del></p>
+        <button class="add-to-cart" onclick="addToCart('Heat Protectant Leave In Teatment', 24.00)">Add to Cart</button>
+    </div>
+    <div class="product" >
+<img src="file:///C:/Users/S/Downloads/s2078640-main-zoom.webp" alt="Scrunchies" >
+<h3>Slip<p>Large Slipsilk Scrunchies</p> </h3>
+<p>$39.00</p>
+<button class="add-to-cart" onclick="addToCart('Large Slipsilk Scrunchies', 39.00)">Add to Cart</button>
+</div>
+    <div class="product" >
+        <img src="file:///C:/Users/S/Downloads/s1270289-main-zoom.webp" alt="Prep" >
+        <h3>Bumble and bumble<p>Prep</p> </h3>
+        <p>$30.00</p>
+        <button class="add-to-cart" onclick="addToCart('Prep', 30.00)">Add to Cart</button>
+    </div>
+    <div class="product" >
+<img src="file:///C:/Users/S/Downloads/s2712123-main-zoom.webp" alt="Hair Waver" >
+<h3>BondiBoost <p>Wave Wand 3-Barrel Hair Waver</p></h3>
+<p>$58.00</p>
+<button class="add-to-cart" onclick="addToCart('Wave Wand 3-Barrel Hair Waver', 58.00)">Add to Cart</button>
+</div>
+    <div class="product" >
+        <img src="file:///C:/Users/S/Downloads/s2069151-main-zoom.webp" alt="Hair Gel" >
+        <h3>Amika<p>Curl Corps Curl Enhancing Hair Gel</p></h3>
+        <p>$15.00 <del>$24.99</del></p>
+        <button class="add-to-cart" onclick="addToCart('Curl Corps Curl Enhancing Hair Gel', 15.00)">Add to Cart</button>
+    </div>
+    <div class="product" >
+        <img src="file:///C:/Users/S/Downloads/s2413904-main-zoom.webp" alt="Hair Mask" >
+        <h3>OUAI<p>Treatment Mask for Thick Hair</p></h3>
+        <p>$38.00</p>
+        <button class="add-to-cart" onclick="addToCart('Treatment Mask for Thick Hair', 38.00)">Add to Cart</button>
+</div>
+<div class="product" >
+    <img src="file:///C:/Users/S/Downloads/s2374692-main-zoom.webp" alt="Conditioner" >
+    <h3>BREAD BEAUTY SUPPLY<p>Hair Mask Creamy Deep Conditioner</p></h3>
+    <p>$28.00</p>
+    <button class="add-to-cart" onclick="addToCart('Hair Mask Creamy Deep Conditioner', 28.00)">Add to Cart</button>
+</div>
+<div class="product" >
+    <img src="file:///C:/Users/S/Downloads/s2283117-main-zoom.webp" alt="Sleeping Mask" >
+    <h3>Sephora Collection<p>Clean Hair Sleeping Mask</p></h3>
+    <p>$5.00 <del>$13.00</del></p>
+    <button class="add-to-cart" onclick="addToCart('Clean Hair Sleeping Mask', 5.00)">Add to Cart</button>
+</div>
+<div class="product" >
+    <img src="file:///C:/Users/S/Downloads/s2717502-main-zoom.webp" alt="Hair Mask" >
+    <h3>L'Oréal Professionnel<p> Absolut Repair Protein Treatment Hair Mask </p></h3>
+    <p>$45.00</p>
+    <button class="add-to-cart" onclick="addToCart('Absolut Repair Protein Treatment Hair Mask', 45.00)">Add to Cart</button>
+</div>
+<div class="product" >
+<img src="file:///C:/Users/S/Downloads/s2319556-main-zoom.webp" alt="Silk Glam Band" >
+<h3>Slip<p>Pure Silk Glam Band</p></h3>
+<p>$55.00</p>
+<button class="add-to-cart" onclick="addToCart('Pure Silk Glam Band', 55.00)">Add to Cart</button>
+</div>
+<div class="product" >
+        <img src="file:///C:/Users/S/Downloads/s2473080-main-zoom.webp" alt="Hair Foam" >
+        <h3>Vegamour<p>GRO Hair Foam for Thinning Hair </p></h3>
+        <p>$58.00</p>
+        <button class="add-to-cart" onclick="addToCart('GRO Hair Foam for Thinning Hair', 58.00)">Add to Cart</button>
+    </div>
+<div class="product" >
+<img src="file:///C:/Users/S/Downloads/s2718161-main-zoom.webp" alt="Tool Gift Set" >
+<h3>Shark Beauty<p>Shark FlexStyle FrizzFighter Finishing Tool Gift Set</p></h3>
+<p>$250.00 <del>$349.00</del></p>
+<button class="add-to-cart" onclick="addToCart('Shark FlexStyle FrizzFighter Finishing Tool Gift Set', 250.00)">Add to Cart</button>
+</div>
+<div class="product">
+    <img src="file:///C:/Users/S/Downloads/s2316834-main-zoom.webp" alt="Hair Mask" >
+    <h3>IGK Offline<p> 3-Minute Hydration Hair Mask</p></h3>
+    <p>$38.00</p>
+    <button class="add-to-cart" onclick="addToCart('3-Minute Hydration Hair Mask', 38.00)">Add to Cart</button>
+</div>
+<div class="product" >
+    <img src="file:///C:/Users/S/Downloads/s2718062-main-zoom.webp" alt="Airwrap" >
+    <h3>Dyson<p>Airwrap Multi Styler in Ceramic Pop</p></h3>
+    <p>$599.00</p>
+    <button class="add-to-cart" onclick="addToCart('Airwrap Multi Styler in Ceramic Pop', 599.00)">Add to Cart</button>
+</div>
+<div class="product" >
+<img src="file:///C:/Users/S/Downloads/s2382026-main-zoom.webp" alt="Silk Turban" >
+<h3>Slip<p>Pure Silk Turban</p></h3>
+<p>$85.00 </p>
+<button class="add-to-cart" onclick="addToCart('Pure Silk Turban', 85.00)">Add to Cart</button>
+</div>
+<div class="product" >
+    <img src="file:///C:/Users/S/Downloads/s2390896-main-zoom.webp" alt="Hair Mask" >
+    <h3>Pureology<p>Strength Cure Superfoods Treatment Hair Mask</p> </h3>
+    <p>$44.00</p>
+    <button class="add-to-cart" onclick="addToCart('Strength Cure Superfoods Treatment Hair Mask', 44.00)">Add to Cart</button>
+</div>
+<div class="product" >
+<img src="file:///C:/Users/S/Downloads/s2692663-main-zoom.webp" alt="Vanity Bag" >
+<h3>Ries<p>The Essential Travel Vanity Bag</p> </h3>
+<p>$65.00  <del>$83.00</del></p>
+<button class="add-to-cart" onclick="addToCart('The Essential Travel Vanity Bag', 65.00)">Add to Cart</button>
+</div>
+<div class="product" >
+<img src="file:///C:/Users/S/Downloads/s2593895-main-zoom.webp" alt="Set" >
+<h3>Viori<p>Hair Shampoo & Conditioner Bar with Bamboo Holder Set</p></h3>
+<p>$33.00 <del>$52.00</del></p>
+<button class="add-to-cart" onclick="addToCart('Hair Shampoo & Conditioner Bar with Bamboo Holder Set', 33.00)">Add to Cart</button>
+</div>
+<div class="product" >
+    <img src="file:///C:/Users/S/Downloads/s2559177-main-zoom.webp" alt="Dry Shampoo" >
+    <h3>Crown Affair<p>The Dry Shampoo</p> </h3>
+    <p>$36.00</p>
+    <button class="add-to-cart" onclick="addToCart('The Dry Shampoo', 36.00)">Add to Cart</button>
+</div>
+<div class="product" >
+<img src="file:///C:/Users/S/Downloads/s2654564-main-zoom.webp" alt="Flat Iron" >
+<h3>L'Oréal Professionnel<p>Steampod SteamPod Flat Iron & Styler Limited Edition Bundle</p></h3>
+<p>$250.00</p>
+<button class="add-to-cart" onclick="addToCart('Steampod SteamPod Flat Iron & Styler Limited Edition Bundle', 250.00)">Add to Cart</button>
+</div>
+
+    
+    </section>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Your Shopping Cart</h2>
+            <ul id="cart-list"></ul>
+            <p>Total: $<span id="cart-total">0.00</span></p>
+        </div>
+    </div>
+
+    <script src="prov.js"></script>
+
+
+</body>
+</html>
