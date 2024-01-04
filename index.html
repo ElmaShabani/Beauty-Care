@@ -10,62 +10,7 @@
     <link rel="stylesheet" href="./index.css">
 
     <style>
-        body {
-            font-family: 'Times New Roman', Times, serif, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
 
-        nav {
-            background-color: rgba(236, 206, 176, 0.5);
-
-            color: white;
-            padding: 10px;
-        }
-
-        ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-        }
-
-        li {
-            margin-right: 20px;
-            position: relative;
-        }
-
-        a {
-            text-decoration: none;
-            color: #4d4242;
-            padding: 10px;
-            display: block;
-        }
-
-        ul ul {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: rgba(236, 206, 176, 0.5);
-            border-radius: 0 0 4px 4px;
-            box-shadow: #4d4242;
-            ;
-        }
-
-        ul li:hover>ul {
-            display: initial;
-        }
-
-        img {
-            z-index: 0;
-            width: 50%;
-            height: 100%;
-        }
-
-        .dropdown {
-            z-index: 1;
-        }
     </style>
 </head>
 
@@ -89,7 +34,7 @@
 
             </li>
         </ul>
-        <div id="cart-image" onclick="toggleCart()" style=" bottom: 50px; right: 50px;">
+        <div id="cart-image" onclick="toggleCart()" style="">
             <img src="cart1.jpg" alt="Cart" width="40px">
         </div>
     </nav>
