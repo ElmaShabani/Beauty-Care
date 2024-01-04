@@ -5,43 +5,106 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Styling...</title>
+    <title>EverGlow Beauty</title>
 
     <link rel="stylesheet" href="./index.css">
 
-    </header>
-    <div class="container3">
-        <div class="middle-box">
-            <div class="sub-box">
-                <a href="Dehydration.html">DEHYDRATION</a>
-            </div>
-            <div class="sub-box">
-                <a href="link2.html">DAY CREAM MOISTURISERS</a>
-            </div>
-            <div class="sub-box">
-                <a href="link3.html">NIGHT CREAM MOISTURISERS</a>
-            </div>
-            <div class="sub-box">
-                <a href="link4.html">FACE MASKS</a>
-            </div>
-            <div class="sub-box">
-                <a href="link5.html">SERUMS & BOOSTERS</a>
-            </div>
-            <div class="sub-box">
-                <a href="link6.html">CLEANSERS & MAKEUP REMOVER</a>
-            </div>
-            <div class="sub-box">
-                <a href="link7.html">EYE & LIP CARE</a>
-            </div>
-            <div class="sub-box">
-                <a href="link8.html">See all <br> SKINCARE PRODUCT TYPE</a>
-            </div>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: rgba(236, 206, 176, 0.5);
+
+            color: white;
+            padding: 10px;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        li {
+            margin-right: 20px;
+            position: relative;
+        }
+
+        a {
+            text-decoration: none;
+            color: #4d4242;
+            padding: 10px;
+            display: block;
+        }
+
+        ul ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: rgba(236, 206, 176, 0.5);
+            border-radius: 0 0 4px 4px;
+            box-shadow: #4d4242;
+            ;
+        }
+
+        ul li:hover>ul {
+            display: initial;
+        }
+
+        img {
+            z-index: 0;
+            width: 50%;
+            height: 100%;
+        }
+
+        .dropdown {
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li>
+                <a href="#">Skin care</a>
+                <ul class="dropdown">
+                    <li><a href="Dehydration.html">Dehydration</a></li>
+                    <li><a href="Daycream.html">Day & Night Cream Moisturiser</a></li>
+                    <li><a href="Face.html">Face Masks & Cleansers</a></li>
+                    <li><a href="Serum.html">Serums & Lip Care</a></li>
+
+                </ul>
+            </li>
+            <li>
+                <a href="#">Tips</a>
+
+            </li>
+        </ul>
+        <div id="cart-image" onclick="toggleCart()" style=" bottom: 50px; right: 50px;">
+            <img src="cart1.jpg" alt="Cart" width="40px">
         </div>
-    </div>
+    </nav>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const currentHtmlFile = window.location.href.split("/").slice(-1)[0];
+
+            var link = document.querySelector(".sub-box a[href='" + currentHtmlFile + "']");
+            link.style.textDecoration = 'underline';
+
+        });
+    </script>
 
     <div class="container">
         <div class="box left">
-            <h1>Timeless Beauty, Timeless Care</h1>
             <img src="background.jpeg">
         </div>
         <div class="box right">
@@ -72,4 +135,6 @@
         </div>
     </div>
     </div>
-</head>
+
+    <script src="cart.js"></script>
+    </head>
