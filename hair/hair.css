@@ -1,0 +1,165 @@
+.container3 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width:100%;
+    
+}
+
+
+
+.middle-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(236, 206, 176, 0.5);
+    padding: 30px;
+    width:100%;
+
+}
+
+.sub-box {
+    flex: 1;
+    padding: 0px;
+    text-align: center;
+    font-family: 'Verdana', sans-serif;
+    width:100%;
+}
+
+.sub-box a {
+    text-decoration: none;
+    color: #4d4242;
+    transition: color 0.3s ease;
+}
+
+.sub-box a:hover {
+    color: #000;
+}
+
+
+
+
+.box {
+    flex: 1;
+    position: relative;
+}
+
+a.left img {
+    position: relative;
+}
+
+.left h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+
+}
+
+
+
+footer {
+    background-color:rgba(236, 206, 176, 0.5) ;
+    color: black;
+    padding: 20px 0;
+}
+
+.footer-container{
+
+    display: flex;
+    justify-content: space-around;
+}
+
+.quick-links,
+.get-in-touch {
+    flex: 1;
+}
+.get-in-touch p {
+    margin-left: 400px;
+    font-size: 20px;
+}
+.quick-links h2,
+.get-in-touch h2 {
+    margin-left: 400px;
+    margin-bottom: 10px;
+}
+.left{
+    margin-left: 100px;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-left: 400px;
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+
+a {
+    text-decoration: none;
+    color:black;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+header {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 5px;
+    display: flex;
+    align-items: center; /* Center items vertically */
+}
+   header img {
+    max-width: 80px; /* Adjust the max-width as needed */
+    height: auto;
+    margin-right: 20px; /* Add some spacing between the logo and other content */
+}
+.blockquote p{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+blockquote {
+    width: 600px;
+    font-size: 1.2em;
+    color: #333;
+}
+.table-container tr{
+width:100%
+}
+.fourth-container{
+display: flex;
+align-items: center;
+justify-content: space-around;
+padding: 20px;
+background-color: white;
+margin-bottom: 150px;
+}
+
+.round-image {
+border-radius: 50%;
+width: 600px;
+height: 600px;
+}
+
+.quote-container {
+max-width: 900px;
+}
+
+
+.site-footer-payments {
+padding: 40px;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+background-color: rgba(236, 206, 176, 0.5);
+}
+.site-footer-payments__link__icon {
+display: block;
+margin: 1.5vw;
+justify-content: center;
+}
