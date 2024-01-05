@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+    body {
+        font-family: 'Arial', sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color:rgba(236, 206, 176, 0.5) ;
+    }
+    
+    .contact-form-container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        width: 500px;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    label {
+        margin-top: 10px;
+    }
+    
+    input,
+    textarea {
+        margin-bottom: 10px;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    
+    button {
+        background-color: gray;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background-color:darkgray;
+    }
+   
+    </style>
+</head>
+<body>
+   
+
+    <div class="contact-form-container">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="button" onclick="submitForm()">Submit</button>
+        </form>
+    </div>
+
+   <!-- <footer>
+        <div class="footer-container">
+           <div class="left"> <h2>EverGlow Beauty</h2> <p style="font-size: 20px;">EverGlow Beauty Kosova</p></div> 
+            <div class="quick-links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="MainPage.html" style="color: black;">Home</a></li>
+                    <li><a href="OurStory.html" style="color: black;">About Us</a></li>
+                    <li><a href="contact.html" style="color: black;">Contact</a></li>
+                </ul>
+            </div>
+            <div class="get-in-touch">
+                <h2>Get in Touch</h2>
+                <p> <a href="https://maps.app.goo.gl/scmxnwzCazoUVT8b9" style="color: black;">Address: Prishtine</a>  </p>
+                <p>Email: everglowbeauty.com</p>
+                <p>Phone: +383 48 555 111</p>
+            </div>
+        </div>
+    </footer> -->
+
+    <script>
+        function submitForm() {
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var message = document.getElementById("message").value;
+
+    if (name === "" || email === "" || message === "") {
+        alert("Please fill in all fields.");
+    } else {
+        alert("Thank you, " + name + "! Your message has been submitted.");
+        document.getElementById("contactForm").reset();
+    }
+}
+    </script>
+</body>
+</html>
