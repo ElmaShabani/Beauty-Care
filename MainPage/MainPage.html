@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="MainPage.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <title>EverGlow Beauty</title>
+    <link rel="icon" type="image/x-icon" href="c:\Users\elona\Downloads\favicon.ico.PNG">
+   </head>
+<body>
+    <header>
+       <a href="MainPage.html"><img src="c:\Users\elona\Downloads\logo.jpg" alt="Your Brand Logo"></a>
+        <h3 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">EverGlow Beauty</h3>
+        <nav>
+            <ul>
+                <li><a href="#">Makeup</a></li>
+                <li><a href="#">Skin Care</a></li>
+                <li><a href="#">Fragrance</a></li>
+                <li><a href="#">Hair Care</a></li>
+            </ul>
+        </nav>
+    </header>
+     <section id="video-section" >
+        <video width="100%" height="100%" autoplay loop muted >
+            <source src="c:\Users\elona\Downloads\Untitled video - Made with Clipchamp (2).mp4" type="video/mp4" autoplay>
+            
+        </video>
+    </section>
+    <br> 
+    <h1 style="font-family: 'Times New Roman', Times, serif;"><b>Best Sellers</b></h1>
+
+<div class="slider-container" style="font-family: 'Times New Roman', Times, serif;">
+    <div class="slider">
+        <div class="slide">
+            <a href="#">
+        <img src="c:\Users\elona\Downloads\night4.jpg" alt="Image 1"> </a>
+        <h4 style="text-align: center;">Vichy</h4>
+        <p style="text-align: center;">Neovadiol Rose Platinium Night <br>Cream</p>
+        <button class="add-to-cart" onclick="addToCart('Neovadiol Rose Platinium Night',110.00)">Add to Cart</button>
+        </div>
+        <div class="slide">
+            <a href="#">
+        <img src="c:\Users\elona\Downloads\s2114072-main-zoom.webp" alt="Image 2"> </a>
+        <h4 style="text-align: center;">Huda Beauty</h4>
+        <p style="text-align: center;">Easy Bake Loose Baking <br> & Setting Powder</p> 
+        <p style="text-align: center;">$38.00</p>  
+        <button class="add-to-cart" onclick="addToCart('Easy Bake Loose Baking <br> & Setting Powder',38.00)">Add to Cart</button>
+            
+    </div>
+        <div class="slide">
+            <a href="#">
+        <img src="c:\Users\elona\Downloads\day4.jpg" alt="Image 3"> </a>
+        <h4 style="text-align: center;">Vichy</h4>
+        <p style="text-align: center;">Neovadiol Perimenopause<br> Plumping Day Cream for Dry Skin</p>
+        <button class="add-to-cart" onclick="addToCart('Neovadiol Perimenopause<br> Plumping Day Cream for Dry Skin',110.00)">Add to Cart</button>
+           
+    </div>
+        <div class="slide">
+            <a href="#">
+        <img src="c:\Users\elona\Downloads\s2385169-main-zoom.webp" alt="Image 4"> </a>
+        <h3 style="text-align: center;">Fenty Beauty by Rihanna</h3>
+        <p style="text-align: center;">Diamond Bomb All-Over Diamond Veil</p>
+        <p style="text-align: center;">$42.00 <del>$67.00</del></p>
+        <button class="add-to-cart" onclick="addToCart('Diamond Bomb All-Over Diamond Veil',42.00)">Add to Cart</button>
+           
+    </div>
+        <div class="slide">
+            <a href="#">
+        <img src="c:\Users\elona\Downloads\s2662468-main-zoom.webp" alt="Image 5"> </a>
+        <h3 style="text-align: center;">Fenty Beauty</h3>
+        <p style="text-align: center;">Gloss Bomb Universal</p>
+        <p style="text-align: center;">$21.00</p>
+        <button class="add-to-cart" onclick="addToCart('Gloss Bomb Universal',21.00)">Add to Cart</button>
+           
+        </div>
+        <div class="slide">
+            <a href="#">
+        <img src="c:\Users\elona\Downloads\venesa111.webp" alt="Image 6"> </a>
+        <h3 style="text-align: center;">Dior</h3>
+        <p style="text-align: center;">Sauvage Eau de Toilette</p>
+        <p style="text-align: center;">$110.00</p>
+        <button class="add-to-cart" onclick="addToCart('Sauvage Eau de Toilette',110.00)">Add to Cart</button>
+           
+        </div>
+        <div class="slide">
+            <a href="#">
+        <img src="c:\Users\elona\Downloads\s2382026-main-zoom.webp" alt="Image 7"> </a>
+        <h3 style="text-align: center;">Slip</h3>
+        <p style="text-align: center;">Pure Silk Turban</p>
+        <p style="text-align: center;"> $85.00</p>
+        <button class="add-to-cart" onclick="addToCart('Pure Silk Turban',85.00)">Add to Cart</button>
+            
+        </div>
+        <div class="slide">
+            <a href="#">
+            <img src="c:\Users\elona\Downloads\s2718062-main-zoom.webp" alt="Image 8"></a>
+            <h3 style="text-align: center;">Dyson</h3>
+            <p style="text-align: center;">Airwrap Multi Styler in Ceramic Pop</p>
+            <p style="text-align: center;"> $599.00</p>
+            <button class="add-to-cart" onclick="addToCart('Airwrap Multi Styler in Ceramic Pop',599.00)">Add to Cart</button>
+            </div>
+         </div>
+</div>
+<button class="prev" onclick="prevSlide()">❮</button>
+ <button class="next" onclick="nextSlide()">❯</button>
+ <br>
+
+ <div class="second-container" style="font-family: 'Times New Roman', Times, serif;">
+    <div class="image-container">
+        <img src="c:\Users\elona\Downloads\006_210519_FACIAL_OIL_HM_DUO_FACIAL_OIL_RM_2202.jpg" alt="Image" class="round-image">
+    </div>
+    <div class="quote-container">
+        <blockquote>
+            <h1 style="color: peru;">What makes us Unique?</h1>
+            <p>Together we’re building a safe, welcoming <br> space in beauty and beyond. This is <br> makeup made to feel good in, without <br>hiding what makes you unique. And it’s all <br> vegan and cruelty free.</p>
+            <a href="OurStory.html" style="color: peru;">OUR STORY</a>
+        </blockquote>
+    </div>
+ </div>
+ <br> 
+
+ <h1 style="font-family: 'Times New Roman', Times, serif;font-size: 3.0em;"><i>Our Beautiful Clients</i></h1><br>
+ 
+ <div class="carousel-container">
+    <div class="image-row">
+        <div class="image-item">
+            <img src="c:\Users\elona\Downloads\original.avif" alt="Image 1">
+            <p>@cashincolor</p>
+        </div>
+        <div class="image-item">
+            <img src="c:\Users\elona\Downloads\original1.heic" alt="Image 2">
+            <p>@lolo.glow.makeup</p>
+        </div>
+        <div class="image-item">
+            <img src="c:\Users\elona\Downloads\original (1).avif" alt="Image 3">
+            <p>@stephanieteap</p>
+        </div>
+        <div class="image-item">
+            <img src="c:\Users\elona\Downloads\original (2).avif" alt="Image 4">
+            <p>@honeyflushed</p>
+        </div>
+        <div class="image-item">
+            <img src="c:\Users\elona\Downloads\original (3).avif" alt="Image 5">
+            <p>@makeupbypamela</p>
+        </div>
+        <div class="image-item">
+            <img src="c:\Users\elona\Downloads\original (4).avif" alt="Image 6">
+            <p>@steelethelook</p>
+        </div>
+        <div class="image-item">
+            <img src="c:\Users\elona\Downloads\original (5).avif" alt="Image 7">
+            <p>@lisameyy</p>
+        </div>
+        
+    </div>
+    
+    <div class="image-row">
+        <div class="image-item">
+            <img src="c:\Users\elona\Downloads\original (6).avif" alt="Image 8">
+            <p>@hollywardbeauty</p>
+        </div>
+        <div class="image-item">
+            <img src="c:\Users\elona\Downloads\original (7).avif" alt="Image 9">
+            <p>@wherestarlandd</p>
+        </div>
+        <div class="image-item">
+            <img src="c:\Users\elona\Downloads\original (8).avif" alt="Image 10">
+            <p>@bigaldoesmakeup</p>
+        </div>
+        <div class="image-item">
+            <img src="c:\Users\elona\Downloads\original (9).avif" alt="Image 11">
+            <p>@mitziivonne</p>
+        </div>
+        <div class="image-item">
+            <img src="c:\Users\elona\Downloads\original (10).avif" alt="Image 12">
+            <p>@misscharicmatic__</p>
+        </div>
+        <div class="image-item">
+            <img src="c:\Users\elona\Downloads\original (11).avif" alt="Image 13">
+            <p>@uniquely.cenestial.inc</p>
+        </div>
+        <div class="image-item">
+            <img src="c:\Users\elona\Downloads\original (12).avif" alt="Image 14">
+            <p>@tanikka143</p>
+        </div>
+       
+    </div>
+</div>
+<div class="third-container" style="font-family: 'Times New Roman', Times, serif; background-color:rgba(247, 230, 203, 0.919);">
+    <div class="quote-container">
+        <blockquote>
+            <h1>Make an <b><i>impact</i></b> on mental health</h1>
+            <p>3% of EverGlow Beauty’s annual sales will go <br> directly to the <abbr title="World Health Organization">EverGlow Impact Fund</abbr> to <br> expand mental health services in <br>underserved communities.</p>
+        </blockquote>
+    </div>
+    <div class="image-container">
+        <img src="c:\Users\elona\Downloads\Happy-people-800x533.jpg" alt="Image5" class="square-image">
+    </div>
+</div>
+
+
+
+  <footer>
+    <div class="footer-container">
+       <div class="left"> <h2>Everglow Beauty</h2> <p style="font-size: 20px;">Everglow Beauty Kosova</p></div> 
+        <div class="quick-links">
+            <h2>Quick Links</h2>
+            <ul>
+                <li><a href="MainPage.html">Home</a></li>
+                <li><a href="OurStory.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="get-in-touch">
+            <h2>Get in Touch</h2>
+            <address style="margin-left: 100px; font-size: 20px; font-family:Georgia, 'Times New Roman', Times, serif;" > <a href ="https://maps.app.goo.gl/scmxnwzCazoUVT8b9">Address: Prishtine</a>  </address>
+            <p>Email: <mark style="background-color: white;"> <a href="mailto:everglowbeauty@gmail.com">everglowbeauty@gmail.com</a> </mark></p>
+            <p>Phone: <mark style="background-color: white;">+383 48 555 111</mark>  </p>
+        </div>
+    </div>
+    <div class="site-footer-payments">
+        <a class="site-footer-payments__link" href="https://www.paypal.com/" style="pointer-events: auto;">
+        <img src="https://images.ctfassets.net/eoaaqxyywn6o/6rDEb4sJOBkiIga3rkaSfA/b705c283f12f64d22365f9d168d2e9be/PayPal.svg" alt="PayPal" class="site-footer-payments__link__icon"></a>
+        <a class="site-footer-payments__link" href="https://www.clearpay.co.uk/en-GB" style="pointer-events: auto;">
+        <img src="https://images.ctfassets.net/eoaaqxyywn6o/2fVeO7f2x78KlbQuhqmuVb/a195d07a55c2bb8e1f595d5b541d4d79/Clearpay.svg" alt="Clearpay" class="site-footer-payments__link__icon"></a>
+        <a class="site-footer-payments__link" href="https://usa.visa.com/" style="pointer-events: auto;">
+        <img src="https://images.ctfassets.net/eoaaqxyywn6o/4QTzSyV3E2jIfll4u3GgIW/46acc6659798376dc8bb416454f2baba/Visa.svg" alt="Visa" class="site-footer-payments__link__icon"></a>
+        <a class="site-footer-payments__link" href="https://www.americanexpress.com/" style="pointer-events: auto;">
+        <img  src="https://images.ctfassets.net/eoaaqxyywn6o/1R0NBLVCShxTQNVHNjanE4/c970e9e15ecbb026929000ae3fcce6ae/Amex.svg" alt="Amex" class="site-footer-payments__link__icon"></a>
+        <a class="site-footer-payments__link" href="https://www.mastercard.us/en-us.html" style="pointer-events: auto;">
+        <img src="https://images.ctfassets.net/eoaaqxyywn6o/5bs4r6UiioP3Fkj4Qg35o8/5583c0ecc4b6500a1083fd38cfabf6dc/Mastercard.svg" alt="Mastercard" class="site-footer-payments__link__icon"></a>
+        <a class="site-footer-payments__link" href="https://n26.com/en-eu/maestro-card" style="pointer-events: auto;">
+        <img src="https://images.ctfassets.net/eoaaqxyywn6o/5IdXqCmgjNCVwZNyssRsdE/702c37ee931258aad2071e063bbd337e/Maestro.svg" alt="Maestro" class="site-footer-payments__link__icon"></a>
+</div>
+
+</footer> 
+<script src="mainpage.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
