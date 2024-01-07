@@ -9,15 +9,9 @@
 <body>
     <header>
         <h1>Eyes</h1>
-        <div id="cart" class="hidden">
-            <h2>Shopping Cart</h2>
-            <ul id="cart-items">
-            </ul>
-            <p>Total: $<span id="cart-total">0.00</span></p>
-        </div>
-    
-        <div id="cart-image" onclick="toggleCart()">
-            <img src="C:\Users\S\Desktop\cart.jpg" alt="Cart" width="70px">
+        <div id="cart">
+            <span id="cart-count">0</span>
+            <img src="C:\Users\S\Desktop\cart.jpg" alt="Shopping Cart">
         </div>
 
     </header>
@@ -27,54 +21,54 @@
             <img src="file:///C:/Users/S/Desktop/s2389518-main-zoom.webp" alt="Eyeshadow Palette" >
             <h3>MAEKUP BY MARIO <p>Master Mattes Eyeshadow Palette</p></h3>
             <p>$50.00</p>
-            <button class="add-to-cart" onclick="addToCart('Master Mattes Eyeshadow Palette', 50.00)">Add to Cart</button>
             </div>
             <div class="product">
                 <img src="file:///C:/Users/S/Downloads/s2697456-main-zoom.webp" alt="Eyeshadow Palette">
                 <h2>Natasha Denona <p> Nude Eyeshadow Palette</p></h2>
                 <p>$69.00</p>
-                <button class="add-to-cart" onclick="addToCart('Nude Eyeshadow Palette', 69.00)">Add to Cart</button>
               </div>
               <div class="product" >
                 <img src="file:///C:/Users/S/Desktop/s1393693-main-zoom.webp" alt="Eyeliner" >
                 <h3>Urban Decay<p>Glide-On Waterproof Eyeliner Pencil</p></h3>
                 <p>$25.00</p>
-                <button class="add-to-cart" onclick="addToCart('Glide-On Waterproof Eyeliner Pencil', 25.00)">Add to Cart</button>
             </div>
             <div class="product" >
                 <img src="file:///C:/Users/S/Desktop/s1775006-main-zoom.webp" alt="Eyeshadow Palette" >
                 <h3>Tarte<p>Tartelette In Bloom Clay Eyeshadow Palette</p></h3>
                 <p>$45.00</p>
-                <button class="add-to-cart" onclick="addToCart('Tartelette In Bloom Clay Eyeshadow Palette', 45.00)">Add to Cart</button>
             </div>
             <div class="product" >
                 <img src="file:///C:/Users/S/Desktop/s1578699-main-zoom.webp" alt="Brow Pomade" >
                 <h3>Anastasia Beverly Hills<p>Smudge Proof Brow Pomade</p></h3>
                 <p>$21.00 </p>
-                <button class="add-to-cart" onclick="addToCart('Smudge Proof Brow Pomade', 21.00)">Add to Cart</button>
                 </div>
                 <div class="product" >
                     <img src="file:///C:/Users/S/Downloads/s2458917-main-zoom.webp" alt="Eyeshadow" >
                     <h3>Charlotte Tilbury<p>Eyes To Mesmerize Cream Eyeshadow</p></h3>
                     <p>$36.00 </p>
-                    <button class="add-to-cart" onclick="addToCart('Eyes To Mesmerize Cream Eyeshadow', 36.00)">Add to Cart</button>
                 </div>
                 <div class="product" >
                     <img src="file:///C:/Users/S/Downloads/s2373413-main-zoom.webp" alt="Lashes" >
                     <h3>Sephora Collection<p>False Lashes</p></h3>
                     <p>$5.00 <del>$15.00</del></p>
-                    <button class="add-to-cart" onclick="addToCart('False Lashes', 5.00)">Add to Cart</button>
                 </div>
                 <div class="product" >
                     <img src="file:///C:/Users/S/Downloads/s2684371-main-zoom.webp" alt="Eyeshadow" >
-                    <h3>Kaja<p>Eye Bento Bouncy Eyeshadow Trio</p></h3>
+                    <h3>Kaja<p>Eye Bento Bouncy Eyeshadow Trio/p></h3>
                     <p>$25.00</p>
-                    <button class="add-to-cart" onclick="addToCart('Eye Bento Bouncy Eyeshadow Trio', 25.00)">Add to Cart</button>
             </div>
     </section>
 
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Your Shopping Cart</h2>
+            <ul id="cart-list"></ul>
+            <p>Total: $<span id="cart-total">0.00</span></p>
+        </div>
+    </div>
 
-    <script src="forall.js"></script>
+    <script src="script.js"></script>
     
 
 </body>

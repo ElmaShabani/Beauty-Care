@@ -1,6 +1,4 @@
 
-
-
 .container3 {
     display: flex;
     justify-content: flex-start;
@@ -8,9 +6,6 @@
     width:100%;
     
 }
-
-
-
 .middle-box {
     display: flex;
     justify-content: space-between;
@@ -20,7 +15,6 @@
     width:100%;
 
 }
-
 .sub-box {
     flex: 1;
     padding: 0px;
@@ -28,20 +22,14 @@
     font-family: 'Verdana', sans-serif;
     width:100%;
 }
-
 .sub-box a {
     text-decoration: none;
     color: #4d4242;
     transition: color 0.3s ease;
 }
-
 .sub-box a:hover {
     color: #000;
 }
-
-
-
-
 .box {
     flex: 1;
     position: relative;
@@ -57,23 +45,17 @@ a.left img {
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 25px;
-
 }
-
-
-
 footer {
     background-color:rgba(236, 206, 176, 0.5) ;
     color: black;
     padding: 20px 0;
 }
-
 .footer-container{
 
     display: flex;
     justify-content: space-around;
 }
-
 .quick-links,
 .get-in-touch {
     flex: 1;
@@ -94,18 +76,15 @@ ul {
     list-style: none;
     padding: 0;
 }
-
 ul li {
     margin-left: 400px;
     margin-bottom: 8px;
     font-size: 20px;
 }
-
 a {
     text-decoration: none;
     color:black;
 }
-
 a:hover {
     text-decoration: underline;
 }
@@ -115,12 +94,12 @@ header {
     color: #000000;
     padding: 5px;
     display: flex;
-    align-items: center; /* Center items vertically */
+    align-items: center; 
 }
    header img {
-    max-width: 80px; /* Adjust the max-width as needed */
+    max-width: 80px; 
     height: auto;
-    margin-right: 20px; /* Add some spacing between the logo and other content */
+    margin-right: 20px;
 }
 .blockquote p{
     font-family: Georgia, 'Times New Roman', Times, serif;
