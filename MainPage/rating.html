@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Rating Form</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('C:\Users\S\Downloads\e75730955d430a2b97e6a801d7c5b895 (1).jpg') ;
+            color: #333;
+        }
+        form {
+            background: rgba(255, 255, 255, 0.9);
+            max-width: 400px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .thank-you-message {
+            display: none;
+            margin-top: 20px;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Rate Our Service</h1>
+
+<form id="ratingForm" action="#" method="post" onsubmit="submitForm(); return false;">
+    <label>
+        <input type="radio" name="rating" value="1"> 1 Star
+    </label>
+    <label>
+        <input type="radio" name="rating" value="2"> 2 Stars
+    </label>
+    <label>
+        <input type="radio" name="rating" value="3"> 3 Stars
+    </label>
+    <label>
+        <input type="radio" name="rating" value="4"> 4 Stars
+    </label>
+    <label>
+        <input type="radio" name="rating" value="5"> 5 Stars
+    </label>
+
+    <input type="submit" value="Submit Rating">
+    
+    <p class="thank-you-message" id="thankYouMessage">Thank you for your rating!</p>
+</form>
+
+<script>
+    function submitForm() {
+        document.getElementById("ratingForm").style.display = "none";
+        document.getElementById("thankYouMessage").style.display = "block";
+    }
+</script>
+
+</body>
+</html>
+</html>
