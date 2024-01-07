@@ -56,6 +56,13 @@ a.left img {
     font-size: 25px;
 
 }
+.text-with-shadow {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    
+}
 
 
 
@@ -163,3 +170,10 @@ display: block;
 margin: 1.5vw;
 justify-content: center;
 }
+@font-face {
+    font-family: 'MyFont';
+    src: url('fonts/c:\Users\PC\Desktop\favicon.ico.jpg') format('FONT');
+    font-weight: normal;
+    font-style: normal;
+}
+
