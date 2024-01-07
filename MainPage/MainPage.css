@@ -42,7 +42,7 @@ nav a {
 }
 
  #video-section {
-    height: 100vh;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -72,7 +72,7 @@ background-color: rgb(247, 230, 201);
 }
 button {
 position: absolute;
-top: 1150px;
+top: 1300px;
 transform: translateY(-50%);
 font-size: 2.5em;
 background: none;
@@ -228,3 +228,4 @@ blockquote {
     footer a:hover {
         text-decoration: underline;
     }
+
