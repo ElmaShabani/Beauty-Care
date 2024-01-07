@@ -76,12 +76,12 @@ footer {
     flex: 1;
 }
 .get-in-touch p {
-    margin-left: 400px;
+    margin-left: 100px;
     font-size: 20px;
 }
 .quick-links h2,
 .get-in-touch h2 {
-    margin-left: 400px;
+    margin-left: 100px;
     margin-bottom: 10px;
 }
 .left{
@@ -93,7 +93,7 @@ ul {
 }
 
 ul li {
-    margin-left: 400px;
+    margin-left: 100px;
     margin-bottom: 8px;
     font-size: 20px;
 }
@@ -112,12 +112,12 @@ header {
     color: #000000;
     padding: 5px;
     display: flex;
-    align-items: center; /* Center items vertically */
+    align-items: center; 
 }
    header img {
-    max-width: 80px; /* Adjust the max-width as needed */
+    max-width: 80px; 
     height: auto;
-    margin-right: 20px; /* Add some spacing between the logo and other content */
+    margin-right: 20px; 
 }
 .blockquote p{
     font-family: Georgia, 'Times New Roman', Times, serif;
