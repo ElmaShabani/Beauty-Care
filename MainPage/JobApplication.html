@@ -1,1 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="c:\Users\elona\Downloads\favicon.ico.PNG">
+    <style>
+  body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5dfc9;
+    color: #333;
+  
+   }
+   header {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 5px;
+    display: flex;
+    align-items: center; 
+}
+   header img {
+    max-width: 65px; 
+    height: auto;
+    margin-right: 20px; 
+}
 
+nav {
+    margin-top: 5px;
+    margin-left: 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: peru;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav a {
+    color:peru;
+    text-decoration: none;
+}
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 450px;
+            margin-top: 50px;
+            justify-content: center;
+            align-items: center;
+            margin-left: 500px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, select {
+           
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .error {
+            color: red;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+        textarea {
+            width: 100%;
+        }
+        footer {
+        background-color:rgba(255, 255, 255, 0.5) ;
+        color: black;
+        padding: 20px 0;
+        
+    }
+    
+    .footer-container{
+    
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .quick-links,
+    .get-in-touch {
+        flex: 1;
+        margin-left: 100px;
+    }
+    .get-in-touch p {
+        margin-left: 100px;
+        font-size: 20px;
+    }
+    .quick-links h2,
+    .get-in-touch h2 {
+        margin-left: 100px;
+        margin-bottom: 10px;
+    }
+    .left{
+        margin-left: 100px;
+    }
+     footer ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+     footer ul li {
+        margin-left: 100px;
+        margin-bottom: 8px;
+        font-size: 20px;
+    }
+    
+     footer a {
+        text-decoration: none;
+        color:black;
+    }
+    
+    footer a:hover {
+        text-decoration: underline;
+    }
+    .site-footer-payments {
+padding: 40px;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+background-color: rgba(236, 206, 176, 0.5);
+}
+.site-footer-payments__link__icon {
+display: block;
+margin: 1.5vw;
+justify-content: center;
+
+}
+    </style>
+    <title>Job Application</title>
+</head>
+<body>
+    <header>
+        <a href="MainPage.html"><img src="c:\Users\elona\Downloads\logo.jpg" alt="Your Brand Logo"></a>
+        <h3 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">EverGlow Beauty</h3>
+        <nav>
+            <ul>
+                <li><a href="#">Makeup</a></li>
+                <li><a href="#">Skin Care</a></li>
+                <li><a href="#">Fragrance</a></li>
+                <li><a href="#">Hair Care</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <form id="jobApplicationForm">
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" required style="width: 100%;">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required style="width: 100%;">
+
+        <label>Preferred Contact Method:</label>
+        <label for="contactEmail">Email
+        <input type="radio" id="contactEmail" name="contactMethod" value="email" checked></label>
+        <label for="contactPhone">Phone
+        <input type="radio" id="contactPhone" name="contactMethod" value="phone"></label>
+        
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required style="width: 100%;">
+
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{10}" placeholder="Enter 10-digit phone number" required width="100%">
+
+        <label>Skills:</label>
+        <label for="managingSkills">Managing
+        <input type="checkbox" id="makeupSkills" name="skills" value="managing"></label>
+        <label for="leadingSkills">Leading
+        <input type="checkbox" id="leadingSkills" name="skills" value="leading"></label>
+        <label for="advisingSkills">Advising
+        <input type="checkbox" id="advisingSkills" name="skills" value="advising"></label>
+        <label for="accuracySkills">Accuracy and Speed
+        <input type="checkbox" id="accuracySkills" name="skills" value="accuracy"></label>
+        <br>
+        <label for="position"> Select Position:</label>
+      <select id="position" name="position" required style="text-align: center;">
+        <option value="Cashier">Cashier</option>
+        <option value="Advisor" selected>Beauty Advisor</option>
+        <option value="Manager">Store Manager</option>
+        <option value="Sales">Sales Leader</option>
+      </select> 
+      <br>
+        <label for="coverLetter">Cover Letter:</label>
+      <textarea id="coverLetter" name="coverLetter" rows="4" required ></textarea>
+      <br>
+        
+
+        <button type="button" onclick="validateForm()" style="width: 100%;">Submit Application</button>
+    </form>
+    <footer>
+        <div class="footer-container">
+           <div class="left"> <h2>Everglow Beauty</h2> <p style="font-size: 20px;">Everglow Beauty Kosova</p></div> 
+            <div class="quick-links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="MainPage.html">Home</a></li>
+                    <li><a href="OurStory.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="get-in-touch">
+                <h2>Get in Touch</h2>
+                <address style="margin-left: 100px; font-size: 20px; font-family:Georgia, 'Times New Roman', Times, serif;" > <a href ="https://maps.app.goo.gl/scmxnwzCazoUVT8b9">Address: Prishtine</a>  </address>
+                <p>Email: <mark style="background-color: white;"> <a href="mailto:everglowbeauty@gmail.com">everglowbeauty@gmail.com</a> </mark></p>
+                <p>Phone: <mark style="background-color: white;">+383 48 555 111</mark>  </p>
+            </div>
+        </div>
+        <div class="site-footer-payments">
+            <a class="site-footer-payments__link" href="https://www.paypal.com/" style="pointer-events: auto;">
+            <img src="https://images.ctfassets.net/eoaaqxyywn6o/6rDEb4sJOBkiIga3rkaSfA/b705c283f12f64d22365f9d168d2e9be/PayPal.svg" alt="PayPal" class="site-footer-payments__link__icon"></a>
+            <a class="site-footer-payments__link" href="https://www.clearpay.co.uk/en-GB" style="pointer-events: auto;">
+            <img src="https://images.ctfassets.net/eoaaqxyywn6o/2fVeO7f2x78KlbQuhqmuVb/a195d07a55c2bb8e1f595d5b541d4d79/Clearpay.svg" alt="Clearpay" class="site-footer-payments__link__icon"></a>
+            <a class="site-footer-payments__link" href="https://usa.visa.com/" style="pointer-events: auto;">
+            <img src="https://images.ctfassets.net/eoaaqxyywn6o/4QTzSyV3E2jIfll4u3GgIW/46acc6659798376dc8bb416454f2baba/Visa.svg" alt="Visa" class="site-footer-payments__link__icon"></a>
+            <a class="site-footer-payments__link" href="https://www.americanexpress.com/" style="pointer-events: auto;">
+            <img  src="https://images.ctfassets.net/eoaaqxyywn6o/1R0NBLVCShxTQNVHNjanE4/c970e9e15ecbb026929000ae3fcce6ae/Amex.svg" alt="Amex" class="site-footer-payments__link__icon"></a>
+            <a class="site-footer-payments__link" href="https://www.mastercard.us/en-us.html" style="pointer-events: auto;">
+            <img src="https://images.ctfassets.net/eoaaqxyywn6o/5bs4r6UiioP3Fkj4Qg35o8/5583c0ecc4b6500a1083fd38cfabf6dc/Mastercard.svg" alt="Mastercard" class="site-footer-payments__link__icon"></a>
+            <a class="site-footer-payments__link" href="https://n26.com/en-eu/maestro-card" style="pointer-events: auto;">
+            <img src="https://images.ctfassets.net/eoaaqxyywn6o/5IdXqCmgjNCVwZNyssRsdE/702c37ee931258aad2071e063bbd337e/Maestro.svg" alt="Maestro" class="site-footer-payments__link__icon"></a>
+    </div>
+    
+    </footer> 
+
+    <script>
+        function validateForm() {
+            var fullName = document.getElementById('fullName').value;
+            var email = document.getElementById('email').value;
+            var contactMethod = document.querySelector('input[name="contactMethod"]:checked');
+            var dob = document.getElementById('dob').value;
+            var phoneNumber = document.getElementById('phoneNumber').value;
+
+          
+                
+            
+
+            if (fullName === '' || email === '' || contactMethod === null || dob === '' || phoneNumber === '') {
+                alert('Please fill in all required fields.');
+                isValid = false;
+            }
+
+            if (isValid) {
+                alert('Application submitted successfully!');
+
+               
+               
+            }
+        }
+    </script>
+</body>
+</html>
