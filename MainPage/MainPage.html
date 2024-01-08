@@ -20,6 +20,17 @@
                 <li><a href="#">Hair Care</a></li>
             </ul>
         </nav>
+        <div id="cart" class="hidden">
+            <h2>Shopping Cart</h2>
+            <ul id="cart-items">
+            </ul>
+            <p>Total: $<span id="cart-total">0.00</span></p>
+        </div>
+    
+        <div id="cart-image" onclick="toggleCart()" style="margin-right:0% ;" class="cart">
+            <img src="c:\Users\elona\Downloads\cartj.jpg" alt="Cart" width="70px">
+        </div>
+        
     </header>
      <section id="video-section" >
         <video width="100%" height="100%" autoplay loop muted >
@@ -28,8 +39,14 @@
         </video>
     </section>
     <br> 
-    <h3 style="font-family: 'Times New Roman', Times, serif; text-align: center; color:white; background-color: rgb(210, 170, 130);">If you're looking for the best beauty products (and we know you are), a good place to start is with our:</h3>
-    <h1 style="font-family: 'Times New Roman', Times, serif; text-align: center;"><b><i>Best Sellers</i></b></h1>
+
+    <div class="linear-gradient" style="font-family: 'Times New Roman', Times, serif; text-align: center; font-size: 2.0em;">
+        <p>If you're looking for the best beauty products (and we know you are) a good place to start is with our: <b><i>Best Sellers:</i></b></p>
+    </div>
+       
+     
+        
+
 
 <div class="slider-container" style="font-family: 'Times New Roman', Times, serif;">
     <div class="slider">
@@ -56,7 +73,7 @@
         <h4 style="text-align: center;">Vichy</h4>
         <p style="text-align: center;">Neovadiol Perimenopause<br> Plumping Day Cream for Dry Skin</p>
         <p style="text-align: center;">$60.00</p>
-        <button class="add-to-cart" onclick="addToCart('Neovadiol Perimenopause<br> Plumping Day Cream for Dry Skin',110.00)">Add to Cart</button>
+        <button class="add-to-cart" onclick="addToCart('Neovadiol Perimenopause<br> Plumping Day Cream for Dry Skin',60.00)">Add to Cart</button>
            
     </div>
         <div class="slide">
@@ -203,9 +220,7 @@
 </div>
 
 <h1 style="font-size: 2.5em; background-color: #fff; margin-bottom: 50px; font-family:'Times New Roman', Times, serif; text-align:center; margin-top: 150px;"><b>If you're looking for a job in our company click on "Job Application" below!</b></h1>
-<p style="text-align: center; margin-bottom: 150px;"><a href="JobApplication.html" style="font-size: 2.5em; background-color: #fff;font-family:'Times New Roman', Times, serif;color: peru; text-align: center; margin-bottom: 150px;">Job Application</a></p>
-
-
+<p style="text-align: center; margin-bottom: 150px;"><a href="JobApplication.html" target="_blank" style="font-size: 2.5em; background-color: #fff;font-family:'Times New Roman', Times, serif;color: peru; text-align: center; margin-bottom: 150px;">Job Application</a></p>
 
 
   <footer>

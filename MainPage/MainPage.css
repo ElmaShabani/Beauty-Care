@@ -49,7 +49,12 @@ nav a {
     background: #f0f0f0;
     margin-bottom: 80px;
 }   
-
+.linear-gradient{
+    background: linear-gradient(to right, white,peru);
+    color:black;
+    text-align: center;
+    padding: 20px;
+}
 .slider-container {
 overflow: hidden;
 }
@@ -227,5 +232,49 @@ blockquote {
     
     footer a:hover {
         text-decoration: underline;
+    }
+    .product {
+    
+        padding: 10px;
+        margin: 10px;
+        text-align: center;
+    }
+    .cart {
+        margin-right: 0%;
+    }
+    
+    
+    .add-to-cart {
+        background-color: #4CAF50;
+        color: white;
+        padding: 8px 15px;
+        border: none;
+        cursor: pointer;
+    }
+    #cart-img {
+        width: 30px;
+        margin-left: 700px;
+    }
+    
+    
+    #cart {
+        border: 1px solid #ccc;
+        background-color: white;
+        padding: 10px;
+       }
+    
+    #cart-items {
+        list-style:none ;
+        padding: 4;
+        text-align: center;
+    }
+    
+    #cart-total {
+        font-weight: bold;
+    }
+    
+    .hidden {
+        display: none;
+        
     }
 
