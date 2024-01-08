@@ -66,7 +66,7 @@
     </header>
      <section id="video-section" >
         <video width="100%" height="100%" autoplay loop muted >
-            <source src="../img/Untitled video - Made with Clipchamp (2).mp4" type="video/mp4" autoplay>
+            <source src="../img/makeup.mp4" type="video/mp4" autoplay>
             
         </video>
     </section>
@@ -311,11 +311,14 @@
             <ul>
                 <li><a href="MainPage.html">Home</a></li>
                 <li><a href="OurStory.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a>
-                
+                <li><a href="contact.html">Contact</a></li>
+                <li> <div id="currentDateElement"></div>
+
                     <script>
-               
+           
                         const currentDate = new Date();
+                
+                        
                         const currentDateElement = document.getElementById('currentDateElement');
                         if (currentDateElement) {
                             currentDateElement.textContent = `Current Date: ${currentDate.toLocaleDateString()} - Current time: ${currentDate.toLocaleTimeString()}`;
