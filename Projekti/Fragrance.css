@@ -156,3 +156,13 @@ height: 400px;
 .quote-container {
 max-width: 900px;
 }
+.list{
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 100px;
+
+}
+ul , li {
+    max-width: 700px;
+    padding: 7px;
+    }
