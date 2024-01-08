@@ -3,7 +3,9 @@ let cartData = JSON.parse(sessionStorage.getItem('cartData')) || { items: [], to
 function addToCart(productName, productPrice) {
     cartData.items.push({ name: productName, price: productPrice });
     cartData.total += productPrice;
+
     sessionStorage.setItem('cartData', JSON.stringify(cartData));
+
     updateCartUI();
 }
 
@@ -36,6 +38,7 @@ function toggleCart() {
     const cart = document.getElementById('cart');
     cart.classList.toggle('hidden');
 }
+
 window.addEventListener('beforeunload', function () {
     sessionStorage.removeItem('cartData');
 });
@@ -45,4 +48,6 @@ document.addEventListener('visibilitychange', function () {
         sessionStorage.setItem('cartData', JSON.stringify(cartData));
     }
 });
+
 updateCartUI();
+

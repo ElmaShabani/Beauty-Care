@@ -72,11 +72,23 @@ footer {
 .left{
     margin-left: 100px;
 }
-ul {
+.fifth-container{
+    width: 90%;
+}
+.list{
+    width: 90%;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 100px;}
+ul , li {
+    width: 90%;
+    padding: 7px;
+    }
+nav ul {
     list-style: none;
     padding: 0;
 }
-ul li {
+nav ul li {
     margin-left: 400px;
     margin-bottom: 8px;
     font-size: 20px;
@@ -94,13 +106,14 @@ header {
     color: #000000;
     padding: 5px;
     display: flex;
-    align-items: center; 
+    align-items: center; /* Center items vertically */
 }
    header img {
-    max-width: 80px; 
+    max-width: 80px; /* Adjust the max-width as needed */
     height: auto;
-    margin-right: 20px;
+    margin-right: 20px; /* Add some spacing between the logo and other content */
 }
+   
 .blockquote p{
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
@@ -139,7 +152,7 @@ justify-content: center;
 align-items: center;
 background-color: rgba(236, 206, 176, 0.5);
 }
-.site-footer-payments__link__icon {
+.site-footer-payments__link_icon img {
 display: block;
 margin: 1.5vw;
 justify-content: center;
@@ -152,3 +165,33 @@ justify-content: center;
     background: #f0f0f0;
     margin-bottom: 80px;
 } 
+.text-with-shadow {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    
+}
+.text-wrapping {
+    width: 900px;
+    background-color: #fff;
+    padding: 5px;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    word-wrap: break-word;
+}
+.drop-container {
+    display: flex;
+  }
+  .drop-zone {
+    width: 300px;
+    height: 380px;
+    border: 2px dashed #ccc;
+    margin: 10px;
+    padding: 10px;
+  }
+   
+  #login-image {
+    cursor: pointer;
+    margin-left: 20px; 
+}

@@ -5,6 +5,7 @@
     text-align: center;
 }
 
+
 .add-to-cart {
     background-color: #4CAF50;
     color: white;
@@ -12,15 +13,17 @@
     border: none;
     cursor: pointer;
 }
-#cart-img {
+.cart-img img {
     width: 30px;
     margin-left: 20px;
+    cursor: auto pointer;
 }
 
 #cart {
     border: 1px solid #ccc;
     background-color: white;
     padding: 10px;
+    
    }
 
 #cart-items {
@@ -44,15 +47,17 @@ body {
     background-color:white;
     
 }
-
 header {
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Times New Roman', Times, serif;
     background-color: rgba(236, 206, 176, 0.5);
     padding: 10px 20px;
     text-align: center;
     display: flex;
     justify-content: space-between;
+
 }
+
+
 section {
     display: flex;
     justify-content: space-around;
@@ -103,7 +108,3 @@ section {
     color: black;
 }
 
-
-#cart-image {
-    cursor: pointer;
-}
