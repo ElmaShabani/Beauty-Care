@@ -269,39 +269,6 @@ th {
         margin: 10px;
         text-align: center;
     }
-    .cart {
-        margin-right: 0%;
-    }
-    
-    
-    .add-to-cart {
-        background-color: #4CAF50;
-        color: white;
-        padding: 8px 15px;
-        border: none;
-        cursor: pointer;
-    }
-    #cart-img {
-        width: 30px;
-        margin-left: 700px;
-    }
-    
-    
-    #cart {
-        border: 1px solid #ccc;
-        background-color: white;
-        padding: 10px;
-       }
-    
-    #cart-items {
-        list-style:none ;
-        padding: 4;
-        text-align: center;
-    }
-    
-    #cart-total {
-        font-weight: bold;
-    }
     
     .hidden {
         display: none;

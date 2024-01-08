@@ -13,24 +13,44 @@
        <a href="MainPage.html"><img src="c:\Users\elona\Downloads\logo.jpg" alt="Your Brand Logo"></a>
        <div class="text-with-shadow" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">EverGlow Beauty</div>
         
-        <nav>
-            <ul>
-                <li><a href="#">Makeup</a></li>
-                <li><a href="#">Skin Care</a></li>
-                <li><a href="#">Fragrance</a></li>
-                <li><a href="#">Hair Care</a></li>
-            </ul>
-        </nav>
-        <div id="cart" class="hidden">
-            <h2>Shopping Cart</h2>
-            <ul id="cart-items">
-            </ul>
-            <p>Total: $<span id="cart-total">0.00</span></p>
-        </div>
-    
-        <div id="cart-image" onclick="toggleCart()" style="margin-right:0% ;" class="cart">
-            <img src="c:\Users\elona\Downloads\cartj.jpg" alt="Cart" width="70px">
-        </div>
+       <nav>
+        <ul>
+            <li><a href="#">Makeup</a>
+                <ul class="subcategories">
+                    <li><a href="#">Face</a></li>
+                    <li><a href="#">Eyes</a></li>
+                    <li><a href="#">Lips</a></li>
+                    <li><a href="#">Cheek</a></li>
+                    <li><a href="#">See All</a></li>
+                </ul></li>
+            <li><a href="#">Skin Care</a>
+                <ul class="subcategories">
+                    <li><a href="Dehydration.html">Dehydration</a></li>
+                    <li><a href="Daycream.html">Day & Night Cream Moisturiser</a></li>
+                    <li><a href="Face.html">Face Masks & Cleansers</a></li>
+                    <li><a href="Serum.html">Serums & Lip Care</a></li>
+
+                </ul>
+            </li>
+            <li><a href="#">Fragrance</a>
+                <ul class="subcategories">
+                    <li><a href="#">Women</a></li>
+                    <li><a href="#">Men</a></li>
+                    <li><a href="#">Gift Sets</a></li>
+                    <li><a href="#">See All</a></li>  
+                </ul>
+            </li>
+            <li><a href="#">Hair Care</a>
+                <ul class="subcategories">
+                    <li><a href="#">Treatments</a></li>
+                    <li><a href="#">Styling</a></li>
+                    <li><a href="#">Gifts</a></li>
+                    <li><a href="#">See All</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+  
         
     </header>
      <section id="video-section" >
@@ -56,7 +76,7 @@
         <h4 style="text-align: center;">Vichy</h4>
         <p style="text-align: center;">Neovadiol Rose Platinium Night <br>Cream</p>
         <p style="text-align: center;">$48.50</p>
-        <button class="add-to-cart" onclick="addToCart('Neovadiol Rose Platinium Night',110.00)">Add to Cart</button>
+        
         </div>
         <div class="slide">
             <a href="#">
@@ -64,7 +84,7 @@
         <h4 style="text-align: center;">Huda Beauty</h4>
         <p style="text-align: center;">Easy Bake Loose Baking <br> & Setting Powder</p> 
         <p style="text-align: center;">$38.00</p>  
-        <button class="add-to-cart" onclick="addToCart('Easy Bake Loose Baking <br> & Setting Powder',38.00)">Add to Cart</button>
+        
             
     </div>
         <div class="slide">
@@ -73,8 +93,7 @@
         <h4 style="text-align: center;">Vichy</h4>
         <p style="text-align: center;">Neovadiol Perimenopause<br> Plumping Day Cream for Dry Skin</p>
         <p style="text-align: center;">$60.00</p>
-        <button class="add-to-cart" onclick="addToCart('Neovadiol Perimenopause<br> Plumping Day Cream for Dry Skin',60.00)">Add to Cart</button>
-           
+       
     </div>
         <div class="slide">
             <a href="#">
@@ -82,7 +101,7 @@
         <h3 style="text-align: center;">Fenty Beauty by Rihanna</h3>
         <p style="text-align: center;">Diamond Bomb All-Over Diamond Veil</p>
         <p style="text-align: center;">$42.00 <del>$67.00</del></p>
-        <button class="add-to-cart" onclick="addToCart('Diamond Bomb All-Over Diamond Veil',42.00)">Add to Cart</button>
+     
            
     </div>
         <div class="slide">
@@ -91,7 +110,7 @@
         <h3 style="text-align: center;">Fenty Beauty</h3>
         <p style="text-align: center;">Gloss Bomb Universal</p>
         <p style="text-align: center;">$21.00</p>
-        <button class="add-to-cart" onclick="addToCart('Gloss Bomb Universal',21.00)">Add to Cart</button>
+        
            
         </div>
         <div class="slide">
@@ -100,7 +119,7 @@
         <h3 style="text-align: center;">Dior</h3>
         <p style="text-align: center;">Sauvage Eau de Toilette</p>
         <p style="text-align: center;">$110.00</p>
-        <button class="add-to-cart" onclick="addToCart('Sauvage Eau de Toilette',110.00)">Add to Cart</button>
+       
            
         </div>
         <div class="slide">
@@ -109,7 +128,7 @@
         <h3 style="text-align: center;">Slip</h3>
         <p style="text-align: center;">Pure Silk Turban</p>
         <p style="text-align: center;"> $85.00</p>
-        <button class="add-to-cart" onclick="addToCart('Pure Silk Turban',85.00)">Add to Cart</button>
+        
             
         </div>
         <div class="slide">
@@ -118,7 +137,7 @@
             <h3 style="text-align: center;">Dyson</h3>
             <p style="text-align: center;">Airwrap Multi Styler in Ceramic Pop</p>
             <p style="text-align: center;"> $599.00</p>
-            <button class="add-to-cart" onclick="addToCart('Airwrap Multi Styler in Ceramic Pop',599.00)">Add to Cart</button>
+           
             </div>
          </div>
 </div>
@@ -321,6 +340,23 @@
 </footer> 
 <script src="mainpage.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function(){
+      
+        $('.subcategories').hide();
+
+        
+        $('nav li').hover(
+            function(){
+                $(this).find('.subcategories').stop(true, true).slideDown();
+            },
+            function(){
+                $(this).find('.subcategories').stop(true, true).slideUp();
+            }
+        );
+    });
+</script>
 </body>
 </html>
 
