@@ -19,6 +19,7 @@
         <div class="text-with-shadow">
             EverGlow Beauty
         </div>
+    
         
         <div class="container3" style="font-family: Verdana, Geneva, Tahoma, sans-serif;" >
             <div class="middle-box">
@@ -35,48 +36,18 @@
                     <a href="seall.html">SEE ALL</a>
                 </div>
             </div>
+            
         </div>
+        
     </header>
-    <script>
-        // Deklarimi i një vargu të produkteve
-        const products = [
-            { name: 'Shampoo', price: 10 },
-            { name: 'Conditioner', price: 8 },
-            { name: 'Hair Mask', price: 15 },
-            { name: 'Hair Serum', price: 12 },
-        ];
-
-        // Funksion që do të përdoret si callback për të përpunuar çdo produkt
-        function processProduct(product, callback) {
-            // Thirrja e callback funksionit për çdo produkt
-            callback(product);
-        }
-
-        // Funksion callback që shton një tekstin në çdo produkt
-        function addText(product) {
-            product.description = `This is ${product.name}. Price: $${product.price}.`;
-        }
-
-        // Funksion callback që zvogëlon çmimin e produktit
-        function reducePrice(product) {
-            product.price -= 5;
-        }
-
-        // Përdorimi i callback funksioneve për të përpunuar çdo produkt
-        products.forEach(function(product) {
-            processProduct(product, addText);
-            processProduct(product, reducePrice);
-        });
-
-        // Shfaqja e produkteve në console pas përpunimit
-        console.log(products);
-    </script>
+    
 
     <section id="video-section">
         <video width="100%" height="100%" autoplay loop muted >
             <source src="c:\Users\PC\Downloads\IMG_0 (1).MOV" type="video/mp4" autoplay>
         </video>
     </section>
+
 
     <div class="fourth-container">
         <img src="../img/img1hair.webp">
@@ -86,49 +57,68 @@
 
         <div class="quote-container">
             <blockquote>
-                <!-- Përdorimi i variablave për tekstin e citatit dhe paragrafit -->
+                
                 <h1 id="quote" style="font-family: Georgia, 'Times New Roman', Times, serif; color: black;">{{quoteText}}</h1>
                 <p>{{paragraphText}}</p>
             </blockquote>
+            
 
-            <!-- Përdorimi i variablës për tekstin e butonit -->
+      
             <button class="btn btn-primary" onclick="changeQuote()">{{buttonText}}</button>
         </div>
+
+
+    
     </div>
+    <h2>The most expensive hair product is:</h2>
+    <ul style="list-style: circle;" id="expensiveProductList"></ul>
+  
+    <h2>The cheapest hair product is:</h2>
+    <ul style="list-style:circle;" id="cheapestProductList"></ul>
+  
     <script>
-        // Deklarimi i një vargu të produkteve
-        const products = [
-            { name: 'Shampoo', price: 10 },
-            { name: 'Conditioner', price: 8 },
-            { name: 'Hair Mask', price: 15 },
-            { name: 'Hair Serum', price: 12 },
-        ];
-
-        // Funksion që do të përdoret si callback për të përpunuar çdo produkt
-        function processProduct(product, callback) {
-            // Thirrja e callback funksionit për çdo produkt
-            callback(product);
-        }
-
-        // Funksion callback që shton një tekstin në çdo produkt
-        function addText(product) {
-            product.description = `This is ${product.name}. Price: $${product.price}.`;
-        }
-
-        // Funksion callback që zvogëlon çmimin e produktit
-        function reducePrice(product) {
-            product.price -= 5;
-        }
-
-        // Përdorimi i callback funksioneve për të përpunuar çdo produkt
-        products.forEach(function(product) {
-            processProduct(product, addText);
-            processProduct(product, reducePrice);
+      const products = [
+        { id: 1, name: 'Dyson', price: 599.00 },
+        { id: 2, name: 'Flat Iron', price: 250 },
+        { id: 3, name: 'Hair Mask', price: 38 },
+        { id: 4, name: 'Prep', price: 30 },
+        { id: 5, name: 'Curl Smith', price: 24 },
+   
+      ];
+ 
+      const mostExpensiveProduct = products.reduce((maxProduct, currentProduct) => {
+        return (currentProduct.price > maxProduct.price) ? currentProduct : maxProduct;
+      }, products[0]);
+  
+      const cheapestProduct = products.reduce((minProduct, currentProduct) => {
+        return (currentProduct.price < minProduct.price) ? currentProduct : minProduct;
+      }, products[0]);
+  
+      
+      const expensiveProductList = document.getElementById('expensiveProductList');
+      products
+        .filter(product => product.price === mostExpensiveProduct.price)
+        .forEach(product => {
+          const listItem = document.createElement('li');
+          listItem.textContent = `${product.name} - $${product.price.toFixed(2)}`;
+          expensiveProductList.appendChild(listItem);
         });
-
-        // Shfaqja e produkteve në console pas përpunimit
-        console.log(products);
+       
+  const productNames = products.map(product => product.name);
+  console.log('Product Names:', productNames);
+  
+      
+      const cheapestProductList = document.getElementById('cheapestProductList');
+      products
+        .filter(product => product.price === cheapestProduct.price)
+        .forEach(product => {
+          const listItem = document.createElement('li');
+          listItem.textContent = `${product.name} - $${product.price.toFixed(2)}`;
+          cheapestProductList.appendChild(listItem);
+        });
     </script>
+  
+</div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -141,17 +131,33 @@
                     <li><a href="MainPage.html">Home</a></li>
                     <li><a href="OurStory.html">About Us</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <li> <div id="currentDateElement"></div>
+
+                        <script>
+               
+                            const currentDate = new Date();
+                    
+                            
+                            const currentDateElement = document.getElementById('currentDateElement');
+                            if (currentDateElement) {
+                                currentDateElement.textContent = `Current Date: ${currentDate.toLocaleDateString()} - Current time: ${currentDate.toLocaleTimeString()}`;
+                            }
+                        </script></li>
                 </ul>
             </div>
+            
+            
             <div class="get-in-touch">
                 <h2>Get in Touch</h2>
                 <address style="margin-left: 100px; font-size: 20px; font-family:Georgia, 'Times New Roman', Times, serif;" >
                     <a href="https://maps.app.goo.gl/scmxnwzCazoUVT8b9">Address: Prishtine</a>
                 </address>
-                <p>Email: <mark style="background-color: white;"> <a href="mailto:everglowbeauty@gmail.com">everglowbeauty@gmail.com</a> </mark></p>
+                <p>Email: <mark style="background-color: white;"> <a href="mailto:everglowbeauty@gmail.com">everglowbeauty&amp;gmail.com</a> </mark></p>
                 <p>Phone: <mark style="background-color: white;">+383 48 555 111</mark></p>
             </div>
+            
         </div>
+        
 
         <div class="site-footer-payments">
             <a class="site-footer-payments__link" href="https://www.paypal.com/" style="pointer-events: auto;">
@@ -168,28 +174,30 @@
             <img src="https://images.ctfassets.net/eoaaqxyywn6o/5IdXqCmgjNCVwZNyssRsdE/702c37ee931258aad2071e063bbd337e/Maestro.svg" alt="Maestro" class="site-footer-payments__link__icon"></a>
             
         </div>
+        
     </footer>
 
     <script>
-        // Deklarimi i variablave në fillim të skriptit
+      
         var initialQuote = "Hair care is self-care!";
         var initialParagraph = "Throughout history, hair has played a significant role in our society it is associated with youthfulness and beauty in women and virility and masculinity in men; so it's no surprise that hair loss can make many men and women feel self-conscious.Your hair is the crown you never take off, after all.Life is too short not to appreciate your natural mane and to go for the hair of your dreams.Hair matter. Pay attention to your hair, because everyone else will.Good looking hair isn't just pleasing to the eye, but often indicates a strong healthy individual. Being attracted to healthy hair is quite natural. It also shows a sign of good hygiene and care for one's self.";
         var reminderButtonText = "Reminder";
 
-        // Vendosja e vlerave të variablave në faqe në fillim
         document.getElementById("quote").textContent = initialQuote;
         document.querySelector(".quote-container p").textContent = initialParagraph;
         document.querySelector(".quote-container button").textContent = reminderButtonText;
 
         function changeQuote() {
-            // Përdorimi i variablave në skript
+          
             var quoteElement = document.getElementById("quote");
 
             if (quoteElement) {
-                // Ndryshimi i tekstit me vlerën e variablës
+
                 quoteElement.textContent = "And with our products your hair will look gorgeous!";
             }
         }
+        
     </script>
 </body>
 </html>
+And with our products your hair will look gorgeous
