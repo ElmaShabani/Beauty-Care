@@ -13,90 +13,93 @@
             window.location.href = "https://www.instagram.com/";
         }
 
-        function login() {
-        var usernameInput = document.getElementById("username").value;
-        var passwordInput = document.getElementById("password").value;
-
-        if (usernameInput && passwordInput) {
-            
-            window.location.href = "allformakeup.html";
-        } else {
-            alert("Please fill in both username and password fields.");
-        }
-    }
-    function validateUsername(username) {
-          
-            return username.length >= 8;
+        function validateUsername(username) {
+            return username.length >= 6;
         }
 
         function validatePassword(password) {
-            return password.length >= 7;
+            return password.length >= 6;
         }
-        
+
+        function login(event) {
+            event.preventDefault();
+
+            var usernameInput = document.getElementById("username").value;
+            var passwordInput = document.getElementById("password").value;
+
+            if (usernameInput && passwordInput && validateUsername(usernameInput) && validatePassword(passwordInput)) {
+                window.location.href = "allformakeup.html";
+            } else {
+                alert("Invalid username or password. Please check your input.");
+            }
+        }
     </script>
     <style>
-        
-body {
-    font-family: Arial, sans-serif;
-    background-color: rgba(236, 206, 176, 0.5);
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-}
-form {
-    margin-top: 30px;
-    background-color:white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-}
-label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-}
-input {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 16px;
-    box-sizing: border-box;
-    border-radius: 4px;
-    border: 1px solid black;
-    
-}
-button {
-    background-color:white;
-    color: black;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-button:hover {
-    background-color: rgb(26, 159, 68) ;
-}
-.social-login {
-    margin-top: 20px;
-}
-.social-login button {
-    margin: 5px;
-}
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('../img/backlogin.avif');
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        form {
+            margin-top: 30px;
+            background-color:white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border-radius: 4px;
+            border: 1px solid black;
+        }
+
+        button {
+            background-color:white;
+            color: black;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: rgb(26, 159, 68) ;
+        }
+
+        .social-login {
+            margin-top: 20px;
+        }
+
+        .social-login button {
+            margin: 5px;
+        }
     </style>
 </head>
 <body>
-
-    <form action="/your-login-endpoint" method="post" autocomplete="on">
+    <form action="/your-login-endpoint" method="post" autocomplete="on" onsubmit="login(event)">
         <h2>Log Into EverGlow Beauty</h2>
         
         <input type="text" id="username" name="username" placeholder="Username..." required>
         <input type="password" id="password" name="password"  placeholder="Password..." required>
 
-        <button type="submit" style="width: 200px; border: 1px solid black;" onclick="login()">Log In</button>
-       <p>or</p>
+        <button type="submit" style="width: 200px; border: 1px solid black;">Log In</button>
+        <p>or</p>
         <div class="social-login" >
             <button type="button" style="border: 1px solid black;"  onclick="loginWithFacebook()">
                 Log In with
@@ -107,13 +110,7 @@ button:hover {
                 Log In with
                 <img src="file:///C:/Users/S/Desktop/Instagram_logo_2022.svg.webp" alt="Instagram Icon" width="20">
             </button>
-
-            
         </div>
-        
     </form>
-   
-
-   
 </body>
 </html>
