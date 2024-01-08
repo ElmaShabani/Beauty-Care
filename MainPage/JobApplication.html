@@ -47,6 +47,13 @@ nav a {
     color:peru;
     text-decoration: none;
 }
+.text-with-shadow {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    
+}
 
         form {
             background-color: #fff;
@@ -165,7 +172,7 @@ justify-content: center;
 <body>
     <header>
         <a href="MainPage.html"><img src="c:\Users\elona\Downloads\logo.jpg" alt="Your Brand Logo"></a>
-        <h3 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">EverGlow Beauty</h3>
+        <div class="text-with-shadow" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">EverGlow Beauty</div>
         <nav>
             <ul>
                 <li><a href="#">Makeup</a></li>
@@ -177,17 +184,21 @@ justify-content: center;
     </header>
 
     <form id="jobApplicationForm">
+        <input type="text" id="readonlyInput" name="readonlyInput" value=" APPLY FOR A JOB BELOW!" readonly style="width: 100%; background-color: #f5dfc9;">
         <label for="fullName">Full Name:</label>
-        <input type="text" id="fullName" name="fullName" required style="width: 100%;">
+        <input type="text" id="fullName" name="fullName" required style="width: 100%;" form="jobApplicationForm">
 
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required style="width: 100%;">
+        <input type="email" id="email" name="email" required style="width: 100%;" placeholder="@gmail.com">
 
         <label>Preferred Contact Method:</label>
         <label for="contactEmail">Email
         <input type="radio" id="contactEmail" name="contactMethod" value="email" checked></label>
         <label for="contactPhone">Phone
-        <input type="radio" id="contactPhone" name="contactMethod" value="phone"></label>
+        <input type="radio" id="contactPhone" name="contactMethod" value="phone"></label> <br>
+
+        <label for="age">Enter your age (between 18 and 65):</label>
+        <input type="text" id="age" name="age" min="18" max="65">
         
 
         <label for="dob">Date of Birth:</label>
@@ -195,7 +206,6 @@ justify-content: center;
 
         <label for="phoneNumber">Phone Number:</label>
         <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{10}" placeholder="Enter 10-digit phone number" required width="100%">
-
         <label>Skills:</label>
         <label for="managingSkills">Managing
         <input type="checkbox" id="makeupSkills" name="skills" value="managing"></label>
@@ -207,12 +217,13 @@ justify-content: center;
         <input type="checkbox" id="accuracySkills" name="skills" value="accuracy"></label>
         <br>
         <label for="position"> Select Position:</label>
-      <select id="position" name="position" required style="text-align: center;">
-        <option value="Cashier">Cashier</option>
-        <option value="Advisor" selected>Beauty Advisor</option>
-        <option value="Manager">Store Manager</option>
-        <option value="Sales">Sales Leader</option>
-      </select> 
+      <input  list="positions" id="position" name="position" required style="text-align: center;">
+        <datalist id="positions">
+       <option value="Cashier">
+        <option value="Beauty Advisor" selected>
+        <option value="Store Manager">
+        <option value="Sales Leader">
+        </datalist> 
       <br>
         <label for="coverLetter">Cover Letter:</label>
       <textarea id="coverLetter" name="coverLetter" rows="4" required ></textarea>
@@ -256,28 +267,29 @@ justify-content: center;
     
     </footer> 
 
+  
     <script>
         function validateForm() {
-            var fullName = document.getElementById('fullName').value;
-            var email = document.getElementById('email').value;
-            var contactMethod = document.querySelector('input[name="contactMethod"]:checked');
-            var dob = document.getElementById('dob').value;
-            var phoneNumber = document.getElementById('phoneNumber').value;
+            try {
+                var fullName = document.getElementById('fullName').value;
+                var email = document.getElementById('email').value;
+                var contactMethod = document.querySelector('input[name="contactMethod"]:checked');
+                var dob = document.getElementById('dob').value;
+                var phoneNumber = document.getElementById('phoneNumber').value;
+                var age = document.getElementById('age').value;
 
-          
-                
-            
+                if (fullName === '' || email === '' || contactMethod === null || dob === '' || phoneNumber === '' || age === '') {
+                    throw new Error('Please fill in all required fields.');
+                }
 
-            if (fullName === '' || email === '' || contactMethod === null || dob === '' || phoneNumber === '') {
-                alert('Please fill in all required fields.');
-                isValid = false;
-            }
+                if (isNaN(age) || age < 18 || age > 65) {
+                    throw new RangeError('Enter a valid age between 18 and 65.');
+                }
 
-            if (isValid) {
+
                 alert('Application submitted successfully!');
-
-               
-               
+            } catch (error) {
+                alert('Error: ' + error.message);
             }
         }
     </script>

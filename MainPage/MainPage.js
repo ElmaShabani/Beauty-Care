@@ -79,3 +79,5 @@ document.addEventListener('visibilitychange', function () {
 
 
 updateCartUI();
+
+

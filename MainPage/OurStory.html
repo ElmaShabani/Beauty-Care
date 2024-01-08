@@ -41,6 +41,13 @@ nav a {
     color:peru;
     text-decoration: none;
 }
+.text-with-shadow {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    
+}
 
 .third-container {
     display: flex;
@@ -220,7 +227,7 @@ p {
 <body>
     <header>
         <a href="MainPage.html"><img src="c:\Users\elona\Downloads\logo.jpg" alt="Your Brand Logo"></a>
-        <h3 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">EverGlow Beauty</h3>
+        <div class="text-with-shadow" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">EverGlow Beauty</div>
         <nav>
             <ul>
                 <li><a href="#">Makeup</a></li>
@@ -251,14 +258,21 @@ p {
     <div class="quote-container">
         <blockquote>
             <h1 style="color: peru;">A note from <i><b><mark>US</mark></b></i></h1>
-            <p>​We think EverGlow Beauty can be more than a beauty brand it <br> can make an impact. I want us all to stop comparing ourselves to <br>each other and just start embracing our own uniqueness.</p>
+            <!--<p>​We think EverGlow Beauty can be more than a beauty brand it <br> can make an impact. I want us all to stop comparing ourselves to <br>each other and just start embracing our own uniqueness.</p>-->
+            <p>Click the button below!</p>
         </blockquote>
+        <audio controls>
+            <source src="c:\Users\elona\Downloads\ever.mp3" type="audio/mp3" style="display:none;" >
+            Your browser does not support the audio tag.
+        </audio> 
     </div>
  </div>
 
  <blockquote style="font-size: 2.5em; background-color: #fff; margin-bottom: 150px;" >
     <h1 style="font-family:'Times New Roman', Times, serif; text-align:center;" class="custom-font">“Being <i><b>unique</b></i> is about being <br> comfortable with yourself. We’ve  <br>stopped trying to be perfect. We <br>just want to be us.”</h1>
- </blockquote>
+    
+</blockquote>
+ 
 
  <div class="third-container" style="font-family: 'Times New Roman', Times, serif; background-color:rgba(247, 230, 203, 0.919);">
     <div class="quote-container">
@@ -314,6 +328,8 @@ p {
 </div>
 
 </footer> 
+
+   
 
 </body>
 </html>
