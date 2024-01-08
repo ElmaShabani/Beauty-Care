@@ -4,7 +4,10 @@ body {
     padding: 0;
     background-color: #f5dfc9;
     color: #333;
-  
+    background-image: url(../img/new-york-beauty-photographer-los-angeles-cosmetic-photography-skincare-michelle-monique-makeup-model-hayden-graye-morphe-grid-glowstunner-unibrow-eyebrows-sunscreen.jpg);
+    background-repeat: no-repeat;
+    background-position: 0%;
+   
    }
    header {
     background-color: #ffffff;
