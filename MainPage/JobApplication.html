@@ -3,9 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="JobApplication.css">
     <link rel="icon" type="image/x-icon" href="c:\Users\elona\Downloads\favicon.ico.PNG">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function() {
+           
+            $('header').hide().fadeIn(1000); 
+        });
+    </script>
     <style>
-  body {
+       
+/*  body {
     font-family: 'Times New Roman', Times, serif;
     margin: 0;
     padding: 0;
@@ -166,7 +175,8 @@ margin: 1.5vw;
 justify-content: center;
 
 }
-    </style>
+   */
+</style>
     <title>Job Application</title>
 </head>
 <body>
@@ -175,10 +185,39 @@ justify-content: center;
         <div class="text-with-shadow" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">EverGlow Beauty</div>
         <nav>
             <ul>
-                <li><a href="#">Makeup</a></li>
-                <li><a href="#">Skin Care</a></li>
-                <li><a href="#">Fragrance</a></li>
-                <li><a href="#">Hair Care</a></li>
+                <li><a href="allformakeup.html">Makeup</a>
+                    <ul class="subcategories">
+                        <li><a href="facee.html">Face</a></li>
+                        <li><a href="eyes.html">Eyes</a></li>
+                        <li><a href="lips.html">Lips</a></li>
+                        <li><a href="cheeks.html">Cheek</a></li>
+                        <li><a href="makeup.html">See All</a></li>
+                    </ul></li>
+                <li><a href="Face.html">Skin Care</a>
+                    <ul class="subcategories">
+                        <li><a href="Dehydration.html">Dehydration</a></li>
+                        <li><a href="Daycream.html">Day & Night Cream Moisturiser</a></li>
+                        <li><a href="Face.html">Face Masks & Cleansers</a></li>
+                        <li><a href="Serum.html">Serums & Lip Care</a></li>
+    
+                    </ul>
+                </li>
+                <li><a href="Fragrance.html">Fragrance</a>
+                    <ul class="subcategories">
+                        <li><a href="Women.html">Women</a></li>
+                        <li><a href="Men.html">Men</a></li>
+                        <li><a href="Gift Sets.html">Gift Sets</a></li>
+                        <li><a href="Seeall.html">See All</a></li>  
+                    </ul>
+                </li>
+                <li><a href="allforhair.html">Hair Care</a>
+                    <ul class="subcategories">
+                        <li><a href="treatments.html">Treatments</a></li>
+                        <li><a href="styling.html">Styling</a></li>
+                        <li><a href="gifts.html">Gifts</a></li>
+                        <li><a href="seall.html">See All</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </header>
@@ -277,7 +316,23 @@ justify-content: center;
     </div>
     
     </footer> 
-
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function(){
+          
+            $('.subcategories').hide();
+    
+            
+            $('nav li').hover(
+                function(){
+                    $(this).find('.subcategories').stop(true, true).slideDown();
+                },
+                function(){
+                    $(this).find('.subcategories').stop(true, true).slideUp();
+                }
+            );
+        });
+    </script>
   
     <script>
         function validateForm() {
