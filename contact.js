@@ -10,3 +10,8 @@ function submitForm() {
         document.getElementById("contactForm").reset();
     }
 }
+$(document).ready(function(){
+    $("form").submit(function(){
+        alert("Forma është paraqitur!");
+    });
+});

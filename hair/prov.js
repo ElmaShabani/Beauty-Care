@@ -3,11 +3,8 @@ let cartData = JSON.parse(sessionStorage.getItem('cartData')) || { items: [], to
 function addToCart(productName, productPrice) {
     cartData.items.push({ name: productName, price: productPrice });
     cartData.total += productPrice;
-
-    // Save the updated cart data to sessionStorage
     sessionStorage.setItem('cartData', JSON.stringify(cartData));
 
-    // Update the UI immediately after adding to the cart
     updateCartUI();
 }
 
@@ -41,17 +38,16 @@ function toggleCart() {
     cart.classList.toggle('hidden');
 }
 
-// Listen for beforeunload event to clear the cart when the user leaves the website
+
 window.addEventListener('beforeunload', function () {
     sessionStorage.removeItem('cartData');
 });
 
-// Listen for page visibility change events to update the cart before leaving
 document.addEventListener('visibilitychange', function () {
     if (document.visibilityState === 'hidden') {
         sessionStorage.setItem('cartData', JSON.stringify(cartData));
     }
 });
 
-// Initial UI update when the page loads
 updateCartUI();
+
