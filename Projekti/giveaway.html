@@ -6,8 +6,98 @@
     <title>GIVEAWAY</title>
     <link rel="icon" type="image/x-icon" href="../img/favicon.ico.PNG">
     <style>
-        /* Styles remain the same as in your original code */
-        /* ... */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        form {
+            max-width: 400px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-right: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #wheel-container {
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        #wheel {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: conic-gradient(
+                #f00 0% 10%,
+                #0f0 10% 20%,
+                #00f 20% 30%,
+                #f00 30% 40%,
+                #0f0 40% 50%,
+                #00f 50% 60%,
+                #f00 60% 70%,
+                #0f0 70% 80%,
+                #00f 80% 90%,
+                #f00 90% 100%
+            );
+            transition: transform 3s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+        }
+
+        #result {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .win {
+            color: red; /* Ngjyra e kuqe për "YOU WIN" */
+        }
+
+        .next-time {
+            color: blue; /* Ngjyra e kaltër për "NEXT TIME" */
+        }
+        
     </style>
 </head>
 <body>
@@ -24,7 +114,8 @@
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" placeholder="Enter your username..." required>
             
-            <button type="button" onclick="spinWheel(callbackFunction)">Try your luck!</button>
+
+            <button type="button" onclick="spinWheel()">Try your luck!</button>
             <div id="result"></div>
         </form>
 
@@ -34,7 +125,7 @@
     </div>
 
     <script>
-        function spinWheel(callback) {
+        function spinWheel() {
             const email = document.getElementById('email').value;
             const name = document.getElementById('name').value;
             const username = document.getElementById('username').value;
@@ -53,24 +144,40 @@
                 resultElement.innerText = result.message;
                 resultElement.className = result.className;
                 resetWheel();
-
-                if (typeof callback === 'function') {
-                    callback(result.message); // Pass the result to the callback function
-                }
             }, 3000); // Wait for the animation to complete (3 seconds)
         }
 
-        function callbackFunction(message) {
-            // You can implement your custom logic here based on the result message
-            console.log('Callback function called with message:', message);
+        function checkPrize() {
+            const degrees = getRandomDegrees();
+            let result;
+
+
+            if (degrees >= 0 && degrees < 36) {
+                result = { message: "YOU WIN!", className: "win" };
+            } else if (degrees >= 36 && degrees < 72) {
+                result = { message: "NEXT TIME", className: "next-time" };
+            } else {
+                result = { message: "Try again!", className: "" };
+            }
+
+            return result;
         }
 
-        /* Other functions remain the same as in your original code */
+        function getRandomDegrees() {
+            // Simulate a random wheel position (0 to 360 degrees)
+            return Math.floor(Math.random() * 360);
+        }
 
+        function resetWheel() {
+            const wheel = document.getElementById('wheel');
+            wheel.style.transition = 'none';
+            wheel.style.transform = 'rotate(0deg)'; // Reset the wheel position
+            void wheel.offsetWidth; // Trigger reflow
+            wheel.style.transition = 'transform 3s cubic-bezier(0.17, 0.67, 0.83, 0.67)'; // Re-enable transition
+        }
     </script>
 </body>
 </html>
-
 
 
 
