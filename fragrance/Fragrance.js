@@ -1,8 +1,6 @@
 let cartItems = [];
 let cartTotal = 0;
 
-
-
 function addToCart(productName, productPrice) {
     cartItems.push({ name: productName, price: productPrice });
     cartTotal += productPrice;
@@ -23,3 +21,7 @@ function updateCartUI() {
     cartTotalElement.textContent = cartTotal.toFixed(2);
 }
 
+function toggleCart() {
+    const cart = document.getElementById('cart');
+    cart.classList.toggle('hidden');
+}
