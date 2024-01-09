@@ -25,3 +25,7 @@ function toggleCart() {
     const cart = document.getElementById('cart');
     cart.classList.toggle('hidden');
 }
+ // Përdorimi i ngjarjes "click" me jQuery
+ $("#myButton").click(function() {
+    alert("Ju klikuat butonin!");
+});
