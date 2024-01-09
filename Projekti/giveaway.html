@@ -8,6 +8,10 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-image: url(../img/fotojabackground.avif);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
             margin: 0;
             padding: 20px;
             background-color: #f4f4f4;
@@ -91,11 +95,15 @@
         }
 
         .win {
-            color: red; /* Ngjyra e kuqe për "YOU WIN" */
+            color: red; /* Red for "YOU WIN" */
         }
 
         .next-time {
-            color: blue; /* Ngjyra e kaltër për "NEXT TIME" */
+            color: blue; /* Blue for "NEXT TIME" */
+        }
+
+        .try-again {
+            color: green; /* Green for "Try again!" */
         }
         
     </style>
@@ -114,7 +122,6 @@
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" placeholder="Enter your username..." required>
             
-
             <button type="button" onclick="spinWheel()">Try your luck!</button>
             <div id="result"></div>
         </form>
@@ -146,18 +153,17 @@
                 resetWheel();
             }, 3000); // Wait for the animation to complete (3 seconds)
         }
-        
+
         function checkPrize() {
             const degrees = getRandomDegrees();
             let result;
 
-
             if (degrees >= 0 && degrees < 36) {
-                result = { message: "YOU WIN!", className: "win" };
+                result = { message: "YOU WIN A DYSON!", className: "win" };
             } else if (degrees >= 36 && degrees < 72) {
-                result = { message: "NEXT TIME", className: "next-time" };
+                result = { message: "YOU WIN SLIP SCRUNCHIES!", className: "win" };
             } else {
-                result = { message: "Try again!", className: "" };
+                result = { message: "NEXT TIME,GOOD LUCK!", className: "next-time" };
             }
 
             return result;
@@ -178,10 +184,4 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
 
