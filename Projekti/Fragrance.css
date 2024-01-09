@@ -160,10 +160,10 @@ max-width: 900px;
     margin-left: 20px;
     margin-top: 20px;
     margin-bottom: 100px;
-    
-
+    width: 900px;
 }
- ul , li {
+ .list ul  li {
     max-width: 700px;
     padding: 7px;
+    margin-left: 0%;
     }
