@@ -29,24 +29,26 @@
             var passwordInput = document.getElementById("password").value;
 
             if (usernameInput && passwordInput && validateUsername(usernameInput) && validatePassword(passwordInput)) {
-                window.location.href = "allformakeup.html";
+                window.location.href = "MainPage.html";
             } else {
                 alert("Invalid username or password. Please check your input.");
             }
         }
     </script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-image: url('../img/bglogin.jpg');
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+      body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('../img/topp.jpg');
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+   }
 
+     
         form {
             margin-top: 200px;
             background-color:white;
@@ -93,6 +95,7 @@
     </style>
 </head>
 <body>
+    
     <form action="/your-login-endpoint" method="post" autocomplete="on" onsubmit="login(event)">
         <h2>Log Into EverGlow Beauty</h2>
         
