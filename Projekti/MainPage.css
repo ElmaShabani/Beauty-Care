@@ -84,7 +84,7 @@ background-color: rgb(247, 230, 201);
 }
 button {
 position: absolute;
-top: 1300px;
+top: 1320px;
 transform: translateY(-50%);
 font-size: 2.5em;
 background: none;
@@ -95,11 +95,11 @@ outline:#fde7c2;
 }
 
 .prev {
-left: 10px;
+left: 20px;
 }
 
 .next {
-right: 10px;
+right: 20px;
 }
 .second-container{
 display: flex;

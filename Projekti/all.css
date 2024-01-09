@@ -116,9 +116,10 @@ header {
    
 .blockquote p{
     font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2em;
 }
 blockquote {
-    width: 900px;
+    width: 800px;
     font-size: 1.2em;
     color: #333;
 }
@@ -173,7 +174,7 @@ justify-content: center;
     
 }
 .text-wrapping {
-    width: 900px;
+    width: 800px;
     background-color: #fff;
     padding: 5px;
     margin: 20px auto;
@@ -185,7 +186,7 @@ justify-content: center;
   }
   .drop-zone {
     width: 300px;
-    height: 380px;
+    height: 300px;
     border: 2px dashed #ccc;
     margin: 10px;
     padding: 10px;
