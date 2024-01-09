@@ -95,15 +95,15 @@
         }
 
         .win {
-            color: red; /* Red for "YOU WIN" */
+            color: red; 
         }
 
         .next-time {
-            color: blue; /* Blue for "NEXT TIME" */
+            color: blue; 
         }
 
         .try-again {
-            color: green; /* Green for "Try again!" */
+            color: green;
         }
         
     </style>
@@ -143,7 +143,7 @@
             }
 
             const wheel = document.getElementById('wheel');
-            wheel.style.transform = 'rotate(720deg)'; // Rotate the wheel twice (720 degrees)
+            wheel.style.transform = 'rotate(720deg)'; 
 
             setTimeout(() => {
                 const resultElement = document.getElementById('result');
@@ -151,7 +151,7 @@
                 resultElement.innerText = result.message;
                 resultElement.className = result.className;
                 resetWheel();
-            }, 3000); // Wait for the animation to complete (3 seconds)
+            }, 3000); 
         }
 
         function checkPrize() {
@@ -170,16 +170,15 @@
         }
 
         function getRandomDegrees() {
-            // Simulate a random wheel position (0 to 360 degrees)
             return Math.floor(Math.random() * 360);
         }
 
         function resetWheel() {
             const wheel = document.getElementById('wheel');
             wheel.style.transition = 'none';
-            wheel.style.transform = 'rotate(0deg)'; // Reset the wheel position
-            void wheel.offsetWidth; // Trigger reflow
-            wheel.style.transition = 'transform 3s cubic-bezier(0.17, 0.67, 0.83, 0.67)'; // Re-enable transition
+            wheel.style.transform = 'rotate(0deg)'; 
+            void wheel.offsetWidth; 
+            wheel.style.transition = 'transform 3s cubic-bezier(0.17, 0.67, 0.83, 0.67)'; 
         }
     </script>
 </body>
