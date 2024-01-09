@@ -1,12 +1,13 @@
 body {
     font-family: 'Times New Roman', Times, serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f5dfc9;
+    margin: 0%;
+    padding: 0%;
     color: #333;
-    background-image: url(../img/new-york-beauty-photographer-los-angeles-cosmetic-photography-skincare-michelle-monique-makeup-model-hayden-graye-morphe-grid-glowstunner-unibrow-eyebrows-sunscreen.jpg);
+    background-image: url('../img/backgroundJA.jpg');
     background-repeat: no-repeat;
-    background-position: 0%;
+    background-size:cover;
+    background-position: center;
+    
    
    }
    header {
@@ -100,7 +101,7 @@ nav a {
             width: 100%;
         }
         footer {
-        background-color:rgba(255, 255, 255, 0.5) ;
+        background-color:rgb(255, 255, 255, 0.8) ;
         color: black;
         padding: 20px 0;
         
