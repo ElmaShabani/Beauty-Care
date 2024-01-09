@@ -5,10 +5,12 @@ function submitForm() {
 
     if (name === "" || email === "" || message === "") {
         alert("Please fill in all fields.");
+            window.location.href = "MainPage.html";
     } else {
         alert("Thank you, " + name + "! Your message has been submitted.");
         document.getElementById("contactForm").reset();
     }
+
 }
 $(document).ready(function(){
     $("form").submit(function(){
