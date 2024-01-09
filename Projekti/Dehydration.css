@@ -1,0 +1,150 @@
+.add-to-cart {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.cart-img img {
+    width: 30px;
+    margin-left: 20px;
+    cursor: auto pointer;
+}
+
+#cart {
+    border: 1px solid #ccc;
+    background-color: white;
+    padding: 10px;
+
+}
+
+#cart-items {
+    list-style: none;
+    padding: 4;
+    text-align: center;
+}
+
+#cart-total {
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+
+}
+
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+
+}
+
+header {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgba(236, 206, 176, 0.5);
+    padding: 10px 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.background-container {
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.image-box {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.image {
+    width: 300px;
+    height: auto;
+    border: 2px solid white;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.image:hover {
+    transform: scale(1.1);
+}
+
+.image-box p {
+    margin: 5px 0;
+}
+
+footer {
+    background-color: rgba(236, 206, 176, 0.5);
+    color: black;
+    padding: 20px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.quick-links,
+.get-in-touch {
+    flex: 1;
+    margin-left: 100px;
+}
+
+.get-in-touch p {
+    margin-left: 100px;
+    font-size: 20px;
+}
+
+.quick-links h2,
+.get-in-touch h2 {
+    margin-left: 100px;
+    margin-bottom: 10px;
+}
+
+.left2 {
+    margin-left: 100px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin-left: 100px;
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+
+footer a {
+    text-decoration: none;
+    color: black;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.site-footer-payments {
+    padding: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(236, 206, 176, 0.5);
+}
+
+
+.site-footer-payments__link__icon {
+    display: block;
+    margin: 1.5vw;
+    justify-content: center;
+}
