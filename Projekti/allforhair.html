@@ -83,7 +83,6 @@
 
 
     <div class="fourth-container">
-        <img src="../img/img1hair.webp">
         <div class="image-container">
             <img src="../img/hairphoto.webp" alt="Hair" class="round-image">
         </div>
@@ -193,9 +192,10 @@
                     
                             
                             const currentDateElement = document.getElementById('currentDateElement');
-                            if (currentDateElement) {
-                                currentDateElement.textContent = `Current Date: ${currentDate.toLocaleDateString()<br>} - Current time: ${currentDate.toLocaleTimeString()}`;
-                            }
+                             if (currentDateElement) {
+                             currentDateElement.innerHTML = `Current Date: ${currentDate.toLocaleDateString()}<br>  Current time: ${currentDate.toLocaleTimeString()}`;
+                             }
+
                         </script></li>
                 </ul>
             </div>
