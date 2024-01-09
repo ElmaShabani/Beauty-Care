@@ -160,9 +160,10 @@ max-width: 900px;
     margin-left: 20px;
     margin-top: 20px;
     margin-bottom: 100px;
+    
 
 }
-ul , li {
+ ul , li {
     max-width: 700px;
     padding: 7px;
     }
