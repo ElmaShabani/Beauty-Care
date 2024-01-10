@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EverGlow Beauty</title>
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico.PNG">
 
     <link rel="stylesheet" href="./Dehydration.css">
 </head>
@@ -119,7 +120,7 @@
         </div>
         <div class="image-box">
             <img src="../img/EyeandLip2.jpg" alt=" Foto 5" class="image">
-            <p>Slow Âge Eye Cream</p>
+            <p>Slow Âge Eye Creamm</p>
             <p>$22.20</p>
             <button class="add-to-cart" onclick="addToCart('Slow Âge Eye Cream',22.20)">Add to
                 Cart</button>
@@ -136,7 +137,7 @@
     </div>
     <footer>
         <div class="footer-container">
-            <div class="left2">
+            <div class="left">
                 <h2>Everglow Beauty</h2>
                 <p style="font-size: 20px;">Everglow Beauty Kosova</p>
             </div>
@@ -145,15 +146,24 @@
                 <ul>
                     <li><a href="MainPage.html">Home</a></li>
                     <li><a href="OurStory.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.html">Contact</a>
+
+                        <script>
+
+                            const currentDate = new Date();
+                            const currentDateElement = document.getElementById('currentDateElement');
+                            if (currentDateElement) {
+                                currentDateElement.textContent = `Current Date: ${currentDate.toLocaleDateString()} - Current time: ${currentDate.toLocaleTimeString()}`;
+                            }
+                        </script>
+                    </li>
                 </ul>
             </div>
             <div class="get-in-touch">
                 <h2>Get in Touch</h2>
                 <address
                     style="margin-left: 100px; font-size: 20px; font-family:Georgia, 'Times New Roman', Times, serif;">
-                    <a href="https://maps.app.goo.gl/scmxnwzCazoUVT8b9">Address: Prishtine</a>
-                </address>
+                    <a href="https://maps.app.goo.gl/scmxnwzCazoUVT8b9">Address: Prishtine</a> </address>
                 <p>Email: <mark style="background-color: white;"> <a
                             href="mailto:everglowbeauty@gmail.com">everglowbeauty@gmail.com</a> </mark></p>
                 <p>Phone: <mark style="background-color: white;">+383 48 555 111</mark> </p>
@@ -183,7 +193,27 @@
         </div>
 
     </footer>
+    <script src="mainpage.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $('.subcategories').hide();
+
+
+            $('nav li').hover(
+                function () {
+                    $(this).find('.subcategories').stop(true, true).slideDown();
+                },
+                function () {
+                    $(this).find('.subcategories').stop(true, true).slideUp();
+                }
+            );
+        });
+    </script>
     <script src="forall.js"></script>
+
 </body>
 
 </html>

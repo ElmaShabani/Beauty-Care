@@ -167,3 +167,23 @@ max-width: 900px;
     padding: 7px;
     margin-left: 0%;
     }
+
+    footer ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+     footer ul li {
+        margin-left: 400px;
+        margin-bottom: 8px;
+        font-size: 14px;
+    }
+    
+     footer a {
+        text-decoration: none;
+        color:black;
+    }
+    
+    footer a:hover {
+        text-decoration: underline;
+    }
