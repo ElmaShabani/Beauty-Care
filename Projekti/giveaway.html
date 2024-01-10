@@ -132,26 +132,36 @@
     </div>
 
     <script>
-        function spinWheel() {
-            const email = document.getElementById('email').value;
-            const name = document.getElementById('name').value;
-            const username = document.getElementById('username').value;
+        var maxAttempts = 3;  
+        var currentAttempt = 0;  
 
-            if (email.trim() === '' || name.trim() === '' || username.trim() === '') {
-                alert('Please fill in all fields before spinning the wheel.');
-                return;
+        function spinWheel() {
+            while (currentAttempt < maxAttempts) {
+                const email = document.getElementById('email').value;
+                const name = document.getElementById('name').value;
+                const username = document.getElementById('username').value;
+
+                if (email.trim() === '' || name.trim() === '' || username.trim() === '') {
+                    alert('Please fill in all fields before spinning the wheel.');
+                    return;
+                }
+
+                const wheel = document.getElementById('wheel');
+                wheel.style.transform = 'rotate(720deg)';
+
+                setTimeout(() => {
+                    const resultElement = document.getElementById('result');
+                    const result = checkPrize();
+                    resultElement.innerText = result.message;
+                    resultElement.className = result.className;
+                    resetWheel();
+                }, 3000);
+
+                currentAttempt++;  
+                return;  
             }
 
-            const wheel = document.getElementById('wheel');
-            wheel.style.transform = 'rotate(720deg)'; 
-
-            setTimeout(() => {
-                const resultElement = document.getElementById('result');
-                const result = checkPrize();
-                resultElement.innerText = result.message;
-                resultElement.className = result.className;
-                resetWheel();
-            }, 3000); 
+            alert("You have reached the maximum number of attempts.");
         }
 
         function checkPrize() {
@@ -163,7 +173,7 @@
             } else if (degrees >= 36 && degrees < 72) {
                 result = { message: "YOU WIN SLIP SCRUNCHIES!", className: "win" };
             } else {
-                result = { message: "NEXT TIME,GOOD LUCK!", className: "next-time" };
+                result = { message: "NEXT TIME, GOOD LUCK!", className: "next-time" };
             }
 
             return result;
@@ -176,11 +186,10 @@
         function resetWheel() {
             const wheel = document.getElementById('wheel');
             wheel.style.transition = 'none';
-            wheel.style.transform = 'rotate(0deg)'; 
-            void wheel.offsetWidth; 
-            wheel.style.transition = 'transform 3s cubic-bezier(0.17, 0.67, 0.83, 0.67)'; 
+            wheel.style.transform = 'rotate(0deg)';
+            void wheel.offsetWidth;
+            wheel.style.transition = 'transform 3s cubic-bezier(0.17, 0.67, 0.83, 0.67)';
         }
     </script>
 </body>
 </html>
-
