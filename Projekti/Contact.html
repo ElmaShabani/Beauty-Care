@@ -10,18 +10,19 @@
        
         <style>
           body {
-              background-image: url('../img/projekti.img.jpg');
-              background-size: cover;
-              background-position: center;
-              background-repeat: no-repeat;
-              background-origin: content-box;
-              background-attachment: fixed;
-              margin: 0; 
-              height: 100vh;
-              width: 100vw; 
-              display: flex; 
-              align-items: center;
-              justify-content: center; 
+                 background-image: url('../img/projekti.img.jpg');
+                   background-attachment: fixed;
+                       background-size: cover;    
+                       background-position: center;
+                       background-repeat: no-repeat;
+                       background-origin: content-box;
+                       background-attachment: fixed;
+                       margin: 0; 
+                       height: 100vh;
+                       width: 100vw; 
+                       display: flex; 
+                       align-items: center;
+                       justify-content: center; 
           }
           input, textarea, button{
             width: 100%;
@@ -58,16 +59,11 @@ if (nameInput.value.length === 0) {
 }
 
 let emailInput = document.getElementById('email');
-if (emailInput.value.includes('@')) 
-  { window.location.href = "MainPage.html";
-};
+if (emailInput.value.includes('@')) {
+    console.log('Valid email address.');
 } else {
     alert('Invalid email address.');
 }
-if (usernameInput && passwordInput && validateUsername(usernameInput) && validatePassword(passwordInput)) {
-                window.location.href = "MainPage.html";
-}
-
 let messageInput = document.getElementById('message');
 let messageLength = messageInput.value.length;
 switch (true) {
