@@ -133,13 +133,13 @@
  
                      <script>
             
-                         const currentDate = new Date();
-                 
-                         
-                         const currentDateElement = document.getElementById('currentDateElement');
-                         if (currentDateElement) {
-                             currentDateElement.textContent = `Current Date: ${currentDate.toLocaleDateString()} - Current time: ${currentDate.toLocaleTimeString()}`;
-                         }
+            const currentDate = new Date();
+                    
+                            
+                    const currentDateElement = document.getElementById('currentDateElement');
+                     if (currentDateElement) {
+                     currentDateElement.innerHTML = `Current Date: ${currentDate.toLocaleDateString()}<br>  Current time: ${currentDate.toLocaleTimeString()}`;
+                     }
                      </script></li>
              </ul>
          </div>
