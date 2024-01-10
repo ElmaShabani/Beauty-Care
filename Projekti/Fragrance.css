@@ -176,7 +176,7 @@ max-width: 900px;
      footer ul li {
         margin-left: 400px;
         margin-bottom: 8px;
-        font-size: 14px;
+        font-size: 20px;
     }
     
      footer a {
@@ -187,3 +187,16 @@ max-width: 900px;
     footer a:hover {
         text-decoration: underline;
     }
+    .site-footer-payments {
+        padding: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(236, 206, 176, 0.5);
+        }
+        .site-footer-payments__link__icon {
+            display: block;
+            margin: 1.5vw;
+            justify-content: center;
+            }
