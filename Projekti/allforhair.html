@@ -52,19 +52,19 @@
         </div>
     
         
-        <div class="container3" style="font-family: Verdana, Geneva, Tahoma, sans-serif;" >
-            <div class="middle-box">
-                <div class="sub-box">
-                    <a href="treatments.html">TREATMENTS</a>
+        <div class="container3" style="font-family: Georgia, 'Times New Roman', Times, serif;" >
+            <div class="middle-box d-flex justify-content-around">
+                  <div class="sub-box">
+                    <a href="treatments.html" class="btn btn-light">TREATMENTS</a>
                 </div>
                 <div class="sub-box">
-                    <a href="styling.html">STYLING</a>
+                    <a href="styling.html" class="btn btn-light">STYLING</a>
                 </div>
                 <div class="sub-box">
-                    <a href="gifts.html">GIFT SETS</a>
+                    <a href="gifts.html" class="btn btn-light">GIFT SETS</a>
                 </div>
                 <div class="sub-box">
-                    <a href="seall.html">SEE ALL</a>
+                    <a href="seall.html" class="btn btn-light">SEE ALL</a>
                 </div>
             </div>
             
@@ -72,9 +72,6 @@
         
         
     </header>
-    
-    
-
     <section id="video-section">
         <video width="100%" height="100%" autoplay loop muted >
             <source src="../img/hair.mp4" type="video/mp4" autoplay>
@@ -82,20 +79,18 @@
     </section>
 
 
-    <div class="fourth-container">
+    <div class="fourth-container" style="border: 2px solid pink; border-radius: 10px;border-style: double; margin-left: 30px; margin-right: 30px;">
         <div class="image-container">
             <img src="../img/hairphoto.webp" alt="Hair" class="round-image">
         </div>
 
-        <div class="quote-container">
-            <blockquote>
+        <div class="quote-container" style="border: 2 px solid black;">
+            <blockquote >
                 
                 <h1 id="quote" style="font-family: Georgia, 'Times New Roman', Times, serif; color: black;">{{quoteText}}</h1>
                 <p>{{paragraphText}}</p>
             </blockquote>
             
-
-      
             <button class="btn btn-primary" onclick="changeQuote()">{{buttonText}}</button>
         </div>
         
@@ -105,21 +100,24 @@
     </div>
     <p style="font-size: 2em; background-color: #fff; margin-bottom: 50px; font-family:'Times New Roman', Times, serif; text-align:center; margin-top: 150px;"><b><i>If you want to win prize click the link below!</i></b></p>
     <p style="text-align: center; margin-bottom: 150px;"><a href="giveaway.html" target="_blank" style="font-size: 2em; background-color: #fff;font-family:'Times New Roman', Times, serif;color: rgb(152, 111, 15); text-align: center; margin-bottom: 150px;">GIVEAWAY!!</a></p>
-    <button id="revealProducts">Reveal Products</button>
+
 
     <h2>The most expensive hair product is:</h2>
     <div id="expensiveProduct" class="hidden">
         <img id="expensiveProductImage" src="../img/hair.jpg" alt="Expensive Product Image">
-        <ul style="list-style: circle;" id="expensiveProductList"></ul>
+        <ul class="list-group" id="expensiveProductList"></ul>
     </div>
-  
+
+    <button id="revealExpensiveProduct" class="btn btn-primary">Reveal Most Expensive Product</button>
+
     <h2>The cheapest hair product is:</h2>
     <div id="cheapestProduct" class="hidden">
         <img id="cheapestProductImage" src="../img/hair1.jpg" alt="Cheapest Product Image">
-        <ul style="list-style: circle;" id="cheapestProductList"></ul>
+        <ul class="list-group" id="cheapestProductList"></ul>
     </div>
 
-  
+    <button id="revealCheapestProduct" class="btn btn-primary">Reveal Cheapest Product</button>
+
     <script>
         $(document).ready(function () {
             const products = [
@@ -129,44 +127,49 @@
                 { id: 4, name: 'Prep', price: 30 },
                 { id: 5, name: 'Curl Smith', price: 24 },
             ];
-    
+
             const mostExpensiveProduct = products.reduce((maxProduct, currentProduct) => {
                 return (currentProduct.price > maxProduct.price) ? currentProduct : maxProduct;
             }, products[0]);
-    
+
             const cheapestProduct = products.reduce((minProduct, currentProduct) => {
                 return (currentProduct.price < minProduct.price) ? currentProduct : minProduct;
             }, products[0]);
-    
+
             const expensiveProductList = $('#expensiveProductList');
             const expensiveProductImage = $('#expensiveProductImage');
             const expensiveProductContainer = $('#expensiveProduct');
-    
+
             products
                 .filter(product => product.price === mostExpensiveProduct.price)
                 .forEach(product => {
-                    const listItem = $('<li>').text(`${product.name} - $${product.price.toFixed(2)}`);
+                    const listItem = $('<li>').addClass('list-group-item').text(`${product.name} - $${product.price.toFixed(2)}`);
                     expensiveProductList.append(listItem);
                 });
-    
+
             const cheapestProductList = $('#cheapestProductList');
             const cheapestProductImage = $('#cheapestProductImage');
             const cheapestProductContainer = $('#cheapestProduct');
-    
+
             products
                 .filter(product => product.price === cheapestProduct.price)
                 .forEach(product => {
-                    const listItem = $('<li>').text(`${product.name} - $${product.price.toFixed(2)}`);
+                    const listItem = $('<li>').addClass('list-group-item').text(`${product.name} - $${product.price.toFixed(2)}`);
                     cheapestProductList.append(listItem);
                 });
-    
-            
-            $('#revealProducts').click(function () {
+
+            $('#revealExpensiveProduct').click(function () {
                 expensiveProductContainer.removeClass('hidden').hide().fadeIn(800);
+            });
+
+            $('#revealCheapestProduct').click(function () {
                 cheapestProductContainer.removeClass('hidden').hide().fadeIn(800);
             });
         });
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
     
   
 </div>
@@ -175,85 +178,87 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   
     <footer>
-        
-        <div class="footer-container">
-            <div class="left"> <h2>Everglow Beauty</h2> <p style="font-size: 20px;">Everglow Beauty Kosova</p></div> 
+        <div class="container d-flex footer-container">
+            <div class="left">
+                <h2>Everglow Beauty</h2>
+                <p style="font-size: 20px;">Everglow Beauty Kosova</p>
+            </div>
             <div class="quick-links">
                 <h2>Quick Links</h2>
                 <ul>
                     <li><a href="MainPage.html">Home</a></li>
                     <li><a href="OurStory.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li> <div id="currentDateElement"></div>
-
+                    <li><a href="contact.html">Contact</a>
+                    <li><div id="currentDateElement"></div>
                         <script>
-               
+    
                             const currentDate = new Date();
-                    
-                            
                             const currentDateElement = document.getElementById('currentDateElement');
-                             if (currentDateElement) {
-                             currentDateElement.innerHTML = `Current Date: ${currentDate.toLocaleDateString()} <br>  Current time: ${currentDate.toLocaleTimeString()}`;
-                             }
-
-                        </script></li>
+                            if (currentDateElement) {
+                                currentDateElement.textContent = `Current Date: ${currentDate.toLocaleDateString()} - Current time: ${currentDate.toLocaleTimeString()}`;
+                            }
+                        </script>
+                    </li>
                 </ul>
             </div>
-            
-            
             <div class="get-in-touch">
                 <h2>Get in Touch</h2>
-                <address style="margin-left: 100px; font-size: 20px; font-family:Georgia, 'Times New Roman', Times, serif;" >
-                    <a href="https://maps.app.goo.gl/scmxnwzCazoUVT8b9">Address: Prishtine</a>
-                </address>
-                <p>Email: <mark style="background-color: white;"> <a href="mailto:everglowbeauty@gmail.com">everglowbeauty&amp;gmail.com</a> </mark></p>
-                <p>Phone: <mark style="background-color: white;">+383 48 555 111</mark></p>
+                <address
+                    style="margin-left: 100px; font-size: 20px; font-family:Georgia, 'Times New Roman', Times, serif;">
+                    <a href="https://maps.app.goo.gl/scmxnwzCazoUVT8b9">Address: Prishtine</a> </address>
+                <p>Email: <mark style="background-color: white;"> <a
+                            href="mailto:everglowbeauty@gmail.com">everglowbeauty@gmail.com</a> </mark></p>
+                <p>Phone: <mark style="background-color: white;">+383 48 555 111</mark> </p>
             </div>
-            
         </div>
-        
-
-        <div class="site-footer-payments">
+        <div class="container-fluid site-footer-payments">
             <aside>
                 <h2>Payment methods: </h2>
             </aside>
+            <div class="row">
+              <div class="col text-center">
             <a class="site-footer-payments__link" href="https://www.paypal.com/" style="pointer-events: auto;">
-                <img src="https://images.ctfassets.net/eoaaqxyywn6o/6rDEb4sJOBkiIga3rkaSfA/b705c283f12f64d22365f9d168d2e9be/PayPal.svg" alt="PayPal" class="site-footer-payments__link__icon">
-            </a>
-            <img src="https://images.ctfassets.net/eoaaqxyywn6o/2fVeO7f2x78KlbQuhqmuVb/a195d07a55c2bb8e1f595d5b541d4d79/Clearpay.svg" alt="Clearpay" class="site-footer-payments__link__icon"></a>
-            <a class="site-footer-payments__link" href="https://usa.visa.com/" style="pointer-events: auto;">
-            <img src="https://images.ctfassets.net/eoaaqxyywn6o/4QTzSyV3E2jIfll4u3GgIW/46acc6659798376dc8bb416454f2baba/Visa.svg" alt="Visa" class="site-footer-payments__link__icon"></a>
-            <a class="site-footer-payments__link" href="https://www.americanexpress.com/" style="pointer-events: auto;">
-            <img  src="https://images.ctfassets.net/eoaaqxyywn6o/1R0NBLVCShxTQNVHNjanE4/c970e9e15ecbb026929000ae3fcce6ae/Amex.svg" alt="Amex" class="site-footer-payments__link__icon"></a>
-            <a class="site-footer-payments__link" href="https://www.mastercard.us/en-us.html" style="pointer-events: auto;">
-            <img src="https://images.ctfassets.net/eoaaqxyywn6o/5bs4r6UiioP3Fkj4Qg35o8/5583c0ecc4b6500a1083fd38cfabf6dc/Mastercard.svg" alt="Mastercard" class="site-footer-payments__link__icon"></a>
-            <a class="site-footer-payments__link" href="https://n26.com/en-eu/maestro-card" style="pointer-events: auto;">
-            <img src="https://images.ctfassets.net/eoaaqxyywn6o/5IdXqCmgjNCVwZNyssRsdE/702c37ee931258aad2071e063bbd337e/Maestro.svg" alt="Maestro" class="site-footer-payments__link__icon"></a>
-            
+                <img src="https://images.ctfassets.net/eoaaqxyywn6o/6rDEb4sJOBkiIga3rkaSfA/b705c283f12f64d22365f9d168d2e9be/PayPal.svg"
+                    alt="PayPal" class="site-footer-payments__link__icon"></a></div>
+             <div class="col text-center"><a class="site-footer-payments__link" href="https://www.clearpay.co.uk/en-GB" style="pointer-events: auto;">
+                <img src="https://images.ctfassets.net/eoaaqxyywn6o/2fVeO7f2x78KlbQuhqmuVb/a195d07a55c2bb8e1f595d5b541d4d79/Clearpay.svg"
+                    alt="Clearpay" class="site-footer-payments__link__icon"></a></div>
+             <div class="col text-center"><a class="site-footer-payments__link" href="https://usa.visa.com/" style="pointer-events: auto;">
+                <img src="https://images.ctfassets.net/eoaaqxyywn6o/4QTzSyV3E2jIfll4u3GgIW/46acc6659798376dc8bb416454f2baba/Visa.svg"
+                    alt="Visa" class="site-footer-payments__link__icon"></a></div>
+             <div class="col text-center"><a class="site-footer-payments__link" href="https://www.americanexpress.com/" style="pointer-events: auto;">
+                <img src="https://images.ctfassets.net/eoaaqxyywn6o/1R0NBLVCShxTQNVHNjanE4/c970e9e15ecbb026929000ae3fcce6ae/Amex.svg"
+                    alt="Amex" class="site-footer-payments__link__icon"></a></div>
+             <div class="col text-center"><a class="site-footer-payments__link" href="https://www.mastercard.us/en-us.html" style="pointer-events: auto;">
+                <img src="https://images.ctfassets.net/eoaaqxyywn6o/5bs4r6UiioP3Fkj4Qg35o8/5583c0ecc4b6500a1083fd38cfabf6dc/Mastercard.svg"
+                    alt="Mastercard" class="site-footer-payments__link__icon"></a></div>
+             <div class="col text-center"><a class="site-footer-payments__link" href="https://n26.com/en-eu/maestro-card" style="pointer-events: auto;">
+                <img src="https://images.ctfassets.net/eoaaqxyywn6o/5IdXqCmgjNCVwZNyssRsdE/702c37ee931258aad2071e063bbd337e/Maestro.svg"
+                    alt="Maestro" class="site-footer-payments__link__icon"></a></div>
         </div>
-        
+        </div>
+    
     </footer>
 
     <script>
-      
         var initialQuote = "Hair care is self-care!";
-        var initialParagraph = "Throughout history, hair has played a significant role in our society it is associated with youthfulness and beauty in women and virility and masculinity in men; so it's no surprise that hair loss can make many men and women feel self-conscious.Your hair is the crown you never take off, after all.Life is too short not to appreciate your natural mane and to go for the hair of your dreams.Hair matter. Pay attention to your hair, because everyone else will.Good looking hair isn't just pleasing to the eye, but often indicates a strong healthy individual. Being attracted to healthy hair is quite natural. It also shows a sign of good hygiene and care for one's self.";
+        var initialParagraph = "Throughout history, hair has played a significant role in our society it is associated with youthfulness and beauty in women and virility and masculinity in men, so it's no surprise that hair loss can make many men and women feel self-conscious.Your hair is the crown you never take off, after all.Life is too short not to appreciate your natural mane and to go for the hair of your dreams.Hair matter. Pay attention to your hair, because everyone else will.Good looking hair isn't just pleasing to the eye, but often indicates a strong healthy individual. Being attracted to healthy hair is quite natural. It also shows a sign of good hygiene and care for one's self.";
         var reminderButtonText = "Reminder";
-
+        
+    
         document.getElementById("quote").textContent = initialQuote;
         document.querySelector(".quote-container p").textContent = initialParagraph;
         document.querySelector(".quote-container button").textContent = reminderButtonText;
-
+    
         function changeQuote() {
-          
             var quoteElement = document.getElementById("quote");
-
+    
             if (quoteElement) {
-
-                quoteElement.textContent = "And with our products your hair will look gorgeous!";
+                quoteElement.textContent = "And with our products, your hair will look gorgeous!";
             }
         }
-        
     </script>
+    
+
 </body>
 </html>
