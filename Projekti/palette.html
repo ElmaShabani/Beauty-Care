@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="jquery.js"></script>
+  <link rel="icon" type="image/x-icon" href="../img/favicon.ico.PNG">
+  <title>Color Palette Generator</title>
+
+<style>
+    body{
+        background-color: white ;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    #color-generator {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 8px;
+}
+
+.color-selector {
+  margin-bottom: 20px;
+}
+
+#color-palette {
+  margin-top: 20px;
+}
+
+.palette-color {
+    border: 2px solid black;
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+</style></head>
+<body>
+
+  <div id="color-generator">
+    <h2 style="color: black;">Express your unique style by creating your personalized makeup color palette</h2>
+    
+    <div class="color-selector">
+      <label for="eyeshadow-color">Eyeshadow Color:</label>
+      <input type="color" id="eyeshadow-color" onchange="updateColor('eyeshadow')">
+    </div>
+
+    <div class="color-selector">
+      <label for="lipstick-color">Lipstick Color:</label>
+      <input type="color" id="lipstick-color" onchange="updateColor('lipstick')">
+    </div>
+
+    <div class="color-selector">
+      <label for="blush-color">Blush Color:</label>
+      <input type="color" id="blush-color" onchange="updateColor('blush')">
+    </div>
+
+    <div class="color-selector">
+      <label for="foundation-color">Foundation Color:</label>
+      <input type="color" id="foundation-color" onchange="updateColor('foundation')">
+    </div>
+
+    <div class="color-selector">
+      <label for="contour-color">Contour Color:</label>
+      <input type="color" id="contour-color" onchange="updateColor('contour')">
+    </div>
+    
+
+    <div id="color-palette">
+       <h3>Your Color Palette:</h3>
+      <div id="yourpalette" style="border-radius: 4px; border: 2px solid black; width:285px">
+      <div id="eyeshadow" class="palette-color"></div>
+      <div id="lipstick" class="palette-color"></div>
+      <div id="blush" class="palette-color"></div>
+      <div id="foundation" class="palette-color"></div>
+      <div id="contour" class="palette-color"></div>
+    </div>
+  </div>
+<script>
+
+let tekstiOriginal = '<h2 style="color: black; font-size: 1.5em;">Express your unique style by creating your personalized makeup color palette</h2>';
+let teksti = 'h2';
+let elementi = document.querySelector(teksti);
+let modifiedHTML = tekstiOriginal.replace('style="color: black;', 'style="color: hotpink;');
+elementi.innerHTML = modifiedHTML;
+
+    function updateColor(type) {
+  const colorInput = document.getElementById(`${type}-color`).value;
+  const paletteColor = document.getElementById(type);
+
+  paletteColor.style.backgroundColor = colorInput;
+}
+
+
+</script>
+</body>
+</html>

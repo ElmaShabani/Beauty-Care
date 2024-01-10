@@ -59,14 +59,15 @@ footer {
 .quick-links,
 .get-in-touch {
     flex: 1;
+    margin-left: 100px;
 }
 .get-in-touch p {
-    margin-left: 400px;
+    margin-left: 100px;
     font-size: 20px;
 }
 .quick-links h2,
 .get-in-touch h2 {
-    margin-left: 400px;
+    margin-left: 100px;
     margin-bottom: 10px;
 }
 .left{
@@ -75,43 +76,38 @@ footer {
 .fifth-container{
     width: 90%;
 }
-.list{
-    width: 90%;
-    margin-left: 20px;
-    margin-top: 20px;
-    margin-bottom: 100px;}
-ul , li {
-    width: 90%;
-    padding: 7px;
+
+    footer ul {
+        list-style: none;
+        padding: 0;
     }
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-nav ul li {
-    margin-left: 400px;
-    margin-bottom: 8px;
-    font-size: 20px;
-}
-a {
-    text-decoration: none;
-    color:black;
-}
-a:hover {
-    text-decoration: underline;
-}
+    
+     footer ul li {
+        margin-left: 100px;
+        margin-bottom: 8px;
+        font-size: 20px;
+    }
+    
+     footer a {
+        text-decoration: none;
+        color:black;
+    }
+    
+    footer a:hover {
+        text-decoration: underline;
+    }
 
 header {
     background-color: #ffffff;
     color: #000000;
     padding: 5px;
     display: flex;
-    align-items: center; /* Center items vertically */
+    align-items: center; 
 }
    header img {
-    max-width: 80px; /* Adjust the max-width as needed */
+    max-width: 80px; 
     height: auto;
-    margin-right: 20px; /* Add some spacing between the logo and other content */
+    margin-right: 20px; 
 }
    
 .blockquote p{
@@ -146,18 +142,18 @@ max-width: 900px;
 }
 
 .site-footer-payments {
-padding: 40px;
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-align-items: center;
-background-color: rgba(236, 206, 176, 0.5);
-}
-.site-footer-payments__link_icon img {
-display: block;
-margin: 1.5vw;
-justify-content: center;
-}
+    padding: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(236, 206, 176, 0.5);
+    }
+    .site-footer-payments__link__icon {
+    display: block;
+    margin: 1.5vw;
+    justify-content: center;
+    }
 #video-section {
     height: auto;
     display: flex;

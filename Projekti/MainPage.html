@@ -14,7 +14,8 @@
 
             $('header').hide().fadeIn(1000);
         });
-    </script>
+        
+   </script>
 </head>
 
 <body>
@@ -32,12 +33,13 @@
                      <li><a href="cheeks.html">Cheek</a></li>
                      <li><a href="makeup.html">See All</a></li>
                  </ul></li>
-             <li><a href="Skintips.html">Skin Care</a>
+             <li><a href="index.html">Skin Care</a>
                  <ul class="subcategories">
                      <li><a href="Dehydration.html">Dehydration</a></li>
                      <li><a href="Daycream.html">Day & Night Cream Moisturiser</a></li>
                      <li><a href="Face.html">Face Masks & Cleansers</a></li>
                      <li><a href="Serum.html">Serums & Lip Care</a></li>
+                     <li><a href="Skintips.html">Skin Tips</a></li>
  
  
                  </ul>
@@ -337,17 +339,20 @@
                 <ul>
                     <li><a href="MainPage.html">Home</a></li>
                     <li><a href="OurStory.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li> <div id="currentDateElement"></div>
 
                         <script>
-
+               
                             const currentDate = new Date();
+                    
+                            
                             const currentDateElement = document.getElementById('currentDateElement');
-                            if (currentDateElement) {
-                                currentDateElement.textContent = `Current Date: ${currentDate.toLocaleDateString()} - Current time: ${currentDate.toLocaleTimeString()}`;
-                            }
-                        </script>
-                    </li>
+                             if (currentDateElement) {
+                             currentDateElement.innerHTML = `Current Date: ${currentDate.toLocaleDateString()} <br>  Current time: ${currentDate.toLocaleTimeString()}`;
+                             }
+
+                        </script></li>
                 </ul>
             </div>
             <div class="get-in-touch">
@@ -361,6 +366,9 @@
             </div>
         </div>
         <div class="site-footer-payments">
+            <aside>
+                <h2>Payment methods: </h2>
+            </aside>
             <a class="site-footer-payments__link" href="https://www.paypal.com/" style="pointer-events: auto;">
                 <img src="https://images.ctfassets.net/eoaaqxyywn6o/6rDEb4sJOBkiIga3rkaSfA/b705c283f12f64d22365f9d168d2e9be/PayPal.svg"
                     alt="PayPal" class="site-footer-payments__link__icon"></a>
@@ -387,6 +395,7 @@
     <script src="mainpage.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    
     <script>
         $(document).ready(function () {
 

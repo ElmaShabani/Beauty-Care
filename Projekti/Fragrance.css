@@ -167,3 +167,36 @@ max-width: 900px;
     padding: 7px;
     margin-left: 0%;
     }
+    
+            .site-footer-payments {
+                padding: 40px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                background-color: rgba(236, 206, 176, 0.5);
+                }
+                .site-footer-payments__link__icon {
+                display: block;
+                margin: 1.5vw;
+                justify-content: center;
+                }
+                footer ul {
+                    list-style: none;
+                    padding: 0;
+                }
+                
+                 footer ul li {
+                    margin-left: 400px;
+                    margin-bottom: 8px;
+                    font-size: 20px;
+                }
+                
+                 footer a {
+                    text-decoration: none;
+                    color:black;
+                }
+                
+                footer a:hover {
+                    text-decoration: underline;
+                }
