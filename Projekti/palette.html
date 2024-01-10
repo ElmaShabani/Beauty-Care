@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script src="jquery.js"></script>
+  <link rel="icon" type="image/x-icon" href="../img/favicon.ico.PNG">
   <title>Color Palette Generator</title>
 
 <style>
@@ -40,7 +42,7 @@
 <body>
 
   <div id="color-generator">
-    <h2>Express your unique style by creating your personalized makeup color palette</h2>
+    <h2 style="color: black;">Express your unique style by creating your personalized makeup color palette</h2>
     
     <div class="color-selector">
       <label for="eyeshadow-color">Eyeshadow Color:</label>
@@ -79,12 +81,20 @@
     </div>
   </div>
 <script>
+
+let tekstiOriginal = '<h2 style="color: black; font-size: 1.5em;">Express your unique style by creating your personalized makeup color palette</h2>';
+let teksti = 'h2';
+let elementi = document.querySelector(teksti);
+let modifiedHTML = tekstiOriginal.replace('style="color: black;', 'style="color: hotpink;');
+elementi.innerHTML = modifiedHTML;
+
     function updateColor(type) {
   const colorInput = document.getElementById(`${type}-color`).value;
   const paletteColor = document.getElementById(type);
 
   paletteColor.style.backgroundColor = colorInput;
 }
+
 
 </script>
 </body>
