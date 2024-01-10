@@ -91,49 +91,65 @@
     </div>
 </div>
 <footer>
-    <div class="footer-container">
-       <div class="left"> <h2>Everglow Beauty</h2> <p style="font-size: 20px;">Everglow Beauty Kosova</p></div> 
+    <div class="container d-flex footer-container">
+        <div class="left">
+            <h2>Everglow Beauty</h2>
+            <p style="font-size: 20px;">Everglow Beauty Kosova</p>
+        </div>
         <div class="quick-links">
             <h2>Quick Links</h2>
             <ul>
                 <li><a href="MainPage.html">Home</a></li>
                 <li><a href="OurStory.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li> <div id="currentDateElement"></div>
-
+                <li><a href="contact.html">Contact</a>
+                <li><div id="currentDateElement"></div>
                     <script>
-           
+
                         const currentDate = new Date();
-                
-                        
                         const currentDateElement = document.getElementById('currentDateElement');
                         if (currentDateElement) {
                             currentDateElement.textContent = `Current Date: ${currentDate.toLocaleDateString()} - Current time: ${currentDate.toLocaleTimeString()}`;
                         }
-                    </script></li>
+                    </script>
+                </li>
             </ul>
         </div>
         <div class="get-in-touch">
             <h2>Get in Touch</h2>
-            <address style="margin-left: 100px; font-size: 20px; font-family:Georgia, 'Times New Roman', Times, serif;" > <a href ="https://maps.app.goo.gl/scmxnwzCazoUVT8b9">Address: Prishtine</a>  </address>
-            <p>Email: <mark style="background-color: white;"> <a href="mailto:everglowbeauty@gmail.com">everglowbeauty@gmail.com</a> </mark></p>
-            <p>Phone: <mark style="background-color: white;">+383 48 555 111</mark>  </p>
+            <address
+                style="margin-left: 100px; font-size: 20px; font-family:Georgia, 'Times New Roman', Times, serif;">
+                <a href="https://maps.app.goo.gl/scmxnwzCazoUVT8b9">Address: Prishtine</a> </address>
+            <p>Email: <mark style="background-color: white;"> <a
+                        href="mailto:everglowbeauty@gmail.com">everglowbeauty@gmail.com</a> </mark></p>
+            <p>Phone: <mark style="background-color: white;">+383 48 555 111</mark> </p>
         </div>
     </div>
-    <div class="site-footer-payments">
+    <div class="container-fluid site-footer-payments">
+        <aside>
+            <h2>Payment methods: </h2>
+        </aside>
+        <div class="row">
+          <div class="col text-center">
         <a class="site-footer-payments__link" href="https://www.paypal.com/" style="pointer-events: auto;">
-        <img src="https://images.ctfassets.net/eoaaqxyywn6o/6rDEb4sJOBkiIga3rkaSfA/b705c283f12f64d22365f9d168d2e9be/PayPal.svg" alt="PayPal" class="site-footer-payments__link__icon"></a>
-        <a class="site-footer-payments__link" href="https://www.clearpay.co.uk/en-GB" style="pointer-events: auto;">
-        <img src="https://images.ctfassets.net/eoaaqxyywn6o/2fVeO7f2x78KlbQuhqmuVb/a195d07a55c2bb8e1f595d5b541d4d79/Clearpay.svg" alt="Clearpay" class="site-footer-payments__link__icon"></a>
-        <a class="site-footer-payments__link" href="https://usa.visa.com/" style="pointer-events: auto;">
-        <img src="https://images.ctfassets.net/eoaaqxyywn6o/4QTzSyV3E2jIfll4u3GgIW/46acc6659798376dc8bb416454f2baba/Visa.svg" alt="Visa" class="site-footer-payments__link__icon"></a>
-        <a class="site-footer-payments__link" href="https://www.americanexpress.com/" style="pointer-events: auto;">
-        <img  src="https://images.ctfassets.net/eoaaqxyywn6o/1R0NBLVCShxTQNVHNjanE4/c970e9e15ecbb026929000ae3fcce6ae/Amex.svg" alt="Amex" class="site-footer-payments__link__icon"></a>
-        <a class="site-footer-payments__link" href="https://www.mastercard.us/en-us.html" style="pointer-events: auto;">
-        <img src="https://images.ctfassets.net/eoaaqxyywn6o/5bs4r6UiioP3Fkj4Qg35o8/5583c0ecc4b6500a1083fd38cfabf6dc/Mastercard.svg" alt="Mastercard" class="site-footer-payments__link__icon"></a>
-        <a class="site-footer-payments__link" href="https://n26.com/en-eu/maestro-card" style="pointer-events: auto;">
-        <img src="https://images.ctfassets.net/eoaaqxyywn6o/5IdXqCmgjNCVwZNyssRsdE/702c37ee931258aad2071e063bbd337e/Maestro.svg" alt="Maestro" class="site-footer-payments__link__icon"></a>
-</div>
+            <img src="https://images.ctfassets.net/eoaaqxyywn6o/6rDEb4sJOBkiIga3rkaSfA/b705c283f12f64d22365f9d168d2e9be/PayPal.svg"
+                alt="PayPal" class="site-footer-payments__link__icon"></a></div>
+         <div class="col text-center"><a class="site-footer-payments__link" href="https://www.clearpay.co.uk/en-GB" style="pointer-events: auto;">
+            <img src="https://images.ctfassets.net/eoaaqxyywn6o/2fVeO7f2x78KlbQuhqmuVb/a195d07a55c2bb8e1f595d5b541d4d79/Clearpay.svg"
+                alt="Clearpay" class="site-footer-payments__link__icon"></a></div>
+         <div class="col text-center"><a class="site-footer-payments__link" href="https://usa.visa.com/" style="pointer-events: auto;">
+            <img src="https://images.ctfassets.net/eoaaqxyywn6o/4QTzSyV3E2jIfll4u3GgIW/46acc6659798376dc8bb416454f2baba/Visa.svg"
+                alt="Visa" class="site-footer-payments__link__icon"></a></div>
+         <div class="col text-center"><a class="site-footer-payments__link" href="https://www.americanexpress.com/" style="pointer-events: auto;">
+            <img src="https://images.ctfassets.net/eoaaqxyywn6o/1R0NBLVCShxTQNVHNjanE4/c970e9e15ecbb026929000ae3fcce6ae/Amex.svg"
+                alt="Amex" class="site-footer-payments__link__icon"></a></div>
+         <div class="col text-center"><a class="site-footer-payments__link" href="https://www.mastercard.us/en-us.html" style="pointer-events: auto;">
+            <img src="https://images.ctfassets.net/eoaaqxyywn6o/5bs4r6UiioP3Fkj4Qg35o8/5583c0ecc4b6500a1083fd38cfabf6dc/Mastercard.svg"
+                alt="Mastercard" class="site-footer-payments__link__icon"></a></div>
+         <div class="col text-center"><a class="site-footer-payments__link" href="https://n26.com/en-eu/maestro-card" style="pointer-events: auto;">
+            <img src="https://images.ctfassets.net/eoaaqxyywn6o/5IdXqCmgjNCVwZNyssRsdE/702c37ee931258aad2071e063bbd337e/Maestro.svg"
+                alt="Maestro" class="site-footer-payments__link__icon"></a></div>
+    </div>
+    </div>
 
 </footer>
 
