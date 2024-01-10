@@ -37,34 +37,18 @@
                     <form id="contactForm">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
-<<<<<<< HEAD
-                 <br>
+              
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
                 <keygem name="user_key" challenge="random_string"> 
-                <br>
-    
+        
                 <label for="message">Message:</label>
-                <br>
                 <textarea id="message" name="message" rows="4" required></textarea> 
-                <br>
-=======
-                <keygem name="user_key" challenge="random_string">
-    
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email" required><br>
-    
-                <label for="message">Message:</label><br>
-                <textarea id="message" name="message" rows="4" required></textarea>
->>>>>>> a9d906d5dc1a4a5a87714be73d87b23e1e45cd82
     
                 <button type="button" onclick="submitForm()">Submit</button>
             </form>
         </div>
         </div>
-    
-       <!--<script src="Contact.js"></script>
-        <script src="https://code.jquery.com/contact.js"></script> -->
         <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
    <script>
     function submitForm(){
@@ -73,15 +57,17 @@ if (nameInput.value.length === 0) {
     alert('Please enter your name.');
 }
 
-// Kushtëzim IF...ELSE
 let emailInput = document.getElementById('email');
-if (emailInput.value.includes('@')) {
-    console.log('Valid email address.');
+if (emailInput.value.includes('@')) 
+  { window.location.href = "MainPage.html";
+};
 } else {
     alert('Invalid email address.');
 }
+if (usernameInput && passwordInput && validateUsername(usernameInput) && validatePassword(passwordInput)) {
+                window.location.href = "MainPage.html";
+}
 
-// SWITCH
 let messageInput = document.getElementById('message');
 let messageLength = messageInput.value.length;
 switch (true) {

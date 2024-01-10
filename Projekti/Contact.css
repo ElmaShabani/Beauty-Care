@@ -37,3 +37,6 @@ button {
 button:hover {
     background-color:darkgray;
 }
+input, textarea, button{
+    width: 100%;
+  }
