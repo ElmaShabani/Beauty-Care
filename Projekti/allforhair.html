@@ -119,53 +119,52 @@
     <button id="revealCheapestProduct" class="btn btn-primary">Reveal Cheapest Product</button>
 
     <script>
-        $(document).ready(function () {
-            const products = [
-                { id: 1, name: 'Dyson', price: 599.00 },
-                { id: 2, name: 'Flat Iron', price: 250 },
-                { id: 3, name: 'Hair Mask', price: 38 },
-                { id: 4, name: 'Prep', price: 30 },
-                { id: 5, name: 'Curl Smith', price: 24 },
-            ];
+         $(document).ready(function () {
+        const products = [
+            { id: 1, name: 'Dyson', price: 599.00 },
+            { id: 2, name: 'Flat Iron', price: 250 },
+            { id: 3, name: 'Hair Mask', price: 38 },
+            { id: 4, name: 'Prep', price: 30 },
+            { id: 5, name: 'Curl Smith', price: 24 },
+        ];
 
-            const mostExpensiveProduct = products.reduce((maxProduct, currentProduct) => {
-                return (currentProduct.price > maxProduct.price) ? currentProduct : maxProduct;
-            }, products[0]);
+        const mostExpensiveProduct = products.reduce((maxProduct, currentProduct) => {
+            return (currentProduct.price > maxProduct.price) ? currentProduct : maxProduct;
+        }, products[0]);
 
-            const cheapestProduct = products.reduce((minProduct, currentProduct) => {
-                return (currentProduct.price < minProduct.price) ? currentProduct : minProduct;
-            }, products[0]);
+        const cheapestProduct = products.reduce((minProduct, currentProduct) => {
+            return (currentProduct.price < minProduct.price) ? currentProduct : minProduct;
+        }, products[0]);
 
-            const expensiveProductList = $('#expensiveProductList');
-            const expensiveProductImage = $('#expensiveProductImage');
-            const expensiveProductContainer = $('#expensiveProduct');
+        const expensiveProductList = $('#expensiveProductList');
+        const expensiveProductImage = $('#expensiveProductImage');
+        const expensiveProductContainer = $('#expensiveProduct');
 
-            products
-                .filter(product => product.price === mostExpensiveProduct.price)
-                .forEach(product => {
-                    const listItem = $('<li>').addClass('list-group-item').text(`${product.name} - $${product.price.toFixed(2)}`);
-                    expensiveProductList.append(listItem);
-                });
+        products
+    .filter(product => product.price === mostExpensiveProduct.price)
+    .forEach(product => {
+        const listItem = $('<li>').addClass('list-group-item').text(`${product.name} - $${product.price.toString()}`);
+        expensiveProductList.append(listItem);
+    });
 
-            const cheapestProductList = $('#cheapestProductList');
-            const cheapestProductImage = $('#cheapestProductImage');
-            const cheapestProductContainer = $('#cheapestProduct');
+        const cheapestProductList = $('#cheapestProductList');
+        const cheapestProductImage = $('#cheapestProductImage');
+        const cheapestProductContainer = $('#cheapestProduct');
 
-            products
-                .filter(product => product.price === cheapestProduct.price)
-                .forEach(product => {
-                    const listItem = $('<li>').addClass('list-group-item').text(`${product.name} - $${product.price.toFixed(2)}`);
-                    cheapestProductList.append(listItem);
-                });
-
-            $('#revealExpensiveProduct').click(function () {
-                expensiveProductContainer.removeClass('hidden').hide().fadeIn(800);
-            });
-
-            $('#revealCheapestProduct').click(function () {
-                cheapestProductContainer.removeClass('hidden').hide().fadeIn(800);
-            });
+        products
+       .filter(product => product.price === cheapestProduct.price)
+       .forEach(product => {
+        const listItem = $('<li>').addClass('list-group-item').text(`${product.name} - $${product.price.toExponential()}`);
+        cheapestProductList.append(listItem);
+    });
+        $('#revealExpensiveProduct').click(function () {
+            expensiveProductContainer.removeClass('hidden').hide().fadeIn(800);
         });
+
+        $('#revealCheapestProduct').click(function () {
+            cheapestProductContainer.removeClass('hidden').hide().fadeIn(800);
+        });
+    });
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -240,6 +239,7 @@
     
     </footer>
 
+    
     <script>
         var initialQuote = "Hair care is self-care!";
         var initialParagraph = "Throughout history, hair has played a significant role in our society it is associated with youthfulness and beauty in women and virility and masculinity in men, so it's no surprise that hair loss can make many men and women feel self-conscious.Your hair is the crown you never take off, after all.Life is too short not to appreciate your natural mane and to go for the hair of your dreams.Hair matter. Pay attention to your hair, because everyone else will.Good looking hair isn't just pleasing to the eye, but often indicates a strong healthy individual. Being attracted to healthy hair is quite natural. It also shows a sign of good hygiene and care for one's self.";
