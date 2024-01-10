@@ -58,16 +58,11 @@ if (nameInput.value.length === 0) {
 }
 
 let emailInput = document.getElementById('email');
-if (emailInput.value.includes('@')) 
-  { window.location.href = "MainPage.html";
-};
+if (emailInput.value.includes('@')) {
+    console.log('Valid email address.');
 } else {
     alert('Invalid email address.');
 }
-if (usernameInput && passwordInput && validateUsername(usernameInput) && validatePassword(passwordInput)) {
-                window.location.href = "MainPage.html";
-}
-
 let messageInput = document.getElementById('message');
 let messageLength = messageInput.value.length;
 switch (true) {
