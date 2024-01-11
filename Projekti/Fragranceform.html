@@ -9,7 +9,7 @@
     <style>
         body {
      font-family: 'Arial', sans-serif;
-     background: linear-gradient(to right, #4caf50, #45a049);
+     background: linear-gradient(to right, peru, rgb(122, 100, 77));
      display: flex;
      align-items: center;
      justify-content: center;
@@ -48,7 +48,7 @@
         }
 
         button:hover {
-            background-color: #45a049;
+            background-color: #161304;
         }
 
         #result {
@@ -86,9 +86,9 @@
 
         <div class="product-list">
             <img src="../img/venesa20.png" alt="Chanel" class="active">
-            <img src="../img/venesa30.png" alt="Yves Saint Laurent">
-            <img src="../img/venesa40.png" alt="Tom Ford">
-            <img src="../img/venesa50.png" alt="Dior">
+            <img src="../img/venesa30.png" alt="Yves Saint Laurent" class="active" >
+            <img src="../img/venesa40.png" alt="Tom Ford" class="active">
+            <img src="../img/venesa50.png" alt="Dior" class="active">
         </div>
         <audio controls>
             <source src="../img/Audiooo11.mp3" type="audio/mp3" style="display:none;" >
@@ -108,11 +108,10 @@
             updateProductImage();
         });
 
-        let allowImageChange = true;  // Shtuar variabël të re
-
+        let allowImageChange = true;  
 function playGame() {
     if (!allowImageChange) {
-        // Klienti ka përdorur fatin e tij tashmë, nuk lejohet të luajë përsëri
+       
         return;
     }
 
@@ -145,11 +144,6 @@ function showResult(message, changeImage) {
     }
 
     }
-
-
-
-
-
         function calculateDiscount(percentage) {
             const originalPrice = 100;
             const discountAmount = (percentage / 100) * originalPrice;
