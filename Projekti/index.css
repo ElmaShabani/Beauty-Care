@@ -49,7 +49,7 @@ header img {
 }
 
 /* Pjesa e pare e body te faqes skincare */
-.container {
+.containerr {
     display: flex;
     justify-content: space-between;
     background-color: rgba(236, 206, 176, 0.5);
