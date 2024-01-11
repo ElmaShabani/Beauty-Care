@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Quiz</title>
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+    background-image: url(../img/backgroundJA.jpg);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.quiz-container {
+    max-width: 600px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.question {
+    margin-bottom: 30px;
+    
+}
+
+button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#resultContainer {
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none;
+}
+label {
+  text-align: left;
+}
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1 style="color: peru;">Welcome to the Beauty Quiz!</h1>
+        <form id="beautyQuizForm">
+            <div class="question">
+                <label for="makeupPreference">What's your go-to makeup look?</label>
+                <select id="makeupPreference" name="makeupPreference">
+                    <option value="natural">Natural</option>
+                    <option value="glam">Glam</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="hairType">What is you're hair type?</label>
+                <select id="hairType" name="hairType">
+                    <option value="straight">Straight</option>
+                    <option value="curly">Curly</option>
+                    
+                </select>
+            </div>
+            <div class="question">
+                <label for="favoriteIngredient">Pick a skincare ingredient you love:</label>
+                <select id="favoriteIngredient" name="favoriteIngredient">
+                    <option value="FaceMasks">Face Masks</option>
+                    <option value="Serums">Serums</option>
+                </select>
+            </div>
+            <button type="button" onclick="calculateResults()">Discover Your Beauty Persona</button>
+        </form>
+        <div id="resultContainer" class="hidden">
+            <h2>Your Beauty Persona:</h2>
+            <p id="resultText"></p>
+            <p>Explore our <a href="makeup.html" style="color: peru;"><i>Makeup products</i></a></p>
+            <p>Explore our <a href="seall.html" style="color: peru;"><i>Hair products</i></a></p>
+            <p>Explore our <a href="Seeall.html" style="color: peru;"><i>Fragrance products</i></a></p>
+            <p>Explore our <a href="Serum.html" style="color: peru;"><i>SkinCare products</i></a></p>
+        </div>
+    </div>
+    <script>
+        function calculateResults() {
+  
+    const makeupPreference = document.getElementById('makeupPreference').value;
+    const hairType = document.getElementById('hairType').value;
+    const favoriteIngredient = document.getElementById('favoriteIngredient').value;
+
+   
+    let beautyPersona = '';
+    if (makeupPreference === 'natural' && hairType === 'curly' && favoriteIngredient === 'Serums') {
+        beautyPersona = 'You are a Curly Natural Beauty Enthusiast!';
+    } else if (makeupPreference === 'glam' && hairType === 'straight' && favoriteIngredient === 'FaceMasks') {
+        beautyPersona = 'You are a Glam Diva with Radiant Skin!';
+    } else if (makeupPreference === 'natural' && hairType === 'curly' && favoriteIngredient === 'FaceMasks') {
+        beautyPersona = 'You are a Natural Trendsetter with Hydrated Skin!';
+    }  else if (makeupPreference === 'natural' && hairType === 'straight' && favoriteIngredient === 'Serums') {
+        beautyPersona = 'You are a Straight Haired Natural Beauty and a Skin Care Enthusiast!';
+    } else if (makeupPreference === 'natural' && hairType === 'straight' && favoriteIngredient === 'FaceMasks') {
+        beautyPersona = 'You are a Bold Trendsetter with Hydrated Skin!';
+    } else if (makeupPreference === 'glam' && hairType === 'curly' && favoriteIngredient === 'Serums') {
+        beautyPersona = 'You are a Glam Queen with a Cool HairStyle!';
+    } else if (makeupPreference === 'glam' && hairType === 'curly' && favoriteIngredient === 'FaceMasks') {
+        beautyPersona = 'You are Glamorous Barbie with Hydrated Skin!';
+    }  else if (makeupPreference === 'glam' && hairType === 'straight' && favoriteIngredient === 'Serums') {
+        beautyPersona = 'You are a Glam Babe  with Glowy Skin!';
+    } else {
+        beautyPersona = 'Discover your unique beauty persona!';
+    }
+
+   
+    document.getElementById('resultText').innerText = beautyPersona;
+    document.getElementById('resultContainer').classList.remove('hidden');
+}
+    </script>
+</body>
+</html>
+
