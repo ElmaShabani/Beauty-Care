@@ -106,21 +106,29 @@
             updateProductImage();
         });
 
-        function playGame() {
-            const guessedName = document.getElementById('perfumeName').value.toLowerCase();
-const currentPerfume = perfumeData[currentPerfumeIndex];
+        let allowImageChange = true;  // Shtuar variabël të re
 
-const regex = /^[a-zA-Z\s]+$/;
+function playGame() {
+    if (!allowImageChange) {
+        // Klienti ka përdorur fatin e tij tashmë, nuk lejohet të luajë përsëri
+        return;
+    }
 
-if (guessedName.match(regex) && guessedName === currentPerfume.name.toLowerCase()) {
-    const discountedPrice = calculateDiscount(currentPerfume.discount);
-    showResult(`Congratulations! You've guessed it right. You get a ${currentPerfume.discount}% discount. New Price: $${discountedPrice}`, false);
-} else {
-    showResult('Sorry, wrong guess. Try again! Please enter only letters and spaces without special characters or numbers.', true);
+    const guessedName = document.getElementById('perfumeName').value.toLowerCase();
+    const currentPerfume = perfumeData[currentPerfumeIndex];
+
+    const regex = /^[a-zA-Z\s]+$/;
+
+    if (guessedName.match(regex) && guessedName === currentPerfume.name.toLowerCase()) {
+        const discountedPrice = calculateDiscount(currentPerfume.discount);
+        showResult(`Congratulations! You've guessed it right. You get a ${currentPerfume.discount}% discount. New Price: $${discountedPrice}`, false);
+    } else {
+        showResult('Sorry, wrong guess. Try again! Please enter only letters and spaces without special characters or numbers.', true);
+    }
+    allowImageChange = false;  // Ndryshuar gjendjen pas lojës së parë
 }
-        }
 
-        function showResult(message, changeImage) {
+function showResult(message, changeImage) {
     const resultDiv = document.getElementById('result');
     const discountMessageElement = document.getElementById('discountMessage');
 
@@ -130,11 +138,14 @@ if (guessedName.match(regex) && guessedName === currentPerfume.name.toLowerCase(
     if (changeImage) {
         currentPerfumeIndex = (currentPerfumeIndex + 1) % perfumeData.length;
         updateProductImage();
-    } else {
-        // Nuk ndryshohet imazhi pas përgjigjes
-        // Mund të shtoni kod shtesë këtu nëse është e nevojshme
+    } else if (!changeImage) {
+        
     }
-}
+
+    }
+
+
+
 
 
         function calculateDiscount(percentage) {
