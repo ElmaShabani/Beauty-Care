@@ -54,7 +54,7 @@ canvas {
 button {
     width: 100px;
     height: 50px;
-    background-color: rgba(236, 206, 176, 0.5);
+    background-color: rgb(236, 206, 176, 0.5);
 }
 
 #fsheh1 {
@@ -149,10 +149,6 @@ footer {
     margin-bottom: 10px;
 }
 
-.left2 {
-    margin-left: 100px;
-}
-
 footer ul {
     list-style: none;
     padding: 0;
@@ -180,11 +176,4 @@ footer a:hover {
     justify-content: center;
     align-items: center;
     background-color: rgba(236, 206, 176, 0.5);
-}
-
-
-.site-footer-payments__link__icon {
-    display: block;
-    margin: 1.5vw;
-    justify-content: center;
 }
