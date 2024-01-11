@@ -54,7 +54,7 @@ canvas {
 button {
     width: 100px;
     height: 50px;
-    background-color: #babafe;
+    background-color: rgba(236, 206, 176, 0.5);
 }
 
 #fsheh1 {
