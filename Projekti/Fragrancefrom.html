@@ -86,7 +86,6 @@
         </div>
 
         <div class="product-list">
-           
             <img src="../img/venesa11.png" alt="Chanel" class="active">
             <img src="../img/venesa22.png" alt="Yves Saint Laurent">
             <img src="../img/venesa33.png" alt="Tom Ford">
@@ -95,78 +94,67 @@
     </form>
 
     <script>
-      const perfumeData = [
-    { name: 'Chanel', discount: 5, image: 'venesa11.png' },
-    { name: 'Yves Saint Laurent', discount: 10, image: 'venesa22.png' },
-    { name: 'Tom Ford', discount: 8, image: 'venesa33.png' },
-    { name: 'Dior', discount: 12, image: 'venesa44.png' }
-];
+        const perfumeData = [
+            { name: 'Chanel', discount: 5, image: 'venesa11.png' },
+            { name: 'Yves Saint Laurent', discount: 10, image: 'venesa22.png' },
+            { name: 'Tom Ford', discount: 8, image: 'venesa33.png' },
+            { name: 'Dior', discount: 12, image: 'venesa44.png' }
+        ];
         let currentPerfumeIndex = 0;
-        
-zz
-
-       
+    
         document.addEventListener('DOMContentLoaded', function () {
-            
             updateProductImage();
         });
+    
         function playGame() {
-    const guessedName = document.getElementById('perfumeName').value.toLowerCase();
-    const currentPerfume = perfumeData[currentPerfumeIndex];
-
-    const regex = /^[a-zA-Z\s]+$/;
-
-    if (guessedName.match(regex) && guessedName === currentPerfume.name.toLowerCase()) {
-        const discountedPrice = calculateDiscount(currentPerfume.discount);
-        showResult(`Congratulations! You've guessed it right. You get a ${currentPerfume.discount}% discount. New Price: $${discountedPrice}`, currentPerfume.name, false);
-
-        // Mos ndrysho foto në rast të përgjigjes së saktë
-    } else {
-        showResult('Sorry, wrong guess. Try again! Please enter only letters and spaces without special characters or numbers.', null, true);
-        // Ndrysho foto në rast të përgjigjes së pasaktë
-    }
-}
-
-
-
-
+            const guessedName = document.getElementById('perfumeName').value.toLowerCase();
+            const currentPerfume = perfumeData[currentPerfumeIndex];
+    
+            const regex = /^[a-zA-Z\s]+$/;
+    
+            if (guessedName.match(regex) && guessedName === currentPerfume.name.toLowerCase()) {
+                const discountedPrice = calculateDiscount(currentPerfume.discount);
+                showResult(`Congratulations! You've guessed it right. You get a ${currentPerfume.discount}% discount. New Price: $${discountedPrice}`, true);
+            } else {
+                showResult('Sorry, wrong guess. Try again! Please enter only letters and spaces without special characters or numbers.', false);
+            }
+        }
+    
+        function showResult(message, changeImage) {
+            const resultDiv = document.getElementById('result');
+            const discountMessageElement = document.getElementById('discountMessage');
+    
+            discountMessageElement.textContent = message;
+            resultDiv.style.display = 'block';
+    
+            if (changeImage) {
+                currentPerfumeIndex = findPerfumeIndexByName(perfumeData[currentPerfumeIndex].name);
+                updateProductImage();
+            }
+        }
+    
         function calculateDiscount(percentage) {
-            const originalPrice = 100;  
+            const originalPrice = 100;
             const discountAmount = (percentage / 100) * originalPrice;
             const discountedPrice = originalPrice - discountAmount;
             return discountedPrice.toFixed(2);
         }
-
-        function showResult(message, productName, changeImage) {
-    const resultDiv = document.getElementById('result');
-    const discountMessageElement = document.getElementById('discountMessage');
-
-    discountMessageElement.textContent = message;
-    resultDiv.style.display = 'block';
-
-    if (productName && changeImage) {
-        currentPerfumeIndex = (currentPerfumeIndex + 1) % perfumeData.length;
-        updateProductImage();
-    } else if (productName) {
-        // Mos ndrysho foto në rast të përgjigjes së saktë
-    }
-}
-
-
+    
         function updateProductImage() {
-    const productImages = document.querySelectorAll('.product-list img');
-    productImages.forEach(img => img.classList.remove('active'));
-
-    const randomIndex = Math.floor(Math.random() * productImages.length);
-    const imagePath = `../img/${perfumeData[randomIndex].image}`;
-    productImages[randomIndex].src = imagePath;
-    productImages[randomIndex].alt = perfumeData[randomIndex].name;
-    productImages[randomIndex].classList.add('active');
-}
-
+            const productImages = document.querySelectorAll('.product-list img');
+            productImages.forEach(img => img.classList.remove('active'));
+    
+            const imagePath = `../img/${perfumeData[currentPerfumeIndex].image}`;
+            productImages[currentPerfumeIndex].src = imagePath;
+            productImages[currentPerfumeIndex].alt = perfumeData[currentPerfumeIndex].name;
+            productImages[currentPerfumeIndex].classList.add('active');
+        }
+    
+        function findPerfumeIndexByName(perfumeName) {
+            return perfumeData.findIndex(perfume => perfume.name === perfumeName);
+        }
     </script>
 </body>
 
 </html>
 
-           
