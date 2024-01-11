@@ -11,7 +11,6 @@
     }
 
     function nextSlide() {
-        let nextSlide;
         currentIndex = (currentIndex + 1) % (slider.children.length - 2);
         showSlide(currentIndex);
     }
