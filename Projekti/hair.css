@@ -170,10 +170,5 @@ display: block;
 margin: 1.5vw;
 justify-content: center;
 }
-@font-face {
-    font-family: 'MyFont';
-    src: url('fonts/c:\Users\PC\Desktop\favicon.ico.jpg') format('FONT');
-    font-weight: normal;
-    font-style: normal;
-}
+
 
