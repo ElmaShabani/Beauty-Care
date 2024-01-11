@@ -199,18 +199,20 @@ td{
 th {
     background-color: rgba(236, 206, 176, 0.5); 
 }
-
-.site-footer-payments {
-    padding: 40px;
+.site-footer-payments{
+    padding: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     background-color: rgba(236, 206, 176, 0.5);
-    }
+
+}
+
+
     .site-footer-payments__link__icon {
     display: block;
-    margin: 1.5vw;
+    margin: 15px;
     justify-content: center;
     }
     

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico.PNG">
     <title>Beauty Quiz</title>
     <style>
         body {
@@ -48,6 +49,9 @@ button {
 label {
   text-align: left;
 }
+li {
+    text-align: left;
+}
     </style>
 </head>
 <body>
@@ -76,51 +80,63 @@ label {
                     <option value="Serums">Serums</option>
                 </select>
             </div>
-            <button type="button" onclick="calculateResults()">Discover Your Beauty Persona</button>
+            <button type="button" onclick="calculatePersona()">Discover Your Beauty Persona</button>
         </form>
         <div id="resultContainer" class="hidden">
             <h2>Your Beauty Persona:</h2>
             <p id="resultText"></p>
-            <p>Explore our <a href="makeup.html" style="color: peru;"><i>Makeup products</i></a></p>
-            <p>Explore our <a href="seall.html" style="color: peru;"><i>Hair products</i></a></p>
-            <p>Explore our <a href="Seeall.html" style="color: peru;"><i>Fragrance products</i></a></p>
-            <p>Explore our <a href="Serum.html" style="color: peru;"><i>SkinCare products</i></a></p>
+            <ol>
+            <li>Explore our <a href="makeup.html" style="color: peru;"><i>Makeup products</i></a></li>
+            <li>Explore our <a href="seall.html" style="color: peru;"><i>Hair products</i></a></li>
+            <li>Explore our <a href="Seeall.html" style="color: peru;"><i>Fragrance products</i></a></li>
+            <li>Explore our <a href="Serum.html" style="color: peru;"><i>SkinCare products</i></a></li>
+            </ol>
         </div>
     </div>
+    
+   
     <script>
-        function calculateResults() {
-  
-    const makeupPreference = document.getElementById('makeupPreference').value;
-    const hairType = document.getElementById('hairType').value;
-    const favoriteIngredient = document.getElementById('favoriteIngredient').value;
-
-   
-    let beautyPersona = '';
-    if (makeupPreference === 'natural' && hairType === 'curly' && favoriteIngredient === 'Serums') {
-        beautyPersona = 'You are a Curly Natural Beauty Enthusiast!';
-    } else if (makeupPreference === 'glam' && hairType === 'straight' && favoriteIngredient === 'FaceMasks') {
-        beautyPersona = 'You are a Glam Diva with Radiant Skin!';
-    } else if (makeupPreference === 'natural' && hairType === 'curly' && favoriteIngredient === 'FaceMasks') {
-        beautyPersona = 'You are a Natural Trendsetter with Hydrated Skin!';
-    }  else if (makeupPreference === 'natural' && hairType === 'straight' && favoriteIngredient === 'Serums') {
-        beautyPersona = 'You are a Straight Haired Natural Beauty and a Skin Care Enthusiast!';
-    } else if (makeupPreference === 'natural' && hairType === 'straight' && favoriteIngredient === 'FaceMasks') {
-        beautyPersona = 'You are a Bold Trendsetter with Hydrated Skin!';
-    } else if (makeupPreference === 'glam' && hairType === 'curly' && favoriteIngredient === 'Serums') {
-        beautyPersona = 'You are a Glam Queen with a Cool HairStyle!';
-    } else if (makeupPreference === 'glam' && hairType === 'curly' && favoriteIngredient === 'FaceMasks') {
-        beautyPersona = 'You are Glamorous Barbie with Hydrated Skin!';
-    }  else if (makeupPreference === 'glam' && hairType === 'straight' && favoriteIngredient === 'Serums') {
-        beautyPersona = 'You are a Glam Babe  with Glowy Skin!';
-    } else {
-        beautyPersona = 'Discover your unique beauty persona!';
-    }
-
-   
-    document.getElementById('resultText').innerText = beautyPersona;
-    document.getElementById('resultContainer').classList.remove('hidden');
-}
+        function BeautyPersona(makeupPreference, hairType, favoriteIngredient) {
+            this.makeupPreference = makeupPreference;
+            this.hairType = hairType;
+            this.favoriteIngredient = favoriteIngredient;
+    
+            this.calculatePersona = function() {
+                if (this.makeupPreference === 'natural' && this.hairType === 'curly' && this.favoriteIngredient === 'Serums') {
+                    return 'You are a Curly Natural Beauty Enthusiast!';
+                } else if (this.makeupPreference === 'glam' && this.hairType === 'straight' && this.favoriteIngredient === 'FaceMasks') {
+                    return 'You are a Glam Diva with Radiant Skin!';
+                } else if (this.makeupPreference === 'natural' && this.hairType === 'curly' && this.favoriteIngredient === 'FaceMasks') {
+                    return 'You are a Natural Trendsetter with Hydrated Skin!';
+                } else if (this.makeupPreference === 'natural' && this.hairType === 'straight' && this.favoriteIngredient === 'Serums') {
+                    return 'You are a Straight Haired Natural Beauty and a Skin Care Enthusiast!';
+                } else if (this.makeupPreference === 'natural' && this.hairType === 'straight' && this.favoriteIngredient === 'FaceMasks') {
+                    return 'You are a Bold Trendsetter with Hydrated Skin!';
+                } else if (this.makeupPreference === 'glam' && this.hairType === 'curly' && this.favoriteIngredient === 'Serums') {
+                    return 'You are a Glam Queen with a Cool Hairstyle!';
+                } else if (this.makeupPreference === 'glam' && this.hairType === 'curly' && this.favoriteIngredient === 'FaceMasks') {
+                    return 'You are Glamorous Barbie with Hydrated Skin!';
+                } else if (this.makeupPreference === 'glam' && this.hairType === 'straight' && this.favoriteIngredient === 'Serums') {
+                    return 'You are a Glam Babe with Glowy Skin!';
+                } else {
+                    return 'Discover your unique beauty persona!';
+                }
+            };
+        }
+    
+        const userPersona = new BeautyPersona(
+            document.getElementById('makeupPreference').value,
+            document.getElementById('hairType').value,
+            document.getElementById('favoriteIngredient').value
+        );
+    
+        function calculatePersona() {
+            const resultText = userPersona.calculatePersona();
+            document.getElementById('resultText').innerText = resultText;
+            document.getElementById('resultContainer').classList.remove('hidden');
+        }
     </script>
+    
 </body>
 </html>
 
