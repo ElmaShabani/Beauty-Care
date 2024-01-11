@@ -87,18 +87,18 @@
 
         <div class="product-list">
             <img src="../img/venesa20.png" alt="Chanel" class="active">
-            <img src="../img/venesa30.png" alt="Yves Saint Laurent" class="active">
-            <img src="../img/venesa40.png" alt="Tom Ford" class="active">
-            <img src="../img/venesa50.png" alt="Dior" class="active">
+            <img src="../img/venesa30.png" alt="Yves Saint Laurent">
+            <img src="../img/venesa40.png" alt="Tom Ford">
+            <img src="../img/venesa50.png" alt="Dior">
         </div>
     </form>
 
     <script>
         const perfumeData = [
-            { name: 'Chanel', discount: 5, image: 'venesa11.png' },
-            { name: 'Yves Saint Laurent', discount: 10, image: 'venesa22.png' },
-            { name: 'Tom Ford', discount: 8, image: 'venesa33.png' },
-            { name: 'Dior', discount: 12, image: 'venesa44.png' }
+            { name: 'Chanel', discount: 5 },
+            { name: 'Yves Saint Laurent', discount: 10 },
+            { name: 'Tom Ford', discount: 8 },
+            { name: 'Dior', discount: 12 }
         ];
         let currentPerfumeIndex = 0;
 
@@ -106,65 +106,69 @@
             updateProductImage();
         });
 
-        function playGame() {
-            const guessedName = document.getElementById('perfumeName').value.toLowerCase();
-            const currentPerfume = perfumeData[currentPerfumeIndex];
+        let allowImageChange = true;  // Shtuar variabël të re
 
-            const regex = /^[a-zA-Z\s]+$/;
+function playGame() {
+    if (!allowImageChange) {
+        // Klienti ka përdorur fatin e tij tashmë, nuk lejohet të luajë përsëri
+        return;
+    }
 
-            if (guessedName.match(regex) && guessedName === currentPerfume.name.toLowerCase()) {
-                const discountedPrice = calculateDiscount(currentPerfume.discount);
-                showResult(`Congratulations! You've guessed it right. You get a ${currentPerfume.discount}% discount. New Price: $${discountedPrice}`, false);
-            } else {
-                showResult('Sorry, wrong guess. Try again! Please enter only letters and spaces without special characters or numbers.', true);
-            }
-        }
+    const guessedName = document.getElementById('perfumeName').value.toLowerCase();
+    const currentPerfume = perfumeData[currentPerfumeIndex];
 
-        function showResult(message, changeImage) {
-            const resultDiv = document.getElementById('result');
-            const discountMessageElement = document.getElementById('discountMessage');
+    const regex = /^[a-zA-Z\s]+$/;
 
-            discountMessageElement.textContent = message;
-            resultDiv.style.display = 'block';
+    if (guessedName.match(regex) && guessedName === currentPerfume.name.toLowerCase()) {
+        const discountedPrice = calculateDiscount(currentPerfume.discount);
+        showResult(`Congratulations! You've guessed it right. You get a ${currentPerfume.discount}% discount. New Price: $${discountedPrice}`, false);
+    } else {
+        showResult('Sorry, wrong guess. Try again! Please enter only letters and spaces without special characters or numbers.', true);
+    }
+    allowImageChange = false;  // Ndryshuar gjendjen pas lojës së parë
+}
 
-            if (changeImage) {
-                currentPerfumeIndex = (currentPerfumeIndex + 1) % perfumeData.length;
-                updateProductImage();
-            }
-        }
+function showResult(message, changeImage) {
+    const resultDiv = document.getElementById('result');
+    const discountMessageElement = document.getElementById('discountMessage');
+
+    discountMessageElement.textContent = message;
+    resultDiv.style.display = 'block';
+
+    if (changeImage) {
+        currentPerfumeIndex = (currentPerfumeIndex + 1) % perfumeData.length;
+        updateProductImage();
+    } else if (!changeImage) {
+        
+    }
+
+    }
+
+
+
+
 
         function calculateDiscount(percentage) {
             const originalPrice = 100;
             const discountAmount = (percentage / 100) * originalPrice;
             const discountedPrice = originalPrice - discountAmount;
+
             return discountedPrice.toFixed(2);
         }
 
         function updateProductImage() {
-            const productImages = document.querySelectorAll('.product-list img');
-            const randomIndex = Math.floor(Math.random() * perfumeData.length);
+    const productImages = document.querySelectorAll('.product-list img');
+    const randomIndex = Math.floor(Math.random() * productImages.length);
+    
+    console.log('Updating product image. Random index:', randomIndex);
 
-            productImages.forEach((img, index) => {
-                img.src = `img/venesa${index + 11}.png`;
-                img.alt = perfumeData[index].name;
-                img.classList.remove('active');  });
-                productImages.forEach((img, index) => {
-                img.src = `img/venesa${index + 22}.png`;
-                img.alt = perfumeData[index].name;
-                img.classList.remove('active');  });
-                productImages.forEach((img, index) => {
-                img.src = `img/venesa${index + 33}.png`;
-                img.alt = perfumeData[index].name;
-                img.classList.remove('active');   });
-                productImages.forEach((img, index) => {
-                img.src = `img/venesa${index + 44}.png`;
-                img.alt = perfumeData[index].name;
-                img.classList.remove('active');  
+    productImages.forEach((img, index) => {
+        img.classList.remove('active');
+    });
 
-            });
+    productImages[randomIndex].classList.add('active');
+}
 
-            productImages[randomIndex].classList.add('active');
-        }
     </script>
 </body>
 
