@@ -91,8 +91,11 @@
             <img src="../img/venesa40.png" alt="Tom Ford">
             <img src="../img/venesa50.png" alt="Dior">
         </div>
+        <audio controls>
+            <source src="../img/audio33.mp3" type="audio/mp3" style="display:none;" >
+            Your browser does not support the audio tag.
+        </audio>    
     </form>
-
     <script>
         const perfumeData = [
             { name: 'Chanel', discount: 5 },
@@ -125,7 +128,7 @@ function playGame() {
     } else {
         showResult('Sorry, wrong guess. Try again! Please enter only letters and spaces without special characters or numbers.', true);
     }
-    allowImageChange = false;  // Ndryshuar gjendjen pas lojës së parë
+    allowImageChange = false; 
 }
 
 function showResult(message, changeImage) {
