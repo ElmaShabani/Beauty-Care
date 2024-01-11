@@ -84,3 +84,8 @@ document.addEventListener('visibilitychange', function () {
     }
 });
 updateCartUI();
+
+function Product(name, price){
+    this.name=name;
+    this.price=price;
+}
