@@ -25,6 +25,9 @@
     document.querySelector('.prev').addEventListener('click', prevSlide);
     document.querySelector('.next').addEventListener('click', nextSlide);
 });
+function shfaqMesazhin() {
+    alert('Everglow Beauty Kosova: Where beauty meets excellence, making us the best choice for all your cosmetic needs!');
+    }
 
 
     
