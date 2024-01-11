@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fragrance Quiz Game</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(45deg, #FF6B6B, #6B6BFF, #6BFFB6);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+            position: relative;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #333;
+            display: none;
+        }
+
+        /* Korniza për foton e fragrance */
+        .fragrance-image-container {
+            border: 5px solid #fff;
+            border-radius: 2px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .fragrance-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* GSAP Animation */
+        .fragrance-image {
+            width: 100px;
+            height: 100px;
+            display: block;
+            margin: 20px auto;
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="fragranceForm">
+        <h2>Fragrance Quiz Game</h2>
+
+        <label for="gender">Select your gender:</label>
+        <select id="gender" name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+
+        <label for="favoriteNote">What's your favorite fragrance note?</label>
+        <input type="text" id="favoriteNote" name="favoriteNote" required>
+
+        <label for="preferredType">Select your preferred fragrance type:</label>
+        <select id="preferredType" name="preferredType">
+            <option value="floral">Floral</option>
+            <option value="woody">Woody</option>
+            <option value="citrusy">Citrusy</option>
+            <option value="spicy">Spicy</option>
+        </select>
+
+        <button type="button" onclick="submitForm()">Discover Your Fragrance</button>
+
+        <div id="result">
+            <div class="fragrance-image-container">
+                <img class="fragrance-image" src="../img/Golisser.webp" alt="Glossier">
+            </div>
+            <h3>Glossier<p> Glossier You Eau de Parfum </p></h3>
+            <p id="fragranceRecommendation"></p>
+
+            <div class="fragrance-image-container">
+                <img class="fragrance-image" src="../img/Daisy.webp" alt="Daisy">
+            </div>
+            <h3>Daisy<p>Marc Jacobs Fragrances</p></h3>
+        </div>
+    </form>
+
+    <!-- GSAP Library -->
+    <script src="https://unpkg.com/gsap@3.9.0/dist/gsap.min.js"></script>
+
+    <script>
+       function getFragranceData(gender, favoriteNote, preferredType) {
+    const key = `${gender}_${favoriteNote}_${preferredType}`;
+    const fragrances = {
+        male_woody_woody: { recommendation: 'Try a sophisticated woody fragrance like Sandalwood Elegance!', image: 'wooden_bottle.png' },
+        female_floral_floral: { recommendation: 'Experience the beauty of floral scents with our Blossom Delight fragrance!', image: 'floral_bottle.png' },
+        // Shto përfundimisht për kombinime të tjera
+    };
+
+    return fragrances[key];
+}
+
+function submitForm() {
+    const gender = document.getElementById('gender').value;
+    const favoriteNote = document.getElementById('favoriteNote').value.toLowerCase();
+    const preferredType = document.getElementById('preferredType').value.toLowerCase();
+
+    // Deklaro variablat recommendation dhe fragranceImage
+    let recommendation, fragranceImage;
+
+    if (!gender || !favoriteNote || !preferredType) {
+        alert("Please fill in all fields.");
+        return;
+    }
+
+    // Logjika e rekomandimit
+    const fragranceData = getFragranceData(gender, favoriteNote, preferredType);
+
+    if (fragranceData) {
+        recommendation = fragranceData.recommendation;
+        fragranceImage = fragranceData.image;
+    } else {
+        recommendation = 'Explore our collection to find the perfect fragrance for you!';
+    }
+
+    // Shfaq rekomandimin me animacion
+    showRecommendation(recommendation, fragranceImage);
+}
+
+function showRecommendation(recommendation, fragranceImage) {
+    const resultDiv = document.getElementById('result');
+    const fragranceImageElement = document.querySelector('.fragrance-image');
+    const fragranceRecommendationElement = document.getElementById('fragranceRecommendation');
+
+    // Set recommendation text
+    fragranceRecommendationElement.textContent = recommendation;
+
+    // Set fragrance image source
+    fragranceImageElement.src = `../img/${fragranceImage}`;
+
+    // Animate the result display
+    gsap.fromTo(resultDiv, { opacity: 0 }, { opacity: 1, display: 'block', duration: 0.5 });
+    gsap.fromTo(fragranceImageElement, { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 1, delay: 0.5 });
+
+    // Scroll to the result section
+    gsap.to(window, { duration: 1, scrollTo: { y: resultDiv.offsetTop, offsetY: 50 } });
+}
+
+    </script>
+</body>
+
+</html>

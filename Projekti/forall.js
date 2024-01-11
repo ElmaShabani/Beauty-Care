@@ -1,66 +1,60 @@
 let cartData = JSON.parse(sessionStorage.getItem('cartData')) || { items: [], total: 0 };
+        if (!sessionStorage.getItem('cartData')) {
+            sessionStorage.setItem('cartData', JSON.stringify(cartData));
+        }
 
-function addToCart(productName, productPrice) {
-    cartData.items.push({ name: productName, price: productPrice });
-    cartData.total += productPrice;
+        const maxAllowedTotalPrice = 100;
 
-    sessionStorage.setItem('cartData', JSON.stringify(cartData));
+        function addToCart(productName, productPrice) {
+            if (cartData.total + productPrice <= maxAllowedTotalPrice) {
+                cartData.items.push({ name: productName, price: productPrice });
+                cartData.total += productPrice;
 
-    updateCartUI();
-}
+                sessionStorage.setItem('cartData', JSON.stringify(cartData));
+                updateCartUI();
+            } else {
+                alert(`Adding this item exceeds the maximum allowed total price of $${maxAllowedTotalPrice}.`);
+            }
+        }
 
-function updateCartUI() {
-    const cartItemsContainer = document.getElementById('cart-items');
-    const cartTotalElement = document.getElementById('cart-total');
+        function updateCartUI() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartTotalElement = document.getElementById('cart-total');
 
-    if (cartItemsContainer && cartTotalElement) {
-        cartItemsContainer.innerHTML = '';
-        cartData.items.forEach(item => {
-            const listItem = document.createElement('li');
-            listItem.textContent = `${item.name} - $${item.price.toFixed(2)}`;
-            cartItemsContainer.appendChild(listItem);
-        });
+            if (cartItemsContainer && cartTotalElement) {
+                cartItemsContainer.innerHTML = '';
+                cartData.items.forEach(item => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+                    cartItemsContainer.appendChild(listItem);
+                });
 
-        cartTotalElement.textContent = cartData.total.toFixed(2);
-    } else {
-        console.error("One or more cart elements not found.");
-    }
-}
-function toggleCart() {
-    const cart = document.getElementById('cart');
-    cart.classList.toggle('hidden');
-}
+                cartTotalElement.textContent = cartData.total.toFixed(2);
+            } else {
+                console.error("One or more cart elements not found.");
+            }
+        }
 
-function addToCart(productName, productPrice) {
-    if (!cartData) {
-console.error("Cart data not available.");
-return;
-}
+        function toggleCart() {
+            const cart = document.getElementById('cart');
+            cart.classList.toggle('hidden');
+        }
 
-cartData.items.push({ name: productName, price: productPrice });
+        function placeOrder() {
+            const selectedPaymentMethod = document.getElementById('payment-method').value;
+            const cardNumber = document.getElementById('card-number').value;
+            const cvv = document.getElementById('cvv').value;
 
-cartData.total += productPrice;
+            if (!cardNumber || !cvv) {
+                alert('Please enter your card number and CVV before placing the order.');
+            } else if (!isNumeric(cardNumber) || !isNumeric(cvv)) {
+                alert('Please enter only numerical values for the card number and CVV.');
+                return;
+            } else {
+                alert('Order placed successfully!');
+            }
 
-sessionStorage.setItem('cartData', JSON.stringify(cartData));
-
-updateCartUI();
-}
-
-
-function placeOrder() {
-    const selectedPaymentMethod = document.getElementById('payment-method').value;
-    const cardNumber = document.getElementById('card-number').value;
-    const cvv = document.getElementById('cvv').value;
-
-    if (!cardNumber || !cvv) {
-        alert('Please enter your card number and CVV before placing the order.');
-    }else if (!isNumeric(cardNumber) || !isNumeric(cvv)) {
-        alert('Please enter only numerical values for the card number and CVV.');
-        return;
-    } else {
-        alert('Order placed successfully!');
-    }
-    function isNumeric(value) {
-    return !isNaN(+value);
-}
-}
+            function isNumeric(value) {
+                return !isNaN(+value);
+            }
+        }
