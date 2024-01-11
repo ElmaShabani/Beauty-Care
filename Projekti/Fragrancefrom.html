@@ -5,19 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fragrance Quiz Game</title>
+    <title>Fragrance Discount Game</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(45deg, #FF6B6B, #6B6BFF, #6BFFB6);
-            background-size: 400% 400%;
-            animation: gradientAnimation 15s ease infinite;
-            margin: 0;
-            padding: 0;
+            background-color: #f4f4f4;
             display: flex;
             align-items: center;
             justify-content: center;
             height: 100vh;
+            margin: 0;
         }
 
         form {
@@ -25,9 +22,7 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 400px;
             text-align: center;
-            position: relative;
         }
 
         label {
@@ -35,8 +30,7 @@
             margin-bottom: 8px;
         }
 
-        input,
-        select {
+        input {
             width: 100%;
             padding: 10px;
             margin-bottom: 16px;
@@ -65,144 +59,112 @@
             display: none;
         }
 
-        /* Korniza për foton e fragrance */
-        .fragrance-image-container {
-            border: 5px solid #fff;
-            border-radius: 2px;
-            overflow: hidden;
-            margin-bottom: 20px;
-        }
-
-        .fragrance-image {
-            width: 100%;
+        .product-list img {
+            display: none;
+            max-width: 100%;
             height: auto;
-            display: block;
         }
 
-        @keyframes gradientAnimation {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        /* GSAP Animation */
-        .fragrance-image {
-            width: 100px;
-            height: 100px;
+        .product-list img.active {
             display: block;
-            margin: 20px auto;
-            opacity: 0;
+            margin-left: 90px;
         }
     </style>
 </head>
 
 <body>
-    <form id="fragranceForm">
-        <h2>Fragrance Quiz Game</h2>
+    <form id="fragranceGameForm">
+        <h2>Fragrance Discount Game</h2>
 
-        <label for="gender">Select your gender:</label>
-        <select id="gender" name="gender">
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <option value="other">Other</option>
-        </select>
+        <label for="perfumeName">Enter the Perfume Name:</label>
+        <input type="text" id="perfumeName" name="perfumeName" required>
 
-        <label for="favoriteNote">What's your favorite fragrance note?</label>
-        <input type="text" id="favoriteNote" name="favoriteNote" required>
-
-        <label for="preferredType">Select your preferred fragrance type:</label>
-        <select id="preferredType" name="preferredType">
-            <option value="floral">Floral</option>
-            <option value="woody">Woody</option>
-            <option value="citrusy">Citrusy</option>
-            <option value="spicy">Spicy</option>
-        </select>
-
-        <button type="button" onclick="submitForm()">Discover Your Fragrance</button>
+        <button type="button" onclick="playGame()">Check Discount</button>
 
         <div id="result">
-            <div class="fragrance-image-container">
-                <img class="fragrance-image" src="../img/Golisser.webp" alt="Glossier">
-            </div>
-            <h3>Glossier<p> Glossier You Eau de Parfum </p></h3>
-            <p id="fragranceRecommendation"></p>
+            <p id="discountMessage"></p>
+        </div>
 
-            <div class="fragrance-image-container">
-                <img class="fragrance-image" src="../img/Daisy.webp" alt="Daisy">
-            </div>
-            <h3>Daisy<p>Marc Jacobs Fragrances</p></h3>
+        <div class="product-list">
+            <img src="../img/venesa20.png" alt="Chanel" class="active">
+            <img src="../img/venesa30.png" alt="Yves Saint Laurent" class="active">
+            <img src="../img/venesa40.png" alt="Tom Ford" class="active">
+            <img src="../img/venesa50.png" alt="Dior" class="active">
         </div>
     </form>
 
-    <!-- GSAP Library -->
-    <script src="https://unpkg.com/gsap@3.9.0/dist/gsap.min.js"></script>
-
     <script>
-       function getFragranceData(gender, favoriteNote, preferredType) {
-    const key = `${gender}_${favoriteNote}_${preferredType}`;
-    const fragrances = {
-        male_woody_woody: { recommendation: 'Try a sophisticated woody fragrance like Sandalwood Elegance!', image: 'wooden_bottle.png' },
-        female_floral_floral: { recommendation: 'Experience the beauty of floral scents with our Blossom Delight fragrance!', image: 'floral_bottle.png' },
-        // Shto përfundimisht për kombinime të tjera
-    };
+        const perfumeData = [
+            { name: 'Chanel', discount: 5, image: 'venesa11.png' },
+            { name: 'Yves Saint Laurent', discount: 10, image: 'venesa22.png' },
+            { name: 'Tom Ford', discount: 8, image: 'venesa33.png' },
+            { name: 'Dior', discount: 12, image: 'venesa44.png' }
+        ];
+        let currentPerfumeIndex = 0;
 
-    return fragrances[key];
-}
+        document.addEventListener('DOMContentLoaded', function () {
+            updateProductImage();
+        });
 
-function submitForm() {
-    const gender = document.getElementById('gender').value;
-    const favoriteNote = document.getElementById('favoriteNote').value.toLowerCase();
-    const preferredType = document.getElementById('preferredType').value.toLowerCase();
+        function playGame() {
+            const guessedName = document.getElementById('perfumeName').value.toLowerCase();
+            const currentPerfume = perfumeData[currentPerfumeIndex];
 
-    // Deklaro variablat recommendation dhe fragranceImage
-    let recommendation, fragranceImage;
+            const regex = /^[a-zA-Z\s]+$/;
 
-    if (!gender || !favoriteNote || !preferredType) {
-        alert("Please fill in all fields.");
-        return;
-    }
+            if (guessedName.match(regex) && guessedName === currentPerfume.name.toLowerCase()) {
+                const discountedPrice = calculateDiscount(currentPerfume.discount);
+                showResult(`Congratulations! You've guessed it right. You get a ${currentPerfume.discount}% discount. New Price: $${discountedPrice}`, false);
+            } else {
+                showResult('Sorry, wrong guess. Try again! Please enter only letters and spaces without special characters or numbers.', true);
+            }
+        }
 
-    // Logjika e rekomandimit
-    const fragranceData = getFragranceData(gender, favoriteNote, preferredType);
+        function showResult(message, changeImage) {
+            const resultDiv = document.getElementById('result');
+            const discountMessageElement = document.getElementById('discountMessage');
 
-    if (fragranceData) {
-        recommendation = fragranceData.recommendation;
-        fragranceImage = fragranceData.image;
-    } else {
-        recommendation = 'Explore our collection to find the perfect fragrance for you!';
-    }
+            discountMessageElement.textContent = message;
+            resultDiv.style.display = 'block';
 
-    // Shfaq rekomandimin me animacion
-    showRecommendation(recommendation, fragranceImage);
-}
+            if (changeImage) {
+                currentPerfumeIndex = (currentPerfumeIndex + 1) % perfumeData.length;
+                updateProductImage();
+            }
+        }
 
-function showRecommendation(recommendation, fragranceImage) {
-    const resultDiv = document.getElementById('result');
-    const fragranceImageElement = document.querySelector('.fragrance-image');
-    const fragranceRecommendationElement = document.getElementById('fragranceRecommendation');
+        function calculateDiscount(percentage) {
+            const originalPrice = 100;
+            const discountAmount = (percentage / 100) * originalPrice;
+            const discountedPrice = originalPrice - discountAmount;
+            return discountedPrice.toFixed(2);
+        }
 
-    // Set recommendation text
-    fragranceRecommendationElement.textContent = recommendation;
+        function updateProductImage() {
+            const productImages = document.querySelectorAll('.product-list img');
+            const randomIndex = Math.floor(Math.random() * perfumeData.length);
 
-    // Set fragrance image source
-    fragranceImageElement.src = `../img/${fragranceImage}`;
+            productImages.forEach((img, index) => {
+                img.src = `img/venesa${index + 11}.png`;
+                img.alt = perfumeData[index].name;
+                img.classList.remove('active');  });
+                productImages.forEach((img, index) => {
+                img.src = `img/venesa${index + 22}.png`;
+                img.alt = perfumeData[index].name;
+                img.classList.remove('active');  });
+                productImages.forEach((img, index) => {
+                img.src = `img/venesa${index + 33}.png`;
+                img.alt = perfumeData[index].name;
+                img.classList.remove('active');   });
+                productImages.forEach((img, index) => {
+                img.src = `img/venesa${index + 44}.png`;
+                img.alt = perfumeData[index].name;
+                img.classList.remove('active');  
 
-    // Animate the result display
-    gsap.fromTo(resultDiv, { opacity: 0 }, { opacity: 1, display: 'block', duration: 0.5 });
-    gsap.fromTo(fragranceImageElement, { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 1, delay: 0.5 });
+            });
 
-    // Scroll to the result section
-    gsap.to(window, { duration: 1, scrollTo: { y: resultDiv.offsetTop, offsetY: 50 } });
-}
-
+            productImages[randomIndex].classList.add('active');
+        }
     </script>
 </body>
 

@@ -119,14 +119,19 @@
     <button id="revealCheapestProduct" class="btn btn-primary">Reveal Cheapest Product</button>
 
     <script>
+        function Product(id, name, price) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+}
          $(document).ready(function () {
         const products = [
-            { id: 1, name: 'Dyson', price: 599.00 },
-            { id: 2, name: 'Flat Iron', price: 250 },
-            { id: 3, name: 'Hair Mask', price: 38 },
-            { id: 4, name: 'Prep', price: 30 },
-            { id: 5, name: 'Curl Smith', price: 24 },
-        ];
+        new Product(1, 'Dyson', 599.00),
+        new Product(2, 'Flat Iron', 250),
+        new Product(3, 'Hair Mask', 38),
+        new Product(4, 'Prep', 30),
+        new Product(5, 'Curl Smith', 24),
+    ];
 
         const mostExpensiveProduct = products.reduce((maxProduct, currentProduct) => {
             return (currentProduct.price > maxProduct.price) ? currentProduct : maxProduct;
