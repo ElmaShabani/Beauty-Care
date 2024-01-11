@@ -90,74 +90,92 @@
     <div class="slider-container" style="font-family: 'Times New Roman', Times, serif;">
         <div class="slider">
             <div class="slide">
-                <a href="Daycream.html">
-                    <img src="../img/night4.jpg" alt="Image 1"> </a>
+               
+                    <img src="../img/night4.jpg" alt="Image 1"> 
                 <h4 style="text-align: center;">Vichy</h4>
                 <p style="text-align: center;">Neovadiol Rose Platinium Night <br>Cream</p>
                 <p style="text-align: center;">$48.50</p>
+                <div class="sub-box">
+                <a href="Daycream.html" class="btn btn-light">SHOP NOW</a>
+                </div>
 
             </div>
             <div class="slide">
-                <a href="facee.html">
-                    <img src="../img/hudabeauty.webp" alt="Image 2"> </a>
+                
+                    <img src="../img/hudabeauty.webp" alt="Image 2">
                 <h4 style="text-align: center;">Huda Beauty</h4>
                 <p style="text-align: center;">Easy Bake Loose Baking <br> & Setting Powder</p>
                 <p style="text-align: center;">$38.00</p>
-
+                <div class="sub-box">
+                <a href="facee.html" class="btn btn-light">SHOP NOW</a>
+                </div>
 
             </div>
             <div class="slide">
-                <a href="Daycream.html">
-                    <img src="../img/day4.jpg" alt="Image 3"> </a>
+                
+                    <img src="../img/day4.jpg" alt="Image 3"> 
                 <h4 style="text-align: center;">Vichy</h4>
                 <p style="text-align: center;">Neovadiol Perimenopause<br> Plumping Day Cream for Dry Skin</p>
                 <p style="text-align: center;">$60.00</p>
-
+                <div class="sub-box">
+                <a href="Daycream.html" class=" btn btn-light">SHOP NOW</a>
+                </div>
             </div>
             <div class="slide">
-                <a href="cheeks.html">
-                    <img src="../img/fentydiamond.webp" alt="Image 4"> </a>
+                
+                    <img src="../img/fentydiamond.webp" alt="Image 4"> 
                 <h3 style="text-align: center;">Fenty Beauty by Rihanna</h3>
                 <p style="text-align: center;">Diamond Bomb All-Over Diamond Veil</p>
                 <p style="text-align: center;">$42.00 <del>$67.00</del></p>
-
+                <div class="sub-box">
+                <a href="cheeks.html" class="btn btn-light">SHOP NOW</a>
+                </div>
 
             </div>
             <div class="slide">
-                <a href="lips.html">
-                    <img src="../img/fentygloss.webp" alt="Image 5"> </a>
+                
+                    <img src="../img/fentygloss.webp" alt="Image 5">
                 <h3 style="text-align: center;">Fenty Beauty</h3>
                 <p style="text-align: center;">Gloss Bomb Universal</p>
                 <p style="text-align: center;">$21.00</p>
-
+                <div class="sub-box">
+                <a href="lips.html" class="btn btn-light">SHOP NOW</a>
+                </div>
 
             </div>
             <div class="slide">
-                <a href="Men.html">
-                    <img src="../img/Dior.webp" alt="Image 6"> </a>
+                
+                    <img src="../img/Dior.webp" alt="Image 6">
                 <h3 style="text-align: center;">Dior</h3>
                 <p style="text-align: center;">Sauvage Eau de Toilette</p>
                 <p style="text-align: center;">$110.00</p>
-
+                <div class="sub-box">
+                <a href="Men.html" class="btn btn-light">SHOP NOW</a>
+                </div>
 
             </div>
             <div class="slide">
-                <a href="gifts.html">
-                    <img src="../img/puresilk.webp" alt="Image 7"> </a>
+                
+                    <img src="../img/puresilk.webp" alt="Image 7">
                 <h3 style="text-align: center;">Slip</h3>
                 <p style="text-align: center;">Pure Silk Turban</p>
                 <p style="text-align: center;"> $85.00</p>
-
+                <div class="sub-box">
+                <a href="gifts.html" class="btn btn-light">SHOP NOW</a>
+                </div>
 
             </div>
             <div class="slide">
-                <a href="gifts.html">
-                    <img src="../img/dyson.webp" alt="Image 8"></a>
+                    <img src="../img/dyson.webp" alt="Image 8">
                 <h3 style="text-align: center;">Dyson</h3>
                 <p style="text-align: center;">Airwrap Multi Styler in Ceramic Pop</p>
                 <p style="text-align: center;"> $599.00</p>
+                <div class="sub-box">
+                <a href="gifts.html" class="btn btn-light">SHOP NOW</a>
+                </div>
 
             </div>
+            
         </div>
     </div>
     <button class="prev" onclick="prevSlide()">❮</button>
@@ -329,7 +347,7 @@
     </table>
 
     <footer>
-        <div class="footer-container">
+        <div class="container d-flex footer-container">
             <div class="left">
                 <h2>Everglow Beauty</h2>
                 <p style="font-size: 20px;">Everglow Beauty Kosova</p>
@@ -339,20 +357,17 @@
                 <ul>
                     <li><a href="MainPage.html">Home</a></li>
                     <li><a href="OurStory.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li> <div id="currentDateElement"></div>
-
+                    <li><a href="contact.html">Contact</a>
+                    <li><div id="currentDateElement"></div>
                         <script>
-               
+    
                             const currentDate = new Date();
-                    
-                            
                             const currentDateElement = document.getElementById('currentDateElement');
-                             if (currentDateElement) {
-                             currentDateElement.innerHTML = `Current Date: ${currentDate.toLocaleDateString()} <br>  Current time: ${currentDate.toLocaleTimeString()}`;
-                             }
-
-                        </script></li>
+                            if (currentDateElement) {
+                                currentDateElement.textContent = `Current Date: ${currentDate.toLocaleDateString()} - Current time: ${currentDate.toLocaleTimeString()}`;
+                            }
+                        </script>
+                    </li>
                 </ul>
             </div>
             <div class="get-in-touch">
@@ -365,32 +380,32 @@
                 <p>Phone: <mark style="background-color: white;">+383 48 555 111</mark> </p>
             </div>
         </div>
-        <div class="site-footer-payments">
+        <div class="container-fluid site-footer-payments">
             <aside>
                 <h2>Payment methods: </h2>
             </aside>
+            <div class="row">
+              <div class="col text-center">
             <a class="site-footer-payments__link" href="https://www.paypal.com/" style="pointer-events: auto;">
                 <img src="https://images.ctfassets.net/eoaaqxyywn6o/6rDEb4sJOBkiIga3rkaSfA/b705c283f12f64d22365f9d168d2e9be/PayPal.svg"
-                    alt="PayPal" class="site-footer-payments__link__icon"></a>
-            <a class="site-footer-payments__link" href="https://www.clearpay.co.uk/en-GB" style="pointer-events: auto;">
+                    alt="PayPal" class="site-footer-payments__link__icon"></a></div>
+             <div class="col text-center"><a class="site-footer-payments__link" href="https://www.clearpay.co.uk/en-GB" style="pointer-events: auto;">
                 <img src="https://images.ctfassets.net/eoaaqxyywn6o/2fVeO7f2x78KlbQuhqmuVb/a195d07a55c2bb8e1f595d5b541d4d79/Clearpay.svg"
-                    alt="Clearpay" class="site-footer-payments__link__icon"></a>
-            <a class="site-footer-payments__link" href="https://usa.visa.com/" style="pointer-events: auto;">
+                    alt="Clearpay" class="site-footer-payments__link__icon"></a></div>
+             <div class="col text-center"><a class="site-footer-payments__link" href="https://usa.visa.com/" style="pointer-events: auto;">
                 <img src="https://images.ctfassets.net/eoaaqxyywn6o/4QTzSyV3E2jIfll4u3GgIW/46acc6659798376dc8bb416454f2baba/Visa.svg"
-                    alt="Visa" class="site-footer-payments__link__icon"></a>
-            <a class="site-footer-payments__link" href="https://www.americanexpress.com/" style="pointer-events: auto;">
+                    alt="Visa" class="site-footer-payments__link__icon"></a></div>
+             <div class="col text-center"><a class="site-footer-payments__link" href="https://www.americanexpress.com/" style="pointer-events: auto;">
                 <img src="https://images.ctfassets.net/eoaaqxyywn6o/1R0NBLVCShxTQNVHNjanE4/c970e9e15ecbb026929000ae3fcce6ae/Amex.svg"
-                    alt="Amex" class="site-footer-payments__link__icon"></a>
-            <a class="site-footer-payments__link" href="https://www.mastercard.us/en-us.html"
-                style="pointer-events: auto;">
+                    alt="Amex" class="site-footer-payments__link__icon"></a></div>
+             <div class="col text-center"><a class="site-footer-payments__link" href="https://www.mastercard.us/en-us.html" style="pointer-events: auto;">
                 <img src="https://images.ctfassets.net/eoaaqxyywn6o/5bs4r6UiioP3Fkj4Qg35o8/5583c0ecc4b6500a1083fd38cfabf6dc/Mastercard.svg"
-                    alt="Mastercard" class="site-footer-payments__link__icon"></a>
-            <a class="site-footer-payments__link" href="https://n26.com/en-eu/maestro-card"
-                style="pointer-events: auto;">
+                    alt="Mastercard" class="site-footer-payments__link__icon"></a></div>
+             <div class="col text-center"><a class="site-footer-payments__link" href="https://n26.com/en-eu/maestro-card" style="pointer-events: auto;">
                 <img src="https://images.ctfassets.net/eoaaqxyywn6o/5IdXqCmgjNCVwZNyssRsdE/702c37ee931258aad2071e063bbd337e/Maestro.svg"
-                    alt="Maestro" class="site-footer-payments__link__icon"></a>
+                    alt="Maestro" class="site-footer-payments__link__icon"></a></div>
         </div>
-
+        </div>
     </footer>
     <script src="mainpage.js"></script>
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
