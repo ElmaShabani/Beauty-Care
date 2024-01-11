@@ -1,6 +1,5 @@
 body {
-    margin: 0px;
-    overflow-x: hidden;
+    margin: 0;
 }
 
 header {
@@ -28,7 +27,7 @@ header img {
 
 .sub-box {
     flex: 1;
-    padding: 0px;
+    padding: 0;
     position: relative;
     text-align: center;
     font-family: 'Georgia, Times New Roman', sans-serif;
@@ -45,15 +44,14 @@ header img {
     font-weight: bold;
     color: black;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-
 }
 
 /* Pjesa e pare e body te faqes skincare */
-.container {
+.containerr {
     display: flex;
     justify-content: space-between;
     background-color: rgba(236, 206, 176, 0.5);
-    margin: 0px 5px;
+    margin: 0 5px;
 }
 
 .left img {
@@ -72,28 +70,21 @@ header img {
     margin: 15px;
 }
 
-/* Pjesa e pare e body te faqes skincare */
-
 .container2 {
     display: flex;
     justify-content: space-between;
     background-color: rgba(236, 206, 176, 0.5);
     margin: 5px 5px;
-
 }
 
 .right1 img {
     height: 100vh;
 }
 
-
 .left1 p {
     margin: 300px 200px;
     font-style: italic;
 }
-
-/* FOOTER */
-
 
 footer {
     background-color: rgba(236, 206, 176, 0.5);
@@ -155,7 +146,6 @@ footer a:hover {
     align-items: center;
     background-color: rgba(236, 206, 176, 0.5);
 }
-
 
 .site-footer-payments__link__icon {
     display: block;
