@@ -1,55 +1,60 @@
 let cartData = JSON.parse(sessionStorage.getItem('cartData')) || { items: [], total: 0 };
+        if (!sessionStorage.getItem('cartData')) {
+            sessionStorage.setItem('cartData', JSON.stringify(cartData));
+        }
 
-function addToCart(productName, productPrice) {
-    cartData.items.push({ name: productName, price: productPrice });
-    cartData.total += productPrice;
+        const maxAllowedTotalPrice = 100;
 
-    sessionStorage.setItem('cartData', JSON.stringify(cartData));
+        function addToCart(productName, productPrice) {
+            if (cartData.total + productPrice <= maxAllowedTotalPrice) {
+                cartData.items.push({ name: productName, price: productPrice });
+                cartData.total += productPrice;
 
-    updateCartUI();
-}
+                sessionStorage.setItem('cartData', JSON.stringify(cartData));
+                updateCartUI();
+            } else {
+                alert(`Adding this item exceeds the maximum allowed total price of $${maxAllowedTotalPrice}.`);
+            }
+        }
 
-function updateCartUI() {
-    const cartItemsContainer = document.getElementById('cart-items');
-    const cartTotalElement = document.getElementById('cart-total');
-    const cartListModal = document.getElementById('cart-list');
-    const cartTotalModalElement = document.getElementById('cart-total-modal');
+        function updateCartUI() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartTotalElement = document.getElementById('cart-total');
 
-    cartItemsContainer.innerHTML = '';
-    cartData.items.forEach(item => {
-        const listItem = document.createElement('li');
-        listItem.textContent = `${item.name} - $${item.price.toFixed(2)}`;
-        cartItemsContainer.appendChild(listItem);
-    });
+            if (cartItemsContainer && cartTotalElement) {
+                cartItemsContainer.innerHTML = '';
+                cartData.items.forEach(item => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+                    cartItemsContainer.appendChild(listItem);
+                });
 
-    cartTotalElement.textContent = cartData.total.toFixed(2);
+                cartTotalElement.textContent = cartData.total.toFixed(2);
+            } else {
+                console.error("One or more cart elements not found.");
+            }
+        }
 
-    cartListModal.innerHTML = '';
-    cartData.items.forEach(item => {
-        const listItem = document.createElement('li');
-        listItem.textContent = `${item.name} - $${item.price.toFixed(2)}`;
-        cartListModal.appendChild(listItem);
-    });
+        function toggleCart() {
+            const cart = document.getElementById('cart');
+            cart.classList.toggle('hidden');
+        }
 
-    cartTotalModalElement.textContent = cartData.total.toFixed(2);
-}
+        function placeOrder() {
+            const selectedPaymentMethod = document.getElementById('payment-method').value;
+            const cardNumber = document.getElementById('card-number').value;
+            const cvv = document.getElementById('cvv').value;
 
-function toggleCart() {
-    const cart = document.getElementById('cart');
-    cart.classList.toggle('hidden');
-}
+            if (!cardNumber || !cvv) {
+                alert('Please enter your card number and CVV before placing the order.');
+            } else if (!isNumeric(cardNumber) || !isNumeric(cvv)) {
+                alert('Please enter only numerical values for the card number and CVV.');
+                return;
+            } else {
+                alert('Order placed successfully!');
+            }
 
-window.addEventListener('beforeunload', function () {
-    sessionStorage.removeItem('cartData');
-});
-
-document.addEventListener('visibilitychange', function () {
-    if (document.visibilityState === 'hidden') {
-        sessionStorage.setItem('cartData', JSON.stringify(cartData));
-    }
-});
-
-updateCartUI();
-
-  
-
+            function isNumeric(value) {
+                return !isNaN(+value);
+            }
+        }
