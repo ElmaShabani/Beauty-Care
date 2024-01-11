@@ -2,6 +2,8 @@
   document.addEventListener("DOMContentLoaded", function () {
     const slider = document.querySelector('.slider');
     let currentIndex = 0;
+    
+    
 
     function showSlide(index) {
         const slideWidth = document.querySelector('.slider img').clientWidth;
@@ -9,6 +11,7 @@
     }
 
     function nextSlide() {
+        let nextSlide;
         currentIndex = (currentIndex + 1) % (slider.children.length - 2);
         showSlide(currentIndex);
     }
