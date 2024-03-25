@@ -3,7 +3,7 @@ let cartData = JSON.parse(sessionStorage.getItem('cartData')) || { items: [], to
             sessionStorage.setItem('cartData', JSON.stringify(cartData));
         }
 
-        const maxAllowedTotalPrice = 100;
+        const maxAllowedTotalPrice = 10000000;
 
         function addToCart(productName, productPrice) {
             if (cartData.total + productPrice <= maxAllowedTotalPrice) {
@@ -20,9 +20,8 @@ let cartData = JSON.parse(sessionStorage.getItem('cartData')) || { items: [], to
         function updateCartUI() {
             const cartItemsContainer = document.getElementById('cart-items');
             const cartTotalElement = document.getElementById('cart-total');
-
+            cartItemsContainer.innerHTML = '';
             if (cartItemsContainer && cartTotalElement) {
-                cartItemsContainer.innerHTML = '';
                 cartData.items.forEach(item => {
                     const listItem = document.createElement('li');
                     listItem.textContent = `${item.name} - $${item.price.toFixed(2)}`;
