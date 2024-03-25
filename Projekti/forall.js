@@ -3,7 +3,7 @@ let cartData = JSON.parse(sessionStorage.getItem('cartData')) || { items: [], to
             sessionStorage.setItem('cartData', JSON.stringify(cartData));
         }
 
-        const maxAllowedTotalPrice = 100;
+        const maxAllowedTotalPrice = 10000000;
 
         function addToCart(productName, productPrice) {
             if (cartData.total + productPrice <= maxAllowedTotalPrice) {
