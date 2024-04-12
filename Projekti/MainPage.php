@@ -18,48 +18,48 @@
 </head>
 <body>
       <header>
-        <a href="MainPage.html"><img src="../img/logo.jpg" alt="Your Brand Logo"></a>
+        <a href="MainPage.php"><img src="../img/logo.jpg" alt="Your Brand Logo"></a>
         <div class="text-with-shadow" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">EverGlow Beauty</div>
          <nav>
          <ul>
-             <li><a href="allformakeup.html">Makeup</a>
+             <li><a href="allformakeup.php">Makeup</a>
                  <ul class="subcategories">
-                     <li><a href="facee.html">Face</a></li>a
-                     <li><a href="eyes.html">Eyes</a></li>
-                     <li><a href="lips.html">Lips</a></li>
-                     <li><a href="cheeks.html">Cheek</a></li>
-                     <li><a href="makeup.html">See All</a></li>
+                     <li><a href="facee.php">Face</a></li>a
+                     <li><a href="eyes.php">Eyes</a></li>
+                     <li><a href="lips.php">Lips</a></li>
+                     <li><a href="cheeks.php">Cheek</a></li>
+                     <li><a href="makeup.php">See All</a></li>
                  </ul></li>
-             <li><a href="index.html">Skin Care</a>
+             <li><a href="index.php">Skin Care</a>
                  <ul class="subcategories">
-                     <li><a href="Dehydration.html">Dehydration</a></li>
-                     <li><a href="Daycream.html">Day & Night Cream Moisturiser</a></li>
-                     <li><a href="Face.html">Face Masks & Cleansers</a></li>
-                     <li><a href="Serum.html">Serums & Lip Care</a></li>
-                     <li><a href="Skintips.html">Skin Tips</a></li>
+                     <li><a href="Dehydration.php">Dehydration</a></li>
+                     <li><a href="Daycream.php">Day & Night Cream Moisturiser</a></li>
+                     <li><a href="Face.php">Face Masks & Cleansers</a></li>
+                     <li><a href="Serum.php">Serums & Lip Care</a></li>
+                     <li><a href="Skintips.php">Skin Tips</a></li>
                  </ul>
              </li>
-             <li><a href="Fragrance.html">Fragrance</a>
+             <li><a href="Fragrance.php">Fragrance</a>
                  <ul class="subcategories">
-                     <li><a href="Women.html">Women</a></li>
-                     <li><a href="Men.html">Men</a></li>
-                     <li><a href="Gift Sets.html">Gift Sets</a></li>
-                     <li><a href="Seeall.html">See All</a></li>  
-                     <a href="Unisex.html">Uni Sex</a></li>
+                     <li><a href="Women.php">Women</a></li>
+                     <li><a href="Men.php">Men</a></li>
+                     <li><a href="Gift Sets.php">Gift Sets</a></li>
+                     <li><a href="Seeall.php">See All</a></li>  
+                     <a href="Unisex.php">Uni Sex</a></li>
                  </ul>
              </li>
-             <li><a href="allforhair.html">Hair Care</a>
+             <li><a href="allforhair.php">Hair Care</a>
                  <ul class="subcategories">
-                     <li><a href="treatments.html">Treatments</a></li>
-                     <li><a href="styling.html">Styling</a></li>
-                     <li><a href="gifts.html">Gifts</a></li>
-                     <li><a href="seall.html">See All</a></li>
+                     <li><a href="treatments.php">Treatments</a></li>
+                     <li><a href="styling.php">Styling</a></li>
+                     <li><a href="gifts.php">Gifts</a></li>
+                     <li><a href="seall.php">See All</a></li>
                  </ul>
              </li>
          </ul>
      </nav>
      <div id="login-image" onclick="showLogin()">
-        <a href="login.html" ><img src="../img/login-removebg-preview (1).png" alt="Login" width="70px" style="cursor: pointer; width: 20px;"></a>
+        <a href="login.php" ><img src="../img/login-removebg-preview (1).png" alt="Login" width="70px" style="cursor: pointer; width: 20px;"></a>
      </div>
   </header> 
    <section id="video-section">
@@ -81,7 +81,7 @@
                 <p style="text-align: center;">Neovadiol Rose Platinium Night <br>Cream</p>
                 <p style="text-align: center;">$48.50</p>
                 <div class="sub-box">
-                <a href="Daycream.html" class="btn btn-light">SHOP NOW</a>
+                <a href="Daycream.php" class="btn btn-light">SHOP NOW</a>
                 </div>
             </div>
             <div class="slide">
@@ -90,7 +90,7 @@
                 <p style="text-align: center;">Easy Bake Loose Baking <br> & Setting Powder</p>
                 <p style="text-align: center;">$38.00</p>
                 <div class="sub-box">
-                <a href="facee.html" class="btn btn-light">SHOP NOW</a>
+                <a href="facee.php" class="btn btn-light">SHOP NOW</a>
                 </div>
             </div>
             <div class="slide">
@@ -99,7 +99,7 @@
                 <p style="text-align: center;">Neovadiol Perimenopause<br> Plumping Day Cream for Dry Skin</p>
                 <p style="text-align: center;">$60.00</p>
                 <div class="sub-box">
-                <a href="Daycream.html" class=" btn btn-light">SHOP NOW</a>
+                <a href="Daycream.php" class=" btn btn-light">SHOP NOW</a>
                 </div>
             </div>
             <div class="slide">
@@ -108,7 +108,7 @@
                 <p style="text-align: center;">Diamond Bomb All-Over Diamond Veil</p>
                 <p style="text-align: center;">$42.00 <del>$67.00</del></p>
                 <div class="sub-box">
-                <a href="cheeks.html" class="btn btn-light">SHOP NOW</a>
+                <a href="cheeks.php" class="btn btn-light">SHOP NOW</a>
                 </div>
             </div>
             <div class="slide">
@@ -117,7 +117,7 @@
                 <p style="text-align: center;">Gloss Bomb Universal</p>
                 <p style="text-align: center;">$21.00 <del>$35.00</del></p>
                 <div class="sub-box">
-                <a href="lips.html" class="btn btn-light">SHOP NOW</a>
+                <a href="lips.php" class="btn btn-light">SHOP NOW</a>
                 </div>
             </div>
             <div class="slide">
@@ -126,7 +126,7 @@
                 <p style="text-align: center;">Sauvage Eau de Toilette</p>
                 <p style="text-align: center;">$110.00</p>
                 <div class="sub-box">
-                <a href="Men.html" class="btn btn-light">SHOP NOW</a>
+                <a href="Men.php" class="btn btn-light">SHOP NOW</a>
                 </div>
             </div>
             <div class="slide">
@@ -135,7 +135,7 @@
                 <p style="text-align: center;">Pure Silk Turban</p>
                 <p style="text-align: center;"> $85.00</p>
                 <div class="sub-box">
-                <a href="gifts.html" class="btn btn-light">SHOP NOW</a>
+                <a href="gifts.php" class="btn btn-light">SHOP NOW</a>
                 </div>
             </div>
             <div class="slide">
@@ -144,7 +144,7 @@
                 <p style="text-align: center;">Airwrap Multi Styler in Ceramic Pop</p>
                 <p style="text-align: center;"> $599.00</p>
                 <div class="sub-box">
-                <a href="gifts.html" class="btn btn-light">SHOP NOW</a>
+                <a href="gifts.php" class="btn btn-light">SHOP NOW</a>
                 </div>
             </div>
              </div>
@@ -162,7 +162,7 @@
                 <p>Together we’re building a safe, welcoming <br> space in beauty and beyond. This is <br> makeup made
                     to feel good in, without <br>hiding what makes you unique. And it’s all <br> vegan and cruelty free.
                 </p>
-                <a href="OurStory.html" style="color: peru;">OUR STORY</a>
+                <a href="OurStory.php" style="color: peru;">OUR STORY</a>
             </blockquote>
         </div>
     </div>
@@ -171,7 +171,7 @@
         <div class="card-body">
     <h1 style="font-size: 2.5em; background-color: #fff; margin-bottom: 50px; font-family:'Times New Roman', Times, serif; text-align:center; margin-top: 150px;">
         <b>Click on "Beauty Quiz" below to play a fun quiz!</b></h1>
-    <p style="text-align: center; margin-bottom: 150px;"><a href="BeautyQuiz.html" target="_self"
+    <p style="text-align: center; margin-bottom: 150px;"><a href="BeautyQuiz.php" target="_self"
             style="font-size: 2.2em; background-color: #fff;font-family:'Times New Roman', Times, serif;color: peru; text-align: center; margin-bottom: 150px;">Beauty Quiz</a></p>
         </div>
     </div>
@@ -252,7 +252,7 @@
         <div class="card-body">
     <h1 style="font-size: 2.5em; background-color: #fff; margin-bottom: 50px; font-family:'Times New Roman', Times, serif; text-align:center; margin-top: 150px;">
         <b>If you're looking for a job in our company click on "Job Application" below!</b></h1>
-    <p style="text-align: center; margin-bottom: 150px;"><a href="JobApplication.html" target="_blank"
+    <p style="text-align: center; margin-bottom: 150px;"><a href="JobApplication.php" target="_blank"
             style="font-size: 2.5em; background-color: #fff;font-family:'Times New Roman', Times, serif;color: peru; text-align: center; margin-bottom: 150px;">Job
             Application</a></p>
         </div>
@@ -327,9 +327,9 @@
             <div class="quick-links">
                 <h2>Quick Links</h2>
                 <ul>
-                    <li><a href="MainPage.html">Home</a></li>
-                    <li><a href="OurStory.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a>
+                    <li><a href="MainPage.php">Home</a></li>
+                    <li><a href="OurStory.php">About Us</a></li>
+                    <li><a href="contact.php">Contact</a>
                     <li><div id="currentDateElement"></div>
                         <script>
                             const currentDate = new Date();
