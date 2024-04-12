@@ -26,7 +26,7 @@
 <body>
     
     <header>  
-    <a href="MainPage.php"> <img src="../img/logo.jpg" alt="Your Brand Logo"> <a href="MainPage.html"></a>
+    <a href="MainPage.php"> <img src="../img/logo.jpg" alt="Your Brand Logo"> <a href="MainPage.php"></a>
     <div class="text-with-shadow">
         EverGlow Beauty
     </div>
@@ -34,19 +34,19 @@
         <div class="container3" style="font-family: Verdana, Geneva, Tahoma, sans-serif;" >
         <div class="middle-box">
             <div class="sub-box">
-                <a href="Women.html" class="btn btn-light">Women</a>
+                <a href="Women.php" class="btn btn-light">Women</a>
             </div>
             <div class="sub-box">
-                <a href="Men.html" class="btn btn-light">Men</a>
+                <a href="Men.php" class="btn btn-light">Men</a>
             </div>
             <div class="sub-box">
-                <a href="Unisex.html" class="btn btn-light">Unisex</a>
+                <a href="Unisex.php" class="btn btn-light">Unisex</a>
             </div>
             <div class="sub-box">
-                <a href="Gift Sets.html" class="btn btn-light">Gift Sets</a>
+                <a href="Gift Sets.php" class="btn btn-light">Gift Sets</a>
             </div>
             <div class="sub-box">
-                <a href="Seeall.html" class="btn btn-light">See All</a>
+                <a href="Seeall.php" class="btn btn-light">See All</a>
             </div>
         </div>
     </div>
@@ -215,9 +215,9 @@
         <div class="quick-links">
             <h2>Quick Links</h2>
             <ul>
-                <li><a href="MainPage.html">Home</a></li>
-                <li><a href="OurStory.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a>
+                <li><a href="MainPage.php">Home</a></li>
+                <li><a href="OurStory.php">About Us</a></li>
+                <li><a href="contact.php">Contact</a>
                     <script>
                
                         const currentDate = new Date();
