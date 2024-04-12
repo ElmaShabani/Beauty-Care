@@ -46,7 +46,7 @@
     
     <header>
         
-        <a href="MainPage.html"> <img src="../img/logo.jpg" alt="Your Brand Logo"> <a href="MainPage.html"></a>
+        <a href="MainPage.php"> <img src="../img/logo.jpg" alt="Your Brand Logo"> <a href="MainPage.php"></a>
         <div class="text-with-shadow">
             EverGlow Beauty
         </div>
@@ -55,16 +55,16 @@
         <div class="container3" style="font-family: Georgia, 'Times New Roman', Times, serif;" >
             <div class="middle-box d-flex justify-content-around">
                   <div class="sub-box">
-                    <a href="treatments.html" class="btn btn-light">TREATMENTS</a>
+                    <a href="treatments.php" class="btn btn-light">TREATMENTS</a>
                 </div>
                 <div class="sub-box">
-                    <a href="styling.html" class="btn btn-light">STYLING</a>
+                    <a href="styling.php" class="btn btn-light">STYLING</a>
                 </div>
                 <div class="sub-box">
-                    <a href="gifts.html" class="btn btn-light">GIFT SETS</a>
+                    <a href="gifts.php" class="btn btn-light">GIFT SETS</a>
                 </div>
                 <div class="sub-box">
-                    <a href="seall.html" class="btn btn-light">SEE ALL</a>
+                    <a href="seall.php" class="btn btn-light">SEE ALL</a>
                 </div>
             </div>
             
@@ -99,78 +99,8 @@
     
     </div>
     <p style="font-size: 2em; background-color: #fff; margin-bottom: 50px; font-family:'Times New Roman', Times, serif; text-align:center; margin-top: 150px;"><b><i>If you want to win prize click the link below!</i></b></p>
-    <p style="text-align: center; margin-bottom: 150px;"><a href="giveaway.html" target="_blank" style="font-size: 2em; background-color: #fff;font-family:'Times New Roman', Times, serif;color: rgb(152, 111, 15); text-align: center; margin-bottom: 150px;">GIVEAWAY!!</a></p>
+    <p style="text-align: center; margin-bottom: 150px;"><a href="giveaway.php" target="_blank" style="font-size: 2em; background-color: #fff;font-family:'Times New Roman', Times, serif;color: rgb(152, 111, 15); text-align: center; margin-bottom: 150px;">GIVEAWAY!!</a></p>
 
-
-    <h2>The most expensive hair product is:</h2>
-    <div id="expensiveProduct" class="hidden">
-        <img id="expensiveProductImage" src="../img/hair.jpg" alt="Expensive Product Image">
-        <ul class="list-group" id="expensiveProductList"></ul>
-    </div>
-
-    <button id="revealExpensiveProduct" class="btn btn-primary">Reveal Most Expensive Product</button>
-
-    <h2>The cheapest hair product is:</h2>
-    <div id="cheapestProduct" class="hidden">
-        <img id="cheapestProductImage" src="../img/hair1.jpg" alt="Cheapest Product Image">
-        <ul class="list-group" id="cheapestProductList"></ul>
-    </div>
-
-    <button id="revealCheapestProduct" class="btn btn-primary">Reveal Cheapest Product</button>
-
-    <script>
-        function Product(id, name, price) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-}
-         $(document).ready(function () {
-        const products = [
-        new Product(1, 'Dyson', 599.00),
-        new Product(2, 'Flat Iron', 250),
-        new Product(3, 'Hair Mask', 38),
-        new Product(4, 'Prep', 30),
-        new Product(5, 'Curl Smith', 24),
-    ];
-
-        const mostExpensiveProduct = products.reduce((maxProduct, currentProduct) => {
-            return (currentProduct.price > maxProduct.price) ? currentProduct : maxProduct;
-        }, products[0]);
-
-        const cheapestProduct = products.reduce((minProduct, currentProduct) => {
-            return (currentProduct.price < minProduct.price) ? currentProduct : minProduct;
-        }, products[0]);
-
-        const expensiveProductList = $('#expensiveProductList');
-        const expensiveProductImage = $('#expensiveProductImage');
-        const expensiveProductContainer = $('#expensiveProduct');
-
-        products
-    .filter(product => product.price === mostExpensiveProduct.price)
-    .forEach(product => {
-        const listItem = $('<li>').addClass('list-group-item').text(`${product.name} - $${product.price.toString()}`);
-        expensiveProductList.append(listItem);
-    });
-
-        const cheapestProductList = $('#cheapestProductList');
-        const cheapestProductImage = $('#cheapestProductImage');
-        const cheapestProductContainer = $('#cheapestProduct');
-
-        products
-       .filter(product => product.price === cheapestProduct.price)
-       .forEach(product => {
-        const listItem = $('<li>').addClass('list-group-item').text(`${product.name} - $${product.price.toExponential()}`);
-        cheapestProductList.append(listItem);
-    });
-        $('#revealExpensiveProduct').click(function () {
-            expensiveProductContainer.removeClass('hidden').hide().fadeIn(800);
-        });
-
-        $('#revealCheapestProduct').click(function () {
-            cheapestProductContainer.removeClass('hidden').hide().fadeIn(800);
-        });
-    });
-    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -271,9 +201,9 @@
             <div class="quick-links">
                 <h2>Quick Links</h2>
                 <ul>
-                    <li><a href="MainPage.html">Home</a></li>
-                    <li><a href="OurStory.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a>
+                    <li><a href="MainPage.php">Home</a></li>
+                    <li><a href="OurStory.php">About Us</a></li>
+                    <li><a href="contact.php">Contact</a>
                     <li><div id="currentDateElement"></div>
                         <script>
     
@@ -313,7 +243,7 @@
              <div class="col text-center"><a id="AmexLink" class="site-footer-payments__link" href="https://www.americanexpress.com/" style="pointer-events: auto;">
                 <img src="https://images.ctfassets.net/eoaaqxyywn6o/1R0NBLVCShxTQNVHNjanE4/c970e9e15ecbb026929000ae3fcce6ae/Amex.svg"
                     alt="Amex" class="site-footer-payments__link__icon"></a></div>
-             <div class="col text-center"><a id="MastercardLink" class="site-footer-payments__link" href="https://www.mastercard.us/en-us.html" style="pointer-events: auto;">
+             <div class="col text-center"><a id="MastercardLink" class="site-footer-payments__link" href="https://www.mastercard.us/en-us.php" style="pointer-events: auto;">
                 <img src="https://images.ctfassets.net/eoaaqxyywn6o/5bs4r6UiioP3Fkj4Qg35o8/5583c0ecc4b6500a1083fd38cfabf6dc/Mastercard.svg"
                     alt="Mastercard" class="site-footer-payments__link__icon"></a></div>
              <div class="col text-center"><a id="MaestroLink" class="site-footer-payments__link" href="https://n26.com/en-eu/maestro-card" style="pointer-events: auto;">
@@ -346,6 +276,7 @@
             }
         }
     </script>
+    
 
 </body>
 </html>
