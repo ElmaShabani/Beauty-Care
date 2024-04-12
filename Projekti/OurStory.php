@@ -21,14 +21,14 @@
 </head>
 <body>
     <header>
-        <a href="MainPage.html"><img src="../img/logo.jpg" alt="Your Brand Logo"></a>
+        <a href="MainPage.php"><img src="../img/logo.jpg" alt="Your Brand Logo"></a>
         <div class="text-with-shadow" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">EverGlow Beauty</div>
         <nav>
             <ul>
-                <li><a href="allformakeup.html">Makeup</a></li>
-                <li><a href="Face.html">Skin Care</a></li>
-                <li><a href="Fragrance.html">Fragrance</a></li>
-                <li><a href="allforhair.html">Hair Care</a></li>
+                <li><a href="allformakeup.php">Makeup</a></li>
+                <li><a href="Face.php">Skin Care</a></li>
+                <li><a href="Fragrance.php">Fragrance</a></li>
+                <li><a href="allforhair.php">Hair Care</a></li>
             </ul>
         </nav>
        
@@ -99,9 +99,9 @@
         <div class="quick-links">
             <h2>Quick Links</h2>
             <ul>
-                <li><a href="MainPage.html">Home</a></li>
-                <li><a href="OurStory.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a>
+                <li><a href="MainPage.php">Home</a></li>
+                <li><a href="OurStory.php">About Us</a></li>
+                <li><a href="contact.php">Contact</a>
                 <li><div id="currentDateElement"></div>
                     <script>
 
