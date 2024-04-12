@@ -202,9 +202,9 @@ background-image: linear-gradient(rgb(236, 206, 176, 0.5), rgba(186, 162, 137, 0
             <div class="quick-links">
                 <h2>Quick Links</h2>
                 <ul>
-                    <li><a href="MainPage.html">Home</a></li>
-                    <li><a href="OurStory.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a>
+                    <li><a href="MainPage.php">Home</a></li>
+                    <li><a href="OurStory.php">About Us</a></li>
+                    <li><a href="contact.php">Contact</a>
                     <li><div id="currentDateElement"></div>
                         <script>
     
