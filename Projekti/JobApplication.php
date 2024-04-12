@@ -19,41 +19,41 @@
 <body>
    
     <header>
-        <a href="MainPage.html"><img src="../img/logo.jpg" alt="Your Brand Logo"></a>
+        <a href="MainPage.php"><img src="../img/logo.jpg" alt="Your Brand Logo"></a>
         <div class="text-with-shadow" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">EverGlow Beauty</div>
         <nav>
             <ul>
-                <li><a href="allformakeup.html">Makeup</a>
+                <li><a href="allformakeup.php">Makeup</a>
                     <ul class="subcategories">
-                        <li><a href="facee.html">Face</a></li>
-                        <li><a href="eyes.html">Eyes</a></li>
-                        <li><a href="lips.html">Lips</a></li>
-                        <li><a href="cheeks.html">Cheek</a></li>
-                        <li><a href="makeup.html">See All</a></li>
+                        <li><a href="facee.php">Face</a></li>
+                        <li><a href="eyes.php">Eyes</a></li>
+                        <li><a href="lips.php">Lips</a></li>
+                        <li><a href="cheeks.php">Cheek</a></li>
+                        <li><a href="makeup.php">See All</a></li>
                     </ul></li>
-                <li><a href="Face.html">Skin Care</a>
+                <li><a href="Face.php">Skin Care</a>
                     <ul class="subcategories">
-                        <li><a href="Dehydration.html">Dehydration</a></li>
-                        <li><a href="Daycream.html">Day & Night Cream Moisturiser</a></li>
-                        <li><a href="Face.html">Face Masks & Cleansers</a></li>
-                        <li><a href="Serum.html">Serums & Lip Care</a></li>
+                        <li><a href="Dehydration.php">Dehydration</a></li>
+                        <li><a href="Daycream.php">Day & Night Cream Moisturiser</a></li>
+                        <li><a href="Face.php">Face Masks & Cleansers</a></li>
+                        <li><a href="Serum.php">Serums & Lip Care</a></li>
     
                     </ul>
                 </li>
-                <li><a href="Fragrance.html">Fragrance</a>
+                <li><a href="Fragrance.php">Fragrance</a>
                     <ul class="subcategories">
-                        <li><a href="Women.html">Women</a></li>
-                        <li><a href="Men.html">Men</a></li>
-                        <li><a href="Gift Sets.html">Gift Sets</a></li>
-                        <li><a href="Seeall.html">See All</a></li>  
+                        <li><a href="Women.php">Women</a></li>
+                        <li><a href="Men.php">Men</a></li>
+                        <li><a href="Gift Sets.php">Gift Sets</a></li>
+                        <li><a href="Seeall.php">See All</a></li>  
                     </ul>
                 </li>
-                <li><a href="allforhair.html">Hair Care</a>
+                <li><a href="allforhair.php">Hair Care</a>
                     <ul class="subcategories">
-                        <li><a href="treatments.html">Treatments</a></li>
-                        <li><a href="styling.html">Styling</a></li>
-                        <li><a href="gifts.html">Gifts</a></li>
-                        <li><a href="seall.html">See All</a></li>
+                        <li><a href="treatments.php">Treatments</a></li>
+                        <li><a href="styling.php">Styling</a></li>
+                        <li><a href="gifts.php">Gifts</a></li>
+                        <li><a href="seall.php">See All</a></li>
                     </ul>
                 </li>
             </ul>
@@ -122,9 +122,9 @@
             <div class="quick-links">
                 <h2>Quick Links</h2>
                 <ul>
-                    <li><a href="MainPage.html">Home</a></li>
-                    <li><a href="OurStory.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a>
+                    <li><a href="MainPage.php">Home</a></li>
+                    <li><a href="OurStory.php">About Us</a></li>
+                    <li><a href="contact.php">Contact</a>
                     <li><div id="currentDateElement"></div>
                         <script>
     
