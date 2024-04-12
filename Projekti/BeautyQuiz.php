@@ -86,10 +86,10 @@ li {
             <h2>Your Beauty Persona:</h2>
             <p id="resultText"></p>
             <ol>
-            <li>Explore our <a href="makeup.html" style="color: peru;"><i>Makeup products</i></a></li>
-            <li>Explore our <a href="seall.html" style="color: peru;"><i>Hair products</i></a></li>
-            <li>Explore our <a href="Seeall.html" style="color: peru;"><i>Fragrance products</i></a></li>
-            <li>Explore our <a href="Serum.html" style="color: peru;"><i>SkinCare products</i></a></li>
+            <li>Explore our <a href="makeup.php" style="color: peru;"><i>Makeup products</i></a></li>
+            <li>Explore our <a href="seall.php" style="color: peru;"><i>Hair products</i></a></li>
+            <li>Explore our <a href="Seeall.php" style="color: peru;"><i>Fragrance products</i></a></li>
+            <li>Explore our <a href="Serum.php" style="color: peru;"><i>SkinCare products</i></a></li>
             </ol>
         </div>
     </div>

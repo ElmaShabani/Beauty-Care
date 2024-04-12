@@ -21,25 +21,25 @@
     </head>
 <body>
     <header>
-         <a href="MainPage.html"><img src="../img/logo.jpg" alt="Your Brand Logo"> <a href="MainPage.html"></a> 
+         <a href="MainPage.php"><img src="../img/logo.jpg" alt="Your Brand Logo"> <a href="MainPage.php"></a> 
         <h3 style="font-family: Verdana, Geneva, Tahoma, sans-serif;"><div class="text-with-shadow"> EverGlow Beauty</h3></div>
         
     <div class="container3" style="font-family: Georgia, 'Times New Roman', Times, serif;" >
       <div class="middle-box d-flex justify-content-around">
             <div class="sub-box">
-                <a href="facee.html" class="btn btn-light" >FACE</a>
+                <a href="facee.php" class="btn btn-light" >FACE</a>
             </div>
             <div class="sub-box">
-                <a href="eyes.html" class="btn btn-light">EYES</a>
+                <a href="eyes.php" class="btn btn-light">EYES</a>
             </div>
             <div class="sub-box">
-                <a href="lips.html" class="btn btn-light">LIPS</a>
+                <a href="lips.php" class="btn btn-light">LIPS</a>
             </div>
             <div class="sub-box">
-                <a href="cheeks.html" class="btn btn-light">CHEEK</a>
+                <a href="cheeks.php" class="btn btn-light">CHEEK</a>
             </div>
             <div class="sub-box">
-                <a href="makeup.html" class="btn btn-light">SEE ALL</a>
+                <a href="makeup.php" class="btn btn-light">SEE ALL</a>
             </div>
             
         </div>
@@ -122,7 +122,10 @@
         <img id="foundation" src="../img/diorfoundation.webp" alt="Foundation" style="width:200px;
         padding:2px;" draggable="true" ondragstart="drag(event)"></nav></div>
         <br>
-        
+        <div class="generator" style="background-color:  rgba(236, 206, 176, 0.5);padding: 20px;  border-radius: 10px;margin-left: 30px; margin-right: 30px; margin-top: 50px; margin-bottom: 60px;">
+        <h3><a href="palette.php" class="text-dark">Click here to unlock the artistry of self-expression with our Color Palette Generator! Dive into a world of endless 
+          possibilities as you curate your makeup palette, selecting hues for eyeshadow, lipstick, blush, foundation, and contour.</a></h3></div>
+  
   <footer>
     <div class="container d-flex footer-container">
         <div class="left">
@@ -132,9 +135,9 @@
         <div class="quick-links">
             <h2>Quick Links</h2>
             <ul>
-                <li><a href="MainPage.html">Home</a></li>
-                <li><a href="OurStory.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a>
+                <li><a href="MainPage.php">Home</a></li>
+                <li><a href="OurStory.php">About Us</a></li>
+                <li><a href="contact.php">Contact</a>
                 <li><div id="currentDateElement"></div>
                     <script>
 
@@ -174,7 +177,7 @@
          <div class="col text-center"><a id="AmexLink" class="site-footer-payments__link" href="https://www.americanexpress.com/" style="pointer-events: auto;">
             <img src="https://images.ctfassets.net/eoaaqxyywn6o/1R0NBLVCShxTQNVHNjanE4/c970e9e15ecbb026929000ae3fcce6ae/Amex.svg"
                 alt="Amex" class="site-footer-payments__link__icon"></a></div>
-         <div class="col text-center"><a id="MastercardLink" class="site-footer-payments__link" href="https://www.mastercard.us/en-us.html" style="pointer-events: auto;">
+         <div class="col text-center"><a id="MastercardLink" class="site-footer-payments__link" href="https://www.mastercard.us/en-us.php" style="pointer-events: auto;">
             <img src="https://images.ctfassets.net/eoaaqxyywn6o/5bs4r6UiioP3Fkj4Qg35o8/5583c0ecc4b6500a1083fd38cfabf6dc/Mastercard.svg"
                 alt="Mastercard" class="site-footer-payments__link__icon"></a></div>
          <div class="col text-center"><a id="MaestroLink" class="site-footer-payments__link" href="https://n26.com/en-eu/maestro-card" style="pointer-events: auto;">
@@ -208,7 +211,7 @@
 
     
 
-
+          
     </body>
-  </html>
+    </html>
 

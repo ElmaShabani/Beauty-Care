@@ -23,7 +23,7 @@
             var passwordInput = document.getElementById("password").value;
 
             if (usernameInput && passwordInput && validateUsername(usernameInput) && validatePassword(passwordInput)) {
-                window.location.href = "MainPage.html";
+                window.location.href = "MainPage.php";
             } else {
                 alert("Invalid username or password. Please check your input.");
             }
