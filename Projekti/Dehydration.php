@@ -1,3 +1,39 @@
+<?php
+// Deklarimi i variablave per produktet
+$products = [
+    ["name" => "Neovadiol Multi-Corrective Eye and Lip Care for Menopause 15ml", "price" => 20.00],
+    ["name" => "Aqualia Thermal Gel Moisturising Day Cream", "price" => 22.40],
+    // Shtoni produktet e tjera këtu
+];
+
+// Funksioni per te shtuar produktet ne cart
+function addToCart($productName, $productPrice) {
+    // Krijimi i një sesioni nese nuk ekziston
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+    // Krijimi i nje array per produktet ne cart ne sesion
+    if (!isset($_SESSION['cart'])) {
+        $_SESSION['cart'] = [];
+    }
+    // Shtimi i produktit ne shporte
+    $_SESSION['cart'][] = ["name" => $productName, "price" => $productPrice];
+}
+
+// Shfaqja e produkteve ne cart
+function displayCart() {
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+    if (isset($_SESSION['cart'])) {
+        foreach ($_SESSION['cart'] as $item) {
+            echo "<li>{$item['name']} - $ {$item['price']}</li>";
+        }
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
