@@ -1,3 +1,8 @@
+<?php
+
+// Shtoni nje variabel globale
+$_GLOBALS['companyName'] = "EverGlow Beauty";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
