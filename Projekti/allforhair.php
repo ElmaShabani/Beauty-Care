@@ -66,16 +66,8 @@
         </video>
     </section>
 
-    <?php
-    // Kontrolloni nëse një cookie për ngjyrën e sfondit ekziston
-    if(isset($_COOKIE['background_color'])) {
-        $background_color = $_COOKIE['background_color'];
-    } else {
-        // Nëse nuk ka një cookie për ngjyrën e sfondit, përdorni një ngjyrë parazgjedhur
-        $background_color = "#FFC0CB"; // Baby Pink
+   
 
-    }
-    ?>
 
     <div class="fourth-container" style="border: 2px solid pink; border-radius: 10px;border-style: double; margin-left: 30px; margin-right: 30px; background-color: <?php echo $background_color; ?>;">
         <div class="image-container">

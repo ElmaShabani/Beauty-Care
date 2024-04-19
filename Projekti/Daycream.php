@@ -10,6 +10,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./Dehydration.css">
     <link rel="stylesheet" href="./Skintips.js">
+    <style>
+        /* Stilizimi i ndryshuar bazuar në vlerën e cookies */
+        body {
+            background-color: <?php echo isset($_COOKIE['background_color']) ? $_COOKIE['background_color'] : '#FFFFFF'; ?>;
+        }
+    </style>
 </head>
 
 <body>
@@ -22,12 +28,12 @@
             <p>Total: $<span id="cart-total">0.00</span></p>
             <label for="payment-method">Select Payment Method:</label>
             <select id="payment-method" name="payment-method">
-            <option value="paypal">PayPal</option>
-            <option value="clearpay">Clearpay</option>
-            <option value="visa"> Visa</option>
-            <option value="amex">American Express</option>
-            <option value="mastercard">Mastercard</option>
-            <option value="maestro">Maestro</option>
+                <option value="paypal">PayPal</option>
+                <option value="clearpay">Clearpay</option>
+                <option value="visa"> Visa</option>
+                <option value="amex">American Express</option>
+                <option value="mastercard">Mastercard</option>
+                <option value="maestro">Maestro</option>
             </select><br><br>
             <label for="card-number">Enter Card Number:</label>
             <input type="text" id="card-number" name="card-number">
@@ -41,18 +47,8 @@
         <div id="cart-image" onclick="toggleCart()">
             <img src="../img/cart.jpg" alt="Cart" width="70px">
         </div>
-  
-  
     </header>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const currentHtmlFile = window.location.href.split("/").slice(-1)[0];
-
-            var link = document.querySelector(".sub-box a[href='" + currentHtmlFile + "']");
-            link.style.textDecoration = 'underline';
-        });
-    </script>
     <div class="background-container">
         <div class="image-box">
             <img src="../img/day1.jpg" alt="Foto 1" class="image">
@@ -114,7 +110,8 @@
     ?>
     <script>
         const visits = <?php echo $_SESSION['visits']; ?>;
-        console.log("Number of visits: " + visits);
+        // Vendos numrin e vizitave në elementin me id "visits-count"
+        document.getElementById("visits-count").innerText = visits;
     </script>
 
     <script src="forall.js"></script>
