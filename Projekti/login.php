@@ -28,6 +28,8 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
     header("Location: MainPage.php");
     exit;
 }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -65,6 +67,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
     font-family: 'Times New Roman', Times, serif;
     margin: 0;
     padding: 0;
+    
     background: radial-gradient(ellipse at center, rgba(236, 206, 176, 0.5)  10% , rgb(101, 45, 17) 100% );
     text-align: center;
     display: flex;
@@ -125,7 +128,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
     </style>
 </head>
 <body>
-    
+
     <form action="/your-login-endpoint" method="post" autocomplete="on" onsubmit="login(event)">
         <h2>Log Into EverGlow Beauty</h2>
         
