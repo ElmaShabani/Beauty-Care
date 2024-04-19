@@ -11,7 +11,8 @@
        
         <style>
           body {
-                       background-image: url('../img/projekti.img.jpg');
+            /*background-image: url('../img/<?php echo $background_image; ?>');*/
+                      background-image: url('../img/projekti.img.jpg'); 
                        background-attachment: fixed;
                        background-size: cover;    
                        background-position: center;
