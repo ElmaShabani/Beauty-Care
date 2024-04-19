@@ -45,29 +45,67 @@
             <h3>Gucci<p>Mini Flora Gorgeous Jasmine Eau de Parfum Perfume Set</p></h3>
             <p>$39.00</p> 
             <button class="add-to-cart" onclick="addToCart('Mini Flora Gorgeous Jasmine Eau de Parfum Perfume Set',39.00)">Add to Cart</button>
-        </div>
-        <!-- Rest of your product listings -->
-    </section>
-    
-    <!-- New section for gift message -->
-    <section id="gift-message">
-        <h2>Make Your Gifts Extra Special!</h2>
-        <p>Add a personalized message to your loved ones:</p>
-        <textarea id="gift-message-text" rows="4" cols="50" placeholder="Write your message here..."></textarea>
+    </div>
+    <div class="product" >
+       
+        <img src="../img/Libre Discovery Trio Set.webp" alt="Fragrance-Gift Sets" >
+        <h3>Yves Saint Laurent<p> Libre Discovery Trio Set</p></h3>
+        <p>$45.00</p>
+        <button class="add-to-cart" onclick="addToCart(' Libre Discovery Trio Set',45.00)">Add to Cart</button>
+    </div>
+    <div class="product" >
+        <img src="../img/Chanel1.webp" alt="Fragrance-Gift Sets" >
+        <h3>CHANEL<p> CHANCE EAU TENDRE Eau de Toilette Gift Set
+            </p> </h3>
+        <p>$178.00</p>
+        <button class="add-to-cart" onclick="addToCart('CHANCE EAU TENDRE Eau de Toilette Gift Set',178.00)">Add to Cart</button>
+    </div>
+    <div class="product" >
+        <img src="../img/Marc Jacobs Fragrances.webp" alt="Fragrance-Gift Sets" >
+        <h3>Marc Jacobs Fragrances<p> Mini Daisy Eau de Toilette Perfume Gift Set</p> </h3>
+        <p>$79.00</p>
+        <button class="add-to-cart" onclick="addToCart('Mini Daisy Eau de Toilette Perfume Gift Set',79.00)">Add to Cart</button>
+    </div>
+    <div class="product" >
+        <img src="../img/CLEAN RESERVE.webp" alt="Fragrance-Gift Sets" >
+        <h3>CLEAN RESERVE<p>Sparkling Sugar Travel Size Perfume Se</p></h3>
+        <p>$48.00</p> 
+        <button class="add-to-cart" onclick="addToCart('Sparkling Sugar Travel Size Perfume Se',48.00)">Add to Cart</button>
+    </div>
+    <div class="product" >
+        <img src="../img/Fenty Beauty by Rihann.webp" alt="Fragrance-Gift Sets" >
+        <h3>Fenty Beauty by Rihanna <p> Fenty Eau de Parfum Perfume Se</p></h3>
+        <p>$150.00</p>
+        <button class="add-to-cart" onclick="addToCart('Fenty Eau de Parfum Perfume Se',150.00)">Add to Cart</button>
+    </div>
+    <div class="product" >
+        <img src="../img/libre,black.webp" alt="Fragrance-Gift Sets" >
+        <h3>Yves Saint Laurent <p>  Mini Black Opium & Libre Eau de Parfum Set</p></h3>
+        <p>$55.00</p>
+        <button class="add-to-cart" onclick="addToCart(' Mini Black Opium & Libre Eau de Parfum Set',55.00)">Add to Cart</button>
+    </div>
+    <div class="product" >
+        <img src="../img/mini good fortune.webp" alt="Fragrance-Gift Sets" >
+        <h3>Viktor&Rolf<p> Mini Good Fortune & Flowerbomb Perfume Set</p></h3>
+        <p>$29.00</p>
+        <button class="add-to-cart" onclick="addToCart(' Mini Good Fortune & Flowerbomb Perfume Set',29.00)">Add to Cart</button>
+    </div>
+    <div class="product" >
+        <img src="../img/Hermes.webp" alt="Fragrance-Gift Sets" >
+        <h3>HERMÈS<p> Mini Fragrance Discovery Set</p></h3>
+        <p>$60.00</p>
+        <button class="add-to-cart" onclick="addToCart('  Mini Fragrance Discovery Set',60.00)">Add to Cart</button>
+    </div>
     </section>
     
     <script>
         setTimeout(function () {
-            alert("Welcome to the Gift Sets's fragrance sector");
+      alert("Welcome to the Gift Sets's fragrance sector");
         }, 500);
-
-        // Krijo cookie
-        var data = new Date();
-        data.setHours(23, 59, 59, 999); 
-        var dataFormatuar = data.toUTCString();
-        document.cookie = "emri=vlere; expires=" + dataFormatuar;
-    </script>
+      </script>
+      
+      <script src="forall.js"></script>
     
-    <script src="forall.js"></script>
+
 </body>
 </html>
