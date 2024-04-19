@@ -99,7 +99,8 @@
         <h2>Log Into EverGlow Beauty</h2>
         
         <input type="text" id="username" name="username" placeholder="Username..." required>
-        <input type="password" id="password" name="password"  placeholder="Password..." required>
+        <input type="password" id="password" name="password"  placeholder="Email..." required>
+        
 
         <button type="submit" style="width: 200px; border: 1px solid black;">Log In</button>
         <p>or</p>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -26,7 +26,7 @@
 <body>
     
     <header>  
-    <a href="MainPage.php"> <img src="../img/logo.jpg" alt="Your Brand Logo"> <a href="MainPage.html"></a>
+    <a href="MainPage.php"> <img src="../img/logo.jpg" alt="Your Brand Logo"> <a href="MainPage.php"></a>
     <div class="text-with-shadow">
         EverGlow Beauty
     </div>
@@ -34,19 +34,19 @@
         <div class="container3" style="font-family: Verdana, Geneva, Tahoma, sans-serif;" >
         <div class="middle-box">
             <div class="sub-box">
-                <a href="Women.html" class="btn btn-light">Women</a>
+                <a href="Women.php" class="btn btn-light">Women</a>
             </div>
             <div class="sub-box">
-                <a href="Men.html" class="btn btn-light">Men</a>
+                <a href="Men.php" class="btn btn-light">Men</a>
             </div>
             <div class="sub-box">
-                <a href="Unisex.html" class="btn btn-light">Unisex</a>
+                <a href="Unisex.php" class="btn btn-light">Unisex</a>
             </div>
             <div class="sub-box">
-                <a href="Gift Sets.html" class="btn btn-light">Gift Sets</a>
+                <a href="Gift Sets.php" class="btn btn-light">Gift Sets</a>
             </div>
             <div class="sub-box">
-                <a href="Seeall.html" class="btn btn-light">See All</a>
+                <a href="Seeall.php" class="btn btn-light">See All</a>
             </div>
         </div>
     </div>
@@ -63,13 +63,10 @@
     <div class="fourth-container" style="font-family: 'Times New Roman', Times, serif;">
     <div class="image-container">
             <img src="../img/unnamed.jpg" alt="Your Image" class="round-image">
-<<<<<<< HEAD
            <audio controls>
                 <source src="../img/Audiooo11.mp3" type="audio/mp3" style="display:none;" >
                 Your browser does not support the audio tag.
             </audio> 
-=======
->>>>>>> d3fddf97c6ae5419476910b4f82db369eb44b929
         </div>
         <div class="quote-container">
             <blockquote> 
@@ -84,7 +81,7 @@
 </div>
 
 <div class="list">
-    <ul style="border: 5px solid black;border-style: double; list-style-type:circle; background-color:rgba(236, 206, 176, 0.5) ;">
+    <ul style="border: 5px solid black;border-style: double; list-style-type:none; background-color:rgba(236, 206, 176, 0.5) ;">
     
         <li>Fragrance
             <ul>
@@ -215,9 +212,9 @@
         <div class="quick-links">
             <h2>Quick Links</h2>
             <ul>
-                <li><a href="MainPage.html">Home</a></li>
-                <li><a href="OurStory.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a>
+                <li><a href="MainPage.php">Home</a></li>
+                <li><a href="OurStory.php">About Us</a></li>
+                <li><a href="contact.php">Contact</a>
                     <script>
                
                         const currentDate = new Date();
@@ -260,7 +257,7 @@
          <div class="col text-center"><a class="site-footer-payments__link" href="https://www.americanexpress.com/" style="pointer-events: auto;">
             <img src="https://images.ctfassets.net/eoaaqxyywn6o/1R0NBLVCShxTQNVHNjanE4/c970e9e15ecbb026929000ae3fcce6ae/Amex.svg"
                 alt="Amex" class="site-footer-payments__link__icon"></a></div>
-         <div class="col text-center"><a class="site-footer-payments__link" href="https://www.mastercard.us/en-us.html" style="pointer-events: auto;">
+         <div class="col text-center"><a class="site-footer-payments__link" href="https://www.mastercard.us/en-us.php" style="pointer-events: auto;">
             <img src="https://images.ctfassets.net/eoaaqxyywn6o/5bs4r6UiioP3Fkj4Qg35o8/5583c0ecc4b6500a1083fd38cfabf6dc/Mastercard.svg"
                 alt="Mastercard" class="site-footer-payments__link__icon"></a></div>
          <div class="col text-center"><a class="site-footer-payments__link" href="https://n26.com/en-eu/maestro-card" style="pointer-events: auto;">
@@ -270,7 +267,4 @@
     </div>
 
 </footer>
-
- 
-  
 </html>

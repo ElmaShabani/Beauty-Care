@@ -13,26 +13,26 @@
 
 <body>
     <header>
-        <a href="MainPage.html"><img src="../img/Logo.jpg" alt="Your Brand Logo"> </a>
+        <a href="MainPage.php"><img src="../img/Logo.jpg" alt="Your Brand Logo"> </a>
         <h3 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
             <div class="text-with-shadow"> EverGlow Beauty</div>
         </h3>
 
         <div class="container3" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
             <div class="sub-box">
-                <a href="Dehydration.html" class="btn btn-light" >Dehydration</a>
+                <a href="Dehydration.php" class="btn btn-light" >Dehydration</a>
             </div>
             <div class="sub-box">
-                <a href="Daycream.html" class="btn btn-light" >Day & Night Cream</a>
+                <a href="Daycream.php" class="btn btn-light" >Day & Night Cream</a>
             </div>
             <div class="sub-box">
-                <a href="Face.html" class="btn btn-light" >Face Masks & Cleansers</a>
+                <a href="Face.php" class="btn btn-light" >Face Masks & Cleansers</a>
             </div>
             <div class="sub-box">
-                <a href="Serum.html" class="btn btn-light" >Serums & Lip Care</a>
+                <a href="Serum.php" class="btn btn-light" >Serums & Lip Care</a>
             </div>
             <div class="sub-box">
-                <a href="Skintips.html" class="btn btn-light" >Skin Tips</a>
+                <a href="Skintips.php" class="btn btn-light" >Skin Tips</a>
             </div>
         </div>
     </header>
@@ -78,9 +78,9 @@
             <div class="quick-links">
                 <h2>Quick Links</h2>
                 <ul>
-                    <li><a href="MainPage.html">Home</a></li>
-                    <li><a href="OurStory.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a>
+                    <li><a href="MainPage.php">Home</a></li>
+                    <li><a href="OurStory.php">About Us</a></li>
+                    <li><a href="contact.php">Contact</a>
                     <li><div id="currentDateElement"></div>
                         <script>
     
@@ -120,7 +120,7 @@
              <div class="col text-center"><a id="AmexLink" class="site-footer-payments__link" href="https://www.americanexpress.com/" style="pointer-events: auto;">
                 <img src="https://images.ctfassets.net/eoaaqxyywn6o/1R0NBLVCShxTQNVHNjanE4/c970e9e15ecbb026929000ae3fcce6ae/Amex.svg"
                     alt="Amex" class="site-footer-payments__link__icon"></a></div>
-             <div class="col text-center"><a id="MastercardLink" class="site-footer-payments__link" href="https://www.mastercard.us/en-us.html" style="pointer-events: auto;">
+             <div class="col text-center"><a id="MastercardLink" class="site-footer-payments__link" href="https://www.mastercard.us/en-us.php" style="pointer-events: auto;">
                 <img src="https://images.ctfassets.net/eoaaqxyywn6o/5bs4r6UiioP3Fkj4Qg35o8/5583c0ecc4b6500a1083fd38cfabf6dc/Mastercard.svg"
                     alt="Mastercard" class="site-footer-payments__link__icon"></a></div>
              <div class="col text-center"><a id="MaestroLink" class="site-footer-payments__link" href="https://n26.com/en-eu/maestro-card" style="pointer-events: auto;">
