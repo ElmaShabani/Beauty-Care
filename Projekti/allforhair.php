@@ -72,7 +72,8 @@
         $background_color = $_COOKIE['background_color'];
     } else {
         // Nëse nuk ka një cookie për ngjyrën e sfondit, përdorni një ngjyrë parazgjedhur
-        $background_color = "#ffffff"; // Ngjyra e bardhë
+        $background_color = "#FFC0CB"; // Baby Pink
+
     }
     ?>
 
