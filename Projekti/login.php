@@ -1,3 +1,34 @@
+<?php
+// Fillon nje sesion ne PHP
+session_start();
+
+// Kontrollojm nese eshte bere POST request per te procesuar formen e hyrjes
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Marrja e vlerave te hyrjes nga forma
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    // Kontrollo nese perdoruesi dhe fjalekalimi jane te sakte
+    if ($username === "admin" && $password === "admin123") {
+        // Nese autentikimi eshte i suksesshem, vendos nje sesion te ruajtur
+        $_SESSION['loggedin'] = true;
+        $_SESSION['username'] = $username;
+
+        // Vendos nje cookie per te shenuar autentikimin
+        setcookie('fundi_i_dites', 'po', time() + (86400 * 30), "/"); // 86400 sekonda = 1 dite
+    } else {
+        // Ne rast te autentikimit te deshtuar, shfaq nje mesazh gabimi
+        echo "<script>alert('Invalid username or password. Please try again.');</script>";
+    }
+}
+
+// Kontrollo nese sesioni eshte krijuar dhe perdoruesi eshte autentikuar
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+    // Nese autentikimi eshte i suksesshem, ridrejto ne faqen kryesore
+    header("Location: MainPage.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
