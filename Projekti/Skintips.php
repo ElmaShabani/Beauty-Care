@@ -52,7 +52,26 @@
         </div>
     </header>
 
+    <body bgcolor="<?php echo $bgColor ?>" text="<?php echo $txtColor ?>">
+<form action= "./server.php" method ="POST"> 
+<p>Select Background Color:</p>
+<select name=bgColor>
+<option value ="Red">Red</option>
+<option value ="Green">Green</option>
+<option value ="Blue">Blue</option>
+<option value ="Yellow">Yellow</option>
+<option value ="Black">Black</option>
+<option value ="Brown">Brown</option>
+<option value ="White" selected>White</option>
+</select>
 
+<input type ="hidden" name="submitted" value="true"></br>
+<br />
+<input type="submit" value="Kujto vlerat">
+
+
+
+</form>
     <br>
   
     <canvas id="test" width="250" height="100" style=" border: 2px solid #000000; 
