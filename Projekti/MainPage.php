@@ -341,7 +341,56 @@
                     </li>
                 </ul>
             </div>
-            <div class="get-in-touch">
+            <?php 
+    class Info {
+        public $Address;
+        public $Gmail;
+        protected $Phone;
+        private $AddressLink;
+        private $MailLink;
+        
+        function __construct($Address, $Gmail, $Phone) {
+            $this->Address = $Address;
+            $this->Gmail = $Gmail;
+            $this->Phone = $Phone;
+            
+        }
+
+        function set_data($AddressLink, $MailLink){
+            $this->AddressLink = $AddressLink;
+            $this->MailLink = $MailLink;
+        }
+
+        
+        
+        function get_data() {
+            $generateData = '<div class="get-in-touch">
+                <h2>Get in Touch</h2>
+                <address style="margin-left: 100px; font-size: 20px; font-family:Georgia, \'Times New Roman\', Times, serif;">
+                    <a href="' . $this->AddressLink . '">Address: ' . $this->Address . '</a>
+                </address>
+                <p>Email: <mark style="background-color: white;"><a href="' . $this->MailLink . '">' . $this->Gmail . '</a></mark></p>
+                <p>Phone: <mark style="background-color: white;">' . $this->Phone . '</mark></p>
+            </div>';
+            
+            return $generateData;
+        }
+
+        function print_data(){
+            echo $this -> get_data();
+        }
+    }
+    
+    $Our_info = new Info("Ferizaj", "everglowbeauty@gmail.com", "+383 44 898 395");
+    $Our_info->set_data("https://maps.app.goo.gl/scmxnwzCazoUVT8b9", "mailto:everglowbeauty@gmail.com");
+    
+   // echo $Our_info->get_data();
+
+   $Our_info->print_data();
+?>
+
+
+           <!-- <div class="get-in-touch">
                 <h2>Get in Touch</h2>
                 <address
                     style="margin-left: 100px; font-size: 20px; font-family:Georgia, 'Times New Roman', Times, serif;">
@@ -349,7 +398,7 @@
                 <p>Email: <mark style="background-color: white;"> <a
                             href="mailto:everglowbeauty@gmail.com">everglowbeauty@gmail.com</a> </mark></p>
                 <p>Phone: <mark style="background-color: white;">+383 48 555 111</mark> </p>
-            </div>
+            </div>-->
         </div>
         <div class="container-fluid site-footer-payments">
             <aside>
