@@ -1,4 +1,13 @@
+<<<<<<< HEAD
 <<!DOCTYPE html>
+=======
+<?php
+
+// Shtoni nje variabel globale
+$_GLOBALS['companyName'] = "EverGlow Beauty";
+?>
+<!DOCTYPE html>
+>>>>>>> f0e6b945f55c68eacbca78a00732e82d5080ed9c
 <html lang="en">
 
 <head>
