@@ -1,9 +1,13 @@
+<<<<<<< HEAD
+<<!DOCTYPE html>
+=======
 <?php
 
 // Shtoni nje variabel globale
 $_GLOBALS['companyName'] = "EverGlow Beauty";
 ?>
 <!DOCTYPE html>
+>>>>>>> f0e6b945f55c68eacbca78a00732e82d5080ed9c
 <html lang="en">
 
 <head>
@@ -68,13 +72,10 @@ $_GLOBALS['companyName'] = "EverGlow Beauty";
     <div class="fourth-container" style="font-family: 'Times New Roman', Times, serif;">
     <div class="image-container">
             <img src="../img/unnamed.jpg" alt="Your Image" class="round-image">
-<<<<<<< HEAD
            <audio controls>
                 <source src="../img/Audiooo11.mp3" type="audio/mp3" style="display:none;" >
                 Your browser does not support the audio tag.
             </audio> 
-=======
->>>>>>> d3fddf97c6ae5419476910b4f82db369eb44b929
         </div>
         <div class="quote-container">
             <blockquote> 
@@ -89,7 +90,7 @@ $_GLOBALS['companyName'] = "EverGlow Beauty";
 </div>
 
 <div class="list">
-    <ul style="border: 5px solid black;border-style: double; list-style-type:circle; background-color:rgba(236, 206, 176, 0.5) ;">
+    <ul style="border: 5px solid black;border-style: double; list-style-type:none; background-color:rgba(236, 206, 176, 0.5) ;">
     
         <li>Fragrance
             <ul>
@@ -265,7 +266,7 @@ $_GLOBALS['companyName'] = "EverGlow Beauty";
          <div class="col text-center"><a class="site-footer-payments__link" href="https://www.americanexpress.com/" style="pointer-events: auto;">
             <img src="https://images.ctfassets.net/eoaaqxyywn6o/1R0NBLVCShxTQNVHNjanE4/c970e9e15ecbb026929000ae3fcce6ae/Amex.svg"
                 alt="Amex" class="site-footer-payments__link__icon"></a></div>
-         <div class="col text-center"><a class="site-footer-payments__link" href="https://www.mastercard.us/en-us.html" style="pointer-events: auto;">
+         <div class="col text-center"><a class="site-footer-payments__link" href="https://www.mastercard.us/en-us.php" style="pointer-events: auto;">
             <img src="https://images.ctfassets.net/eoaaqxyywn6o/5bs4r6UiioP3Fkj4Qg35o8/5583c0ecc4b6500a1083fd38cfabf6dc/Mastercard.svg"
                 alt="Mastercard" class="site-footer-payments__link__icon"></a></div>
          <div class="col text-center"><a class="site-footer-payments__link" href="https://n26.com/en-eu/maestro-card" style="pointer-events: auto;">
@@ -275,7 +276,4 @@ $_GLOBALS['companyName'] = "EverGlow Beauty";
     </div>
 
 </footer>
-
- 
-  
 </html>

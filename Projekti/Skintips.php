@@ -52,7 +52,26 @@
         </div>
     </header>
 
+    <body bgcolor="<?php echo $bgColor ?>" text="<?php echo $txtColor ?>">
+<form action= "./server.php" method ="POST"> 
+<p>Select Background Color:</p>
+<select name=bgColor>
+<option value ="Red">Red</option>
+<option value ="Green">Green</option>
+<option value ="Blue">Blue</option>
+<option value ="Yellow">Yellow</option>
+<option value ="Black">Black</option>
+<option value ="Brown">Brown</option>
+<option value ="White" selected>White</option>
+</select>
 
+<input type ="hidden" name="submitted" value="true"></br>
+<br />
+<input type="submit" value="Kujto vlerat">
+
+
+
+</form>
     <br>
   
     <canvas id="test" width="250" height="100" style=" border: 2px solid #000000; 
@@ -244,7 +263,7 @@ background-image: linear-gradient(rgb(236, 206, 176, 0.5), rgba(186, 162, 137, 0
              <div class="col text-center"><a id="AmexLink" class="site-footer-payments__link" href="https://www.americanexpress.com/" style="pointer-events: auto;">
                 <img src="https://images.ctfassets.net/eoaaqxyywn6o/1R0NBLVCShxTQNVHNjanE4/c970e9e15ecbb026929000ae3fcce6ae/Amex.svg"
                     alt="Amex" class="site-footer-payments__link__icon"></a></div>
-             <div class="col text-center"><a id="MastercardLink" class="site-footer-payments__link" href="https://www.mastercard.us/en-us.html" style="pointer-events: auto;">
+             <div class="col text-center"><a id="MastercardLink" class="site-footer-payments__link" href="https://www.mastercard.us/en-us.php" style="pointer-events: auto;">
                 <img src="https://images.ctfassets.net/eoaaqxyywn6o/5bs4r6UiioP3Fkj4Qg35o8/5583c0ecc4b6500a1083fd38cfabf6dc/Mastercard.svg"
                     alt="Mastercard" class="site-footer-payments__link__icon"></a></div>
              <div class="col text-center"><a id="MaestroLink" class="site-footer-payments__link" href="https://n26.com/en-eu/maestro-card" style="pointer-events: auto;">
@@ -345,3 +364,4 @@ background-image: linear-gradient(rgb(236, 206, 176, 0.5), rgba(186, 162, 137, 0
 </body>
 
 </html>
+
