@@ -52,35 +52,7 @@
             </form>
         </div>
         </div>
-        <?php
-    $user = "Admin";
-    setcookie("user", $user , time() + 3600); // $_COOKIE["user" => "Admin"]
-
-    //printimi
-    //superglobals => vargje asociative (key => value) , $_SERVER , $_POST, $_GET, $_COOKIE, $_SESSION
-    if(isset($_COOKIE["user"])){
-        echo $_COOKIE["user"];
-        echo "<br><br>";
-        print_r($_COOKIE);
-    }
-  
-    //setcookie("user" , "" , time() - 10000);
-
-    //ruajtja e cookie ne varg
-
-    setcookie("cookie[tre]" , "Cookie3");
-    setcookie("cookie[dy]" , "Cookie2");
-    setcookie("cookie[nje]" , "Cookie1");
-
-    //vlerat per cookie shfaqen vetem pasi faqja eshte bere refresh
-    if(isset($_COOKIE['cookie'])){
-        foreach($_COOKIE['cookie'] as $name => $value){
-            $name = htmlspecialchars($name);
-            $value = htmlspecialchars($value);
-            echo "$name : $value <br> <br>";
-        }
-    }
-?>
+       
         <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
    <script>
     function submitForm(){
