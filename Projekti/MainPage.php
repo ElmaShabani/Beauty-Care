@@ -357,7 +357,6 @@ $_COOKIE[""]
                         </div>
 
                         <?php 
->>>>>>> e3eb0e02d4c2f61595d719e725adac6174113fba
     class Info {
         public $Address;
         public $Gmail;
@@ -392,7 +391,7 @@ $_COOKIE[""]
             return $generateData;
         }
 
-        function print_data(){
+        function print_data () {
             echo $this -> get_data();
         }
     }
@@ -421,13 +420,9 @@ $_COOKIE[""]
                     style="margin-left: 100px; font-size: 20px; font-family:Georgia, 'Times New Roman', Times, serif;">
                     <a href="https://maps.app.goo.gl/scmxnwzCazoUVT8b9">Address: Prishtine</a> </address>
                 <p>Email: <mark style="background-color: white;"> <a
-                            href="mailto:everglowbeauty@gmail.com">everglowbeauty@gmail.com</a> </mark></p>
+                            href ="mailto:everglowbeauty@gmail.com">everglowbeauty@gmail.com</a> </mark></p>
                 <p>Phone: <mark style="background-color: white;">+383 48 555 111</mark> </p>
-<<<<<<< HEAD
-            </div>--> 
-=======
             </div>    --> 
->>>>>>> e3eb0e02d4c2f61595d719e725adac6174113fba
         </div>
         <div class="container-fluid site-footer-payments">
             <aside>
