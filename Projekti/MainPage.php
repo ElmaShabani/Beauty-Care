@@ -390,7 +390,7 @@
 ?>
 
 
-           <!-- <div class="get-in-touch">
+           <!-- <div class="get-in-touch"> 
                 <h2>Get in Touch</h2>
                 <address
                     style="margin-left: 100px; font-size: 20px; font-family:Georgia, 'Times New Roman', Times, serif;">
@@ -398,7 +398,7 @@
                 <p>Email: <mark style="background-color: white;"> <a
                             href="mailto:everglowbeauty@gmail.com">everglowbeauty@gmail.com</a> </mark></p>
                 <p>Phone: <mark style="background-color: white;">+383 48 555 111</mark> </p>
-            </div>-->
+            </div>--> 
         </div>
         <div class="container-fluid site-footer-payments">
             <aside>
