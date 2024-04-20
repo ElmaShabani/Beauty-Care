@@ -100,6 +100,8 @@
         
         <input type="text" id="username" name="username" placeholder="Username..." required>
         <input type="password" id="password" name="password"  placeholder="Password..." required>
+        <input type="text" id="email" name="email"  placeholder="Email..." required>
+        <input type="text" id="tel" name="teli"  placeholder="Tel" required>
 
         <button type="submit" style="width: 200px; border: 1px solid black;">Log In</button>
         <p>or</p>
@@ -115,6 +117,39 @@
             </button></a>
         </div>
     </form>
+
+<!-- QETU JA FILLON REGEXI: -->
+    <?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $email = $_POST['email'];
+    $tel = $_POST['tel'];
+
+    $username_regex = '/^[a-zA-Z0-9_]{3,20}$/'; 
+    $password_regex = '/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/'; 
+    $email_regex = '/^\S+@\S+\.\S+$/'; 
+    $tel_regex = '/^\d{9}$/'; 
+
+    if (!preg_match($username_regex, $username)) {
+        echo "Invalid username format. Username must be alphanumeric and between 3 to 20 characters.";
+    }
+
+    if (!preg_match($password_regex, $password)) {
+        echo "Invalid password format. Password must be at least 8 characters long and contain at least one letter and one number.";
+    }
+
+    if (!preg_match($email_regex, $email)) {
+        echo "Invalid email format.";
+    }
+
+    if (!preg_match($tel_regex, $tel)) {
+        echo "Invalid telephone number format. Telephone number must be 9 digits long.";
+    }
+
+}
+?>
+
     
 </body>
 </html>
