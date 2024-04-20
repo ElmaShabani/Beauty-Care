@@ -1,6 +1,3 @@
-<?php 
-$_COOKIE[""]
-?>
 
 
 
@@ -30,11 +27,10 @@ $_COOKIE[""]
          <ul>
              <li><a href="allformakeup.php">Makeup</a>
                  <ul class="subcategories">
-<<<<<<< HEAD
+
                      <li><a href="facee.php">Face</a></li>
-=======
+
                      <li><a href="facee.php">Face</a></li>a
->>>>>>> f0e6b945f55c68eacbca78a00732e82d5080ed9c
                      <li><a href="eyes.php">Eyes</a></li>
                      <li><a href="lips.php">Lips</a></li>
                      <li><a href="cheeks.php">Cheek</a></li>
@@ -350,18 +346,14 @@ $_COOKIE[""]
                         </script>
                     </li>
                 </ul>
-<<<<<<< HEAD
-            </div>
-            <?php 
-=======
-                        </div>
 
-                        <?php 
-    class Info {
-        public $Address;
-        public $Gmail;
-        protected $Phone;
-        private $AddressLink;
+            </div>
+            <?php
+        class Info{
+            public $Address;
+            public $Gmail;
+            protected $Phone;
+            private $AddressLink;
         private $MailLink;
         
         function __construct($Address, $Gmail, $Phone) {
@@ -373,7 +365,7 @@ $_COOKIE[""]
 
         function set_data($AddressLink, $MailLink){
             $this->AddressLink = $AddressLink;
-            $this->MailLink = $MailLink;
+            $this->MailLink = $MailLink ; 
         }
 
         
@@ -404,10 +396,10 @@ $_COOKIE[""]
    $Our_info->print_data();
 ?>
 
-<<<<<<< HEAD
+        }
 
-           <!-- <div class="get-in-touch"> 
-=======
+
+          
                         
                         
                         
