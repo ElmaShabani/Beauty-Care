@@ -363,10 +363,8 @@ class BaseInfo {
         $this->Gmail = $Gmail;
         $this->Phone = $Phone;
     }
-    function set_data($AddressLink, $MailLink){
-        $this->AddressLink = $AddressLink;
-        $this->MailLink = $MailLink ; 
-    }
+     
+    
 }
 
 class Info extends BaseInfo {
