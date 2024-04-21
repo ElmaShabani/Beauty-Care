@@ -41,7 +41,7 @@
     </header>
 
     <section id="products">
-        
+
     <?php
         $produkte = array(
             "Lip Glow Oil" => 40.00,
@@ -52,7 +52,7 @@
             "Lip Power Long Lasting Lipstick" => 69.00
         );
 
-        // Sortimi sipas çmimit në rendin zbrenda
+  
         krsort($produkte);
 
         foreach ($produkte as $produkt => $cmimi) {

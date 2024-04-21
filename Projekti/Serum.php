@@ -51,6 +51,33 @@
         });
     </script>
     <div class="background-container">
+    <?php
+            $produkte = array(
+                "Normaderm Salicylic Acid + Probiotic Fractions Anti-Blemish Serum 30ml" => 35.00,
+                "Liftactiv Supreme 15% Pure Vitamin C Brightening Serum 20ml" => 28.90,
+                "Liftactiv Supreme Serum 10" => 35.50,
+                "Liftactiv Specialist B3 5% Niacinamide & AHA Complex Dark Spots & Pigmentation Serum 30m" => 40.40,
+                "Aqualia Thermal Rehydrating Serum" => 33.40,
+                "Neovadiol Meno 5 Serum for Menopausal Skin 30ml" => 45.50,
+                "Minéral 89 Hyaluronic Acid Booster" => 20.00,
+                "Minéral 89 Probiotic Serum" => 24.70,
+                "Liftactiv Supreme Eyes & Lashes Serum" => 30.50,
+                "Idéalia Eye Cream" => 25.50,
+                "Slow Âge Eye Cream" => 22.20,
+                "Neovadiol Multi-Corrective Eye and Lip Care for Menopause 15ml" => 28.50
+            );
+
+            arsort($produkte);
+
+            foreach ($produkte as $produkt => $cmimi) {
+                echo '<div class="image-box">';
+                echo '<img src="../img/' . str_replace(' ', '_', $produkt) . '.jpg" alt="' . $produkt . '" class="image">';
+                echo '<p>' . $produkt . '</p>';
+                echo '<p>$' . $cmimi . '</p>';
+                echo '<button class="add-to-cart" onclick="addToCart(\'' . $produkt . '\', ' . $cmimi . ')">Add to Cart</button>';
+                echo '</div>';
+            }
+        ?>
         <div class="image-box">
             <img src="../img/serum1.jpg" alt="Foto 1" class="image">
             <p>Normaderm Salicylic Acid + Probiotic <br>
