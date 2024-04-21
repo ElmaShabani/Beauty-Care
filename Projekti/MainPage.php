@@ -31,6 +31,7 @@
                      <li><a href="facee.php">Face</a></li>
 
                      <li><a href="facee.php">Face</a></li>a
+>>>>>>> f0e6b945f55c68eacbca78a00732e82d5080ed9c
                      <li><a href="eyes.php">Eyes</a></li>
                      <li><a href="lips.php">Lips</a></li>
                      <li><a href="cheeks.php">Cheek</a></li>
@@ -395,13 +396,9 @@ class Info extends BaseInfo {
 $Our_info = new Info("Ferizaj", "everglowbeauty@gmail.com", "+383 44 898 395");
 $Our_info->set_data("https://maps.app.goo.gl/scmxnwzCazoUVT8b9", "mailto:everglowbeauty@gmail.com");
 
-$Our_info->print_data(); 
+   $Our_info->print_data();
 ?>
 
-        
-
-
-          
                         
                         
                         
@@ -445,6 +442,7 @@ $Our_info->print_data();
         </div>
         </div>
         <p class="copyright" style="text-align: center;">&copy; 2023 EverGlow Beauty. All rights reserved.</p>
+      
     </footer>
     <script src="MainPage.js"></script>
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -466,6 +464,7 @@ $Our_info->print_data();
             );
         });
     </script>
+    
 </body>
 
 </html>
