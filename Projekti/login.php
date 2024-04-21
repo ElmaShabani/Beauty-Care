@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../img/favicon.ico.PNG">
     <title>Beauty Website Login</title>
-    <script>
+    <!--<script>
         
 
         function validateUsername(username) {
@@ -29,7 +29,7 @@
                 alert("Invalid username or password. Please check your input.");
             }
         }
-    </script>
+    </script> -->
     <style>
       body {
     font-family: 'Times New Roman', Times, serif;
@@ -134,7 +134,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
 
     // Kontrollo nese perdoruesi dhe fjalekalimi jane te sakte
-    if ($username === "admin" && $password === "admin123") {
+    if ($username === "admin" && $password === "admin1234") {
         // Nese autentikimi eshte i suksesshem, vendos nje sesion te ruajtur
         $_SESSION['loggedin'] = true;
         $_SESSION['username'] = $username;
@@ -157,18 +157,17 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
 
 ?>
 
-    <form action="/your-login-endpoint" method="post" autocomplete="on" onsubmit="login(event)">
+    <form action="/your-login-endpoint" method="POST" autocomplete="on" onsubmit="login(event)">
         <h2>Log Into EverGlow Beauty</h2>
         
         <input type="text" id="username" name="username" placeholder="Username..." required>
-<<<<<<< HEAD
+
         <input type="password" id="password" name="password"  placeholder="Password..." required>
         <input type="text" id="email" name="email"  placeholder="Email..." required>
         <input type="text" id="tel" name="teli"  placeholder="Tel" required>
 =======
         <input type="password" id="password" name="password"  placeholder="Email..." required>
-        
->>>>>>> e3eb0e02d4c2f61595d719e725adac6174113fba
+    
 
         <button type="submit" style="width: 200px; border: 1px solid black;">Log In</button>
         <p>or</p>
@@ -187,35 +186,35 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
 
 <!-- QETU JA FILLON REGEXI: -->
     <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $email = $_POST['email'];
-    $tel = $_POST['tel'];
+//if ($_SERVER["REQUEST_METHOD"] == "POST") {
+   // $username = $_POST['username'];
+    //$password = $_POST['password'];
+    //$email = $_POST['email'];
+    //$tel = $_POST['tel'];
 
-    $username_regex = '/^[a-zA-Z0-9_]{3,20}$/'; 
-    $password_regex = '/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/'; 
-    $email_regex = '/^\S+@\S+\.\S+$/'; 
-    $tel_regex = '/^\d{9}$/'; 
+    ///$username_regex = '/^[a-zA-Z0-9_]{3,20}$/'; 
+    //$password_regex = '/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/'; 
+    //$email_regex = '/^\S+@\S+\.\S+$/'; 
+    //$tel_regex = '/^\d{9}$/'; 
 
-    if (!preg_match($username_regex, $username)) {
-        echo "Invalid username format. Username must be alphanumeric and between 3 to 20 characters.";
-    }
+    //if (!preg_match($username_regex, $username)) {
+      //  echo "Invalid username format. Username must be alphanumeric and between 3 to 20 characters.";
+    //}
 
-    if (!preg_match($password_regex, $password)) {
-        echo "Invalid password format. Password must be at least 8 characters long and contain at least one letter and one number.";
-    }
+    //if (!preg_match($password_regex, $password)) {
+      //  echo "Invalid password format. Password must be at least 8 characters long and contain at least one letter and one number.";
+    //}
 
-    if (!preg_match($email_regex, $email)) {
-        echo "Invalid email format.";
-    }
+    //if (!preg_match($email_regex, $email)) {
+      //  echo "Invalid email format.";
+    //}
 
-    if (!preg_match($tel_regex, $tel)) {
-        echo "Invalid telephone number format. Telephone number must be 9 digits long.";
-    }
+    //if (!preg_match($tel_regex, $tel)) {
+      //  echo "Invalid telephone number format. Telephone number must be 9 digits long.";
+    //}
 
-}
-?>
+//}
+//?>
 
     
 </body>
