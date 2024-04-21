@@ -65,7 +65,18 @@
             <blockquote>
                 <!-- Citati dhe informacione të tjera -->
                 <!-- Shtimi i kodit PHP për renditjen e produkteve -->
-              
+                <?php
+                    // Array me produkte
+                    $products = array("Lipstick", "Highlighter", "Blush", "Eyeshadow", "Lip Liner", "Foundation");
+                    
+                    // Rendisja e vargut
+                    sort($products);
+
+                    // Shfaqja e produkteve të renditura
+                    foreach ($products as $product) {
+                        echo "<p>$product</p>";
+                    }
+                ?>
                 <p id="ann">Special Announcement</p>
                 <p id="text"></p>
                 <button id="shtype">Click me!!</button>
