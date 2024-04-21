@@ -41,7 +41,6 @@
 
     <section id="products">
     <?php
-        // Vargu me emrat e produktit dhe çmimet për secilin produkt
         $produkte = array(
             "Mini Flora Gorgeous Jasmine Eau de Parfum Perfume Set" => 39.00,
             "Libre Discovery Trio Set" => 45.00,
@@ -53,11 +52,8 @@
             "Mini Good Fortune & Flowerbomb Perfume Set" => 29.00,
             "Mini Fragrance Discovery Set" => 60.00
         );
-
-        // Sortimi i vargut duke ruajtur indeksin e lidhur
         asort($produkte);
-
-        // Printimi i vargut të sortuar
+        
         foreach ($produkte as $produkt => $cmimi) {
             echo '<div class="product">';
             echo '<img src="../img/' . str_replace(' ', '_', $produkt) . '.webp" alt="Fragrance-Gift Sets">';
