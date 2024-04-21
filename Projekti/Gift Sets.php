@@ -40,6 +40,33 @@
     </header>
 
     <section id="products">
+    <?php
+        // Vargu me emrat e produktit dhe çmimet për secilin produkt
+        $produkte = array(
+            "Mini Flora Gorgeous Jasmine Eau de Parfum Perfume Set" => 39.00,
+            "Libre Discovery Trio Set" => 45.00,
+            "CHANCE EAU TENDRE Eau de Toilette Gift Set" => 178.00,
+            "Mini Daisy Eau de Toilette Perfume Gift Set" => 79.00,
+            "Sparkling Sugar Travel Size Perfume Se" => 48.00,
+            "Fenty Eau de Parfum Perfume Se" => 150.00,
+            "Mini Black Opium & Libre Eau de Parfum Set" => 55.00,
+            "Mini Good Fortune & Flowerbomb Perfume Set" => 29.00,
+            "Mini Fragrance Discovery Set" => 60.00
+        );
+
+        // Sortimi i vargut duke ruajtur indeksin e lidhur
+        asort($produkte);
+
+        // Printimi i vargut të sortuar
+        foreach ($produkte as $produkt => $cmimi) {
+            echo '<div class="product">';
+            echo '<img src="../img/' . str_replace(' ', '_', $produkt) . '.webp" alt="Fragrance-Gift Sets">';
+            echo '<h3>' . $produkt . '</h3>';
+            echo '<p>$' . $cmimi . '</p>';
+            echo '<button class="add-to-cart" onclick="addToCart(\'' . $produkt . '\', ' . $cmimi . ')">Add to Cart</button>';
+            echo '</div>';
+        }
+        ?>
         <div class="product" >
             <img src="../img/Gucci.webp" alt="Fragrance-Gift Sets" >
             <h3>Gucci<p>Mini Flora Gorgeous Jasmine Eau de Parfum Perfume Set</p></h3>
