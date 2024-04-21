@@ -1,11 +1,11 @@
 <?php
-// Fillimi i PHP-se
+// vargjet
 $show_cart = true; 
-$payment_method = "paypal"; // 
+$payment_method = "paypal"; //Ndryshimi bazuar ne metoden e zgjedhur te pageses
 
 // Deklarimi i funksionit placeOrder()
 function placeOrder() {
-    // Kod per te vendosur porosine
+
 }
 
 
