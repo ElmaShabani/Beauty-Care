@@ -1,3 +1,26 @@
+<?php
+#kontrollojme nese forma eshte bere submitted
+if (isset($_POST['submitted'])){
+#nese po, vendosi vlerat nga POST array ne variabla
+$newbgColor=$_POST['bgColor'];
+$newtxtColor=$_POST['txtColor'];
+#set cookies
+setcookie("bgColor",$newbgColor,time()+3600);
+setcookie("txtColor",$newtxtColor,time()+3600);
+}
+
+#ne rast se shfrytezuesi vjen per here te pare dhe cookies nuk jane vendosur,
+
+if ((!isset($_COOKIE['bgColor']) ) && (!isset($_COOKIE['txtColor']))){
+$bgColor = "Black";
+$txtColor="White";
+}
+#nese cookie-t jane vendousr, atehere perdori ato cookie
+else{
+$bgColor = $_COOKIE['bgColor'];
+$txtColor = $_COOKIE['txtColor'];
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +39,7 @@
     
     <title>Job Application</title>
 </head>
-<body>
+<body bgcolor="<?php echo $bgColor ?>" text="<?php echo $txtColor ?>">
    
     <header>
         <a href="MainPage.php"><img src="../img/logo.jpg" alt="Your Brand Logo"></a>
@@ -61,7 +84,8 @@
     </header>
     
 <div class="form">
-    <form id="jobApplicationForm">
+<form action= "<?php echo $_SERVER['PHP_SELF']; ?>" method ="POST" id="jobApplicationForm">
+  
         <input type="text" id="readonlyInput" name="readonlyInput" value=" APPLY FOR A JOB BELOW!" readonly style="width: 100%; background-color: #f5dfc9;">
         <label for="fullName">Full Name:</label>
         <input type="text" id="fullName" name="fullName" required style="width: 100%;" form="jobApplicationForm"><br>
@@ -106,10 +130,31 @@
         <label for="coverLetter">Cover Letter:</label>
       <textarea id="coverLetter" name="coverLetter" rows="4" required ></textarea>
       <br>
-        
+      <p>Ngjyra e prapavise:</p>
+<select name=bgColor>
+<option value ="Red">E kuqe</option>
+<option value ="Green" selected>E gjelber</option>
+<option value ="Blue">E kalter</option>
+<option value ="Yellow">E verdhe</option>
+<option value ="Black">E zeze</option>
+<option value ="Brown">Kafe</option>
+<option value ="White">E bardhe</option>
+</select>
+<p>Ngjyra e tekstit:</p>
+<select name=txtColor>
+<option value ="Red">E kuqe</option>
+<option value ="Green" selected>E gjelber</option>
+<option value ="Blue">E kalter</option>
+<option value ="Yellow">E verdhe</option>
+<option value ="Black">E zeze</option>
+<option value ="Brown">Kafe</option>
+<option value ="White">E bardhe</option>
+</select>
+<input type ="hidden" name="submitted" value="true"></br>
 
         <button type="button" onclick="validateForm()" style="width: 100%;">Submit Application</button>
     </form>
+ 
 </div>
 <br>
 
