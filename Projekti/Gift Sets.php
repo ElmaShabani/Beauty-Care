@@ -40,6 +40,15 @@
     </header>
 
     <section id="products">
+   
+        <div class="product" >
+            <img src="../img/Gucci.webp" alt="Fragrance-Gift Sets" >
+            <h3>Gucci<p>Mini Flora Gorgeous Jasmine Eau de Parfum Perfume Set</p></h3>
+            <p>$39.00</p> 
+            <button class="add-to-cart" onclick="addToCart('Mini Flora Gorgeous Jasmine Eau de Parfum Perfume Set',39.00)">Add to Cart</button>
+    </div>
+    <div class="product" >
+        
     <?php
         $produkte = array(
             "Mini Flora Gorgeous Jasmine Eau de Parfum Perfume Set" => 39.00,
@@ -52,7 +61,7 @@
             "Mini Good Fortune & Flowerbomb Perfume Set" => 29.00,
             "Mini Fragrance Discovery Set" => 60.00
         );
-        asort($produkte);
+        rsort($produkte);
         
         foreach ($produkte as $produkt => $cmimi) {
             echo '<div class="product">';
@@ -63,13 +72,6 @@
             echo '</div>';
         }
         ?>
-        <div class="product" >
-            <img src="../img/Gucci.webp" alt="Fragrance-Gift Sets" >
-            <h3>Gucci<p>Mini Flora Gorgeous Jasmine Eau de Parfum Perfume Set</p></h3>
-            <p>$39.00</p> 
-            <button class="add-to-cart" onclick="addToCart('Mini Flora Gorgeous Jasmine Eau de Parfum Perfume Set',39.00)">Add to Cart</button>
-    </div>
-    <div class="product" >
        
         <img src="../img/Libre Discovery Trio Set.webp" alt="Fragrance-Gift Sets" >
         <h3>Yves Saint Laurent<p> Libre Discovery Trio Set</p></h3>
