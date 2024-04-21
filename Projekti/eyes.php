@@ -54,7 +54,6 @@
                 "Eye Bento Bouncy Eyeshadow Trio" => 25.00
             );
 
-            // Sortimi sipas çelësit (emrit të produktit)
             ksort($produkte);
 
             foreach ($produkte as $produkt => $cmimi) {

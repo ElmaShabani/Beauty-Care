@@ -41,6 +41,35 @@
     </header>
 
     <section id="products">
+        
+    <?php
+        $produkte = array(
+            "Lip Glow Oil" => 40.00,
+            "Shine Lipstick Balm" => 43.00,
+            "Gloss Bomb Universal" => 21.00,
+            "Lip Sleeping Mask Intense Hydration with Vitamin C" => 24.00,
+            "Mini Pillow Talk Lipstick & Liner Set" => 25.00,
+            "Lip Power Long Lasting Lipstick" => 69.00
+        );
+
+        // Sortimi sipas çmimit në rendin zbrenda
+        krsort($produkte);
+
+        foreach ($produkte as $produkt => $cmimi) {
+            echo '<div class="product">';
+            echo '<img src="../img/' . str_replace(' ', '_', $produkt) . '.webp" alt="Lipstick">';
+            echo '<h3>' . $produkt . '</h3>';
+            echo '<p>$' . $cmimi . '</p>';
+            echo '<button class="add-to-cart" onclick="addToCart(\'' . $produkt . '\', ' . $cmimi . ')">Add to Cart</button>';
+            echo '</div>';
+        }
+        ?>
+
+
+
+
+
+
         <div class="product" >
             <img src="../img/diorlipglow.webp" alt="Lipgloss" >
             <h3>Dior<p>Lip Glow Oil</p></h3>
