@@ -39,7 +39,7 @@
     </header>
 
     <section id="products">
-    <?php
+        <?php
             $produkte = array(
                 "Valentino Donna Born In Roma Eau de Parfum" => 100.00,
                 "Carolina Herrera Mini Good Girl Blush Eau de Parfum" => 15.00,
@@ -64,19 +64,15 @@
                 echo '</div>';
             }
         ?>
-       
     </section>
 
     <script>
         setTimeout(function () {
-      alert("Welcome to the Women's fragrance sector");
+            alert("Welcome to the Women's fragrance sector");
         }, 500);
-      </script>
-      
+    </script>
 
-    
-      <script src="forall.js"></script>
-    
+    <script src="forall.js"></script>
 
 </body>
 </html>
