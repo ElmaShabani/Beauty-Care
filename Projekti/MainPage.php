@@ -443,6 +443,17 @@ $_COOKIE[""]
         </div>
         </div>
         <p class="copyright" style="text-align: center;">&copy; 2023 EverGlow Beauty. All rights reserved.</p>
+        <?php
+session_start();
+
+if (!isset($_SESSION['page_visits'])) {
+    $_SESSION['page_visits'] = 1;
+} else {
+    $_SESSION['page_visits']++;
+}
+
+echo "Total Page Visits: " . $_SESSION['page_visits'];
+?>
     </footer>
     <script src="MainPage.js"></script>
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
