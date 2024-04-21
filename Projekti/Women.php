@@ -51,8 +51,6 @@
                 "Viktor&Rolf Flowerbomb Eau de Parfum" => 170.00,
                 "Dior Hypnotic Poison" => 80.00
             );
-
-            // Renditja e produktit sipas çmimit të tyre në rendin zbrenda
             asort($produkte);
 
             foreach ($produkte as $produkt => $cmimi) {
