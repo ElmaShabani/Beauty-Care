@@ -53,7 +53,7 @@
         "TOM FORD Black Orchid Eau de Parfum Fragrance" => 155.00
     );
 
-    // Renditja e produktit sipas çmimit të tyre në rendin e rritjes
+
     sort($produkte);
 
     foreach ($produkte as $produkt => $cmimi) {
