@@ -1,24 +1,24 @@
 <?php
-#kontrollojme nese forma eshte bere submitted
+
 if (isset($_POST['submitted'])){
-#nese po, vendosi vlerat nga POST array ne variabla
+
 $newbgColor=$_POST['bgColor'];
-$newtxtColor=$_POST['txtColor'];
-#set cookies
+
+
 setcookie("bgColor",$newbgColor,time()+3600);
-setcookie("txtColor",$newtxtColor,time()+3600);
+
 }
 
-#ne rast se shfrytezuesi vjen per here te pare dhe cookies nuk jane vendosur,
 
-if ((!isset($_COOKIE['bgColor']) ) && (!isset($_COOKIE['txtColor']))){
+
+if ((!isset($_COOKIE['bgColor']) )){
 $bgColor = "Black";
-$txtColor="White";
+
 }
-#nese cookie-t jane vendousr, atehere perdori ato cookie
+
 else{
 $bgColor = $_COOKIE['bgColor'];
-$txtColor = $_COOKIE['txtColor'];
+
 }
 ?>
 <!DOCTYPE html>
@@ -39,7 +39,7 @@ $txtColor = $_COOKIE['txtColor'];
     
     <title>Job Application</title>
 </head>
-<body bgcolor="<?php echo $bgColor ?>" text="<?php echo $txtColor ?>">
+<body bgcolor="<?php echo $bgColor ?>" >
    
     <header>
         <a href="MainPage.php"><img src="../img/logo.jpg" alt="Your Brand Logo"></a>
@@ -130,25 +130,15 @@ $txtColor = $_COOKIE['txtColor'];
         <label for="coverLetter">Cover Letter:</label>
       <textarea id="coverLetter" name="coverLetter" rows="4" required ></textarea>
       <br>
-      <p>Ngjyra e prapavise:</p>
+      <p>Background Color:</p>
 <select name=bgColor>
-<option value ="Red">E kuqe</option>
-<option value ="Green" selected>E gjelber</option>
-<option value ="Blue">E kalter</option>
-<option value ="Yellow">E verdhe</option>
-<option value ="Black">E zeze</option>
-<option value ="Brown">Kafe</option>
-<option value ="White">E bardhe</option>
-</select>
-<p>Ngjyra e tekstit:</p>
-<select name=txtColor>
-<option value ="Red">E kuqe</option>
-<option value ="Green" selected>E gjelber</option>
-<option value ="Blue">E kalter</option>
-<option value ="Yellow">E verdhe</option>
-<option value ="Black">E zeze</option>
-<option value ="Brown">Kafe</option>
-<option value ="White">E bardhe</option>
+<option value ="Red">Red</option>
+<option value ="Green" selected>Green</option>
+<option value ="Blue">Blue</option>
+<option value ="Yellow">Yellow</option>
+<option value ="Black">Black</option>
+<option value ="Brown">Brown</option>
+<option value ="White">White</option>
 </select>
 <input type ="hidden" name="submitted" value="true"></br>
 
