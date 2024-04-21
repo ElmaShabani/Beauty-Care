@@ -1,3 +1,26 @@
+<?php
+
+if (isset($_POST['submitted'])){
+
+$newbgColor=$_POST['bgColor'];
+
+
+setcookie("bgColor",$newbgColor,time()+3600);
+
+}
+
+
+
+if ((!isset($_COOKIE['bgColor']) )){
+$bgColor = "Black";
+
+}
+
+else{
+$bgColor = $_COOKIE['bgColor'];
+
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +39,7 @@
     
     <title>Job Application</title>
 </head>
-<body>
+<body bgcolor="<?php echo $bgColor ?>" >
    
     <header>
         <a href="MainPage.php"><img src="../img/logo.jpg" alt="Your Brand Logo"></a>
@@ -61,7 +84,8 @@
     </header>
     
 <div class="form">
-    <form id="jobApplicationForm">
+<form action= "<?php echo $_SERVER['PHP_SELF']; ?>" method ="POST" id="jobApplicationForm">
+  
         <input type="text" id="readonlyInput" name="readonlyInput" value=" APPLY FOR A JOB BELOW!" readonly style="width: 100%; background-color: #f5dfc9;">
         <label for="fullName">Full Name:</label>
         <input type="text" id="fullName" name="fullName" required style="width: 100%;" form="jobApplicationForm"><br>
@@ -106,10 +130,21 @@
         <label for="coverLetter">Cover Letter:</label>
       <textarea id="coverLetter" name="coverLetter" rows="4" required ></textarea>
       <br>
-        
+      <p>Background Color:</p>
+<select name=bgColor>
+<option value ="Red">Red</option>
+<option value ="Green" selected>Green</option>
+<option value ="Blue">Blue</option>
+<option value ="Yellow">Yellow</option>
+<option value ="Black">Black</option>
+<option value ="Brown">Brown</option>
+<option value ="White">White</option>
+</select>
+<input type ="hidden" name="submitted" value="true"></br>
 
         <button type="button" onclick="validateForm()" style="width: 100%;">Submit Application</button>
     </form>
+ 
 </div>
 <br>
 

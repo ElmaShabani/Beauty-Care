@@ -1,13 +1,9 @@
-<<<<<<< HEAD
-<<!DOCTYPE html>
-=======
 <?php
-
-// Shtoni nje variabel globale
+// Shtimi i nje variabel globale
 $_GLOBALS['companyName'] = "EverGlow Beauty";
 ?>
-<!DOCTYPE html>
->>>>>>> f0e6b945f55c68eacbca78a00732e82d5080ed9c
+
+<<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -37,7 +33,7 @@ $_GLOBALS['companyName'] = "EverGlow Beauty";
     <header>  
     <a href="MainPage.php"> <img src="../img/logo.jpg" alt="Your Brand Logo"> <a href="MainPage.php"></a>
     <div class="text-with-shadow">
-        EverGlow Beauty
+    <?php echo $_GLOBALS['companyName']; ?>  
     </div>
     
         <div class="container3" style="font-family: Verdana, Geneva, Tahoma, sans-serif;" >
