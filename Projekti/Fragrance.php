@@ -1,5 +1,5 @@
 <?php
-// Shtimi i nje variabel globale
+// Inicializimi i një variabël globale
 $GLOBALS['companyName'] = "EverGlow Beauty";
 ?>
 
@@ -23,19 +23,18 @@ $GLOBALS['companyName'] = "EverGlow Beauty";
             justify-content: center;
             background: #f0f0f0;
             margin-bottom: 80px;
-        }   
+        }
     </style>
-    <link rel="icon" type="image/x-icon" href="../img/favicon.ico.PNG">
 </head>
 
 <body>
-    
-    <header>  
-        <a href="MainPage.php"><img src="../img/logo.jpg" alt="Your Brand Logo"></a>
+    <header>
+        <a href="MainPage.php">
+            <img src="../img/logo.jpg" alt="Your Brand Logo">
+        </a>
         <div class="text-with-shadow">
-            <?php echo $GLOBALS['companyName']; ?>  
+            <?php echo $GLOBALS['companyName']; ?>
         </div>
-    
         <div class="container3" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
             <div class="middle-box">
                 <div class="sub-box">
@@ -62,7 +61,7 @@ $GLOBALS['companyName'] = "EverGlow Beauty";
             <source src="../img/video11.mp4" type="video/mp4">
         </video>
     </section>
-    
+
     <div class="fourth-container" style="font-family: 'Times New Roman', Times, serif;">
         <div class="image-container">
             <img src="../img/unnamed.jpg" alt="Your Image" class="round-image">
@@ -72,18 +71,18 @@ $GLOBALS['companyName'] = "EverGlow Beauty";
             </audio>
         </div>
         <div class="quote-container">
-            <blockquote> 
-                <h2 style="font-family:Georgia, 'Times New Roman', Times, serif">If you are fascinated by the wonderful world of scents, these perfumes are just right for you.</h2>
-                <p>Discover the perfect scent to complement your elegance and grace. <mark style="background-color:rgba(236, 206, 176, 0.5)">Our women's fragrance collection</mark> a symphony of notes, each crafted to resonate with the charm and confidence of today's modern woman.</p>
-                <p>Step into a realm of timeless masculinity with <mark style="background-color:rgba(236, 206, 176, 0.5)">our men's fragrances</mark>. Whether you prefer a classic, rugged, or modern scent, our collection is designed for the discerning man who appreciates quality and distinction.</p>
-                <p>Discover a collection where fragrance knows no gender. <mark style="background-color:rgba(236, 206, 176, 0.5)">Our unisex scents</mark> are designed to be enjoyed by everyone, breaking traditional norms and embracing the freedom of personal expression.</p>
-                <p>Explore our collection of <mark style="background-color:rgba(236, 206, 176, 0.5)">fragrance gift sets</mark>, a perfect expression of love and appreciation. Thoughtfully assembled, each set is a harmonious symphony of scents, making it an ideal present for any celebration.</p>
+            <blockquote>
+                <h2 style="font-family: Georgia, 'Times New Roman', Times, serif">If you are fascinated by the wonderful world of scents, these perfumes are just right for you.</h2>
+                <p>Discover the perfect scent to complement your elegance and grace.<mark style="background-color: rgba(236, 206, 176, 0.5)">Our women's fragrance collection</mark> a symphony of notes, each crafted to resonate with the charm and confidence of today's modern woman.</p>
+                <p>Step into a realm of timeless masculinity with <mark style="background-color: rgba(236, 206, 176, 0.5)">our men's fragrances</mark>. Whether you prefer a classic, rugged, or modern scent, our collection is designed for the discerning man who appreciates quality and distinction.</p>
+                <p>Discover a collection where fragrance knows no gender. <mark style="background-color: rgba(236, 206, 176, 0.5)">Our unisex scents</mark> are designed to be enjoyed by everyone, breaking traditional norms and embracing the freedom of personal expression.</p>
+                <p>Explore our collection of <mark style="background-color: rgba(236, 206, 176, 0.5)">fragrance gift sets</mark>, a perfect expression of love and appreciation. Thoughtfully assembled, each set is a harmonious symphony of scents, making it an ideal present for any celebration.</p>
             </blockquote>
         </div>
     </div>
 
     <div class="list">
-        <ul style="border: 5px solid black; border-style: double; list-style-type:none; background-color:rgba(236, 206, 176, 0.5);">
+        <ul style="border: 5px solid black; border-style: double; list-style-type: none; background-color: rgba(236, 206, 176, 0.5);">
             <li>Fragrance
                 <ul>
                     <li>Fragrance for Women
@@ -119,89 +118,86 @@ $GLOBALS['companyName'] = "EverGlow Beauty";
         </ul>
     </div>
 
-    <div>
-        <style>
-            table {
-                border-collapse: collapse;
-                width: 100%;
-                margin-top: 20px;
-                margin-bottom: 20px;
-                border: 2px solid black;
-                margin:auto;
-            }
-            th, td {
-                border: 1px solid #dddddd;
-                text-align: left;
-                padding: 15px;
-            }
-            th {
-                background-color: peru;
-                color: black;
-            }
-            td {
-                background-color: white;
-            }
-            h1 {
-                color: black;
-                font-style: italic;
-                text-decoration: underline;
-            }
-            .product-description {
-                font-style: italic;
-                color: black;
-            }
-        </style>
-        <table>
-            <tr>
-                <th>Brand</th>
-                <th>Perfume Name</th>
-                <th>Price</th>
-            </tr>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border: 2px solid black;
+            margin: auto;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 15px;
+        }
+        th {
+            background-color: peru;
+            color: black;
+        }
+        td {
+            background-color: white;
+        }
+        h1 {
+            color: black;
+            font-style: italic;
+            text-decoration: underline;
+        }
+        .product-description {
+            font-style: italic;
+            color: black;
+        }
+    </style>
+    <table>
+        <tr>
+            <th>Brand</th>
+            <th>Perfume Name</th>
+            <th>Price</th>
+        </tr>
+        <tr>
+            <td>Valentino</td>
+            <td>Donna Born In Roma Eau de Parfum</td>
+            <td>$100.00</td>
+        </tr>
+        <tr>
+            <td>Dior</td>
+            <td>Sauvage Eau de Toilette</td>
+            <td>$110.00</td>
+        </tr>
+        <tr>
+            <td>Armani Beauty</td>
+            <td>Armani Code Parfum</td>
+            <td>$144.00</td>
+        </tr>
+        <tr>
+            <td rowspan="4">Yves Saint Laurent</td>
+            <td>Mini Black Opium & Libre Eau de Parfum Set</td>
+            <td>$55.00</td>
+        </tr>
+        <tr>
+            <td>Libre Discovery Trio Set</td>
+            <td>$45.00</td>
+        </tr>
+        <tr>
+            <td>Libre Eau De Parfum</td>
+            <td>$95.00</td>
+        </tr>
+        <tr>
+            <td>Y Eau de Toilette</td>
+            <td>$80.00</td>
+        </tr>
+    </table>
 
-            <tr>
-                <td>Valentino</td>
-                <td>Donna Born In Roma Eau de Parfum</td>
-                <td>$100.00</td>
-            </tr>
-
-            <tr>
-                <td>Dior</td>
-                <td>Sauvage Eau de Toilette</td>
-                <td>$110.00</td>
-            </tr>
-
-            <tr>
-                <td>Armani Beauty</td>
-                <td>Armani Code Parfum</td>
-                <td>$144.00</td>
-            </tr>
-
-            <tr>
-                <td rowspan="4">Yves Saint Laurent</td>
-                <td>Mini Black Opium & Libre Eau de Parfum Set</td>
-                <td>$55.00</td>
-            </tr>
-
-            <tr>
-                <td>Libre Discovery Trio Set</td>
-                <td>$45.00</td>
-            </tr>
-
-            <tr>
-                <td>Libre Eau De Parfum</td>
-                <td>$95.00</td>
-            </tr>
-
-            <tr>
-                <td>Y Eau de Toilette</td>
-                <td>$80.00</td>
-            </tr>
-        </table>
-    </div>
+    <br>
 
     <footer>
         <div class="container d-flex footer-container">
             <div class="left">
-                <h2>Everglow Beauty</h2>
-                <p style="font-size: 20px;">Everglow
+                <!-- Footer content -->
+            </div>
+        </div>
+    </footer>
+</body>
 
+</html>
