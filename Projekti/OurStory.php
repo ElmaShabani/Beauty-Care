@@ -54,6 +54,16 @@
         function modifyString(str) {
             str.value = str.value.toUpperCase();
         }
+        
+         // Funksioni per te larguar referencen e nje vargu
+                function unsetArray(arr) {
+            arr = undefined;
+        }
+
+        // Funksioni per te larguar referencen e nje objekti
+        function unsetObject(obj) {
+            obj = undefined;
+        }
     </script>
 </head>
 <body>
