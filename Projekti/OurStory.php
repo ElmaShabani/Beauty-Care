@@ -24,7 +24,7 @@
             modifyObject(myObject);
             console.log("After modifying object:", myObject);
 
-            // Demonstrimi i modifikimit të stringut përmes referencës
+            // Modifikimit të stringut permes ref
             let myString = { value: "hello" };
             console.log("Before modifying string:", myString);
             let wrappedFunction = wrapFunction(modifyString);
@@ -32,19 +32,19 @@
             console.log("After modifying string:", myString);
         });
 
-        // Funksioni që modifikon një varg përmes referencës
+        // Funksioni që modifikon nje varg permes ref
         function modifyArray(arr) {
             for (let i = 0; i < arr.length; i++) {
                 arr[i] = arr[i] * 2;
             }
         }
 
-        // Funksioni që modifikon një objekt përmes referencës
+        // Funksioni qe modifikon nje objekt permes ref
         function modifyObject(obj) {
             obj.value = "Modified value";
         }
 
-        // Funksioni që modifikon një string përmes referencës duke përdorur një metodë të mbështjellur
+        // Funksioni qe modifikon nje string permes references duke perdorur nje metode te mbeshtjellur
         function wrapFunction(referenceFunction) {
             return function(referenceValue) {
                 referenceFunction(referenceValue);
