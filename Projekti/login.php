@@ -6,41 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../img/favicon.ico.PNG">
     <title>Beauty Website Login</title>
-    <!--<script>
-        
 
-        function validateUsername(username) {
-            return username.length >= 6;
-        }
-
-        function validatePassword(password) {
-            return password.length >= 6;
-        }
-
-        function login(event) {
-            event.preventDefault();
-
-            var usernameInput = document.getElementById("username").value;
-            var passwordInput = document.getElementById("password").value;
-
-            if (usernameInput && passwordInput && validateUsername(usernameInput) && validatePassword(passwordInput)) {
-                window.location.href = "MainPage.php";
-            } else {
-                alert("Invalid username or password. Please check your input.");
-            }
-        }
-    </script> -->
     <style>
       body {
     font-family: 'Times New Roman', Times, serif;
     margin: 0;
     padding: 0;
    
-   
-          
-            /* Nëse nuk ka cookie për ngjyrën e sfondit, përdor ngjyrën e bardhë si default */
-        
-  /*  background: radial-gradient(ellipse at center, rgba(236, 206, 176, 0.5)  10% , rgb(101, 45, 17) 100% ); */
     text-align: center;
     display: flex;
     align-items: center;
