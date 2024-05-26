@@ -1,13 +1,40 @@
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $name = htmlspecialchars($_POST['name']);
+    $email = htmlspecialchars($_POST['email']);
+    $message = htmlspecialchars($_POST['message']);
 
-<DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Contact Us</title>
-        <link rel="icon" type="image/x-icon" href="../img/favicon.ico.PNG">
-        <link rel="stylesheet" href="contact.css">
+    // Kontrolloni nëse të dhënat janë pranuar saktë
+    error_log("Name: $name, Email: $email, Message: $message");
+
+    // Kontrolloni nëse kërkesa është AJAX
+    if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+        // Përgjigjuni me një mesazh të thjeshtë
+        echo "Thank you, $name! We have received your message.";
+    } else {
+        // Përndryshe, kthe një faqe të plotë HTML
+        echo '<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico.PNG">
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Thank you, ' . $name . '! We have received your message.</h1>
+    </div>
+</body>
+</html>';
+    }
+} else {
+    echo "Invalid request method.";
+}
+?>
+
        
         <style>
           body {
@@ -46,11 +73,13 @@
 
             <button type="submit">Submit</button>
         </form>
+        <div id="response"></div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </body>
 </html>
+
   <!-- <script>
     function submitForm(){
     let nameInput = document.getElementById('name');

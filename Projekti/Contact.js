@@ -47,3 +47,24 @@ $(document).ready(function(){
         alert("Forma është paraqitur!");
     });
 });
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Parandalon rifreskimin e faqes
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', 'Contact.php', true);
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest'); // Vendos header-in për AJAX
+
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            document.getElementById('response').innerHTML = xhr.responseText;
+        }
+    };
+
+    const params = 'name=' + encodeURIComponent(name) + '&email=' + encodeURIComponent(email) + '&message=' + encodeURIComponent(message);
+    xhr.send(params);
+});
