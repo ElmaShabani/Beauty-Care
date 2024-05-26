@@ -101,42 +101,42 @@
 </head>
 <body>
 <?php
-session_start();
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-// Kontrollojmë nëse është bërë POST request për të përpunuar formën e hyrjes
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+require 'path/to/PHPMailer/src/Exception.php';
+require 'path/to/PHPMailer/src/PHPMailer.php';
+require 'path/to/PHPMailer/src/SMTP.php';
 
-    // Kontrollo nëse përdoruesi dhe fjalëkalimi janë të saktë
-    if ($username === "admin" && $password === "admin1234") {
-        $_SESSION['loggedin'] = true;
-        $_SESSION['username'] = $username;
+$mail = new PHPMailer(true);
 
-        // Vendos një cookie për të shënuar autentikimin
-        setcookie('fundi_i_dites', 'po', time() + (86400 * 30), "/"); // 86400 sekonda = 1 ditë
+try {
+    //Server settings
+    $mail->isSMTP();
+    $mail->Host = 'smtp.gmail.com';  // Specifikoni SMTP serverin për Gmail
+    $mail->SMTPAuth = true;
+    $mail->Username = 'your-email@gmail.com'; // Shkruani emailin tuaj
+    $mail->Password = 'your-password'; // Shkruani fjalëkalimin tuaj
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port = 587;
 
-        // Dërgimi i email-it
-        $to = 'example@example.com'; 
-        $subject = 'Login Notification';
-        $message = "Hello, you have logged in successfully on " . date('Y-m-d H:i:s');
-        $headers = 'From: webmaster@example.com' . "\r\n" .
-                   'Reply-To: webmaster@example.com' . "\r\n" .
-                   'X-Mailer: PHP/' . phpversion();
+    //Recipients
+    $mail->setFrom('your-email@gmail.com', 'Mailer');
+    $mail->addAddress('recipient@example.com', 'Joe User');     // Shtoni marrësin
 
-        mail($to, $subject, $message, $headers);
-    } else {
-        // Në rast të autentikimit të dështuar, shfaq një mesazh gabimi
-        echo "<script>alert('Invalid username or password. Please try again.');</script>";
-    }
+    //Content
+    $mail->isHTML(true);                                  // Set email format to HTML
+    $mail->Subject = 'Here is the subject';
+    $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
+    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+    $mail->send();
+    echo 'Message has been sent';
+} catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
+?>
 
-// Kontrollo nëse sesioni është krijuar dhe përdoruesi është autentikuar
-if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
-    // Nëse autentikimi është i suksesshëm, ridrejto në faqen kryesore
-    header("Location: MainPage.php");
-    exit;
-}
 ?>
 
 <!DOCTYPE html>

@@ -32,28 +32,25 @@
           
     </head>
     <body>
-                <div class="footer-container"></div>
-              <div class="contact-form-container">
-              
-                  <h2>Contact Us</h2> 
-                    <form id="contactForm">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-              
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <keygen name="user_key" challenge="random_string"> 
-        
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea> 
-        
+    <div class="contact-form-container">
+        <h2>Contact Us</h2>
+        <form id="contactForm" method="post" action="contact.php">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
 
-                <button type="button" onclick="submitForm()">Submit</button>
-            </form>
-        </div>
-        </div>
-       
-        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</body>
+</html>
   <!-- <script>
     function submitForm(){
     let nameInput = document.getElementById('name');
