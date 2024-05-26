@@ -1,3 +1,17 @@
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Merrni të dhënat nga POST request dhe bëni sanitizimin e tyre
+    $name = htmlspecialchars($_POST['name']);
+    $email = htmlspecialchars($_POST['email']);
+    $message = htmlspecialchars($_POST['message']);
+
+    // Përgjigjuni me një mesazh të thjeshtë
+    echo "Thank you, $name! We have received your message: '$message' from email: $email.";
+} else {
+    echo "Invalid request method.";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

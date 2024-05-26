@@ -30,8 +30,7 @@
 
                      <li><a href="facee.php">Face</a></li>
 
-                     <li><a href="facee.php">Face</a></li>a
->>>>>>> f0e6b945f55c68eacbca78a00732e82d5080ed9c
+                     <li><a href="facee.php">Face</a></li>
                      <li><a href="eyes.php">Eyes</a></li>
                      <li><a href="lips.php">Lips</a></li>
                      <li><a href="cheeks.php">Cheek</a></li>
