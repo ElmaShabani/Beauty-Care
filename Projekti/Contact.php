@@ -1,52 +1,44 @@
-<?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Merrni të dhënat nga POST request dhe bëni sanitizimin e tyre
-    $name = htmlspecialchars($_POST['name']);
-    $email = htmlspecialchars($_POST['email']);
-    $message = htmlspecialchars($_POST['message']);
-
-    // Kontrolloni nëse të dhënat janë pranuar saktë (për debug)
-    error_log("Name: $name, Email: $email, Message: $message");
-
-    // Kontrolloni nëse kërkesa është AJAX
-    if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
-        // Përgjigjuni me një mesazh të thjeshtë
-        echo "Thank you, $name! We have received your message.";
-        error_log("AJAX response sent: Thank you, $name! We have received your message.");
-    } else {
-        // Përndryshe, kthe një faqe të plotë HTML
-        echo '<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico.PNG">
     <link rel="stylesheet" href="contact.css">
-    <style>
-        body {
-            background-image: url(\'../img/projekti.img.jpg\');
-            background-attachment: fixed;
-            background-size: cover;    
-            background-position: center;
-            background-repeat: no-repeat;
-            background-origin: content-box;
-            background-attachment: fixed;
-            margin: 0; 
-            height: 100vh;
-            width: 100vw; 
-            display: flex; 
-            align-items: center;
-            justify-content: center; 
-        }
-        input, textarea, button {
-            width: 100%;
-        }
-    </style>
 </head>
 <body>
+</body>
+</html>
+
+    
+        <style>
+          body {
+                       background-image: url('../img/projekti.img.jpg');
+                       background-attachment: fixed;
+                       background-size: cover;    
+                       background-position: center;
+                       background-repeat: no-repeat;
+                       background-origin: content-box;
+                       background-attachment: fixed;
+                       margin: 0; 
+                       height: 100vh;
+                       width: 100vw; 
+                       display: flex; 
+                       align-items: center;
+                       justify-content: center; 
+          }
+          input, textarea, button{
+            width: 100%;
+          }
+      </style>
+          
+    </head>
+    <body>
     <div class="contact-form-container">
         <h2>Contact Us</h2>
-        <form id="contactForm" method="post" action="Contact.php">
+        <form id="contactForm" method="post" action="contact.php">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
 
@@ -58,20 +50,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <button type="submit">Submit</button>
         </form>
-        <div id="response"></div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="contact.js"></script>
 </body>
-</html>';
-    }
-} else {
-    echo "Invalid request method.";
-    error_log("Invalid request method.");
-}
-?>
-
+</html>
 
   <!-- <script>
     function submitForm(){

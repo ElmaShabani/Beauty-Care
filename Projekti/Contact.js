@@ -1,35 +1,17 @@
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // Parandalon rifreskimin e faqes
+//function submitForm() {
+   // var name = document.getElementById("name").value;
+    //var email = document.getElementById("email").value;
+    //var message = document.getElementById("message").value;
 
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
+    //if (name === "" || email === "" || message === "") {
+      //  alert("Please fill in all fields.");
+        //    window.location.href = "MainPage.html";
+    //} else {
+      //  alert("Thank you, " + name + "! Your message has been submitted.");
+        //document.getElementById("contactForm").reset();
+    //}
 
-    console.log('Form submitted with:', { name, email, message });
-
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', 'Contact.php', true);
-    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest'); // Vendos header-in për AJAX
-
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4) {
-            console.log('AJAX request state:', xhr.readyState, 'status:', xhr.status);
-            if (xhr.status === 200) {
-                console.log('Response received:', xhr.responseText);
-                document.getElementById('response').innerHTML = xhr.responseText;
-            } else {
-                console.error('Error in AJAX request:', xhr.status, xhr.statusText);
-            }
-        }
-    };
-
-    const params = 'name=' + encodeURIComponent(name) + '&email=' + encodeURIComponent(email) + '&message=' + encodeURIComponent(message);
-    console.log('Params:', params);
-    xhr.send(params);
-});
-
-
+// Kushtëzim IF
 function submitForm() {
 let nameInput = document.getElementById('name');
 if (nameInput.value.length === 0) {
