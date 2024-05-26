@@ -1,15 +1,18 @@
 <?php
 
-$dbhost = '%';  
-$dbuser = 'elona';
+$dbhost = 'localhost';  
+$dbuser = 'root';
 $dbpass = '';
-$db = "elona";
+$db = "beautycare";
 
 
-$conn = new mysqli($dbhost, $dbuser, $dbpass, $db);
+$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
 
-if (! $conn) {
-    die('Lidhja deshtoi: ' .mysqli_connect_error());
+if ($conn) {
+    echo"You are connected";
+}
+else{
+    echo"Could not connect!";
 }
 
 ?>

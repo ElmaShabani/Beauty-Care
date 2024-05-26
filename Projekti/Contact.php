@@ -54,7 +54,7 @@
         </div>
        
         <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-   <script>
+  <!-- <script>
     function submitForm(){
     let nameInput = document.getElementById('name');
 if (nameInput.value.length === 0) {
@@ -80,7 +80,32 @@ switch (true) {
       alert('Message is too long.');
 }
     }
-   </script>
+   </script> -->
+   <?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
+
+    $to = "elona.fetahu@student.uni-pr.edu"; 
+    $subject = "New Contact Message from $name";
+    $body = "You have received a new message from your website contact form.\n\n".
+            "Here are the details:\n".
+            "Name: $name\n".
+            "Email: $email\n".
+            "Message: $message\n";
+
+    $headers = "From: elona.fetahu@student.uni-pr.edu\n"; // Ndryshoje këtë me adresën tënde të email-it të dërgimit
+    $headers .= "Reply-To: $email"; // Përgjigju direkt në email-in e dërguesit
+
+    if (mail($to, $subject, $body, $headers)) {
+        echo "<script>alert('Your message has been sent successfully!'); window.location.href='contact.html';</script>";
+    } else {
+        echo "<script>alert('Failed to send the message. Please try again later.'); window.location.href='contact.html';</script>";
+    }
+}
+?>
+
     </body>
      <html>
     
