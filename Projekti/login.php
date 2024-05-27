@@ -119,7 +119,7 @@ try {
     <link rel="icon" type="image/x-icon" href="../img/favicon.ico.PNG">
     <title>Beauty Website Login</title>
     <style>
-        /* Stilet tuaja këtu */
+       
     </style>
 </head>
 <body>
