@@ -141,6 +141,20 @@ try {
                </button>
            </a>
         </div>
+        <div class="container"> 
+                <form class="bg-light shadow rounded border" method="post"> 
+                    <div class="p-5"> 
+                        <div> <label for="validationDefaultUsername" class="form-label">First name::</label> 
+                        <div class="input-group"> <span class="input-group-text" id="inputGroupPrepend2"></span> 
+                        <input type="text" class="form-control" id="validationDefaultUsername" name="firstname" placeholder="First name" aria-describedby="inputGroupPrepend2" required> </div> 
+                    </div> <div> <label for="validationDefault01" class="form-label">Last name::</label>
+                     <input type="text" class="form-control" id="validationDefault01" name="lastname" placeholder="Last name" required> </div>
+                      <div> <label for="validationDefault02" class="form-label">Username:</label> 
+                      <input type="text" class="form-control" id="validationDefault02" name="username" placeholder="Set Username" required> </div> 
+                      <label for="validationDefault02" class="form-label">Password:</label> 
+                      <input type="password" class="form-control" id="validationDefault02" name="password" placeholder="Set Password" required> </div> 
+                      <div class="mt-4 d-flex align-items-center"> <button class="btn btn-success mx-3" type="submit" name="signup">Sign Up</button>
+                       <a href="Login.php" class="text-primary">Log In</a> </div> </div> </form> 
     </form>
 </body>
 </html>
