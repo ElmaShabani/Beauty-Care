@@ -161,14 +161,10 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
         <h2>Log Into EverGlow Beauty</h2>
         
         <input type="text" id="username" name="username" placeholder="Username..." required>
-<<<<<<< HEAD
         <input type="password" id="password" name="password"  placeholder="Password..." required>
         <input type="text" id="email" name="email"  placeholder="Email..." required>
         <input type="text" id="tel" name="teli"  placeholder="Tel" required>
-=======
         <input type="password" id="password" name="password"  placeholder="Email..." required>
-        
->>>>>>> e3eb0e02d4c2f61595d719e725adac6174113fba
 
         <button type="submit" style="width: 200px; border: 1px solid black;">Log In</button>
         <p>or</p>

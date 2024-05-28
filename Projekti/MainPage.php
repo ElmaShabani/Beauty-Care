@@ -30,8 +30,7 @@
 
                      <li><a href="facee.php">Face</a></li>
 
-                     <li><a href="facee.php">Face</a></li>a
->>>>>>> f0e6b945f55c68eacbca78a00732e82d5080ed9c
+                     <li><a href="facee.php">Face</a></li>
                      <li><a href="eyes.php">Eyes</a></li>
                      <li><a href="lips.php">Lips</a></li>
                      <li><a href="cheeks.php">Cheek</a></li>
@@ -417,6 +416,7 @@ $Our_info->set_data("https://maps.app.goo.gl/scmxnwzCazoUVT8b9", "mailto:everglo
             <aside>
                 <h2>Payment methods: </h2>
             </aside>
+    
             <div class="row">
               <div class="col text-center">
             <a id="payPallink" class="site-footer-payments__link"  href="https://www.paypal.com/" style="pointer-events: auto;">
