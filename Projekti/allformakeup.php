@@ -216,23 +216,23 @@
             alert('Everglow Beauty Kosova: Where beauty meets excellence, making us the best choice for all your cosmetic needs!');
         }
 
-        function allowDrop(event) {
-            event.preventDefault();
-        }
-      
-        function drag(event) {
-            event.dataTransfer.setData("text", event.target.id);
-        }
-      
-        function drop(event) {
-            event.preventDefault();
-            var data = event.dataTransfer.getData("text");
-            var draggedElement = document.getElementById(data);
-            event.target.appendChild(draggedElement);
-        }
-    </script>
-</body>
-</html>
+            function allowDrop(event) {
+              event.preventDefault();
+            }
+          
+            function drag(event) {
+              event.dataTransfer.setData("text", event.target.id);
+            }
+          
+            function drop(event) {
+              event.preventDefault();
+              var data = event.dataTransfer.getData("text");
+              var draggedElement = document.getElementById(data);
+              event.target.appendChild(draggedElement);
+            }
+          
+</script>
+
     
 
           
