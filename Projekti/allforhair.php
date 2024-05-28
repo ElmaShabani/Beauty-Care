@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hair Care</title>
     <link rel="icon" type="image/x-icon" href="../img/favicon.ico.PNG">
@@ -12,24 +11,20 @@
         .hidden {
             display: none;
         }
-
         .fade-slide-in {
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 1s ease-in-out, transform 1s ease-in-out;
         }
-
         .fade-slide-in.show {
             opacity: 1;
             transform: translateY(0);
         }
-
         .photo-fade-slide-in {
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 1s ease-in-out, transform 1s ease-in-out;
         }
-
         .photo-fade-slide-in.show {
             opacity: 1;
             transform: translateY(0);
@@ -66,10 +61,7 @@
         </video>
     </section>
 
-   
-
-
-    <div class="fourth-container" style="border: 2px solid pink; border-radius: 10px;border-style: double; margin-left: 30px; margin-right: 30px; background-color: <?php echo $background_color; ?>;">
+    <div class="fourth-container" style="border: 2px solid pink; border-radius: 10px;border-style: double; margin-left: 30px; margin-right: 30px;">
         <div class="image-container">
             <img src="../img/hairphoto.webp" alt="Hair" class="round-image">
         </div>
@@ -95,28 +87,23 @@
             border: 2px solid black;
             margin:auto;
         }
-
         th, td {
             border: 1px solid #dddddd;
             text-align: left;
             padding: 15px;
         }
-
         th {
             background-color: lightgoldenrodyellow;
             color: black;
         }
-
         td {
             background-color: white;
         }
-
         h1 {
             color: black;
             font-style: italic;
             text-decoration: underline;
         }
-
         .product-description {
             font-style: italic;
             color: #333;
@@ -172,6 +159,22 @@
             <td>$45.00</td>
         </tr>
     </table>
+
+    <div class="container">
+        <h1>Add New Product</h1>
+        <form onsubmit="event.preventDefault(); sendData();">
+            <div class="mb-3">
+                <label for="productName" class="form-label">Product Name</label>
+                <input type="text" class="form-control" id="productName" required>
+            </div>
+            <div class="mb-3">
+                <label for="productPrice" class="form-label">Product Price</label>
+                <input type="text" class="form-control" id="productPrice" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <div id="response"></div>
+    </div>
 
     <footer>
         <div class="container d-flex footer-container">
@@ -247,9 +250,25 @@
     </footer>
     <script src="hair.js"></script>
     <script>
-        // Skripti për të ndryshuar citimin
         function changeQuote() {
             document.getElementById('quote').textContent = 'Remember, your hair is your best accessory!';
+        }
+
+        function sendData() {
+            var name = document.getElementById("productName").value;
+            var price = document.getElementById("productPrice").value;
+            
+            $.ajax({
+                url: 'add_product.php',
+                type: 'POST',
+                data: {
+                    name: name,
+                    price: price
+                },
+                success: function(response) {
+                    $("#response").html(response);
+                }
+            });
         }
     </script>
 </body>
