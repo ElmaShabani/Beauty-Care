@@ -39,8 +39,27 @@ $bgColor = $_COOKIE['bgColor'];
     
     <title>Job Application</title>
 </head>
-<body bgcolor="<?php echo $bgColor ?>" >
-   
+<body bgcolor="<?php echo $bgColor ?> "|>
+<?php
+function customErrorHandler($errno, $errstr, $errfile, $errline) {
+    echo "<b>Gabim:</b> [$errno] $errstr<br>";
+    echo "Gabimi ndodhi në skedarin '$errfile', rreshti $errline<br>";
+    echo "------------------------------------------------------------<br>";
+    return true;
+}
+
+
+set_error_handler("customErrorHandler");
+
+session_start();
+
+if (isset($_POST['submitted'])){
+    $newbgColor = $_POST['bgColor'];
+    setcookie("bgColor", $newbgColor, time() + 3600);
+}
+
+$bgColor = isset($_COOKIE['bgColor']) ? $_COOKIE['bgColor'] : "Black";
+?>  
     <header>
         <a href="MainPage.php"><img src="../img/logo.jpg" alt="Your Brand Logo"></a>
         <div class="text-with-shadow" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">EverGlow Beauty</div>
@@ -232,29 +251,21 @@ $bgColor = $_COOKIE['bgColor'];
   
     <script>
         function validateForm() {
-            try {
-                var fullName = document.getElementById('fullName').value;
-                var email = document.getElementById('email').value;
-                var contactMethod = document.querySelector('input[name="contactMethod"]:checked');
-                var date = document.getElementById('date').value;
-                var phoneNumber = document.getElementById('phoneNumber').value;
-                var age = document.getElementById('age').value;
-
-                if (fullName === '' || email === '' || contactMethod === null || date === '' || phoneNumber === '' || age === '') {
-                    throw new Error('Please fill in all required fields.');
-                }
-
-                if (isNaN(age) || age < 18 || age > 65) {
-                    throw new RangeError('Enter a valid age between 18 and 65.');
-                }
-
-
-                alert('Application submitted successfully!');
-                window.location.href = "MainPage.php";
-            } catch (error) {
-                alert('Error: ' + error.message);
-            }
+    try {
+        var fullName = document.getElementById('fullName').value;
+        if (fullName === '') throw new Error('Ju lutemi plotësoni emrin e plotë.');
+        var email = document.getElementById('email').value;
+        if (email === '') throw new Error('Emaili është i detyrueshëm.');
+        var age = document.getElementById('age').value;
+        if (isNaN(age) || age < 18 || age > 65) {
+            throw new RangeError('Mosha duhet të jetë ndërmjet 18 dhe 65 vjeç.');
         }
+        alert('Aplikimi u dërgua me sukses!');
+        window.location.href = "MainPage.php";
+    } catch (error) {
+        alert('Gabim: ' + error.message);
+    }
+}
         function shfaqMesazhin() {
     alert('Everglow Beauty Kosova: Where beauty meets excellence, making us the best choice for all your cosmetic needs!');
     }

@@ -42,6 +42,29 @@
 
     <section id="products">
         <div class="product" >
+        <?php
+            $produkte = array(
+                "Master Mattes Eyeshadow Palette" => 50.00,
+                "Nude Eyeshadow Palette" => 69.00,
+                "Glide-On Waterproof Eyeliner Pencil" => 25.00,
+                "Tartelette In Bloom Clay Eyeshadow Palette" => 45.00,
+                "Smudge Proof Brow Pomade" => 21.00,
+                "Eyes To Mesmerize Cream Eyeshadow" => 36.00,
+                "False Lashes" => 5.00,
+                "Eye Bento Bouncy Eyeshadow Trio" => 25.00
+            );
+
+            ksort($produkte);
+
+            foreach ($produkte as $produkt => $cmimi) {
+                echo '<div class="product">';
+                echo '<img src="../img/' . str_replace(' ', '_', $produkt) . '.webp" alt="Eyeshadow Palette">';
+                echo '<h3>' . $produkt . '</h3>';
+                echo '<p>$' . $cmimi . '</p>';
+                echo '<button class="add-to-cart" onclick="addToCart(\'' . $produkt . '\', ' . $cmimi . ')">Add to Cart</button>';
+                echo '</div>';
+            }
+        ?>
             <img src="../img/makeupbymario.webp" alt="Eyeshadow Palette" >
             <h3>MAEKUP BY MARIO <p>Master Mattes Eyeshadow Palette</p></h3>
             <p>$50.00</p>
