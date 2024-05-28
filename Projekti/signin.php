@@ -35,29 +35,48 @@ include ("connectdb.php");
                     <input type="text" class="form-control" id="validationDefault02" name="username" placeholder="Set Username" required>
                 </div>
                 <div>
-                    <label for="validationDefault03" class="form-label" style="width: 100%;">Password:</label>
+                    <label for="validationDefault03" class="form-label">Password:</label>
                     <input type="password" class="form-control" id="validationDefault03" name="password" placeholder="Set Password" required>
                 </div>
                 <div class="mt-4 d-flex align-items-center">
-                    <button class="btn btn-success mx-3" type="submit" name="signup">Sign Up</button>
-                    <a href="login.php" class="text-primary">Log In</a>
+                    <button class="btn btn-success mx-3" type="submit" name="action" value="Signup">Sign Up</button>
+                    <button class="btn btn-info mx-3" type="submit" name="action" value="Update">Update</button>
+                    <button class="btn btn-danger mx-3" type="submit" name="action" value="Delete">Delete</button>
+                    
                 </div>
             </div>
         </form>
         <?php
-        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["signup"])) {
+        include("connectdb.php");
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $firstname = $_POST["firstname"];
             $lastname = $_POST["lastname"];
             $username = $_POST["username"];
             $password = $_POST["password"];
-            $sql = "INSERT INTO users (firstname, lastname, username, password) VALUES ('{$firstname}','{$lastname}', '{$username}','{$password}')";
-            try{
-               mysqli_query($conn,$sql); 
-                echo"<p class='text-center text-success p-3'>Registration Completed Succesfuly</p>";
-               } 
-                catch(mysqli_sql_exception){
-                     echo"<p class='text-center text-danger p-3'>Registration Failed</p>";
-                     }}
+            $action = $_POST["action"];
+            
+            
+           
+            switch ($action) {
+                case "Signup":
+                    $sql = "INSERT INTO users (firstname, lastname, username, password) VALUES ('$firstname', '$lastname', '$username', '$password')";
+                    break;
+                case "Update":
+                    $sql = "UPDATE users SET firstname='$firstname', lastname='$lastname', password='$password' WHERE username='$username'";
+                    break;
+                case "Delete":
+                    $sql = "DELETE FROM users WHERE username='$username'";
+                    break;
+                default:
+                    $sql = false;
+            }
+
+            if ($sql && mysqli_query($conn, $sql)) {
+                echo "<p class='text-center text-success p-3'>" . $action . " completed successfully.</p>";
+            } else {
+                echo "<p class='text-center text-danger p-3'>Error: " . $action . " failed. " . mysqli_error($conn) . "</p>";
+            }
+        }
         ?>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
