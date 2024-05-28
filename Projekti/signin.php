@@ -54,27 +54,32 @@ include ("connectdb.php");
             $username = $_POST["username"];
             $password = $_POST["password"];
             $action = $_POST["action"];
-            
-            
-           
+
             switch ($action) {
                 case "Signup":
-                    $sql = "INSERT INTO users (firstname, lastname, username, password) VALUES ('$firstname', '$lastname', '$username', '$password')";
+                    $stmt = $conn->prepare("INSERT INTO users (firstname, lastname, username, password) VALUES (?, ?, ?, ?)");
+                    $stmt->bind_param("ssss", $firstname, $lastname, $username, $password);
                     break;
                 case "Update":
-                    $sql = "UPDATE users SET firstname='$firstname', lastname='$lastname', password='$password' WHERE username='$username'";
+                    $stmt = $conn->prepare("UPDATE users SET firstname=?, lastname=?, password=? WHERE username=?");
+                    $stmt->bind_param("ssss", $firstname, $lastname, $password, $username);
                     break;
                 case "Delete":
-                    $sql = "DELETE FROM users WHERE username='$username'";
+                    $stmt = $conn->prepare("DELETE FROM users WHERE username=?");
+                    $stmt->bind_param("s", $username);
                     break;
                 default:
-                    $sql = false;
+                    $stmt = false;
             }
 
-            if ($sql && mysqli_query($conn, $sql)) {
+            if ($stmt && $stmt->execute()) {
                 echo "<p class='text-center text-success p-3'>" . $action . " completed successfully.</p>";
             } else {
-                echo "<p class='text-center text-danger p-3'>Error: " . $action . " failed. " . mysqli_error($conn) . "</p>";
+                echo "<p class='text-center text-danger p-3'>Error: " . $action . " failed. " . $conn->error . "</p>";
+            }
+            
+            if ($stmt) {
+                $stmt->close();
             }
         }
         ?>
