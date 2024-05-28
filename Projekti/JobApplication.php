@@ -195,7 +195,7 @@ $bgColor = isset($_COOKIE['bgColor']) ? $_COOKIE['bgColor'] : "Black";
                 <h2>Get in Touch</h2>
                 <address
                     style="margin-left: 100px; font-size: 20px; font-family:Georgia, 'Times New Roman', Times, serif;">
-                    <a href="https://maps.app.goo.gl/scmxnwzCazoUVT8b9">Address: Prishtine</a> </address>
+                    <a href="https://maps.app.goo.gl/scmxnwzCazoUVT8b9">Address: Ferizaj</a> </address>
                 <p>Email: <mark style="background-color: white;"> <a
                             href="mailto:everglowbeauty@gmail.com">everglowbeauty@gmail.com</a> </mark></p>
                 <p>Phone: <mark style="background-color: white;">+383 48 555 111</mark> </p>

@@ -110,55 +110,7 @@
         }
     </style>
 
-    <h1>Recommended hair products for different hair types</h1>
-    
-    <table>
-        <tr>
-            <th rowspan="2">Product Name</th>
-            <th colspan="3">Hair Type</th>
-            <th rowspan="2">Price</th>
-        </tr>
-        <tr>
-            <th>Curl</th>
-            <th>Color</th>
-            <th>Texture</th>
-        </tr>
-        <tr>
-            <td>PATTERN by Tracee Ellis Ross
-                Styling Cream
-                <p class="product-description">A nourishing styling cream for curly hair.</p>
-            </td>
-            <td rowspan="2">Curly</td>
-            <td>Transparent</td>
-            <td>Liquid</td>
-            <td>$28.00</td>
-        </tr>
-        <tr>
-            <td>Amika
-                <p class="product-description">Hydrating conditioner for defined curls.</p>
-            </td>
-            <td>Opaque</td>
-            <td>Creamy</td>
-            <td>$15.00</td>
-        </tr>
-        <tr>
-            <td>BREAD BEAUTY SUPPLY
-                <p class="product-description">Color-protecting shampoo for straight hair.</p>
-            </td>
-            <td>Straight</td>
-            <td rowspan="2">Colored</td>
-            <td>Liquid</td>
-            <td>$28.00</td>
-        </tr>
-        <tr>
-            <td>Absolut Repair Protein Treatment Hair Mask
-                <p class="product-description">Intensive repair mask for wavy hair.</p>
-            </td>
-            <td>Wavy</td>
-            <td>Creamy</td>
-            <td>$45.00</td>
-        </tr>
-    </table>
+
 
     <div class="container">
         <h1>Add New Product</h1>
@@ -203,7 +155,7 @@
             <div class="get-in-touch">
                 <h2>Get in Touch</h2>
                 <address style="margin-left: 100px; font-size: 20px; font-family:Georgia, 'Times New Roman', Times, serif;">
-                    <a id="adresa" href="https://maps.app.goo.gl/scmxnwzCazoUVT8b9">Address: Prishtine</a>
+                    <a id="adresa" href="https://maps.app.goo.gl/scmxnwzCazoUVT8b9">Address: Ferizaj</a>
                 </address>
                 <p>Email: <mark style="background-color: white;"> <a href="mailto:everglowbeauty@gmail.com">everglowbeauty@gmail.com</a> </mark></p>
                 <p>Phone: <mark style="background-color: white;">+383 48 555 111</mark> </p>
@@ -253,6 +205,7 @@
         function changeQuote() {
             document.getElementById('quote').textContent = 'Remember, your hair is your best accessory!';
         }
+        
 
         function sendData() {
             var name = document.getElementById("productName").value;
