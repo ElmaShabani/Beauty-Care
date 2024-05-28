@@ -57,11 +57,11 @@
     
     <section id="video-section">
         <video width="100%" height="100%" autoplay loop muted>
-            <source src="../img/hair.mp4" type="video/mp4" autoplay>
+            <source src="../img/hair.mp4" type="video/mp4">
         </video>
     </section>
 
-    <div class="fourth-container" style="border: 2px solid pink; border-radius: 10px;border-style: double; margin-left: 30px; margin-right: 30px;">
+    <div class="fourth-container" style="border: 2px solid pink; border-radius: 10px; border-style: double; margin-left: 30px; margin-right: 30px;">
         <div class="image-container">
             <img src="../img/hairphoto.webp" alt="Hair" class="round-image">
         </div>
@@ -76,7 +76,7 @@
     </div>
     
     <p style="font-size: 2em; background-color: #fff; margin-bottom: 50px; font-family:'Times New Roman', Times, serif; text-align:center; margin-top: 150px;"><b><i>If you want to win prize click the link below!</i></b></p>
-    <p style="text-align: center; margin-bottom: 150px;"><a href="giveaway.php" target="_blank" style="font-size: 2em; background-color: #fff;font-family:'Times New Roman', Times, serif;color: rgb(152, 111, 15); text-align: center; margin-bottom: 150px;">GIVEAWAY!!</a></p>
+    <p style="text-align: center; margin-bottom: 150px;"><a href="giveaway.php" target="_blank" style="font-size: 2em; background-color: #fff; font-family:'Times New Roman', Times, serif; color: rgb(152, 111, 15); text-align: center; margin-bottom: 150px;">GIVEAWAY!!</a></p>
 
     <style>
         table {
@@ -110,7 +110,6 @@
         }
     </style>
 
-
     <div class="container">
         <h1>Add New Product</h1>
         <form onsubmit="event.preventDefault(); sendData();">
@@ -134,7 +133,7 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Të dhënat e produktit do të vendosen këtu -->
+                <!-- Product data will be inserted here -->
             </tbody>
         </table>
     </div>
@@ -150,7 +149,7 @@
                 <ul>
                     <li><a href="MainPage.php">Home</a></li>
                     <li><a href="OurStory.php">About Us</a></li>
-                    <li><a href="contact.php">Contact</a>
+                    <li><a href="contact.php">Contact</a></li>
                     <li>
                         <div id="currentDateElement"></div>
                         <script>
@@ -220,27 +219,33 @@
         function sendData() {
             var name = document.getElementById("productName").value;
             var price = document.getElementById("productPrice").value;
-            
+
             $.ajax({
-                url: 'add_product.php',
+                url: 'your_php_script.php',
                 type: 'POST',
                 data: {
+                    action: 'add',
                     name: name,
                     price: price
                 },
                 success: function(response) {
-                    $("#response").html(response);
-                    loadProducts();  // Pas përfundimit të shtimit, përditëso tabelën
+                    $("#response").html(response.message);
+                    if (response.status === 'success') {
+                        loadProducts();  // Refresh the product table after adding a product
+                    }
                 }
             });
         }
 
         function loadProducts() {
             $.ajax({
-                url: 'get_products.php',
+                url: 'your_php_script.php',
                 type: 'GET',
+                data: {
+                    action: 'get'
+                },
                 success: function(data) {
-                    var products = JSON.parse(data);
+                    var products = data;
                     var tableBody = $("#productTable tbody");
                     tableBody.empty();
                     products.forEach(function(product) {
@@ -257,6 +262,3 @@
     </script>
 </body>
 </html>
-
-
-
