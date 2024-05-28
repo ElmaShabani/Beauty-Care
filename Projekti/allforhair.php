@@ -115,7 +115,8 @@
     <table>
         <tr>
             <th rowspan="2">Product Name</th>
-            <th colspan="3">Hair Type</th>
+            <th colspan="3">Hair Type
+            </th>
             <th rowspan="2">Price</th>
         </tr>
         <tr>
@@ -125,7 +126,6 @@
         </tr>
         <tr>
             <td>PATTERN by Tracee Ellis Ross
-                Styling Cream
                 <p class="product-description">A nourishing styling cream for curly hair.</p>
             </td>
             <td rowspan="2">Curly</td>
@@ -174,6 +174,18 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
         <div id="response"></div>
+        <table id="productTable" class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Të dhënat e produktit do të vendosen këtu -->
+            </tbody>
+        </table>
     </div>
 
     <footer>
@@ -267,9 +279,32 @@
                 },
                 success: function(response) {
                     $("#response").html(response);
+                    loadProducts();  // Pas përfundimit të shtimit, përditëso tabelën
                 }
             });
         }
+
+        function loadProducts() {
+            $.ajax({
+                url: 'get_products.php',
+                type: 'GET',
+                success: function(data) {
+                    var products = JSON.parse(data);
+                    var tableBody = $("#productTable tbody");
+                    tableBody.empty();
+                    products.forEach(function(product) {
+                        var row = "<tr><td>" + product.id + "</td><td>" + product.name + "</td><td>" + product.price + "</td></tr>";
+                        tableBody.append(row);
+                    });
+                }
+            });
+        }
+
+        $(document).ready(function() {
+            loadProducts();
+        });
     </script>
 </body>
 </html>
+
+
