@@ -11,20 +11,24 @@
         .hidden {
             display: none;
         }
+
         .fade-slide-in {
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 1s ease-in-out, transform 1s ease-in-out;
         }
+
         .fade-slide-in.show {
             opacity: 1;
             transform: translateY(0);
         }
+
         .photo-fade-slide-in {
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 1s ease-in-out, transform 1s ease-in-out;
         }
+
         .photo-fade-slide-in.show {
             opacity: 1;
             transform: translateY(0);
@@ -54,14 +58,14 @@
             </div>
         </div>
     </header>
-    
+   
     <section id="video-section">
         <video width="100%" height="100%" autoplay loop muted>
             <source src="../img/hair.mp4" type="video/mp4" autoplay>
         </video>
     </section>
 
-    <div class="fourth-container" style="border: 2px solid pink; border-radius: 10px;border-style: double; margin-left: 30px; margin-right: 30px;">
+    <div class="fourth-container" style="border: 2px solid pink; border-radius: 10px;border-style: double; margin-left: 30px; margin-right: 30px; background-color: <?php echo $background_color; ?>;">
         <div class="image-container">
             <img src="../img/hairphoto.webp" alt="Hair" class="round-image">
         </div>
@@ -74,9 +78,8 @@
             <button class="btn btn-primary" onclick="changeQuote()">Reminder</button>
         </div>
     </div>
-    
-    <p style="font-size: 2em; background-color: #fff; margin-bottom: 50px; font-family:'Times New Roman', Times, serif; text-align:center; margin-top: 150px;"><b><i>If you want to win prize click the link below!</i></b></p>
-    <p style="text-align: center; margin-bottom: 150px;"><a href="giveaway.php" target="_blank" style="font-size: 2em; background-color: #fff;font-family:'Times New Roman', Times, serif;color: rgb(152, 111, 15); text-align: center; margin-bottom: 150px;">GIVEAWAY!!</a></p>
+   
+   
 
     <style>
         table {
@@ -87,31 +90,35 @@
             border: 2px solid black;
             margin:auto;
         }
+
         th, td {
             border: 1px solid #dddddd;
             text-align: left;
             padding: 15px;
         }
+
         th {
             background-color: lightgoldenrodyellow;
             color: black;
         }
+
         td {
             background-color: white;
         }
+
         h1 {
             color: black;
             font-style: italic;
             text-decoration: underline;
         }
+
         .product-description {
             font-style: italic;
             color: #333;
         }
     </style>
 
-
-    <div class="container">
+ <div class="container">
         <h1>Add New Product</h1>
         <form onsubmit="event.preventDefault(); sendData();">
             <div class="mb-3">
@@ -122,22 +129,12 @@
                 <label for="productPrice" class="form-label">Product Price</label>
                 <input type="text" class="form-control" id="productPrice" required>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Add Product</button>
         </form>
         <div id="response"></div>
-        <table id="productTable" class="table">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Price</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Të dhënat e produktit do të vendosen këtu -->
-            </tbody>
-        </table>
     </div>
+</body>
+</html>
 
     <footer>
         <div class="container d-flex footer-container">
@@ -204,7 +201,7 @@
                 </div>
                 <div class="col text-center">
                     <a id="MaestroLink" class="site-footer-payments__link" href="https://n26.com/en-eu/maestro-card" style="pointer-events: auto;">
-                        <img src="https://images.ctfassets.net/eoaaqxyywn6o/5IdXqCmgjYWyv6je5Gd1CT/56c33d1249c8cb77882a1b7ee675a673/Maestro.svg" alt="Maestro" class="site-footer-payments__link__icon">
+                        <img src="https://images.ctfassets.net/eoaaqxyywn6o/5IdXqCmgjNCVwZNyssRsdE/702c37ee931258aad2071e063bbd337e/Maestro.svg" alt="Maestro" class="site-footer-payments__link__icon">
                     </a>
                 </div>
             </div>
@@ -218,45 +215,23 @@
         }
 
         function sendData() {
-            var name = document.getElementById("productName").value;
-            var price = document.getElementById("productPrice").value;
-            
-            $.ajax({
-                url: 'add_product.php',
-                type: 'POST',
-                data: {
-                    name: name,
-                    price: price
-                },
-                success: function(response) {
-                    $("#response").html(response);
-                    loadProducts();  // Pas përfundimit të shtimit, përditëso tabelën
-                }
-            });
-        }
+            var xhr = new XMLHttpRequest();
+            var url = "add_product.php"; // URL e skriptit PHP që do të pranojë kërkesën
+            xhr.open("POST", url, true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
-        function loadProducts() {
-            $.ajax({
-                url: 'get_products.php',
-                type: 'GET',
-                success: function(data) {
-                    var products = JSON.parse(data);
-                    var tableBody = $("#productTable tbody");
-                    tableBody.empty();
-                    products.forEach(function(product) {
-                        var row = "<tr><td>" + product.id + "</td><td>" + product.name + "</td><td>" + product.price + "</td></tr>";
-                        tableBody.append(row);
-                    });
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var response = xhr.responseText;
+                    document.getElementById("response").innerHTML = response;
                 }
-            });
-        }
+            };
 
-        $(document).ready(function() {
-            loadProducts();
-        });
+            var productName = document.getElementById("productName").value;
+            var productPrice = document.getElementById("productPrice").value;
+            var data = "name=" + productName + "&price=" + productPrice;
+            xhr.send(data);
+        }
     </script>
-</body>
-</html>
 
-
-
+   
