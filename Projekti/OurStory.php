@@ -1,3 +1,33 @@
+<?php
+function &findElement(&$array, $value) {
+    foreach ($array as &$element) {
+        if ($element === $value) {
+            return $element;
+        }
+    }
+    $null = null;
+    return $null;
+}
+
+function updateReference(&$var) {
+    $var .= ' - Updated with reference';
+}
+
+$products = ["Face Cream", "Hair Serum", "Body Lotion", "Perfume"];
+$search = "Hair Serum";
+
+$foundProduct = &findElement($products, $search);
+
+if ($foundProduct !== null) {
+    echo "<p>Product found: $foundProduct</p>";
+    updateReference($foundProduct);
+    echo "<p>Updated Product: $foundProduct</p>";
+} else {
+    echo "<p>Product not found</p>";
+}
+
+echo "<p>All Products: " . implode(", ", $products) . "</p>";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,60 +41,9 @@
     <script>
         $(document).ready(function() {
             $('header').hide().fadeIn(1000); 
-
-            // Demonstrimi i modifikimit të vargut
-            let numbers = [1, 2, 3, 4, 5];
-            console.log("Before modifying array:", numbers);
-            modifyArray(numbers);
-            console.log("After modifying array:", numbers);
-
-            // Demonstrimi i modifikimit të objektit
-            let myObject = { value: "Original value" };
-            console.log("Before modifying object:", myObject);
-            modifyObject(myObject);
-            console.log("After modifying object:", myObject);
-
-            // Modifikimit të stringut permes ref
-            let myString = { value: "hello" };
-            console.log("Before modifying string:", myString);
-            let wrappedFunction = wrapFunction(modifyString);
-            wrappedFunction(myString);
-            console.log("After modifying string:", myString);
-        });
-
-        // Funksioni që modifikon nje varg permes ref
-        function modifyArray(arr) {
-            for (let i = 0; i < arr.length; i++) {
-                arr[i] = arr[i] * 2;
-            }
-        }
-
-        // Funksioni qe modifikon nje objekt permes ref
-        function modifyObject(obj) {
-            obj.value = "Modified value";
-        }
-
-        // Funksioni qe modifikon nje string permes references duke perdorur nje metode te mbeshtjellur
-        function wrapFunction(referenceFunction) {
-            return function(referenceValue) {
-                referenceFunction(referenceValue);
-            }
-        }
-
-        function modifyString(str) {
-            str.value = str.value.toUpperCase();
-        }
-        
-         // Funksioni per te larguar referencen e nje vargu
-                function unsetArray(arr) {
-            arr = undefined;
-        }
-
-        // Funksioni per te larguar referencen e nje objekti
-        function unsetObject(obj) {
-            obj = undefined;
-        }
+        })
     </script>
+   
 </head>
 <body>
     <header>
