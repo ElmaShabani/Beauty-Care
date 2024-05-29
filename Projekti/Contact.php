@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <body>
     <div class="contact-form-container">
         <h2>Contact Us</h2>
-        <form id="contactForm" method="post" action="contact.php">
+        <form id="contactForm" method="post" action="Contact.php">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
 
@@ -115,9 +115,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $headers .= "Reply-To: $email"; // Përgjigju direkt në email-in e dërguesit
 
     if (mail($to, $subject, $body, $headers)) {
-        echo "<script>alert('Your message has been sent successfully!'); window.location.href='contact.html';</script>";
+        echo "<script>alert('Your message has been sent successfully!'); window.location.href='Contact.php';</script>";
     } else {
-        echo "<script>alert('Failed to send the message. Please try again later.'); window.location.href='contact.html';</script>";
+        echo "<script>alert('Failed to send the message. Please try again later.'); window.location.href='Contact.php';</script>";
     }
 }
 ?>

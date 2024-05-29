@@ -134,18 +134,7 @@
             <button type="submit" class="btn btn-primary">Add Product</button>
         </form>
         <div id="response"></div>
-        <table id="productTable" class="table">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Price</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Të dhënat e produktit do të vendosen këtu -->
-            </tbody>
-        </table>
+        
     </div>
 </body>
 </html>
