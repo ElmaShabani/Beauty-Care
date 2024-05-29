@@ -61,11 +61,11 @@
    
     <section id="video-section">
         <video width="100%" height="100%" autoplay loop muted>
-            <source src="../img/hair.mp4" type="video/mp4" autoplay>
+            <source src="../img/hair.mp4" type="video/mp4">
         </video>
     </section>
 
-    <div class="fourth-container" style="border: 2px solid pink; border-radius: 10px;border-style: double; margin-left: 30px; margin-right: 30px; background-color: <?php echo $background_color; ?>;">
+    <div class="fourth-container" style="border: 2px solid pink; border-radius: 10px;border-style: double; margin-left: 30px; margin-right: 30px;">
         <div class="image-container">
             <img src="../img/hairphoto.webp" alt="Hair" class="round-image">
         </div>
@@ -78,8 +78,9 @@
             <button class="btn btn-primary" onclick="changeQuote()">Reminder</button>
         </div>
     </div>
-   
-   
+    
+    <p style="font-size: 2em; background-color: #fff; margin-bottom: 50px; font-family:'Times New Roman', Times, serif; text-align:center; margin-top: 150px;"><b><i>If you want to win prize click the link below!</i></b></p>
+    <p style="text-align: center; margin-bottom: 150px;"><a href="giveaway.php" target="_blank" style="font-size: 2em; background-color: #fff;font-family:'Times New Roman', Times, serif;color: rgb(152, 111, 15); text-align: center; margin-bottom: 150px;">GIVEAWAY!!</a></p>
 
     <style>
         table {
@@ -118,7 +119,8 @@
         }
     </style>
 
- <div class="container">
+
+    <div class="container">
         <h1>Add New Product</h1>
         <form onsubmit="event.preventDefault(); sendData();">
             <div class="mb-3">
@@ -132,6 +134,18 @@
             <button type="submit" class="btn btn-primary">Add Product</button>
         </form>
         <div id="response"></div>
+        <table id="productTable" class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Të dhënat e produktit do të vendosen këtu -->
+            </tbody>
+        </table>
     </div>
 </body>
 </html>
@@ -147,7 +161,7 @@
                 <ul>
                     <li><a href="MainPage.php">Home</a></li>
                     <li><a href="OurStory.php">About Us</a></li>
-                    <li><a href="contact.php">Contact</a>
+                    <li><a href="contact.php">Contact</a></li>
                     <li>
                         <div id="currentDateElement"></div>
                         <script>
@@ -215,23 +229,45 @@
         }
 
         function sendData() {
-            var xhr = new XMLHttpRequest();
-            var url = "add_product.php"; // URL e skriptit PHP që do të pranojë kërkesën
-            xhr.open("POST", url, true);
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    var response = xhr.responseText;
-                    document.getElementById("response").innerHTML = response;
+            var name = document.getElementById("productName").value;
+            var price = document.getElementById("productPrice").value;
+            
+            $.ajax({
+                url: 'add_product.php',
+                type: 'POST',
+                data: {
+                    name: name,
+                    price: price
+                },
+                success: function(response) {
+                    $("#response").html(response);
+                    loadProducts();  // Pas përfundimit të shtimit, përditëso tabelën
                 }
-            };
-
-            var productName = document.getElementById("productName").value;
-            var productPrice = document.getElementById("productPrice").value;
-            var data = "name=" + productName + "&price=" + productPrice;
-            xhr.send(data);
+            });
         }
-    </script>
 
-   
+        function loadProducts() {
+            $.ajax({
+                url: 'get_products.php',
+                type: 'GET',
+                success: function(data) {
+                    var products = JSON.parse(data);
+                    var tableBody = $("#productTable tbody");
+                    tableBody.empty();
+                    products.forEach(function(product) {
+                        var row = "<tr><td>" + product.id + "</td><td>" + product.name + "</td><td>" + product.price + "</td></tr>";
+                        tableBody.append(row);
+                    });
+                }
+            });
+        }
+
+        $(document).ready(function() {
+            loadProducts();
+        });
+    </script>
+</body>
+</html>
+
+
+
