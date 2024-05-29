@@ -11,24 +11,20 @@
         .hidden {
             display: none;
         }
-
         .fade-slide-in {
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 1s ease-in-out, transform 1s ease-in-out;
         }
-
         .fade-slide-in.show {
             opacity: 1;
             transform: translateY(0);
         }
-
         .photo-fade-slide-in {
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 1s ease-in-out, transform 1s ease-in-out;
         }
-
         .photo-fade-slide-in.show {
             opacity: 1;
             transform: translateY(0);
@@ -58,14 +54,14 @@
             </div>
         </div>
     </header>
-   
+    
     <section id="video-section">
         <video width="100%" height="100%" autoplay loop muted>
             <source src="../img/hair.mp4" type="video/mp4">
         </video>
     </section>
 
-    <div class="fourth-container" style="border: 2px solid pink; border-radius: 10px;border-style: double; margin-left: 30px; margin-right: 30px;">
+    <div class="fourth-container" style="border: 2px solid pink; border-radius: 10px; border-style: double; margin-left: 30px; margin-right: 30px;">
         <div class="image-container">
             <img src="../img/hairphoto.webp" alt="Hair" class="round-image">
         </div>
@@ -80,7 +76,7 @@
     </div>
     
     <p style="font-size: 2em; background-color: #fff; margin-bottom: 50px; font-family:'Times New Roman', Times, serif; text-align:center; margin-top: 150px;"><b><i>If you want to win prize click the link below!</i></b></p>
-    <p style="text-align: center; margin-bottom: 150px;"><a href="giveaway.php" target="_blank" style="font-size: 2em; background-color: #fff;font-family:'Times New Roman', Times, serif;color: rgb(152, 111, 15); text-align: center; margin-bottom: 150px;">GIVEAWAY!!</a></p>
+    <p style="text-align: center; margin-bottom: 150px;"><a href="giveaway.php" target="_blank" style="font-size: 2em; background-color: #fff; font-family:'Times New Roman', Times, serif; color: rgb(152, 111, 15); text-align: center; margin-bottom: 150px;">GIVEAWAY!!</a></p>
 
     <style>
         table {
@@ -91,38 +87,33 @@
             border: 2px solid black;
             margin:auto;
         }
-
         th, td {
             border: 1px solid #dddddd;
             text-align: left;
             padding: 15px;
         }
-
         th {
             background-color: lightgoldenrodyellow;
             color: black;
         }
-
         td {
             background-color: white;
         }
-
         h1 {
             color: black;
             font-style: italic;
             text-decoration: underline;
         }
-
         .product-description {
             font-style: italic;
             color: #333;
         }
     </style>
 
-
     <div class="container">
         <h1>Add New Product</h1>
-        <form onsubmit="event.preventDefault(); sendData();">
+        <form id="productForm" onsubmit="event.preventDefault(); sendProduct();">
+            <input type="hidden" id="productId">
             <div class="mb-3">
                 <label for="productName" class="form-label">Product Name</label>
                 <input type="text" class="form-control" id="productName" required>
@@ -131,13 +122,24 @@
                 <label for="productPrice" class="form-label">Product Price</label>
                 <input type="text" class="form-control" id="productPrice" required>
             </div>
-            <button type="submit" class="btn btn-primary">Add Product</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-        <div id="response"></div>
-        
+        <div id="productResponse" class="mt-3"></div>
+        <h2>Product List</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="productTable">
+                <!-- Products will be loaded here -->
+            </tbody>
+        </table>
     </div>
-</body>
-</html>
 
     <footer>
         <div class="container d-flex footer-container">
@@ -204,51 +206,66 @@
                 </div>
                 <div class="col text-center">
                     <a id="MaestroLink" class="site-footer-payments__link" href="https://n26.com/en-eu/maestro-card" style="pointer-events: auto;">
-                        <img src="https://images.ctfassets.net/eoaaqxyywn6o/5IdXqCmgjNCVwZNyssRsdE/702c37ee931258aad2071e063bbd337e/Maestro.svg" alt="Maestro" class="site-footer-payments__link__icon">
+                        <img src="https://images.ctfassets.net/eoaaqxyywn6o/5IdXqCmgjYWyv6je5Gd1CT/56c33d1249c8cb77882a1b7ee675a673/Maestro.svg" alt="Maestro" class="site-footer-payments__link__icon">
                     </a>
                 </div>
             </div>
         </div>
         <p style="text-align:center;">© 2023 EverGlow Beauty. All Rights Reserved.</p>
     </footer>
-    <script src="hair.js"></script>
     <script>
         function changeQuote() {
             document.getElementById('quote').textContent = 'Remember, your hair is your best accessory!';
         }
 
-        function sendData() {
-            var name = document.getElementById("productName").value;
-            var price = document.getElementById("productPrice").value;
-            
+        function sendProduct() {
+            var id = document.getElementById('productId').value;
+            var name = document.getElementById('productName').value;
+            var price = document.getElementById('productPrice').value;
+
             $.ajax({
-                url: 'add_product.php',
+                url: 'manage_product.php',
                 type: 'POST',
                 data: {
+                    action: id ? 'update' : 'add',
+                    id: id,
                     name: name,
                     price: price
                 },
                 success: function(response) {
-                    $("#response").html(response);
-                    loadProducts();  // Pas përfundimit të shtimit, përditëso tabelën
+                    $("#productResponse").html(response.message);
+                    if (response.status === 'success') {
+                        loadProducts();  // Refresh the product table after adding/updating a product
+                        $("#productForm")[0].reset(); // Clear the form
+                        $("#productId").val(''); // Clear the hidden input
+                    }
                 }
             });
         }
 
         function loadProducts() {
             $.ajax({
-                url: 'get_products.php',
+                url: 'manage_product.php',
                 type: 'GET',
+                data: {
+                    action: 'get'
+                },
                 success: function(data) {
                     var products = JSON.parse(data);
-                    var tableBody = $("#productTable tbody");
+                    var tableBody = $("#productTable");
                     tableBody.empty();
                     products.forEach(function(product) {
-                        var row = "<tr><td>" + product.id + "</td><td>" + product.name + "</td><td>" + product.price + "</td></tr>";
+                        var row = "<tr><td>" + product.id + "</td><td>" + product.name + "</td><td>" + product.price + "</td><td><button class='btn btn-info' onclick='populateUpdateForm(" + product.id + ",\"" + product.name + "\"," + product.price + ")'>Edit</button></td></tr>";
                         tableBody.append(row);
                     });
                 }
             });
+        }
+
+        function populateUpdateForm(id, name, price) {
+            $("#productId").val(id);
+            $("#productName").val(name);
+            $("#productPrice").val(price);
         }
 
         $(document).ready(function() {
@@ -257,6 +274,3 @@
     </script>
 </body>
 </html>
-
-
-
