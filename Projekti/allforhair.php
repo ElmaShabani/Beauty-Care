@@ -125,18 +125,16 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
         <div id="productResponse" class="mt-3"></div>
-        <h2>Product List</h2>
-        <table class="table">
+        <table id="productTable" class="table">
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
                     <th>Price</th>
-                    <th>Actions</th>
                 </tr>
             </thead>
-            <tbody id="productTable">
-                <!-- Products will be loaded here -->
+            <tbody>
+                <!-- Product data will be inserted here -->
             </tbody>
         </table>
     </div>
@@ -213,31 +211,29 @@
         </div>
         <p style="text-align:center;">© 2023 EverGlow Beauty. All Rights Reserved.</p>
     </footer>
+    <script src="hair.js"></script>
     <script>
         function changeQuote() {
             document.getElementById('quote').textContent = 'Remember, your hair is your best accessory!';
         }
 
         function sendProduct() {
-            var id = document.getElementById('productId').value;
-            var name = document.getElementById('productName').value;
-            var price = document.getElementById('productPrice').value;
+            var name = document.getElementById("productName").value;
+            var price = document.getElementById("productPrice").value;
 
             $.ajax({
                 url: 'manage_product.php',
                 type: 'POST',
+                dataType: 'json',
                 data: {
-                    action: id ? 'update' : 'add',
-                    id: id,
+                    action: 'add',
                     name: name,
                     price: price
                 },
                 success: function(response) {
                     $("#productResponse").html(response.message);
                     if (response.status === 'success') {
-                        loadProducts();  // Refresh the product table after adding/updating a product
-                        $("#productForm")[0].reset(); // Clear the form
-                        $("#productId").val(''); // Clear the hidden input
+                        loadProducts();  // Refresh the product table after adding a product
                     }
                 }
             });
@@ -247,25 +243,20 @@
             $.ajax({
                 url: 'manage_product.php',
                 type: 'GET',
+                dataType: 'json',
                 data: {
                     action: 'get'
                 },
                 success: function(data) {
-                    var products = JSON.parse(data);
-                    var tableBody = $("#productTable");
+                    var products = data;
+                    var tableBody = $("#productTable tbody");
                     tableBody.empty();
                     products.forEach(function(product) {
-                        var row = "<tr><td>" + product.id + "</td><td>" + product.name + "</td><td>" + product.price + "</td><td><button class='btn btn-info' onclick='populateUpdateForm(" + product.id + ",\"" + product.name + "\"," + product.price + ")'>Edit</button></td></tr>";
+                        var row = "<tr><td>" + product.id + "</td><td>" + product.name + "</td><td>" + product.price + "</td></tr>";
                         tableBody.append(row);
                     });
                 }
             });
-        }
-
-        function populateUpdateForm(id, name, price) {
-            $("#productId").val(id);
-            $("#productName").val(name);
-            $("#productPrice").val(price);
         }
 
         $(document).ready(function() {

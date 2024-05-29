@@ -5,12 +5,12 @@ $server = "localhost";
 $user = "root";
 $pass = "";
 $dbname = "testdb";
-$port = 3307; // Specifiko portin që po përdor
+$port = 3307;
 
 $conn = new mysqli($server, $user, $pass, $dbname, $port);
 
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    die(json_encode(["status" => "error", "message" => "Connection failed: " . $conn->connect_error]));
 }
 
 $action = $_REQUEST['action'];
@@ -24,21 +24,6 @@ if ($action == 'add') {
 
     if ($stmt->execute()) {
         echo json_encode(["status" => "success", "message" => "Product added successfully!"]);
-    } else {
-        echo json_encode(["status" => "error", "message" => "Error: " . $stmt->error]);
-    }
-
-    $stmt->close();
-} elseif ($action == 'update') {
-    $id = $_POST["id"];
-    $name = htmlspecialchars($_POST["name"]);
-    $price = htmlspecialchars($_POST["price"]);
-
-    $stmt = $conn->prepare("UPDATE products SET name=?, price=? WHERE id=?");
-    $stmt->bind_param("ssi", $name, $price, $id);
-
-    if ($stmt->execute()) {
-        echo json_encode(["status" => "success", "message" => "Product updated successfully!"]);
     } else {
         echo json_encode(["status" => "error", "message" => "Error: " . $stmt->error]);
     }
