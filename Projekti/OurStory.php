@@ -1,26 +1,26 @@
 <?php
 function &findElement(&$array, $value) {
-    foreach ($array as &$element) {
+    foreach ($array as &$element) {  // Përdorimi i referencës në foreach
         if ($element === $value) {
-            return $element;
+            return $element;  // Kthimi përmes referencës
         }
     }
     $null = null;
     return $null;
 }
 
-function updateReference(&$var) {
+function updateReference(&$var) {  // Përcjellja përmes referencës
     $var .= ' - Updated with reference';
 }
 
 $products = ["Face Cream", "Hair Serum", "Body Lotion", "Perfume"];
 $search = "Hair Serum";
 
-$foundProduct = &findElement($products, $search);
+$foundProduct = &findElement($products, $search);  // Kthimi përmes referencës
 
 if ($foundProduct !== null) {
     echo "<p>Product found: $foundProduct</p>";
-    updateReference($foundProduct);
+    updateReference($foundProduct);  // Përcjellja përmes referencës
     echo "<p>Updated Product: $foundProduct</p>";
 } else {
     echo "<p>Product not found</p>";
