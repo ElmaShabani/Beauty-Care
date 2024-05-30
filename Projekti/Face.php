@@ -1,44 +1,4 @@
-<?php
-// vargjet
-$show_cart = true; 
-$payment_method = "paypal"; //Ndryshimi bazuar ne metoden e zgjedhur te pageses
 
-// Deklarimi i funksionit placeOrder()
-function placeOrder() {
-
-}
-
-
-// Deklarimi i vargut te produkteve
-$products = array(
-    array(
-        "name" => "Detox Clarifying Charcoal Mask",
-        "price" => 25.00
-    ),
-    array(
-        "name" => "Minéral 89 Fortifying Recovery Mask",
-        "price" => 15.50
-    ),
-    array(
-        "name" => "Double Glow Peel Face Mask",
-        "price" => 30.00
-    ),
-    array(
-        "name" => "Liftactiv Specialist Hyalu Face Mask",
-        "price" => 27.50
-    )
-);
-
-// Deklarimi i vargut te metodave te pageses
-$payment_methods = array(
-    "paypal",
-    "clearpay",
-    "visa",
-    "amex",
-    "mastercard",
-    "maestro"
-);
-?>
 <!DOCTYPE html>
 <html lang="en">
 
