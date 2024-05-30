@@ -112,7 +112,8 @@
 
     <div class="container">
         <h1>Add New Product</h1>
-        <form onsubmit="event.preventDefault(); sendData();">
+        <form id="productForm" onsubmit="event.preventDefault(); sendProduct();">
+            <input type="hidden" id="productId">
             <div class="mb-3">
                 <label for="productName" class="form-label">Product Name</label>
                 <input type="text" class="form-control" id="productName" required>
@@ -123,7 +124,7 @@
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-        <div id="response"></div>
+        <div id="productResponse" class="mt-3"></div>
         <table id="productTable" class="table">
             <thead>
                 <tr>
@@ -216,20 +217,21 @@
             document.getElementById('quote').textContent = 'Remember, your hair is your best accessory!';
         }
 
-        function sendData() {
+        function sendProduct() {
             var name = document.getElementById("productName").value;
             var price = document.getElementById("productPrice").value;
 
             $.ajax({
-                url: 'your_php_script.php',
+                url: 'manage_product.php',
                 type: 'POST',
+                dataType: 'json',
                 data: {
                     action: 'add',
                     name: name,
                     price: price
                 },
                 success: function(response) {
-                    $("#response").html(response.message);
+                    $("#productResponse").html(response.message);
                     if (response.status === 'success') {
                         loadProducts();  // Refresh the product table after adding a product
                     }
@@ -239,8 +241,9 @@
 
         function loadProducts() {
             $.ajax({
-                url: 'your_php_script.php',
+                url: 'manage_product.php',
                 type: 'GET',
+                dataType: 'json',
                 data: {
                     action: 'get'
                 },

@@ -1,37 +1,25 @@
 <?php
-$server = "localhost";
-$user = "root";
-$pass = "";  // Fjalëkalimi është bosh
-$dbname = "testdb";
-$port = 3307;  
-
-$conn = new mysqli($server, $user, $pass, $dbname, $port);
-
-// Kontrollo lidhjen
-if ($conn->connect_error) {
-    die("<p class='text-danger text-center'>Connection with Database failed: " . $conn->connect_error . "</p>");
-}
-
-
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include("connectdb.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = htmlspecialchars($_POST['name']);
-    $feedback = htmlspecialchars($_POST['feedback']);
-    
-    $stmt = $conn->prepare("INSERT INTO feedback (name, feedback) VALUES (?, ?)");
-    $stmt->bind_param("ss", $name, $feedback);
-    if ($stmt->execute()) {
-        echo "Thank you, $name! Your feedback has been received.";
+    $id = $_POST["id"];
+    $name = $_POST["name"];
+    $feedback = $_POST["feedback"];
+
+    $stmt = $conn->prepare("UPDATE feedback SET name=?, feedback=? WHERE id=?");
+    if ($stmt === false) {
+        die("Prepare failed: " . htmlspecialchars($conn->error));
+    }
+    $stmt->bind_param("ssi", $name, $feedback, $id);
+    $stmt->execute();
+    if ($stmt->error) {
+        die("Execute failed: " . htmlspecialchars($stmt->error));
     } else {
-        echo "An error occurred. Please try again.";
+        echo "Feedback updated successfully!";
     }
     $stmt->close();
 }
-
-$conn->close();
 ?>
+
+
 

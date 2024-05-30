@@ -117,7 +117,67 @@
             <button type="button" class="btn btn-primary" onclick="sendFeedback()">Submit</button>
         </form>
         <div id="feedbackResponse" class="mt-3"></div>
+        <h2>Feedback List</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Feedback</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="feedbackTable">
+                <!-- Feedbacks will be loaded here -->
+            </tbody>
+        </table>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
+        function loadFeedbacks() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "read_feedback.php", true);
+            xhr.onreadystatechange = function() {
+                if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                    document.getElementById('feedbackTable').innerHTML = this.responseText;
+                }
+            }
+            xhr.send();
+        }
+
+        function sendFeedback() {
+            var id = document.getElementById('feedbackId').value;
+            var name = document.getElementById('name').value;
+            var feedback = document.getElementById('feedback').value;
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", id ? "update_feedback.php" : "processFeedback.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function() {
+                if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                    document.getElementById('feedbackResponse').innerHTML = this.responseText;
+                    document.getElementById('feedbackForm').reset();
+                    document.getElementById('feedbackId').value = "";
+                    loadFeedbacks(); // Refresh feedback list
+                }
+            }
+            xhr.send("id=" + encodeURIComponent(id) + "&name=" + encodeURIComponent(name) + "&feedback=" + encodeURIComponent(feedback));
+        }
+
+        function populateUpdateForm(id, name, feedback) {
+            document.getElementById('feedbackId').value = id;
+            document.getElementById('name').value = name;
+            document.getElementById('feedback').value = feedback;
+        }
+
+        // Load feedbacks when the page loads
+        window.onload = function() {
+            loadFeedbacks();
+        }
+    </script>
+</body>
+</html>
 
     <div style="border: 2px dashed #ccc;">
       <h1>A little game for our lovely customers...</h1>

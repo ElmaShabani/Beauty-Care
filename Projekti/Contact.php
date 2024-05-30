@@ -53,7 +53,7 @@
     <body>
     <div class="contact-form-container">
         <h2>Contact Us</h2>
-        <form id="contactForm" method="POST" action="sendEmail.php">
+        <form id="contactForm" method="post" action="contact.php">
             <label for="name">Name:</label>
             <input type="text" id="name" name="subject" required>
 
@@ -98,7 +98,30 @@ switch (true) {
 }
     }
    </script> -->
-  
+   <?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
+
+    $to = "elona.fetahu@student.uni-pr.edu"; 
+    $subject = "New Contact Message from $name";
+    $body = "You have received a new message from your website contact form.\n\n".
+            "Here are the details:\n".
+            "Name: $name\n".
+            "Email: $email\n".
+            "Message: $message\n";
+
+    $headers = "From: elona.fetahu@student.uni-pr.edu\n"; // Ndryshoje këtë me adresën tënde të email-it të dërgimit
+    $headers .= "Reply-To: $email"; // Përgjigju direkt në email-in e dërguesit
+
+    if (mail($to, $subject, $body, $headers)) {
+        echo "<script>alert('Your message has been sent successfully!'); window.location.href='contact.html';</script>";
+    } else {
+        echo "<script>alert('Failed to send the message. Please try again later.'); window.location.href='contact.html';</script>";
+    }
+}
+?>
 
     </body>
      <html>
