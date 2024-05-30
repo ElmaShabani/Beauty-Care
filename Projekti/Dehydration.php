@@ -1,43 +1,4 @@
-<?php
-// Deklarimi i variablave per produktet
-$products = [
-    ["name" => "Neovadiol Multi-Corrective Eye and Lip Care for Menopause 15ml", "price" => 20.00],
-    ["name" => "Aqualia Thermal Gel Moisturising Day Cream", "price" => 22.40],
-    ["name" => "Minéral 89 72 Hr Hyaluronic Acid Moisture Boosting Cream for All Skin Types 50ml", "price" => 34.50],
-    ["name" => "Aqualia Thermal Rich Moisturising Day Cream", "price" => 27.70],
-    ["name" => "Aqualia Thermal Light Moisturising Day Cream","price" => 45.50],
-    ["name" => "Aqualia Thermal Night Spa Night Cream", "price" => 30.80],
-    ["name" => "Aqualia Thermal Awakening Eye Balm", "price" => 24.90],
-    ["name" => "Aqualia Thermal Rehydrating Serum", "price" => 18.80],
-];
 
-// Funksioni per te shtuar produktet ne cart
-function addToCart($productName, $productPrice) {
-    // Krijimi i një sesioni nese nuk ekziston
-    if (session_status() == PHP_SESSION_NONE) {
-        session_start();
-    }
-    // Krijimi i nje array per produktet ne cart ne sesion
-    if (!isset($_SESSION['cart'])) {
-        $_SESSION['cart'] = [];
-    }
-    // Shtimi i produktit ne shporte
-    $_SESSION['cart'][] = ["name" => $productName, "price" => $productPrice];
-}
-
-// Shfaqja e produkteve ne cart
-function displayCart() {
-    if (session_status() == PHP_SESSION_NONE) {
-        session_start();
-    }
-    if (isset($_SESSION['cart'])) {
-        foreach ($_SESSION['cart'] as $item) {
-            echo "<li>{$item['name']} - $ {$item['price']}</li>";
-        }
-    }
-}
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
