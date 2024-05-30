@@ -1,15 +1,15 @@
-<?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Merrni të dhënat nga POST request dhe bëni sanitizimin e tyre
-    $name = htmlspecialchars($_POST['name']);
-    $email = htmlspecialchars($_POST['email']);
-    $message = htmlspecialchars($_POST['message']);
+  <?php
+ //if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+ 
+   // $name = htmlspecialchars($_POST['name']);
+    //$email = htmlspecialchars($_POST['email']);
+    //$message = htmlspecialchars($_POST['message']);
 
-    // Përgjigjuni me një mesazh të thjeshtë
-    echo "Thank you, $name! We have received your message: '$message' from email: $email.";
-} else {
-    echo "Invalid request method.";
-}
+  
+    //echo "Thank you, $name! We have received your message: '$message' from email: $email.";
+//} else {
+  //  echo "Invalid request method.";
+//}
 ?>
 
 <!DOCTYPE html>
@@ -53,9 +53,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <body>
     <div class="contact-form-container">
         <h2>Contact Us</h2>
-        <form id="contactForm" method="post" action="contact.php">
+        <form id="contactForm" method="POST" action="sendEmail.php">
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="subject" required>
 
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <label for="message">Message:</label>
             <textarea id="message" name="message" rows="4" required></textarea>
 
-            <button type="submit">Submit</button>
+            <button type="submit" name="send">Send</button>
         </form>
     </div>
 
@@ -98,30 +98,7 @@ switch (true) {
 }
     }
    </script> -->
-   <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $message = $_POST['message'];
-
-    $to = "elona.fetahu@student.uni-pr.edu"; 
-    $subject = "New Contact Message from $name";
-    $body = "You have received a new message from your website contact form.\n\n".
-            "Here are the details:\n".
-            "Name: $name\n".
-            "Email: $email\n".
-            "Message: $message\n";
-
-    $headers = "From: elona.fetahu@student.uni-pr.edu\n"; // Ndryshoje këtë me adresën tënde të email-it të dërgimit
-    $headers .= "Reply-To: $email"; // Përgjigju direkt në email-in e dërguesit
-
-    if (mail($to, $subject, $body, $headers)) {
-        echo "<script>alert('Your message has been sent successfully!'); window.location.href='contact.html';</script>";
-    } else {
-        echo "<script>alert('Failed to send the message. Please try again later.'); window.location.href='contact.html';</script>";
-    }
-}
-?>
+  
 
     </body>
      <html>

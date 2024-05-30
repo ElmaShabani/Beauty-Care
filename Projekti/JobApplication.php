@@ -59,7 +59,16 @@ if (isset($_POST['submitted'])){
 }
 
 $bgColor = isset($_COOKIE['bgColor']) ? $_COOKIE['bgColor'] : "Black";
-?>  
+?> 
+<?php 
+try {
+    
+    if (session_status() !== PHP_SESSION_ACTIVE) {
+        throw new Exception("Sesioni nuk mund të fillohet!");
+    }
+} catch (Exception $e) {
+    echo "<b>Përjashtim:</b> " . $e->getMessage() . "<br>";
+} ?>
     <header>
         <a href="MainPage.php"><img src="../img/logo.jpg" alt="Your Brand Logo"></a>
         <div class="text-with-shadow" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">EverGlow Beauty</div>
@@ -149,16 +158,7 @@ $bgColor = isset($_COOKIE['bgColor']) ? $_COOKIE['bgColor'] : "Black";
         <label for="coverLetter">Cover Letter:</label>
       <textarea id="coverLetter" name="coverLetter" rows="4" required ></textarea>
       <br>
-      <p>Background Color:</p>
-<select name=bgColor>
-<option value ="Red">Red</option>
-<option value ="Green" selected>Green</option>
-<option value ="Blue">Blue</option>
-<option value ="Yellow">Yellow</option>
-<option value ="Black">Black</option>
-<option value ="Brown">Brown</option>
-<option value ="White">White</option>
-</select>
+    
 <input type ="hidden" name="submitted" value="true"></br>
 
         <button type="button" onclick="validateForm()" style="width: 100%;">Submit Application</button>
