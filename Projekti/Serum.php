@@ -51,6 +51,33 @@
         });
     </script>
     <div class="background-container">
+    <?php
+            $produkte = array(
+                "Normaderm Salicylic Acid + Probiotic Fractions Anti-Blemish Serum 30ml" => 35.00,
+                "Liftactiv Supreme 15% Pure Vitamin C Brightening Serum 20ml" => 28.90,
+                "Liftactiv Supreme Serum 10" => 35.50,
+                "Liftactiv Specialist B3 5% Niacinamide & AHA Complex Dark Spots & Pigmentation Serum 30m" => 40.40,
+                "Aqualia Thermal Rehydrating Serum" => 33.40,
+                "Neovadiol Meno 5 Serum for Menopausal Skin 30ml" => 45.50,
+                "Minéral 89 Hyaluronic Acid Booster" => 20.00,
+                "Minéral 89 Probiotic Serum" => 24.70,
+                "Liftactiv Supreme Eyes & Lashes Serum" => 30.50,
+                "Idéalia Eye Cream" => 25.50,
+                "Slow Âge Eye Cream" => 22.20,
+                "Neovadiol Multi-Corrective Eye and Lip Care for Menopause 15ml" => 28.50
+            );
+
+            arsort($produkte);
+
+            foreach ($produkte as $produkt => $cmimi) {
+                echo '<div class="image-box">';
+                echo '<img src="../img/' . str_replace(' ', '_', $produkt) . '.jpg" alt="' . $produkt . '" class="image">';
+                echo '<p>' . $produkt . '</p>';
+                echo '<p>$' . $cmimi . '</p>';
+                echo '<button class="add-to-cart" onclick="addToCart(\'' . $produkt . '\', ' . $cmimi . ')">Add to Cart</button>';
+                echo '</div>';
+            }
+        ?>
         <div class="image-box">
             <img src="../img/serum1.jpg" alt="Foto 1" class="image">
             <p>Normaderm Salicylic Acid + Probiotic <br>
@@ -160,9 +187,9 @@
             <div class="quick-links">
                 <h2>Quick Links</h2>
                 <ul>
-                    <li><a href="MainPage.html">Home</a></li>
-                    <li><a href="OurStory.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a>
+                    <li><a href="MainPage.php">Home</a></li>
+                    <li><a href="OurStory.php">About Us</a></li>
+                    <li><a href="contact.php">Contact</a>
                     <li><div id="currentDateElement"></div>
                         <script>
     
@@ -202,7 +229,7 @@
              <div class="col text-center"><a id="AmexLink" class="site-footer-payments__link" href="https://www.americanexpress.com/" style="pointer-events: auto;">
                 <img src="https://images.ctfassets.net/eoaaqxyywn6o/1R0NBLVCShxTQNVHNjanE4/c970e9e15ecbb026929000ae3fcce6ae/Amex.svg"
                     alt="Amex" class="site-footer-payments__link__icon"></a></div>
-             <div class="col text-center"><a id="MastercardLink" class="site-footer-payments__link" href="https://www.mastercard.us/en-us.html" style="pointer-events: auto;">
+             <div class="col text-center"><a id="MastercardLink" class="site-footer-payments__link" href="https://www.mastercard.us/en-us.php" style="pointer-events: auto;">
                 <img src="https://images.ctfassets.net/eoaaqxyywn6o/5bs4r6UiioP3Fkj4Qg35o8/5583c0ecc4b6500a1083fd38cfabf6dc/Mastercard.svg"
                     alt="Mastercard" class="site-footer-payments__link__icon"></a></div>
              <div class="col text-center"><a id="MaestroLink" class="site-footer-payments__link" href="https://n26.com/en-eu/maestro-card" style="pointer-events: auto;">

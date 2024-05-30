@@ -39,76 +39,38 @@
     </header>
 
     <section id="products">
-        <div class="product" >
-            <img src="../img/Valentino.webp" alt="Fragrance-Women" >
-            <h3>Valentino<p>Donna Born In Roma Eau de Parfum</p></h3>
-            <p>$100.00</p> <p>Size: 1.7 oz/ 50 mL</p>
-            <button class="add-to-cart" onclick="addToCart('Donna Born In Roma Eau de Parfum',100.00)">Add to Cart</button>
-    </div>
-    <div class="product" >
-       
-        <img src="../img/Carolina Herrera.webp" alt="Fragrance-Women" >
-        <h3>Carolina Herrera<p>Mini Good Girl Blush Eau de Parfum</p></h3>
-        <p>$15.00</p> <p>Size: 0.2 oz/ 7mL</p>
-        <button class="add-to-cart" onclick="addToCart('Mini Good Girl Blush Eau de Parfum',15.00)">Add to Cart</button>
-    </div>
-    <div class="product" >
-        <img src="../img/Blacopium.webp" alt="Fragrance-Women" >
-        <h3>Yves Saint Laurent<p> Black Opium Eau de Parfum</p> </h3>
-        <p>$140.00</p><p>Size: 3 oz/ 90 mL</p>
-        <button class="add-to-cart" onclick="addToCart('Black Opium Eau de Parfum',140.00)">Add to Cart</button>
-    </div>
-    <div class="product" >
-        <img src="../img/Libre Eau De Parfum.webp" alt="Fragrance-Women" >
-        <h3>Yves Saint Laurent<p>Libre Eau De Parfum</p> </h3>
-        <p>$95.00</p><p>Size: 1 oz / 30 mL</p>
-        <button class="add-to-cart" onclick="addToCart('Libre Eau De Parfum',95.00)">Add to Cart</button>
-    </div>
-    <div class="product" >
-        <img src="../img/MissDior11.webp" alt="Fragrance-Women" >
-        <h3>Dior<p>Miss Dior Eau de Parfum</p></h3>
-        <p>$160.00</p> <p>Size: 3.4 oz/ 100 mL</p>
-        <button class="add-to-cart" onclick="addToCart('Miss Dior Eau de Parfum',160.00)">Add to Cart</button>
-    </div>
-    <div class="product" >
-        <img src="../img/cocochanel.webp" alt="Fragrance-Women" >
-        <h3>CHANEL <p>COCO MADEMOISELLE Eau de Parfum</p></h3>
-        <p>$130.00</p><p>Size: 1.7 oz/ 50 mL</p>
-        <button class="add-to-cart" onclick="addToCart('COCO MADEMOISELLE Eau de Parfum',130.00)">Add to Cart</button>
-    </div>
-    <div class="product" >
-       
-        <img src="../img/Daisy.webp" alt="Fragrance-Women" >
-        <h3>Daisy<p>Marc Jacobs Fragrances</p></h3>
-        <p>$137.00</p> <p>Size: 3.4 oz/ 100 mL</p>
-        <button class="add-to-cart" onclick="addToCart('Marc Jacobs Fragrances',137.00)">Add to Cart</button>
-    </div>
-    <div class="product" >
-       
-        <img src="../img/Viktor&Rolf.webp" alt="Fragrance-Women" >
-        <h3>Viktor&Rolf<p>Flowerbomb Eau de Parfum</p></h3>
-        <p>$170.00</p> <p>Size: 3.4 oz/ 100 mL</p>
-        <button class="add-to-cart" onclick="addToCart('Flowerbomb Eau de Parfum',170.00)">Add to Cart</button>
-    </div>
-    <div class="product" >
-       
-        <img src="../img/hypnotic poison.webp" alt="Fragrance-Women" >
-        <h3>Dior <p>Hypnotic Poison</p></h3>
-        <p>$80.00</p> <p>Size: 3.1 oz/ 50mL</p>
-        <button class="add-to-cart" onclick="addToCart(' Hypnotic Poison',80.00)">Add to Cart</button>
-    </div>
+        <?php
+            $produkte = array(
+                "Valentino Donna Born In Roma Eau de Parfum" => 100.00,
+                "Carolina Herrera Mini Good Girl Blush Eau de Parfum" => 15.00,
+                "Yves Saint Laurent Black Opium Eau de Parfum" => 140.00,
+                "Yves Saint Laurent Libre Eau De Parfum" => 95.00,
+                "Dior Miss Dior Eau de Parfum" => 160.00,
+                "CHANEL COCO MADEMOISELLE Eau de Parfum" => 130.00,
+                "Daisy Marc Jacobs Fragrances" => 137.00,
+                "Viktor&Rolf Flowerbomb Eau de Parfum" => 170.00,
+                "Dior Hypnotic Poison" => 80.00
+            );
+            asort($produkte);
+
+            foreach ($produkte as $produkt => $cmimi) {
+                echo '<div class="product">';
+                echo '<img src="../img/' . str_replace(' ', '_', $produkt) . '.webp" alt="Fragrance-Women">';
+                echo '<h3>' . $produkt . '</h3>';
+                echo '<p>$' . $cmimi . '</p>';
+                echo '<button class="add-to-cart" onclick="addToCart(\'' . $produkt . '\', ' . $cmimi . ')">Add to Cart</button>';
+                echo '</div>';
+            }
+        ?>
     </section>
 
     <script>
         setTimeout(function () {
-      alert("Welcome to the Women's fragrance sector");
+            alert("Welcome to the Women's fragrance sector");
         }, 500);
-      </script>
-      
+    </script>
 
-    
-      <script src="forall.js"></script>
-    
+    <script src="forall.js"></script>
 
 </body>
 </html>

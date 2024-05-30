@@ -1,3 +1,44 @@
+<?php
+// vargjet
+$show_cart = true; 
+$payment_method = "paypal"; //Ndryshimi bazuar ne metoden e zgjedhur te pageses
+
+// Deklarimi i funksionit placeOrder()
+function placeOrder() {
+
+}
+
+
+// Deklarimi i vargut te produkteve
+$products = array(
+    array(
+        "name" => "Detox Clarifying Charcoal Mask",
+        "price" => 25.00
+    ),
+    array(
+        "name" => "Minéral 89 Fortifying Recovery Mask",
+        "price" => 15.50
+    ),
+    array(
+        "name" => "Double Glow Peel Face Mask",
+        "price" => 30.00
+    ),
+    array(
+        "name" => "Liftactiv Specialist Hyalu Face Mask",
+        "price" => 27.50
+    )
+);
+
+// Deklarimi i vargut te metodave te pageses
+$payment_methods = array(
+    "paypal",
+    "clearpay",
+    "visa",
+    "amex",
+    "mastercard",
+    "maestro"
+);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -123,9 +164,9 @@
             <div class="quick-links">
                 <h2>Quick Links</h2>
                 <ul>
-                    <li><a href="MainPage.html">Home</a></li>
-                    <li><a href="OurStory.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a>
+                    <li><a href="MainPage.php">Home</a></li>
+                    <li><a href="OurStory.php">About Us</a></li>
+                    <li><a href="contact.php">Contact</a>
                     <li><div id="currentDateElement"></div>
                         <script>
     
@@ -165,7 +206,7 @@
              <div class="col text-center"><a id="AmexLink" class="site-footer-payments__link" href="https://www.americanexpress.com/" style="pointer-events: auto;">
                 <img src="https://images.ctfassets.net/eoaaqxyywn6o/1R0NBLVCShxTQNVHNjanE4/c970e9e15ecbb026929000ae3fcce6ae/Amex.svg"
                     alt="Amex" class="site-footer-payments__link__icon"></a></div>
-             <div class="col text-center"><a id="MastercardLink" class="site-footer-payments__link" href="https://www.mastercard.us/en-us.html" style="pointer-events: auto;">
+             <div class="col text-center"><a id="MastercardLink" class="site-footer-payments__link" href="https://www.mastercard.us/en-us.php" style="pointer-events: auto;">
                 <img src="https://images.ctfassets.net/eoaaqxyywn6o/5bs4r6UiioP3Fkj4Qg35o8/5583c0ecc4b6500a1083fd38cfabf6dc/Mastercard.svg"
                     alt="Mastercard" class="site-footer-payments__link__icon"></a></div>
              <div class="col text-center"><a id="MaestroLink" class="site-footer-payments__link" href="https://n26.com/en-eu/maestro-card" style="pointer-events: auto;">

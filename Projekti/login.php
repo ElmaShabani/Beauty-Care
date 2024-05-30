@@ -1,30 +1,30 @@
 <?php
-// fillimi i sessionit
+
 session_start();
 
-// Kontrollimi  nese eshte bere POST request per te procesuar formen e hyrjes
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Marrja e vlerave të hyrjes nga forma
+   
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // Kontrollimi nese perdoruesi dhe fjalekalimi jane te sakte
+    
     if ($username === "admin" && $password === "admin123") {
-        // Nese autentikimi eshte i suksesshem, vendos nje sesion te ruajtur
+       
         $_SESSION['loggedin'] = true;
         $_SESSION['username'] = $username;
 
-        // Vendos nje cookie per te shenu autentikimin
-        setcookie('fundi_i_dites', 'po', time() + (86400 * 30), "/"); // 86400 sekonda = 1 dite
+      
+        setcookie('fundi_i_dites', 'po', time() + (86400 * 30), "/"); 
     } else {
-        // Nese autentikimi deshton, shfaq nje mesazh gabimi
+        
         echo "<script>alert('Invalid username or password. Please try again.');</script>";
     }
 }
 
-// Kontrollimi nese sesioni eshte krijuar dhe perdoruesi esht autentikuar
+
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
-    // Nese autentikimi eshte i suksesshem,kthehu ne faqen kryesore
+   
     header("Location: MainPage.php");
     exit;
 }
@@ -37,60 +37,33 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../img/favicon.ico.PNG">
     <title>Beauty Website Login</title>
-    <script>
-        function validateUsername(username) {
-            return username.length >= 6;
-        }
-
-        function validatePassword(password) {
-            return password.length >= 6;
-        }
-
-        function login(event) {
-            event.preventDefault();
-
-            var usernameInput = document.getElementById("username").value;
-            var passwordInput = document.getElementById("password").value;
-
-            if (usernameInput && passwordInput && validateUsername(usernameInput) && validatePassword(passwordInput)) {
-                // Nëse hyrja është e vlefshme, paraqit formën
-                document.getElementById("loginForm").submit();
-            } else {
-                alert("Invalid username or password. Please check your input.");
-            }
-        }
-    </script>
     <style>
-      body {
-    font-family: 'Times New Roman', Times, serif;
-    margin: 0;
-    padding: 0;
-    background: radial-gradient(ellipse at center, rgba(236, 206, 176, 0.5)  10% , rgb(101, 45, 17) 100% );
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-size: cover;
-    background-position: center;
-   }
-
-     
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(ellipse at center, rgba(236, 206, 176, 0.5)  10% , rgb(101, 45, 17) 100% );
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+        }
         form {
             margin-top: 200px;
-            background-color:white;
+            background-color: white;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 300px;
         }
-
         label {
             display: block;
             margin-bottom: 8px;
             font-weight: bold;
         }
-
-        input {
+        input, button {
             width: 100%;
             padding: 8px;
             margin-bottom: 16px;
@@ -98,49 +71,50 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
             border-radius: 4px;
             border: 1px solid black;
         }
-
         button {
-            background-color:white;
+            background-color: white;
             color: black;
-            padding: 10px 20px;
-            border-radius: 4px;
             cursor: pointer;
         }
-
         button:hover {
-            background-color: rgb(26, 159, 68) ;
+            background-color: rgb(26, 159, 68);
         }
-
-        .social-login {
-            margin-top: 20px;
-        }
-
         .social-login button {
             margin: 5px;
         }
-       
+        a {
+            text-decoration: none;
+        }
     </style>
+    <script>
+        function validateUsername(username) {
+            return username.length >= 6;
+        }
+        function validatePassword(password) {
+            return password.length >= 6;
+        }
+        function login(event) {
+            event.preventDefault();
+            var usernameInput = document.getElementById("username").value;
+            var passwordInput = document.getElementById("password").value;
+            if (usernameInput && passwordInput && validateUsername(usernameInput) && validatePassword(passwordInput)) {
+                window.location.href = "MainPage.php";  
+            } else {
+                alert("Invalid username or password. Please check your input.");
+            }
+        }
+    </script>
 </head>
 <body>
-    <form id="loginForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" autocomplete="on">
+    <form action="/your-login-endpoint" method="post" autocomplete="on" onsubmit="login(event)">
         <h2>Log Into EverGlow Beauty</h2>
-        
         <input type="text" id="username" name="username" placeholder="Username..." required>
-        <input type="password" id="password" name="password"  placeholder="Password..." required>
-
-        <button type="button" style="width: 200px; border: 1px solid black;" onclick="login(event)">Log In</button>
+        <input type="password" id="password"name="password" placeholder="Password..." required>
+        <button type="submit">Log In</button>
         <p>or</p>
-        <div class="social-login" >
-           <a href="https://www.facebook.com/"> <button type="button" style="border: 1px solid black;">
-               Log In with
-                <img src="../img/fblogo.png" alt="Facebook Icon" width="20">
-            </button>
-            </a>
-           <a href="https://www.instagram.com/"> <button type="button" style="border: 1px solid black;">
-               Log In with
-                <img src="../img/instalogo.png" alt="Instagram Icon" width="20">
-            </button></a>
-        </div>
+        <a href="signin.php">
+            <button type="button">Sign Up</button>
+        </a>
     </form>
 </body>
 </html>

@@ -40,6 +40,32 @@
     </header>
 
     <section id="products">
+    <?php
+    $produkte = array(
+        "KAYALI Vanilla Royale Sugared Patchouli | 64 Eau de Parfum Intense" => 95.00,
+        "KILIAN Paris Love, Don't Be Shy" => 250.00,
+        "TOM FORD Ombré Leather Eau de Parfum" => 220.00,
+        "Juliette Has a Gun Ode to Dullness Eau de Parfum" => 160.00,
+        "The Maker Naked Eau de Parfum" => 135.00,
+        "Commodity Gold Expressive" => 90.00,
+        "Glossier Glossier You Eau de Parfum" => 90.00,
+        "PHLUR Tangerine Boy Eau de Parfum" => 99.00,
+        "TOM FORD Black Orchid Eau de Parfum Fragrance" => 155.00
+    );
+
+
+    sort($produkte);
+
+    foreach ($produkte as $produkt => $cmimi) {
+        echo '<div class="product">';
+        echo '<img src="../img/' . str_replace(' ', '_', $produkt) . '.webp" alt="Fragrance-Unisex">';
+        echo '<h3>' . $produkt . '</h3>';
+        echo '<p>$' . $cmimi . '</p>';
+        echo '<button class="add-to-cart" onclick="addToCart(\'' . $produkt . '\', ' . $cmimi . ')">Add to Cart</button>';
+        echo '</div>';
+    }
+?>
+
         <div class="product" >
             <img src="../img/KAYALI.webp" alt="Fragrance-Unisex" >
             <h3>KAYALI<p>Vanilla Royale Sugared Patchouli | 64 Eau de Parfum Intense</p></h3>

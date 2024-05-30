@@ -1,14 +1,32 @@
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Merrni të dhënat nga POST request dhe bëni sanitizimin e tyre
+    $name = htmlspecialchars($_POST['name']);
+    $email = htmlspecialchars($_POST['email']);
+    $message = htmlspecialchars($_POST['message']);
 
-<DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Contact Us</title>
-        <link rel="icon" type="image/x-icon" href="../img/favicon.ico.PNG">
-        <link rel="stylesheet" href="contact.css">
-       
+    // Përgjigjuni me një mesazh të thjeshtë
+    echo "Thank you, $name! We have received your message: '$message' from email: $email.";
+} else {
+    echo "Invalid request method.";
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico.PNG">
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+</body>
+</html>
+
+    
         <style>
           body {
             /*background-image: url('../img/<?php echo $background_image; ?>');*/
@@ -33,27 +51,27 @@
           
     </head>
     <body>
-                <div class="footer-container"></div>
-              <div class="contact-form-container">
-              
-                  <h2>Contact Us</h2> 
-                    <form id="contactForm">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-              
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <keygen name="user_key" challenge="random_string"> 
-        
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea> 
-    
-                <button type="button" onclick="submitForm()">Submit</button>
-            </form>
-        </div>
-        </div>
-        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-   <script>
+    <div class="contact-form-container">
+        <h2>Contact Us</h2>
+        <form id="contactForm" method="post" action="contact.php">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</body>
+</html>
+
+  <!-- <script>
     function submitForm(){
     let nameInput = document.getElementById('name');
 if (nameInput.value.length === 0) {
@@ -79,7 +97,32 @@ switch (true) {
       alert('Message is too long.');
 }
     }
-   </script>
+   </script> -->
+   <?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
+
+    $to = "elona.fetahu@student.uni-pr.edu"; 
+    $subject = "New Contact Message from $name";
+    $body = "You have received a new message from your website contact form.\n\n".
+            "Here are the details:\n".
+            "Name: $name\n".
+            "Email: $email\n".
+            "Message: $message\n";
+
+    $headers = "From: elona.fetahu@student.uni-pr.edu\n"; // Ndryshoje këtë me adresën tënde të email-it të dërgimit
+    $headers .= "Reply-To: $email"; // Përgjigju direkt në email-in e dërguesit
+
+    if (mail($to, $subject, $body, $headers)) {
+        echo "<script>alert('Your message has been sent successfully!'); window.location.href='contact.html';</script>";
+    } else {
+        echo "<script>alert('Failed to send the message. Please try again later.'); window.location.href='contact.html';</script>";
+    }
+}
+?>
+
     </body>
      <html>
     

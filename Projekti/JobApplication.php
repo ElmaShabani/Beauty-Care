@@ -1,3 +1,26 @@
+<?php
+
+if (isset($_POST['submitted'])){
+
+$newbgColor=$_POST['bgColor'];
+
+
+setcookie("bgColor",$newbgColor,time()+3600);
+
+}
+
+
+
+if ((!isset($_COOKIE['bgColor']) )){
+$bgColor = "Black";
+
+}
+
+else{
+$bgColor = $_COOKIE['bgColor'];
+
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,8 +39,27 @@
     
     <title>Job Application</title>
 </head>
-<body>
-   
+<body bgcolor="<?php echo $bgColor ?> "|>
+<?php
+function customErrorHandler($errno, $errstr, $errfile, $errline) {
+    echo "<b>Gabim:</b> [$errno] $errstr<br>";
+    echo "Gabimi ndodhi në skedarin '$errfile', rreshti $errline<br>";
+    echo "------------------------------------------------------------<br>";
+    return true;
+}
+
+
+set_error_handler("customErrorHandler");
+
+session_start();
+
+if (isset($_POST['submitted'])){
+    $newbgColor = $_POST['bgColor'];
+    setcookie("bgColor", $newbgColor, time() + 3600);
+}
+
+$bgColor = isset($_COOKIE['bgColor']) ? $_COOKIE['bgColor'] : "Black";
+?>  
     <header>
         <a href="MainPage.php"><img src="../img/logo.jpg" alt="Your Brand Logo"></a>
         <div class="text-with-shadow" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">EverGlow Beauty</div>
@@ -61,7 +103,8 @@
     </header>
     
 <div class="form">
-    <form id="jobApplicationForm">
+<form action= "<?php echo $_SERVER['PHP_SELF']; ?>" method ="POST" id="jobApplicationForm">
+  
         <input type="text" id="readonlyInput" name="readonlyInput" value=" APPLY FOR A JOB BELOW!" readonly style="width: 100%; background-color: #f5dfc9;">
         <label for="fullName">Full Name:</label>
         <input type="text" id="fullName" name="fullName" required style="width: 100%;" form="jobApplicationForm"><br>
@@ -106,10 +149,21 @@
         <label for="coverLetter">Cover Letter:</label>
       <textarea id="coverLetter" name="coverLetter" rows="4" required ></textarea>
       <br>
-        
+      <p>Background Color:</p>
+<select name=bgColor>
+<option value ="Red">Red</option>
+<option value ="Green" selected>Green</option>
+<option value ="Blue">Blue</option>
+<option value ="Yellow">Yellow</option>
+<option value ="Black">Black</option>
+<option value ="Brown">Brown</option>
+<option value ="White">White</option>
+</select>
+<input type ="hidden" name="submitted" value="true"></br>
 
         <button type="button" onclick="validateForm()" style="width: 100%;">Submit Application</button>
     </form>
+ 
 </div>
 <br>
 
@@ -141,7 +195,7 @@
                 <h2>Get in Touch</h2>
                 <address
                     style="margin-left: 100px; font-size: 20px; font-family:Georgia, 'Times New Roman', Times, serif;">
-                    <a href="https://maps.app.goo.gl/scmxnwzCazoUVT8b9">Address: Prishtine</a> </address>
+                    <a href="https://maps.app.goo.gl/scmxnwzCazoUVT8b9">Address: Ferizaj</a> </address>
                 <p>Email: <mark style="background-color: white;"> <a
                             href="mailto:everglowbeauty@gmail.com">everglowbeauty@gmail.com</a> </mark></p>
                 <p>Phone: <mark style="background-color: white;">+383 48 555 111</mark> </p>
@@ -165,7 +219,7 @@
              <div id="AmexLink" class="col text-center"><a class="site-footer-payments__link" href="https://www.americanexpress.com/" style="pointer-events: auto;">
                 <img src="https://images.ctfassets.net/eoaaqxyywn6o/1R0NBLVCShxTQNVHNjanE4/c970e9e15ecbb026929000ae3fcce6ae/Amex.svg"
                     alt="Amex" class="site-footer-payments__link__icon"></a></div>
-             <div id="MastercardLink" class="col text-center"><a class="site-footer-payments__link" href="https://www.mastercard.us/en-us.html" style="pointer-events: auto;">
+             <div id="MastercardLink" class="col text-center"><a class="site-footer-payments__link" href="https://www.mastercard.us/en-us.php" style="pointer-events: auto;">
                 <img src="https://images.ctfassets.net/eoaaqxyywn6o/5bs4r6UiioP3Fkj4Qg35o8/5583c0ecc4b6500a1083fd38cfabf6dc/Mastercard.svg"
                     alt="Mastercard" class="site-footer-payments__link__icon"></a></div>
              <div id="MaestroLink" class="col text-center"><a class="site-footer-payments__link" href="https://n26.com/en-eu/maestro-card" style="pointer-events: auto;">
@@ -197,29 +251,21 @@
   
     <script>
         function validateForm() {
-            try {
-                var fullName = document.getElementById('fullName').value;
-                var email = document.getElementById('email').value;
-                var contactMethod = document.querySelector('input[name="contactMethod"]:checked');
-                var date = document.getElementById('date').value;
-                var phoneNumber = document.getElementById('phoneNumber').value;
-                var age = document.getElementById('age').value;
-
-                if (fullName === '' || email === '' || contactMethod === null || date === '' || phoneNumber === '' || age === '') {
-                    throw new Error('Please fill in all required fields.');
-                }
-
-                if (isNaN(age) || age < 18 || age > 65) {
-                    throw new RangeError('Enter a valid age between 18 and 65.');
-                }
-
-
-                alert('Application submitted successfully!');
-                window.location.href = "MainPage.html";
-            } catch (error) {
-                alert('Error: ' + error.message);
-            }
+    try {
+        var fullName = document.getElementById('fullName').value;
+        if (fullName === '') throw new Error('Ju lutemi plotësoni emrin e plotë.');
+        var email = document.getElementById('email').value;
+        if (email === '') throw new Error('Emaili është i detyrueshëm.');
+        var age = document.getElementById('age').value;
+        if (isNaN(age) || age < 18 || age > 65) {
+            throw new RangeError('Mosha duhet të jetë ndërmjet 18 dhe 65 vjeç.');
         }
+        alert('Aplikimi u dërgua me sukses!');
+        window.location.href = "MainPage.php";
+    } catch (error) {
+        alert('Gabim: ' + error.message);
+    }
+}
         function shfaqMesazhin() {
     alert('Everglow Beauty Kosova: Where beauty meets excellence, making us the best choice for all your cosmetic needs!');
     }

@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,8 +12,8 @@
     <link rel="icon" type="image/x-icon" href="../img/favicon.ico.PNG">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
-        $(document).ready(function () {  // menyr e shkurter per te treguar se javascript kodi mund te ekzekutohet vetem nese dom esht gati
- 
+        $(document).ready(function () {
+
             $('header').hide().fadeIn(1000);
         });
         
@@ -24,7 +27,10 @@
          <ul>
              <li><a href="allformakeup.php">Makeup</a>
                  <ul class="subcategories">
-                     <li><a href="facee.php">Face</a></li>a
+
+                     <li><a href="facee.php">Face</a></li>
+
+                     <li><a href="facee.php">Face</a></li>
                      <li><a href="eyes.php">Eyes</a></li>
                      <li><a href="lips.php">Lips</a></li>
                      <li><a href="cheeks.php">Cheek</a></li>
@@ -340,21 +346,77 @@
                         </script>
                     </li>
                 </ul>
+
             </div>
-            <div class="get-in-touch">
+            <?php
+
+class BaseInfo {
+    public $Address;
+    public $Gmail;
+    protected $Phone;
+    private $AddressLink;
+    private $MailLink;
+
+    function __construct($Address, $Gmail, $Phone) {
+        $this->Address = $Address;
+        $this->Gmail = $Gmail;
+        $this->Phone = $Phone;
+    }
+     
+    
+}
+
+class Info extends BaseInfo {
+    function set_data($AddressLink, $MailLink) {
+        $this->AddressLink = $AddressLink;
+        $this->MailLink = $MailLink;
+    }
+
+    function get_data() {
+        $generateData = '<div class="get-in-touch">
+            <h2>Get in Touch</h2>
+            <address style="margin-left: 100px; font-size: 20px; font-family:Georgia, \'Times New Roman\', Times, serif;">
+                <a href="' . $this->AddressLink . '">Address: ' . $this->Address . '</a>
+            </address>
+            <p>Email: <mark style="background-color: white;"><a href="' . $this->MailLink . '">' . $this->Gmail . '</a></mark></p>
+            <p>Phone: <mark style="background-color: white;">' . $this->Phone . '</mark></p>
+        </div>';
+
+        return $generateData;
+    }
+
+    function print_data() {
+        echo $this->get_data();
+    }
+}
+
+$Our_info = new Info("Ferizaj", "everglowbeauty@gmail.com", "+383 44 898 395");
+$Our_info->set_data("https://maps.app.goo.gl/scmxnwzCazoUVT8b9", "mailto:everglowbeauty@gmail.com");
+
+   $Our_info->print_data();
+?>
+
+                        
+                        
+                        
+                        
+
+       <!--     <div class="get-in-touch">
+>>>>>>> e3eb0e02d4c2f61595d719e725adac6174113fba
                 <h2>Get in Touch</h2>
                 <address
                     style="margin-left: 100px; font-size: 20px; font-family:Georgia, 'Times New Roman', Times, serif;">
                     <a href="https://maps.app.goo.gl/scmxnwzCazoUVT8b9">Address: Prishtine</a> </address>
                 <p>Email: <mark style="background-color: white;"> <a
-                            href="mailto:everglowbeauty@gmail.com">everglowbeauty@gmail.com</a> </mark></p>
+                            href ="mailto:everglowbeauty@gmail.com">everglowbeauty@gmail.com</a> </mark></p>
                 <p>Phone: <mark style="background-color: white;">+383 48 555 111</mark> </p>
-            </div>
+            </div>    --> 
         </div>
         <div class="container-fluid site-footer-payments">
             <aside>
                 <h2>Payment methods: </h2>
             </aside>
+    
             <div class="row">
               <div class="col text-center">
             <a id="payPallink" class="site-footer-payments__link"  href="https://www.paypal.com/" style="pointer-events: auto;">
@@ -369,7 +431,7 @@
              <div id="AmexLink" class="col text-center"><a class="site-footer-payments__link" href="https://www.americanexpress.com/" style="pointer-events: auto;">
                 <img src="https://images.ctfassets.net/eoaaqxyywn6o/1R0NBLVCShxTQNVHNjanE4/c970e9e15ecbb026929000ae3fcce6ae/Amex.svg"
                     alt="Amex" class="site-footer-payments__link__icon"></a></div>
-             <div id="MastercardLink" class="col text-center"><a class="site-footer-payments__link" href="https://www.mastercard.us/en-us.html" style="pointer-events: auto;">
+             <div id="MastercardLink" class="col text-center"><a class="site-footer-payments__link" href="https://www.mastercard.us/en-us.php" style="pointer-events: auto;">
                 <img src="https://images.ctfassets.net/eoaaqxyywn6o/5bs4r6UiioP3Fkj4Qg35o8/5583c0ecc4b6500a1083fd38cfabf6dc/Mastercard.svg"
                     alt="Mastercard" class="site-footer-payments__link__icon"></a></div>
              <div id="MaestroLink" class="col text-center"><a class="site-footer-payments__link" href="https://n26.com/en-eu/maestro-card" style="pointer-events: auto;">
@@ -378,6 +440,7 @@
         </div>
         </div>
         <p class="copyright" style="text-align: center;">&copy; 2023 EverGlow Beauty. All rights reserved.</p>
+      
     </footer>
     <script src="MainPage.js"></script>
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -399,6 +462,7 @@
             );
         });
     </script>
+    
 </body>
 
 </html>
