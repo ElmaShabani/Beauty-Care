@@ -104,7 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $message = $_POST['message'];
 
-    $to = "elona.fetahu@student.uni-pr.edu"; 
+    $to = ""; 
     $subject = "New Contact Message from $name";
     $body = "You have received a new message from your website contact form.\n\n".
             "Here are the details:\n".
@@ -112,7 +112,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             "Email: $email\n".
             "Message: $message\n";
 
-    $headers = "From: elona.fetahu@student.uni-pr.edu\n"; // Ndryshoje këtë me adresën tënde të email-it të dërgimit
+    $headers = "From: "; // Ndryshoje këtë me adresën tënde të email-it të dërgimit
     $headers .= "Reply-To: $email"; // Përgjigju direkt në email-in e dërguesit
 
     if (mail($to, $subject, $body, $headers)) {
